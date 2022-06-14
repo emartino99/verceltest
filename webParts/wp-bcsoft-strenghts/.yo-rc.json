@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "bcsoft-strenghts",
+    "libraryId": "92974bc9-f3ad-4de4-b105-5367095f7690",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "bcsoftStrenghts",
+    "solutionShortDescription": "bcsoftStrenghts description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

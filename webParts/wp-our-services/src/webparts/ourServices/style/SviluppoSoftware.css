@@ -1,0 +1,43 @@
+.sviluppo-software-container {
+    background-color: #FFF;
+    width: 100%;
+    min-height: 500px;
+    clip-path: polygon(0 9%, 100% 0, 100% 90%, 0% 100%);
+    gap: 1rem;
+}
+
+.sviluppo-software-container > div {
+    flex: 1;
+    gap: 1rem;
+}
+
+.sviluppo-software-cards{
+    height: 200px;
+    width: 350px;
+    transform: skewY(357deg);
+}
+
+.sviluppo-software-cards {
+    gap: 1rem;
+}
+
+.sviluppo-software-cards h3 {
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.sviluppo-software-description > div:first-of-type {
+    width: 78%;
+}
+
+.sviluppo-software-description > div > h2 {
+    font-size: 30px;
+    font-weight: 500;
+    color: #DAB006;
+}
+
+.sviluppo-software-description > div > p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #001F3C;
+}

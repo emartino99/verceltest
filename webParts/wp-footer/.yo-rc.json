@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "footer",
+    "libraryId": "82887100-1f2b-49a5-a96f-bab19ca1ce30",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "Footer",
+    "solutionShortDescription": "Footer description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

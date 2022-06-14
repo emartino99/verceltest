@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "navbar",
+    "libraryId": "4ed6d523-019c-4653-8c02-f8c47b020df2",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "navbar",
+    "solutionShortDescription": "navbar description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

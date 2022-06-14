@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "home-corsi-carousel-client-side-solution",
+    "id": "f245b40d-050b-4157-b221-590505ff5993",
+    "version": "1.2.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "homeCorsiCarousel description"
+      },
+      "longDescription": {
+        "default": "homeCorsiCarousel description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "home-corsi-carousel Feature",
+        "description": "The feature that activates elements of the home-corsi-carousel solution.",
+        "id": "be01f3c1-2d09-46af-8d3e-91da709c444d",
+        "version": "1.2.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/home-corsi-carousel.sppkg"
+  }
+}

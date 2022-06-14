@@ -1,0 +1,32 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "bc-button-client-side-solution",
+    "id": "9290167b-f71e-4fa0-9a32-aafc7dee6948",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "bcButton description"
+      },
+      "longDescription": {
+        "default": "bcButton description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    }
+  },
+  "paths": {
+    "zippedPackage": "solution/bc-button.sppkg"
+  }
+}

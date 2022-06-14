@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "custom-hero-client-side-solution",
+    "id": "47b8e09e-9d2f-4b21-8415-5fe03e98de2f",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "customHero description"
+      },
+      "longDescription": {
+        "default": "customHero description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "custom-hero Feature",
+        "description": "The feature that activates elements of the custom-hero solution.",
+        "id": "23e343bd-beb6-4b4e-a9bc-6a7e7bfd707e",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/custom-hero.sppkg"
+  }
+}

@@ -1,0 +1,22 @@
+.formazione-container {
+    background-color: #001F3C;
+    width: 100%;
+    min-height: 350px;
+    clip-path: polygon(0 9%, 100% 0, 100% 90%, 0% 100%);
+    color: #fff;
+}
+
+.formazione-container > div:first-of-type {
+    width: 75%;
+}
+
+.formazione-card {
+    width: 20rem;
+    transform: skewY(357deg);
+    border: 2px solid #fff;
+    padding: .7rem;
+}
+
+.formazione-card > p {
+    margin: 0;
+}

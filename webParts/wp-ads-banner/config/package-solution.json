@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "bcsoft-sharepoint-client-side-solution",
+    "id": "2d622d7a-f662-4217-a6fd-ab5cd25da591",
+    "version": "1.3.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "bcsoft-sharepoint description"
+      },
+      "longDescription": {
+        "default": "bcsoft-sharepoint description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "bcsoft-sharepoint Feature",
+        "description": "The feature that activates elements of the bcsoft-sharepoint solution.",
+        "id": "528fcbf3-ea5f-4330-a9fe-a5e354760f9f",
+        "version": "1.3.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/bcsoft-sharepoint.sppkg"
+  }
+}

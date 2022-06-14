@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "bcsoft-locations-client-side-solution",
+    "id": "69d29115-fbce-4885-b6ce-4399267e77f7",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "bcsoftLocations description"
+      },
+      "longDescription": {
+        "default": "bcsoftLocations description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "bcsoft-locations Feature",
+        "description": "The feature that activates elements of the bcsoft-locations solution.",
+        "id": "d9d588ff-dbef-44b1-b001-eafe48ca1b3b",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/bcsoft-locations.sppkg"
+  }
+}

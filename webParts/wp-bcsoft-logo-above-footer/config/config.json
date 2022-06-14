@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "wp-bcsoft-logo-above-footer-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/wpBcsoftLogoAboveFooter/WpBcsoftLogoAboveFooterWebPart.js",
+          "manifest": "./src/webparts/wpBcsoftLogoAboveFooter/WpBcsoftLogoAboveFooterWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "WpBcsoftLogoAboveFooterWebPartStrings": "lib/webparts/wpBcsoftLogoAboveFooter/loc/{locale}.js",
+    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js"
+  }
+}

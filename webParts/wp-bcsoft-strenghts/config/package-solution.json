@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "bcsoft-strenghts-client-side-solution",
+    "id": "92974bc9-f3ad-4de4-b105-5367095f7690",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "bcsoftStrenghts description"
+      },
+      "longDescription": {
+        "default": "bcsoftStrenghts description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "bcsoft-strenghts Feature",
+        "description": "The feature that activates elements of the bcsoft-strenghts solution.",
+        "id": "99f17f99-0f88-413d-b3a7-6dfe41fe6e6c",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/bcsoft-strenghts.sppkg"
+  }
+}

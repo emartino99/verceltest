@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "bcsoft-sharepoint",
+    "libraryId": "2d622d7a-f662-4217-a6fd-ab5cd25da591",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "bcsoft-sharepoint",
+    "solutionShortDescription": "bcsoft-sharepoint description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

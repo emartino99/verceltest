@@ -1,0 +1,257 @@
+.mission-vision-container {
+    height: 500px; 
+    width: 301px;
+}
+
+.vision-closed {
+    width: 301px;
+    top: 4%;
+    left: 11%;
+    z-index: 1;
+    transition: all 200ms ease-in;
+    animation: linear;
+    animation-name: vision-move;
+    animation-duration: 2s;
+    animation-fill-mode: forwards
+}
+
+.mission-closed {
+    width: 301px;
+    bottom: 3%;
+    right: 12%;
+    z-index: 1;
+    transition: all 200ms ease-in;
+    animation: linear;
+    animation-name: mission-move;
+    animation-duration: 2s;
+    animation-fill-mode: forwards
+}
+
+.vision-closed > h1,
+.mission-closed > h1 {
+    position: absolute;
+    top: 70%;
+    left: 22%;
+    color: #fff;
+}
+
+.vision-closed > div:first-of-type {
+    position: absolute;
+    top: 16%;
+    left: 29%;
+}
+
+.mission-closed > div:first-of-type {
+    position: absolute;
+    top: 11%;
+    left: 31%;
+}
+
+.vision-description-container {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(70%, 450px);
+    height: 500px;
+    opacity: 0;
+    transition: all 200ms ease-in;
+    animation: linear;
+    animation-name: show-text;
+    animation-duration: 2s;
+    animation-fill-mode: forwards
+}
+
+.vision-description-container div:nth-child(2) {
+    text-align: end;
+}
+
+.vision-description-container > div {
+    padding: 10px;
+}
+
+
+@keyframes vision-move {
+    0% {
+        top: 4%;
+        left: 11%;
+    }
+    15% {
+        top: 4%;
+        left: 11%;
+    }
+    100% {
+        top: 0;
+        left: -70%;
+    }
+}
+
+@keyframes vision-move-fade {
+    0% {
+        top: 4%;
+        left: 11%;
+        opacity: 1;
+    }
+    15% {
+        top: 4%;
+        left: 11%;
+        opacity: 1;
+    }
+    60% {
+        top: 4%;
+        left: -20%;
+        opacity: 0;
+    }
+    100% {
+        top: 4%;
+        left: -70%;
+        opacity: 0;
+    }
+}
+
+@keyframes vision-move-fade-mobile {
+    0% {
+        top: 21%;
+        left: 21%;
+        opacity: 1;
+    }
+    15% {
+        top: 21%;
+        left: 21%;
+        opacity: 1;
+    }
+    60% {
+        top: 21%;
+        left: -20%;
+        opacity: 0;
+    }
+    100% {
+        top: 21%;
+        left: -70%;
+        opacity: 0;
+    }
+}
+
+@keyframes mission-move {
+    0% {
+        bottom: 3%;
+        right: 12%;
+    }
+    15% {
+        bottom: 3%;
+        right: 12%;
+    }
+    100% {
+        bottom: 3%;
+        right: -70%;
+    }
+}
+
+@keyframes mission-move-fade {
+    0% {
+        bottom: 3%;
+        right: 12%;
+        opacity: 1;
+    }
+    15% {
+        bottom: 3%;
+        right: 12%;
+        opacity: 1;
+    }
+    60% {
+        bottom: 3%;
+        right: -20%;
+        opacity: 0;
+    }
+    100% {
+        bottom: 3%;
+        right: -70%;
+        opacity: 0;
+    }
+}
+
+@keyframes mission-move-fade-mobile {
+    0% {
+        bottom: 23%;
+        right: 21%;
+        opacity: 1;
+    }
+    15% {
+        bottom: 23%;
+        right: 21%;
+        opacity: 1;
+    }
+    60% {
+        bottom: 23%;
+        right: -20%;
+        opacity: 0;
+    }
+    100% {
+        bottom: 23%;
+        right: -70%;
+        opacity: 0;
+    }
+}
+
+@keyframes show-text {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@media only screen and (max-width: 1023px) {
+    .vision-closed {
+        animation-name: vision-move-fade;
+    }
+
+    .mission-closed {
+        animation-name: mission-move-fade;
+    }
+}
+
+@media only screen and (max-width: 605px) {
+    .mission-vision-container {
+        width: 200px;
+    }
+
+    .vision-closed {
+        width: 180px;
+        top: 21%;
+        left: 21%;
+        animation-name: vision-move-fade-mobile;
+    }
+
+    .mission-closed {
+        width: 180px;
+        bottom: 23%;
+        right: 21%;
+        animation-name: mission-move-fade-mobile;
+    }
+
+    .vision-closed > h1,
+    .mission-closed > h1 {
+        font-size: 25px;
+    }
+
+    .vision-closed > div:first-of-type {
+        width: 100px;
+    }
+    
+    .mission-closed > div:first-of-type {
+       width: 75px;
+    }
+}

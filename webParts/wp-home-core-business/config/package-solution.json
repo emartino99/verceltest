@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "home-core-business-client-side-solution",
+    "id": "10cfad53-9e5a-4aa9-8351-5172292490b2",
+    "version": "1.3.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "homeCoreBusiness description"
+      },
+      "longDescription": {
+        "default": "homeCoreBusiness description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "home-core-business Feature",
+        "description": "The feature that activates elements of the home-core-business solution.",
+        "id": "4fc91121-4fb6-46e6-951d-9355098ebe5e",
+        "version": "1.3.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/home-core-business.sppkg"
+  }
+}

@@ -1,0 +1,28 @@
+div.core{
+  padding: 0 20px;
+}
+
+.sectionCards > button {
+  height: 38px;
+}
+
+.inner-shadow-button,
+.outer-shadow-button {
+  display: none !important;
+  cursor: default !important;
+}
+
+.inner-shadow-button {
+  transform: translate(5px,-5px);
+  background-color: #002950 !important;
+}
+
+.outer-shadow-button {
+  transform: translate(-5px,5px);
+  background-color: #185fa2 !important;
+}
+
+.main-button:hover + .inner-shadow-button,
+.main-button:hover + .inner-shadow-button + .outer-shadow-button {
+  display: flex !important;
+}

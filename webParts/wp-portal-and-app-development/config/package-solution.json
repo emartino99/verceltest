@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "wp-portal-and-app-development-client-side-solution",
+    "id": "94e167f1-bc27-414c-ac98-399f48c5f6f2",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "wp-portal-and-app-development description"
+      },
+      "longDescription": {
+        "default": "wp-portal-and-app-development description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "wp-portal-and-app-development Feature",
+        "description": "The feature that activates elements of the wp-portal-and-app-development solution.",
+        "id": "1eb14e4c-624f-49bd-804f-a50ef9e300a9",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/wp-portal-and-app-development.sppkg"
+  }
+}

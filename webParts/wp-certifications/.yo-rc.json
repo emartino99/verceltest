@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "cerrtifications",
+    "libraryId": "05565b85-0ea1-4b39-b6e5-3e0ae722f368",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "cerrtifications",
+    "solutionShortDescription": "cerrtifications description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

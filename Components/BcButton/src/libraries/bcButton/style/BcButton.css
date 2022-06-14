@@ -1,0 +1,56 @@
+div.bcButton-container {
+  position: relative;
+}
+
+div.bcButton-shadow {
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 2;
+  transition: 0.1s;
+}
+
+div.bcButton-container.active div.bcButton-shadow{
+  opacity: 1;
+}
+
+div.bcButton-container.active div.bcButton-shadow.top {
+  top: -6px;
+  left: 6px;
+}
+
+div.bcButton-container.active div.bcButton-shadow.bottom {
+  top: 6px;
+  left: -6px;
+}
+
+div.bcButton-shadow.bottom{
+  border:2px solid #C9E2FF
+}
+
+div.bcButton-shadow.top{
+  border:2px solid #0F4B8C
+}
+
+a.bcButton,
+button.bcButton {
+  background-color: #001f3c;
+  position: relative;
+  color: #fff;
+  padding-left: 25px;
+  padding-right: 25px;
+  z-index: 20;
+}
+
+a.bcButton:focus,
+button.bcButton:focus,
+a.bcButton:hover,
+button.bcButton:hover {
+  box-shadow: none;
+  outline: none;
+  color:#fff;
+}

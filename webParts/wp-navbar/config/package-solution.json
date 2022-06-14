@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "navbar-client-side-solution",
+    "id": "4ed6d523-019c-4653-8c02-f8c47b020df2",
+    "version": "1.4.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "navbar description"
+      },
+      "longDescription": {
+        "default": "navbar description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "navbar Feature",
+        "description": "The feature that activates elements of the navbar solution.",
+        "id": "d0980570-6d2e-4342-9edd-9b9d36cf15ca",
+        "version": "1.4.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/navbar.sppkg"
+  }
+}

@@ -1,0 +1,10 @@
+.our-products-card {
+    height: 260px;
+    width: 350px;
+    transform: skewY(358deg)
+}
+
+.dot::after {
+    content: "• • • • • • • • • • • • • • • • • • •";
+    font-size: 24px;
+}

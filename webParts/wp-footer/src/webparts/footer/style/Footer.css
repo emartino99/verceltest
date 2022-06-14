@@ -1,0 +1,119 @@
+/*
+
+PROVO A TARGETTARE IL FOOTER DI SHAREPOINT PER FARLO SCOMPARIRE
+
+*/
+
+div[class*="megaFooterContainer"] {
+    display: none;
+}
+
+.footer-container {
+    min-height: 350px;
+    padding: 50px;
+}
+
+.footer-container-absolute-content {
+    position: absolute;
+    bottom: -89px;
+    left: 0;
+    width: 100%;
+}
+
+.footer-socials-and-logo {
+    min-height: 200px;
+    width: 40%;
+}
+
+.footer-socials-and-logo-img-container {
+    height: 20px;
+    margin: 10px 30px 10px 0px;
+    cursor: pointer;
+}
+
+.footer-socials-and-logo-img-container img:hover {
+    opacity: .7;
+}
+
+.footer-links-newsletter-container {
+    min-height: 200px;
+    width: 60%;
+}
+
+.footer-links {
+    min-height: 110px;
+    width: 100%;
+    padding: 15px;
+}
+
+.footer-links > span {
+    cursor: pointer;
+    margin: 0 50px  20px 0;
+}
+
+.footer-links > span:hover {
+    opacity: .8;
+}
+
+.footer-newsletter {
+    height: 110px;
+    width: 100%;
+    padding: 15px;
+}
+
+.footer-separator {
+    height: 30px;
+    border-bottom: 1px solid #fff;
+}
+
+.footer-privacy {
+    width: 50%;
+    padding: 10px;
+}
+
+.footer-privacy > span {
+    cursor: pointer;
+    margin: 0 15px 15px 0;
+}
+
+.footer-privacy > span:hover {
+    opacity: .8;
+}
+
+.footer-copyright {
+    width: 50%;
+    padding: 10px;
+}
+
+.footer-input-text {
+    width: 250px;
+    border-radius: 3px 0 0 3px;;
+    padding: 5px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    outline: none;
+}
+  
+.footer-button {
+    height: 33px;
+    border-radius: 0 3px 3px 0;
+    width: 100px;
+    border-left: 1px solid gray;
+    outline: none;
+}
+
+@media only screen and (max-width: 950px) {
+    .footer-socials-and-logo {
+        width: 50%;
+    }
+    .footer-links-newsletter-container {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .footer-input-text {
+        width: 200px;
+    }
+}

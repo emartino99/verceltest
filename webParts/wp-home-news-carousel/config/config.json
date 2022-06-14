@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "home-news-carousel-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/homeNewsCarousel/HomeNewsCarouselWebPart.js",
+          "manifest": "./src/webparts/homeNewsCarousel/HomeNewsCarouselWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "HomeNewsCarouselWebPartStrings": "lib/webparts/homeNewsCarousel/loc/{locale}.js",
+    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js"
+  }
+}

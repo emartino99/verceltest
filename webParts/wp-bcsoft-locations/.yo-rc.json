@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "bcsoft-locations",
+    "libraryId": "69d29115-fbce-4885-b6ce-4399267e77f7",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "bcsoftLocations",
+    "solutionShortDescription": "bcsoftLocations description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

@@ -1,0 +1,16 @@
+.ads-banner-text {
+    font-size: 16px;
+    font-weight: 400;
+    margin-right: 25px;
+}
+
+.ads-banner-link-text {
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.ads-banner-link-text:hover {
+    opacity: .7;
+}

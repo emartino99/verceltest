@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "e6312947-525a-4b77-aa42-facbbbef95a2",
+  "alias": "AdsBannerWebPart",
+  "componentType": "WebPart",
+  "version": "*",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "supportsFullBleed": true,
+  "supportedHosts": ["SharePointWebPart"],
+  "preconfiguredEntries": [{
+    "groupId": "5c03119e-3074-46fd-976b-c60198311f70",
+    "group": { "default": "Other" },
+    "title": { "default": "AdsBanner" },
+    "description": { "default": "AdsBanner description" },
+    "officeFabricIconFontName": "Page",
+    "properties": {
+      "backgroundColor": "#DAB006",
+      "adsBannerText": "",
+      "adsBannerTextColor": "#185FA2",
+      "adsBannerLinkText": "",
+      "adsBannerLinkTextColor": "#000",
+      "adsBannerLinkUrl": ""
+    }
+  }]
+}

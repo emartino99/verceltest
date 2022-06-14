@@ -1,0 +1,104 @@
+.custom-hero-clip-path {
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%)
+}
+
+.custom-hero-container {
+    width: 100%;
+}
+
+.custom-hero-button-container {
+    width: 100%;
+}
+
+.custom-hero-bcsoft-logo {
+    position: absolute;
+    top: 18%;
+    left: 47%;
+    height: 450px;
+}
+
+.custom-hero-background-opacity {
+    filter: opacity(.8);
+}
+
+.custom-hero-logo-opacity {
+    filter: opacity(20%);
+}
+
+/* Media queries*/
+@media only screen and (max-width: 1070px) {
+    .custom-hero-bcsoft-logo {
+        top: 25%;
+        left: 47%;
+        height: 400px;
+    }
+}
+
+@media only screen and (max-width: 825px) {
+    .custom-hero-bcsoft-logo {
+        height: 250px;
+    }
+}
+
+@media only screen and (max-width: 525px) {
+    .custom-hero-bcsoft-logo {
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .custom-hero-container h2 {
+        font-size: 32px !important;
+    }
+
+    .custom-hero-container span {
+        font-size: 1em !important;
+    }
+}
+
+
+
+
+
+/* devo levarlo????? */
+.parallelogram {
+    position: relative;
+    z-index: 1;
+    width: 70px;
+    height: 70px;
+    background-color: transparent;
+    border: 3px solid #001F3C;
+    transform: skew(0deg, 12deg);
+}
+
+.parallelogram img{
+    transition: .2s ease-in-out;
+} 
+  
+.parallelogram:hover img{
+    transform: scale(1.5);
+}
+
+.parallelogram-top-shadow,
+.parallelogram-bottom-shadow {
+    display: none;
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: transparent;
+}
+
+.parallelogram-top-shadow {
+    border: 3px solid #185FA2;
+    transform: skew(0deg, 12deg) translate(7px,-7px);
+}
+
+.parallelogram-bottom-shadow {
+    border: 3px solid #ACD0FB;
+    transform: skew(0deg, 12deg) translate(-7px,6px);
+}
+
+.parallelogram:hover + .parallelogram-top-shadow,
+.parallelogram:hover + .parallelogram-top-shadow + .parallelogram-bottom-shadow {
+    display: flex;
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "wp-bcsoft-logo-above-footer-client-side-solution",
+    "id": "1452e4e6-6ae8-4277-80dd-4090d3e1fc9b",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "wpBcsoftLogoAboveFooter description"
+      },
+      "longDescription": {
+        "default": "wpBcsoftLogoAboveFooter description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "wp-bcsoft-logo-above-footer Feature",
+        "description": "The feature that activates elements of the wp-bcsoft-logo-above-footer solution.",
+        "id": "a2090e95-fc08-4adb-b531-2c3c3cdb907c",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/wp-bcsoft-logo-above-footer.sppkg"
+  }
+}

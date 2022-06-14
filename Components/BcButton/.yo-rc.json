@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "bc-button",
+    "libraryId": "9290167b-f71e-4fa0-9a32-aafc7dee6948",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "bcButton",
+    "solutionShortDescription": "bcButton description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "library"
+  }
+}

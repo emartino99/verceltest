@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "contact-us-banner",
+    "libraryId": "ebeac594-a0d2-4b9f-b838-3aee87c734ab",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "contactUsBanner",
+    "solutionShortDescription": "contactUsBanner description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

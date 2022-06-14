@@ -1,0 +1,34 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "4950f57f-05c3-4923-a146-1dc4eeadb9b7",
+  "alias": "CustomHeroWebPart",
+  "componentType": "WebPart",
+  "version": "*",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "supportsFullBleed": true,
+  "supportedHosts": ["SharePointWebPart", "TeamsPersonalApp", "TeamsTab", "SharePointFullPage"],
+  "supportsThemeVariants": true,
+  "preconfiguredEntries": [{
+    "groupId": "5c03119e-3074-46fd-976b-c60198311f70",
+    "group": { "default": "Other" },
+    "title": { "default": "CustomHero" },
+    "description": { "default": "CustomHero description" },
+    "officeFabricIconFontName": "Page",
+    "properties": {
+      "title": "Insert title",
+      "titleColor": "#001F3C",
+      "titleSize": 2,
+      "description": "Insert description",
+      "descriptionColor": "#185FA2",
+      "descriptionSize": 1.5,
+      "textAlign": "left",
+      "backgroundColor": "#fff",
+      "btnLabel": "Insert text",
+      "buttonAlign": "left",
+      "buttonDescription": "Insert description",
+      "buttonDescriptionColor": "#000",
+      "buttonDescriptionSize": 1
+    }
+  }]
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "wp-join-the-team-client-side-solution",
+    "id": "9d0854b6-7203-4c82-8676-6f160ad056e3",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "wpJoinTheTeam description"
+      },
+      "longDescription": {
+        "default": "wpJoinTheTeam description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "wp-join-the-team Feature",
+        "description": "The feature that activates elements of the wp-join-the-team solution.",
+        "id": "bb66137a-008e-4497-9b44-a6262fdc65a5",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/wp-join-the-team.sppkg"
+  }
+}

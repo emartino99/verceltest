@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "custom-hero-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/customHero/CustomHeroWebPart.js",
+          "manifest": "./src/webparts/customHero/CustomHeroWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "CustomHeroWebPartStrings": "lib/webparts/customHero/loc/{locale}.js",
+    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js"
+  }
+}

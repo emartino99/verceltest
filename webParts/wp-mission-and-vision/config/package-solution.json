@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "mission-and-vision-client-side-solution",
+    "id": "c2b20ca2-7b8d-4db8-a1ec-eb4d2ebdc7d2",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "missionAndVision description"
+      },
+      "longDescription": {
+        "default": "missionAndVision description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "mission-and-vision Feature",
+        "description": "The feature that activates elements of the mission-and-vision solution.",
+        "id": "e8abf0e3-f4e0-48a1-8007-01501122d36b",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/mission-and-vision.sppkg"
+  }
+}

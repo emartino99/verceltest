@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "home-partnership-client-side-solution",
+    "id": "2fccf4ca-bb7a-4b04-90e8-a53f42f5033b",
+    "version": "1.3.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "homePartnership description"
+      },
+      "longDescription": {
+        "default": "homePartnership description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "home-partnership Feature",
+        "description": "The feature that activates elements of the home-partnership solution.",
+        "id": "8ec3e938-ab0e-4229-a3bc-9b92f7083257",
+        "version": "1.3.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/home-partnership.sppkg"
+  }
+}

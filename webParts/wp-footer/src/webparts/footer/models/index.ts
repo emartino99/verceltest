@@ -1,0 +1,1 @@
+export { IFooterLinks } from './FooterLinks';

@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "home-corsi-carousel",
+    "libraryId": "f245b40d-050b-4157-b221-590505ff5993",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "homeCorsiCarousel",
+    "solutionShortDescription": "homeCorsiCarousel description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

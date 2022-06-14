@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "home-news-carousel-client-side-solution",
+    "id": "63081f73-daad-40f1-8b43-c3ee6f81646e",
+    "version": "1.1.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "homeNewsCarousel description"
+      },
+      "longDescription": {
+        "default": "homeNewsCarousel description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "home-news-carousel Feature",
+        "description": "The feature that activates elements of the home-news-carousel solution.",
+        "id": "3017813e-9861-4970-9c35-16163a62ff54",
+        "version": "1.1.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/home-news-carousel.sppkg"
+  }
+}

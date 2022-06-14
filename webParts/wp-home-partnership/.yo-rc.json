@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "home-partnership",
+    "libraryId": "2fccf4ca-bb7a-4b04-90e8-a53f42f5033b",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "homePartnership",
+    "solutionShortDescription": "homePartnership description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

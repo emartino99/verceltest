@@ -1,0 +1,22 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "a25fa4fc-045b-4946-8414-860e897bb112",
+  "alias": "FooterWebPart",
+  "componentType": "WebPart",
+  "version": "*",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "supportsFullBleed": true,
+  "supportedHosts": ["SharePointWebPart"],
+  "preconfiguredEntries": [{
+    "groupId": "5c03119e-3074-46fd-976b-c60198311f70",
+    "group": { "default": "Other" },
+    "title": { "default": "footer" },
+    "description": { "default": "footer description" },
+    "officeFabricIconFontName": "Page",
+    "properties": {
+      "backgroundColor": "#001F3C",
+      "textColor": "#fff"
+    }
+  }]
+}

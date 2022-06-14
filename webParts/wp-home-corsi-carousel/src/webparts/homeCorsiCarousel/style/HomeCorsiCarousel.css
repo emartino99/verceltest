@@ -1,0 +1,51 @@
+/* div.carousel3D-container {
+  perspective: 300px;
+}
+
+div.carousel3D-item {
+  background-color: #fff;
+  height: 200px;
+  width: 200px;
+  transform: rotate3d(1, 1, 1, 25deg); 
+}
+
+div.carousel3D-item[data-rotation="1"] {
+  transform: rotate3d(1, 1, 1, 25deg);
+
+}
+div.carousel3D-item[data-rotation="2"] {
+  transform: rotate3d(1, 1, 1, 25deg);
+
+}
+div.carousel3D-item[data-rotation="3"] {
+  transform: rotate3d(1, 1, 1, 25deg);
+
+}
+div.carousel3D-item[data-rotation="4"] {
+  transform: rotate3d(1, 1, 1, 25deg);
+
+}
+div.carousel3D-item[data-rotation="5"] {
+  transform: rotate3d(1, 1, 1, 25deg);
+} */
+
+.swiper-container {
+  height: 250px;
+  width: 100%;
+}
+
+.swiper-slide-container {
+  background-color: #fff;
+  /* clip-path: polygon(0 0, 100% 8%, 100% 100%, 0 95%); */
+  height: 200px;
+  width: 200px;
+}
+
+.swiper-slider-img-container {
+  height: 150px;
+}
+
+.custom-button-container {
+  height: 200px;
+  width: 100%;
+}

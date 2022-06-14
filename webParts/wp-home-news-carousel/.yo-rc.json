@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "home-news-carousel",
+    "libraryId": "63081f73-daad-40f1-8b43-c3ee6f81646e",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "homeNewsCarousel",
+    "solutionShortDescription": "homeNewsCarousel description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "bcsoft-history-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/bcsoftHistory/BcsoftHistoryWebPart.js",
+          "manifest": "./src/webparts/bcsoftHistory/BcsoftHistoryWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "BcsoftHistoryWebPartStrings": "lib/webparts/bcsoftHistory/loc/{locale}.js",
+    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "home-core-business",
+    "libraryId": "10cfad53-9e5a-4aa9-8351-5172292490b2",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "homeCoreBusiness",
+    "solutionShortDescription": "homeCoreBusiness description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "9fd074ac-eaec-4806-98cf-67315d17a7b6",
+  "alias": "NavbarWebPart",
+  "componentType": "WebPart",
+  "version": "*",
+  "manifestVersion": 2,
+  "supportsFullBleed": true,
+  "requiresCustomScript": false,
+  "supportedHosts": ["SharePointWebPart", "TeamsPersonalApp", "TeamsTab", "SharePointFullPage"],
+  "supportsThemeVariants": true,
+  "preconfiguredEntries": [{
+    "groupId": "5c03119e-3074-46fd-976b-c60198311f70",
+    "group": { "default": "Other" },
+    "title": { "default": "Navbar" },
+    "description": { "default": "Navbar Component" },
+    "officeFabricIconFontName": "Page",
+    "properties": {
+      "description": "Navbar"
+    }
+  }]
+}

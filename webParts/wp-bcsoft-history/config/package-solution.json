@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "bcsoft-history-client-side-solution",
+    "id": "970eb3df-aab1-4840-81d5-a92579e7b045",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "bcsoftHistory description"
+      },
+      "longDescription": {
+        "default": "bcsoftHistory description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "bcsoft-history Feature",
+        "description": "The feature that activates elements of the bcsoft-history solution.",
+        "id": "d859ca8a-cb43-4df3-88af-4d3a41c73413",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/bcsoft-history.sppkg"
+  }
+}

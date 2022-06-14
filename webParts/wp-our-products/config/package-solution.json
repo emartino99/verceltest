@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "our-products-client-side-solution",
+    "id": "2abcb05a-75b7-4a9c-9d6e-93b5f3a2be54",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "ourProducts description"
+      },
+      "longDescription": {
+        "default": "ourProducts description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "our-products Feature",
+        "description": "The feature that activates elements of the our-products solution.",
+        "id": "495321fa-6681-4908-851e-bbd52f0124cb",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/our-products.sppkg"
+  }
+}

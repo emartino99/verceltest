@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "cerrtifications-client-side-solution",
+    "id": "05565b85-0ea1-4b39-b6e5-3e0ae722f368",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "cerrtifications description"
+      },
+      "longDescription": {
+        "default": "cerrtifications description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "cerrtifications Feature",
+        "description": "The feature that activates elements of the cerrtifications solution.",
+        "id": "a7df6fd2-172e-4cc2-8eca-f1cbdafda8cf",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/cerrtifications.sppkg"
+  }
+}

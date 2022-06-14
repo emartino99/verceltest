@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "wp-portal-and-app-development",
+    "libraryId": "94e167f1-bc27-414c-ac98-399f48c5f6f2",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "wp-portal-and-app-development",
+    "solutionShortDescription": "wp-portal-and-app-development description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "custom-hero",
+    "libraryId": "47b8e09e-9d2f-4b21-8415-5fe03e98de2f",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "customHero",
+    "solutionShortDescription": "customHero description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

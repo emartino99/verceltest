@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "wp-bcsoft-logo-above-footer",
+    "libraryId": "1452e4e6-6ae8-4277-80dd-4090d3e1fc9b",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "wpBcsoftLogoAboveFooter",
+    "solutionShortDescription": "wpBcsoftLogoAboveFooter description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

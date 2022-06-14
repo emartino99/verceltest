@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "hero-home-page",
+    "libraryId": "997b86ef-022c-4a75-abc7-224ee3c50730",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "heroHomePage",
+    "solutionShortDescription": "heroHomePage description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

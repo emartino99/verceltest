@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "home-clients-presentation",
+    "libraryId": "262ae12c-de6d-4535-abaf-337f95b760c1",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "homeClientsPresentation",
+    "solutionShortDescription": "homeClientsPresentation description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

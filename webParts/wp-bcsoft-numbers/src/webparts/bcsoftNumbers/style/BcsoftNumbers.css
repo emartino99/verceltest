@@ -1,0 +1,327 @@
+.bcsoft-numbers-container {
+    gap: 25px;
+}
+
+.bcsoft-numbers-wrapper {
+    position: relative;
+    width: 450px;
+    padding: 10px;
+    min-height: 500px;
+    color: #fff;
+}
+
+.bcsoft-stats-inner-card-0 p:first-of-type,
+.bcsoft-stats-inner-card-1 p:first-of-type,
+.bcsoft-stats-inner-card-3 p:first-of-type,
+.bcsoft-stats-inner-card-4 p:first-of-type {
+    font-size: 66px;
+    margin: 0;
+}
+
+.bcsoft-stats-inner-card-2 p:first-of-type {
+    font-size: 44px;
+    margin: 0;
+}
+
+.bcsoft-stats-inner-card-0 {
+    z-index: 1;
+    width: 150px;
+    height: 150px; 
+    background: #001F3C;
+    position: absolute;
+    top: 15px; 
+    left: 5px;
+    transform: perspective(800px) rotate3d(0, 1, 0, -20deg) skew(0, 5deg);
+    transition: .5s ease-in-out;
+    text-align: center;
+}
+
+.bcsoft-stats-outer-card-0 {
+    width: 150px; 
+    height: 150px; 
+    background: #ACCFE5;
+    position: absolute;
+    top: 22px;
+    left: 12px;
+    transform: perspective(800px) rotate3d(0, 1, 0, -20deg) skew(0, 5deg);
+    transition: .5s ease-in-out;
+}
+
+.bcsoft-stats-inner-card-0:hover,
+.bcsoft-stats-inner-card-0:hover + .bcsoft-stats-outer-card-0 {
+    transform: scale(1.1) perspective(800px) rotate3d(0, 1, 0, -20deg) skew(0, 5deg);
+}
+
+.bcsoft-stats-inner-card-1 {
+    z-index: 3;
+    width: 140px;
+    height: 140px;
+    background: #155897;
+    position: absolute;
+    top: 145px;
+    left: 115px;
+    transform: perspective(800px) rotate3d(0, 1, 0, -20deg);
+    transition: .5s ease-in-out;
+    text-align: center;
+}
+
+.bcsoft-stats-outer-card-1 {
+    z-index: 2;
+    width: 140px;
+    height: 140px;
+    background: #ACCFE5;
+    position: absolute;
+    top: 152px;
+    left: 122px;
+    transform: perspective(800px) rotate3d(0, 1, 0, -20deg);
+    transition: .5s ease-in-out;
+}
+
+.bcsoft-stats-inner-card-1:hover,
+.bcsoft-stats-inner-card-1:hover + .bcsoft-stats-outer-card-1 {
+    transform: scale(1.1) perspective(800px) rotate3d(0, 1, 0, -20deg);
+}
+
+.bcsoft-stats-inner-card-2 {
+    z-index: 5;
+    width: 100px;
+    height: 100px;
+    background: #AACEF8;
+    position: absolute;
+    top: 260px;
+    left: 45px;
+    transform: perspective(800px) rotate3d(0, 1, 0, -20deg);
+    transition: .5s ease-in-out;
+    text-align: center;
+}
+
+.bcsoft-stats-outer-card-2 {
+    z-index: 4;
+    width: 100px;
+    height: 100px;
+    background: #2974B3;
+    position: absolute;
+    top: 267px;
+    left: 52px;
+    transform: perspective(800px) rotate3d(0, 1, 0, -20deg);
+    transition: .5s ease-in-out;
+}
+
+.bcsoft-stats-inner-card-2:hover,
+.bcsoft-stats-inner-card-2:hover + .bcsoft-stats-outer-card-2 {
+    transform: scale(1.1) perspective(800px) rotate3d(0, 1, 0, -20deg);
+}
+
+.bcsoft-stats-inner-card-3 {
+    z-index: 1;
+    width: 140px;
+    height: 140px;
+    background: #001F3C;
+    position: absolute;
+    top: 265px;
+    left: 220px;
+    transform: perspective(800px) rotate3d(0, 1, 0, -20deg) skew(0, 5deg);
+    transition: .5s ease-in-out;
+    text-align: center;
+}
+
+.bcsoft-stats-outer-card-3 {
+    width: 140px;
+    height: 140px;
+    background: #2974B3;
+    position: absolute;
+    top: 272px;
+    left: 227px;
+    transform: perspective(800px) rotate3d(0, 1, 0, -20deg) skew(0, 5deg);
+    transition: .5s ease-in-out;
+}
+
+.bcsoft-stats-inner-card-3:hover,
+.bcsoft-stats-inner-card-3:hover + .bcsoft-stats-outer-card-3 {
+    transform: scale(1.1) perspective(800px) rotate3d(0, 1, 0, -20deg) skew(0, 5deg);
+}
+
+.bcsoft-stats-inner-card-4 {
+    z-index: 1;
+    width: 140px;
+    height: 140px;
+    background: #155897;
+    position: absolute;
+    top: 43px;
+    left: 267px;
+    transform: perspective(800px) rotate3d(0, 1, 0, -20deg) skew(0, 5deg);
+    transition: .5s ease-in-out;
+    text-align: center;
+}
+
+.bcsoft-stats-outer-card-4 {
+    width: 140px;
+    height: 140px;
+    background: #001F3C;
+    position: absolute;
+    top: 50px;
+    left: 260px;
+    transform: perspective(800px) rotate3d(0, 1, 0, -20deg) skew(0, 5deg);
+    transition: .5s ease-in-out;
+}
+
+.bcsoft-stats-inner-card-4:hover,
+.bcsoft-stats-inner-card-4:hover + .bcsoft-stats-outer-card-4 {
+    transform: scale(1.1) perspective(800px) rotate3d(0, 1, 0, -20deg) skew(0, 5deg);
+}
+
+/*media queries*/
+@media only screen and (max-width: 835px) {
+    .bcsoft-numbers-wrapper {
+        width: 85%;
+        top: 0px;
+        min-height: 300px;
+    }
+
+    .bcsoft-stats-inner-card-0 {
+        height: 125px;
+        width: 125px;
+        top: 0px;
+    }
+
+    .bcsoft-stats-outer-card-0 {
+        height: 125px;
+        width: 125px;
+        top: 7px;
+    }
+
+    .bcsoft-stats-inner-card-1 {
+        height: 115px;
+        width: 115px;
+        top: 100px;
+        left: 100px;
+    }
+
+    .bcsoft-stats-outer-card-1 {
+        height: 115px;
+        width: 115px;
+        top: 107px;
+        left: 107px;
+    }
+
+    .bcsoft-stats-inner-card-2 {
+        height: 75px;
+        width: 75px;
+        top: 195px;
+        left: 50px;
+    }
+
+    .bcsoft-stats-outer-card-2 {
+        height: 75px;
+        width: 75px;
+        top: 202px;
+        left: 57px;
+    }
+
+    .bcsoft-stats-inner-card-3 {
+        height: 115px;
+        width: 115px;
+        top: 200px;
+        left: 185px;
+    }
+
+    .bcsoft-stats-outer-card-3 {
+        height: 115px;
+        width: 115px;
+        top: 207px;
+        left: 192px;
+    }
+
+    .bcsoft-stats-inner-card-4 {
+        height: 115px;
+        width: 115px;
+        top: 25px;
+        left: 225px;
+    }
+
+    .bcsoft-stats-outer-card-4 {
+        height: 115px;
+        width: 115px;
+        top: 17px;
+        left: 217px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .bcsoft-stats-inner-card-0 {
+        height: 100px;
+        width: 100px;
+    }
+
+    .bcsoft-stats-outer-card-0 {
+        height: 100px;
+        width: 100px;
+    }
+
+    .bcsoft-stats-inner-card-1 {
+        height: 90px;
+        width: 90px;
+        top: 80px;
+        left: 80px;
+    }
+
+    .bcsoft-stats-outer-card-1 {
+        height: 90px;
+        width: 90px;
+        top: 87px;
+        left: 87px;
+    }
+
+    .bcsoft-stats-inner-card-2 {
+        height: 75px;
+        width: 75px;
+        top: 143px;
+        left: 18px;
+    }
+
+    .bcsoft-stats-outer-card-2 {
+        height: 75px;
+        width: 75px;
+        top: 150px;
+        left: 25px;
+    }
+
+    .bcsoft-stats-inner-card-3 {
+        height: 90px;
+        width: 90px;
+        top: 155px;
+        left: 150px;
+    }
+
+    .bcsoft-stats-outer-card-3 {
+        height: 90px;
+        width: 90px;
+        top: 162px;
+        left: 157px;
+    }
+
+    .bcsoft-stats-inner-card-4 {
+        height: 90px;
+        width: 90px;
+        top: 25px;
+        left: 180px;
+    }
+
+    .bcsoft-stats-outer-card-4 {
+        height: 90px;
+        width: 90px;
+        top: 17px;
+        left: 187px;
+    }
+
+    .bcsoft-stats-inner-card-0 p:first-of-type,
+    .bcsoft-stats-inner-card-1 p:first-of-type,
+    .bcsoft-stats-inner-card-3 p:first-of-type,
+    .bcsoft-stats-inner-card-4 p:first-of-type {
+        font-size: 33px;
+    }
+
+    .bcsoft-stats-inner-card-2 p:first-of-type {
+        font-size: 22px;
+    }
+}

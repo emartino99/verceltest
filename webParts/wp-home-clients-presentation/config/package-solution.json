@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "home-clients-presentation-client-side-solution",
+    "id": "262ae12c-de6d-4535-abaf-337f95b760c1",
+    "version": "1.2.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "homeClientsPresentation description"
+      },
+      "longDescription": {
+        "default": "homeClientsPresentation description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "home-clients-presentation Feature",
+        "description": "The feature that activates elements of the home-clients-presentation solution.",
+        "id": "6b54ec25-dc04-4de0-823b-0e43bb300984",
+        "version": "1.2.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/home-clients-presentation.sppkg"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "contact-us-banner-client-side-solution",
+    "id": "ebeac594-a0d2-4b9f-b838-3aee87c734ab",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "contactUsBanner description"
+      },
+      "longDescription": {
+        "default": "contactUsBanner description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "contact-us-banner Feature",
+        "description": "The feature that activates elements of the contact-us-banner solution.",
+        "id": "b0670bc8-4541-4f62-9770-e79496abf354",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/contact-us-banner.sppkg"
+  }
+}

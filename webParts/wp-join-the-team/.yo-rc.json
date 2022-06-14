@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "wp-join-the-team",
+    "libraryId": "9d0854b6-7203-4c82-8676-6f160ad056e3",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "wpJoinTheTeam",
+    "solutionShortDescription": "wpJoinTheTeam description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "wp-join-the-team-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/wpJoinTheTeam/WpJoinTheTeamWebPart.js",
+          "manifest": "./src/webparts/wpJoinTheTeam/WpJoinTheTeamWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "WpJoinTheTeamWebPartStrings": "lib/webparts/wpJoinTheTeam/loc/{locale}.js",
+    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js"
+  }
+}

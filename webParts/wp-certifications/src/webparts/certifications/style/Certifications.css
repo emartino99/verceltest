@@ -1,0 +1,9 @@
+.certifications-container {
+    width: 90%;
+}
+
+.certifications-container > div {
+    flex: 1;
+    padding: 1em;
+    min-width: 255px;
+}

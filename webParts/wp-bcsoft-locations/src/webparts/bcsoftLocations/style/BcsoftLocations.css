@@ -1,0 +1,39 @@
+.bcsoft-locations-container > div {
+   flex: 1;
+}
+
+.bcsoft-locations-card {
+    width: min(80%, 250px);
+    background-color: #155897;
+    transform: skewY(355deg);
+    padding: 1em;
+    color: #fff;
+}
+
+.bcsoft-locations-card > p:nth-child(4) {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.bcsoft-locations-card > p:nth-child(4):hover {
+    opacity: .8;
+}
+
+path:hover{
+    fill-opacity: .8;
+    cursor: pointer;
+}
+
+path.selected{
+    fill-opacity: .8;
+}
+
+.regione{
+    transition: all 500ms ease-in-out;
+}
+
+@media only screen and (max-width: 580px) {
+    svg {
+        height: calc(100vw - 60px);
+    }
+}

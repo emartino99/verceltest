@@ -1,0 +1,28 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "21bcfe29-2902-4d05-8a37-daea788e9f22",
+  "alias": "PortalAndAppDevelopmentWebPart",
+  "componentType": "WebPart",
+  "version": "*",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "supportedHosts": ["SharePointWebPart", "TeamsPersonalApp", "TeamsTab", "SharePointFullPage"],
+  "supportsThemeVariants": true,
+  "supportsFullBleed": true,
+  "preconfiguredEntries": [{
+    "groupId": "5c03119e-3074-46fd-976b-c60198311f70", 
+    "group": { "default": "Other" },
+    "title": { "default": "portalAndAppDevelopment" },
+    "description": { "default": "portalAndAppDevelopment description" },
+    "officeFabricIconFontName": "Page",
+    "properties": {
+      "title": "Sviluppo portali e app",
+      "titleSize": 2,
+      "titleColor": "#fff",
+      "description": "L’esperienza maturata nella realizzazione di applicativi, portali e app mobile ci rende un partner affidabile per soluzioni efficienti a costi contenuti",
+      "descriptionSize": 1.2,
+      "descriptionColor":"#fff",
+      "backgroundColor":"#001F3C"
+    }
+  }]
+}

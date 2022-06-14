@@ -1,0 +1,22 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "9dc620f6-05bb-4a32-85be-0354871dda2b",
+  "alias": "HomeCoreBusinessWebPart",
+  "componentType": "WebPart",
+  "version": "*",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "supportsFullBleed": true,
+  "supportedHosts": ["SharePointWebPart", "TeamsPersonalApp", "TeamsTab", "SharePointFullPage"],
+  "supportsThemeVariants": true,
+  "preconfiguredEntries": [{
+    "groupId": "5c03119e-3074-46fd-976b-c60198311f70",
+    "group": { "default": "Other" },
+    "title": { "default": "HomeCoreBusiness" },
+    "description": { "default": "HomeCoreBusiness description" },
+    "officeFabricIconFontName": "Page",
+    "properties": {
+      "description": "HomeCoreBusiness"
+    }
+  }]
+}

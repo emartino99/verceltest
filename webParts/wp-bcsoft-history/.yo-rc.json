@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "bcsoft-history",
+    "libraryId": "970eb3df-aab1-4840-81d5-a92579e7b045",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "bcsoftHistory",
+    "solutionShortDescription": "bcsoftHistory description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

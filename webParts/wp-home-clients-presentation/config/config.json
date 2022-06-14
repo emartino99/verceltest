@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "home-clients-presentation-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/homeClientsPresentation/HomeClientsPresentationWebPart.js",
+          "manifest": "./src/webparts/homeClientsPresentation/HomeClientsPresentationWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "HomeClientsPresentationWebPartStrings": "lib/webparts/homeClientsPresentation/loc/{locale}.js",
+    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js"
+  }
+}

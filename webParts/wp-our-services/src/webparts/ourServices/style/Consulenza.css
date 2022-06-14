@@ -1,0 +1,27 @@
+.consulenza-container {
+    background-color: #C9E2FF;
+    width: 100%;
+    min-height: 350px;
+    clip-path: polygon(0 9%, 100% 0, 100% 90%, 0% 100%);
+}
+
+.consulenza-container > div:first-of-type {
+    width: 58%;
+}
+
+.consulenza-container > div > h2 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #001F3C;
+}
+
+.consulenza-container > div > p {
+    font-size: 16px;
+    color: #001F3C;
+}
+
+.consulenza-container > div > p > span {
+    font-size: 16px;
+    font-weight: 600;
+    color: #001F3C;
+}
