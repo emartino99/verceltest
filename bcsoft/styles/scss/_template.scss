@@ -1,0 +1,47 @@
+.grid {
+    display: grid;
+}
+$cols: (
+  1: 1,
+  2: 2,
+  3: 3,
+  4: 4,
+  5: 5,
+  6: 6,
+  7: 7,
+  8: 8, 
+  9: 9,
+  10:10,
+  11:11,
+  12: 12
+);
+@mixin template($attribute: "grid-template-columns", $prefix: "-") {
+  @each $name, $hex in $cols {
+    &#{$prefix}#{$name} {
+      #{$attribute}: repeat($hex, 1fr);
+    }
+  }
+}
+@mixin col-span($attribute: 'grid-column', $start: 'auto') {
+  @each $name, $hex in $cols {
+    &-#{$name} {
+      #{$attribute}: #{$start} / span $hex;
+    }
+  }
+}
+.template-col {
+  @include template;
+  &-autofill{
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); //TODO: ?shoud be personalized?
+  }
+}
+.span {
+    &-auto{
+        @include col-span;
+    }
+    @each $name, $hex in $cols {
+        &-#{$name} {
+          @include col-span('grid-column', $hex )
+        }
+    }
+}

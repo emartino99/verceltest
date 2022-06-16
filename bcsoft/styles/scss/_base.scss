@@ -1,0 +1,175 @@
+@font-face {
+  font-family: "bold";
+  src: url("../Font/Exo2-Bold.ttf");
+}
+@font-face {
+  font-family: "semibold";
+  src: url("../Font/Exo2-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "light";
+  src: url("../Font/Exo2-Light.ttf");
+}
+
+@font-face {
+  font-family: "regular";
+  src: url("../Font/Exo2-Regular.ttf");
+}
+
+.bold {
+  font-family: "bold";
+}
+
+.semibold {
+  font-family: "semibold";
+}
+
+.light {
+  font-family: "light";
+}
+
+.regular {
+  font-family: "regular";
+}
+
+body {
+  font-family: "regular";
+  margin: 0;
+  padding: 0;
+}
+
+a.disabled {
+  pointer-events: none;
+}
+
+.sectionTitle {
+  font-family: "bold";
+  padding: 30px 0;
+  margin: 0;
+}
+
+.relative {
+  position: relative;
+}
+
+.sectionSubtitle {
+  font-size: 1.2em;
+  font-family: "regular";
+}
+
+.cardSubtitle {
+  font-size: 1.1em;
+  font-family: "regular";
+  width: 100%;
+  color: #001f3c;
+}
+
+.cardTitle {
+  font-family: "bold";
+  width: 100%;
+  color: #001f3c;
+}
+
+div.cardIcon-container {
+  background-color: #fff;
+  padding: 20px;
+  position: absolute;
+  top: -25px;
+  left: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img.cardIcon {
+  height: 50px;
+}
+
+a.btn.btnOutline,
+button.btn.btnOutline {
+  border: 1px solid #001f3c;
+  color: #001f3c;
+  border-radius: 3px;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+  font-family: "regular";
+}
+svg{
+  // min-width: 200px;
+  image-rendering: -webkit-optimize-contrast;
+  &.cardBorder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none !important;
+  }
+}
+
+// div.section {
+//   min-width: 98vw;
+//   min-height: auto;
+//   display: flex;
+//   align-items: center;
+//   padding-top: 50px;
+// }
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.z-1 {
+  z-index: 1;
+}
+
+video {
+  width: 100%;
+}
+
+/* global swiper css */
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    background-color: #0F4B8C;
+    color: #fff !important;
+    clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
+    width: 35px !important;
+    height: 45px !important;
+}
+
+.swiper-button-prev {
+    left: 0px !important;
+}
+
+.swiper-button-next {
+    right: 0px !important;
+}
+
+.swiper-button-next:after {
+    font-size: 25px !important;
+}
+
+.swiper-button-prev:after {
+    font-size: 25px !important;
+}
+
+/* workbench 100% width */
+// #workbenchPageContent,
+//   .CanvasComponent.LCS .CanvasZone {
+//     max-width: 100% !important;
+// }
+.pointer{
+  cursor: pointer;
+}

@@ -1,0 +1,63 @@
+.footer {
+    color: white;
+    background-color: #001f3c;
+    @include padding-top-bottom(null, 72, 16);
+    & .contact {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        & .logo{
+            max-width: 300px;
+        }
+        & .social {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-around;
+            @include padding-top-bottom(null, 25, 25);
+        }
+    }
+    & .legal {
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        font: normal normal 300 12px/18px Exo;
+        letter-spacing: 0.05px;
+    }
+    & .menu {
+        align-items: center;
+        & .privacy {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        & .newsletter {
+            & > label {
+                font: normal normal 300 14px/21px Exo;
+                letter-spacing: 0.03px;
+                color: #ffffff;
+            }
+            & .signin {
+                @include padding-top-bottom(null, 11, 11);
+                height: 34px;
+                & > .input {
+                    width: 180px;
+                    height: 100%;
+                    border-radius: 3px 0 0 3px;
+                    box-sizing: border-box;
+                    border: 1px solid #000;
+                    outline: none;
+                }
+                & > .button {
+                    height: 100%;
+                    border: 1px solid #001f3c;
+                    border-radius: 0px 2px 2px 0px;
+                    @include padding-left-right(null, 24, 24);
+                }
+            }
+        }
+    }
+    & .separator{
+        border: 1px solid #FFFFFF66;
+         @include margin-top-bottom(null, 24, 8);
+    }
+}

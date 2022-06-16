@@ -1,0 +1,104 @@
+$root-font-size: 16;
+
+@function get-rem-from-px($target, $context: $root-font-size) {
+  @return ($target / $context) * 1rem;
+}
+
+@function get-line-height($line-height) {
+  @return get-rem-from-px($line-height);
+}
+
+@mixin font-size-line-weight($font-size, $line-height, $font-weight: null) {
+  font-size: get-rem-from-px($font-size);
+  line-height: get-line-height($line-height);
+
+  @if ($font-weight) {
+    font-weight: $font-weight;
+  }
+}
+@mixin margin-top-bottom($breakpoint, $top, $bottom, $up: null) {
+  @if ($breakpoint == null) {
+    margin-bottom: get-rem-from-px($bottom);
+    margin-top: get-rem-from-px($top);
+  } @else if ($up) {
+    @include media-breakpoint-up($breakpoint) {
+      margin-bottom: get-rem-from-px($bottom);
+      margin-top: get-rem-from-px($top);
+    }
+  } @else {
+    @include media-breakpoint-down($breakpoint) {
+      margin-bottom: get-rem-from-px($bottom);
+      margin-top: get-rem-from-px($top);
+    }
+  }
+}
+@mixin margin-left-right($breakpoint, $left, $right, $up: null) {
+  @if ($breakpoint == null) {
+    margin-left: get-rem-from-px($left);
+    margin-right: get-rem-from-px($right);
+  } @else if ($up) {
+    @include media-breakpoint-up($breakpoint) {
+      margin-left: get-rem-from-px($left);
+      margin-right: get-rem-from-px($right);
+    }
+  } @else {
+    @include media-breakpoint-down($breakpoint) {
+      margin-left: get-rem-from-px($left);
+      margin-right: get-rem-from-px($right);
+    }
+  }
+}
+@mixin padding-top-bottom($breakpoint, $top, $bottom, $up: null) {
+  @if ($breakpoint == null) {
+    padding-bottom: get-rem-from-px($bottom);
+    padding-top: get-rem-from-px($top);
+  } @else if ($up) {
+    @include media-breakpoint-up($breakpoint) {
+      padding-top: get-rem-from-px($top);
+      padding-bottom: get-rem-from-px($bottom);
+    }
+  } @else {
+    @include media-breakpoint-down($breakpoint) {
+      padding-bottom: get-rem-from-px($bottom);
+      padding-top: get-rem-from-px($top);
+    }
+  }
+}
+@mixin padding-left-right($breakpoint, $left, $right, $up: null) {
+  @if ($breakpoint == null) {
+    padding-left: get-rem-from-px($left);
+    padding-right: get-rem-from-px($right);
+  } @else if ($up) {
+    @include media-breakpoint-up($breakpoint) {
+      padding-left: get-rem-from-px($left);
+      padding-right: get-rem-from-px($right);
+    }
+  } @else {
+    @include media-breakpoint-down($breakpoint) {
+      padding-left: get-rem-from-px($left);
+      padding-right: get-rem-from-px($right);
+    }
+  }
+}
+@mixin top-bottom-left-right($breakpoint, $top, $bottom, $left, $right, $up: null) {
+  @if ($breakpoint == null) {
+    left: get-rem-from-px($left);
+    right: get-rem-from-px($right);
+    top: get-rem-from-px($top);
+    bottom: get-rem-from-px($bottom);
+  } @else if ($up) {
+    @include media-breakpoint-up($breakpoint) {
+      left: get-rem-from-px($left);
+      right: get-rem-from-px($right);
+      top: get-rem-from-px($top);
+      bottom: get-rem-from-px($bottom);
+    }
+  } @else {
+    @include media-breakpoint-down($breakpoint) {
+      left: get-rem-from-px($left);
+      right: get-rem-from-px($right);
+      top: get-rem-from-px($top);
+      bottom: get-rem-from-px($bottom);
+    }
+  }
+}
