@@ -6,7 +6,7 @@
         display: flex;
         flex-direction: column;
         text-align: center;
-        & .logo{
+        & .logo {
             max-width: 300px;
         }
         & .social {
@@ -20,25 +20,33 @@
         display: inline-flex;
         align-items: center;
         justify-content: space-between;
-        font: normal normal 300 12px/18px Exo;
-        letter-spacing: 0.05px;
+
+        & .piva {
+            font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-300) var(--unnamed-font-size-12) /
+                var(--unnamed-line-spacing-18) var(--unnamed-font-family-exo-2);
+            letter-spacing: var(--unnamed-character-spacing-0-05);
+            color: var(--unnamed-color-ffffff);
+        }
     }
     & .menu {
         align-items: center;
         & .privacy {
             display: inline-flex;
             align-items: center;
-            justify-content: space-between;
+            // justify-content: space-between;
         }
         & .newsletter {
             & > label {
-                font: normal normal 300 14px/21px Exo;
-                letter-spacing: 0.03px;
-                color: #ffffff;
+                font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-300) var(--unnamed-font-size-14) /
+                    var(--unnamed-line-spacing-21) var(--unnamed-font-family-exo-2);
+                letter-spacing: var(--unnamed-character-spacing-0-03);
+                color: var(--unnamed-color-ffffff);
             }
             & .signin {
                 @include padding-top-bottom(null, 11, 11);
                 height: 34px;
+                font: var(--unnamed-font-style-normal) normal normal var(--unnamed-font-size-14) /
+                    var(--unnamed-line-spacing-24) var(--unnamed-font-family-exo-2);
                 & > .input {
                     width: 180px;
                     height: 100%;
@@ -49,6 +57,13 @@
                 }
                 & > .button {
                     height: 100%;
+
+                    letter-spacing: var(--unnamed-character-spacing-0);
+                    color: var(--unnamed-color-001f3c);
+                    // text-align: left;
+                    // font: normal normal normal 14px/24px Exo 2;
+                    // letter-spacing: 0px;
+                    //
                     border: 1px solid #001f3c;
                     border-radius: 0px 2px 2px 0px;
                     @include padding-left-right(null, 24, 24);
@@ -56,8 +71,12 @@
             }
         }
     }
-    & .separator{
-        border: 1px solid #FFFFFF66;
-         @include margin-top-bottom(null, 24, 8);
+    & .separator {
+        border: 1px solid #ffffff66;
+        @include margin-top-bottom(null, 24, 8);
     }
+}
+.site-info {
+    @include margin-left-right(null, 0, 16);
+    @extend .pointer;
 }

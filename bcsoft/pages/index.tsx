@@ -1,13 +1,11 @@
 import type { GetStaticPropsContext, NextPage } from 'next'
-import axios from 'axios';
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
-import { Logo } from '../assets';
 import { Layout } from '../components/template';
+// import { getToken, instance } from '../services/axios';
 
-
-const Home: NextPage = () => {
+const Home: NextPage = () => {  
+ 
   return (
     <Layout>
       <Head>
@@ -28,9 +26,9 @@ const Home: NextPage = () => {
         </p>
 
         <div className='span-auto-12 grid template-col-autofill'>
-            <a href="https://nextjs.org/docs" className={styles.card}>
-              <h2>Documentation &rarr;</h2>
-              <p>Find in-depth information about Next.js features and API.</p>
+          <a href="https://nextjs.org/docs" className={styles.card}>
+            <h2>Documentation &rarr;</h2>
+            <p>Find in-depth information about Next.js features and API.</p>
           </a>
 
           <a href="https://nextjs.org/learn" className={styles.card}>
@@ -57,34 +55,9 @@ const Home: NextPage = () => {
           </a>
         </div>
       </main>
- 
+
     </Layout>
   )
 }
 
 export default Home
-
-// You should use getStaticProps when:
-//- The data required to render the page is available at build time ahead of a user’s request.
-//- The data comes from a headless CMS.
-//- The data can be publicly cached (not user-specific).
-//- The page must be pre-rendered (for SEO) and be very fast — getStaticProps generates HTML and JSON files, both of which can be cached by a CDN for performance.
-export const getStaticProps = async (ctx: GetStaticPropsContext) => {
-  // const url = "https://bcsoftsrl.sharepoint.com/sites/BCSoft.net.test/_api/web/list/getByTitle('heroQuickLinks')/items"
-
-  // axios
-  //   .get(url)
-  //   .then(res => {
-  //     console.log("🚀 ~ file: index.tsx ~ line 86 ~ getStaticProps ~ res", res)
-
-  //   })
-  //   .catch(error => {
-  //     console.log("🚀 ~ file: index.tsx ~ line 90 ~ getStaticProps ~ error", error)
-
-  //   });
-  return {
-    props: {
-
-    }
-  }
-}

@@ -31,6 +31,7 @@ export const Footer = () => {
               ?.filter(currentLink => currentLink.isMain === "NO")
               .map(item =>
                 <span
+                  className="site-info"
                   key={item.ID}
                   onClick={() => redirectHandler(item.FooterLinkUrl)}>
                   {item.Title}
@@ -47,9 +48,9 @@ export const Footer = () => {
         </form>
       </section>
       <section className="separator span-2-10"></section>
-      <section className="legal span-1-11">
-        <div className=''>
-          {footerLinks?.filter(currentLink => currentLink.isMain === "NO").map(item => <span key={item.ID} onClick={() => redirectHandler(item.FooterLinkUrl)}>{item.Title}</span>)
+      <section className="legal span-2-10">
+        <div className='site'>
+          {footerLinks?.filter(currentLink => currentLink.isMain === "NO").map(item => <span className="site-info" key={item.ID} onClick={() => redirectHandler(item.FooterLinkUrl)}>{item.Title}</span>)
           }
         </div>
         <div className='piva'>
