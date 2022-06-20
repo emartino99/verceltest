@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import { getLayout } from '../components/template';
-import { Hero } from '../components/organism';
+import { Banner, Hero } from '../components/organism';
 
 const Home = () => {  
  
@@ -15,7 +15,7 @@ const Home = () => {
 
       <main className='grid template-col-12'>
         <Hero />
-
+        <Banner/>
         <p className='span-auto-12' onClick={console.log}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.tsx</code>
