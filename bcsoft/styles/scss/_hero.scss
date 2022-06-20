@@ -1,0 +1,117 @@
+div.heroSection {
+    color: black;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.check-more-container p {
+    margin-left: 25px;
+    margin-bottom: 0;
+    color: #185fa2;
+}
+
+.check-more-container p:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+// .quick-links {
+//     max-width: 600px;
+//     min-height: 40px;
+//     max-height: 50px;
+//     d-flex flex-wrap align-items-center
+// }
+
+// div.hero-elements {
+//     z-index: 20;
+//     position: relative;
+// }
+
+/* devo levarlo????? */
+.parallelogram {
+    position: relative;
+    z-index: 1;
+    width: 70px;
+    height: 70px;
+    background-color: transparent;
+    border: 3px solid #001f3c;
+    transform: skew(0deg, 12deg);
+}
+
+.parallelogram img {
+    transition: 0.2s ease-in-out;
+}
+
+.parallelogram:hover img {
+    transform: scale(1.5);
+}
+
+.parallelogram-top-shadow,
+.parallelogram-bottom-shadow {
+    display: none;
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: transparent;
+}
+
+.parallelogram-top-shadow {
+    border: 3px solid #185fa2;
+    transform: skew(0deg, 12deg) translate(7px, -7px);
+}
+
+.parallelogram-bottom-shadow {
+    border: 3px solid #acd0fb;
+    transform: skew(0deg, 12deg) translate(-7px, 6px);
+}
+
+.parallelogram:hover + .parallelogram-top-shadow,
+.parallelogram:hover + .parallelogram-top-shadow + .parallelogram-bottom-shadow {
+    display: flex;
+}
+
+// refactor
+.hero {
+    &-elements {
+        z-index: 20;
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+    }
+    &-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &_title {
+        font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold) var(--unnamed-font-size-64) /
+            var(--unnamed-line-spacing-96) var(--unnamed-font-family-exo-2);
+        letter-spacing: var(--unnamed-character-spacing-0);
+        color: var(--unnamed-color-001f3c);
+    }
+}
+
+.quick-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 600px;
+    min-height: 40px;
+    max-height: 50px;
+    &-menu-centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(0%, -50%);
+    }
+}
+
+.check-more-container {
+    position: relative;
+    width: 100%;
+    padding-left: 1rem;
+    height: 150px;
+    display: flex;
+    align-items: center;
+}

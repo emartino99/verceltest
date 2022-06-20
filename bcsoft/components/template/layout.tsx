@@ -1,15 +1,20 @@
-import { PropsWithChildren, ReactElement } from 'react'
-import { QueryClient, QueryClientProvider } from 'react-query'
-import { Navbar, Footer } from '../organism'
-
-const queryClient = new QueryClient()
+import { title } from 'process';
+import { PropsWithChildren, ReactElement, ReactNode } from 'react'
+import { Navbar, Footer } from '../organism';
 
 export const Layout = ({ children }: PropsWithChildren) => {
+
     return (
-        <QueryClientProvider client={queryClient}>
-            {/* <Navbar /> */}
+        <>
+            <Navbar />
             {children}
             <Footer />
-        </QueryClientProvider>
+        </>
     )
 }
+
+export type GetLayoutType = (page: ReactElement) => ReactNode;
+
+export const getLayout: GetLayoutType = (page) => {
+    return <Layout>{page}</Layout>;
+};

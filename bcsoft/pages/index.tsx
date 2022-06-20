@@ -1,13 +1,12 @@
-import type { GetStaticPropsContext, NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
-import { Layout } from '../components/template';
-// import { getToken, instance } from '../services/axios';
+import { getLayout } from '../components/template';
+import { Hero } from '../components/organism';
 
-const Home: NextPage = () => {  
+const Home = () => {  
  
   return (
-    <Layout>
+    <>
       <Head>
         <title>BCSoft</title>
         <meta name="description" content="BCsoft website homepage" />
@@ -15,10 +14,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className='grid template-col-12'>
-
-        <h1 className='span-auto-12'>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <Hero />
 
         <p className='span-auto-12' onClick={console.log}>
           Get started by editing{' '}
@@ -56,8 +52,11 @@ const Home: NextPage = () => {
         </div>
       </main>
 
-    </Layout>
+    </>
   )
 }
 
 export default Home
+ 
+
+Home.getLayout = getLayout

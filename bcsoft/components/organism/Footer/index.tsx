@@ -1,11 +1,12 @@
 import Head from "next/head";
 import { FormEventHandler, useCallback } from "react";
 import { FacebookLogo, FooterLogo, Linkedin, YouTube } from "../../../assets";
+import { IFooterLinks } from "../../../models";
 import { useFooterLinkHook } from "../../../services";
 
 export const Footer = () => {
 
-  const { footerLinks, error } = useFooterLinkHook();
+   const { footerLinks, error } = useFooterLinkHook();
   
   const redirectHandler = (urlToRedirectTo: string) => window.open(urlToRedirectTo, '_blank');
   
