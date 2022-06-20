@@ -27,7 +27,6 @@ export function Banner() {
     return (
         <div
             className='banner span-1-12'
-            style={{ backgroundColor: backgroundColor, }}
         >
             <span className={`banner-text ${adsBannerTextWeight}`} style={{ color: adsBannerTextColor }}>{adsBannerText}</span>
             {

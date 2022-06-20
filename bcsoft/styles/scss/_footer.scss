@@ -22,10 +22,9 @@
         justify-content: space-between;
 
         & .piva {
-            font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-300) var(--unnamed-font-size-12) /
-                var(--unnamed-line-spacing-18) var(--unnamed-font-family-exo-2);
-            letter-spacing: var(--unnamed-character-spacing-0-05);
-            color: var(--unnamed-color-ffffff);
+            font: normal normal normal 12px/18px Exo;
+            letter-spacing: $--unnamed-character-spacing-0-05;
+            color: $--unnamed-color-ffffff;
         }
     }
     & .menu {
@@ -37,16 +36,14 @@
         }
         & .newsletter {
             & > label {
-                font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-300) var(--unnamed-font-size-14) /
-                    var(--unnamed-line-spacing-21) var(--unnamed-font-family-exo-2);
-                letter-spacing: var(--unnamed-character-spacing-0-03);
-                color: var(--unnamed-color-ffffff);
+                font: normal normal normal 14px/21px Exo;
+                letter-spacing: $--unnamed-character-spacing-0-03;
+                color: $--unnamed-color-ffffff;
             }
             & .signin {
                 @include padding-top-bottom(null, 11, 11);
                 height: 34px;
-                font: var(--unnamed-font-style-normal) normal normal var(--unnamed-font-size-14) /
-                    var(--unnamed-line-spacing-24) var(--unnamed-font-family-exo-2);
+                font: normal normal normal 14px/24px Exo;
                 & > .input {
                     width: 180px;
                     height: 100%;
@@ -57,13 +54,8 @@
                 }
                 & > .button {
                     height: 100%;
-
-                    letter-spacing: var(--unnamed-character-spacing-0);
-                    color: var(--unnamed-color-001f3c);
-                    // text-align: left;
-                    // font: normal normal normal 14px/24px Exo 2;
-                    // letter-spacing: 0px;
-                    //
+                    letter-spacing:$--unnamed-character-spacing-0;
+                    color:$--unnamed-color-001f3c;
                     border: 1px solid #001f3c;
                     border-radius: 0px 2px 2px 0px;
                     @include padding-left-right(null, 24, 24);

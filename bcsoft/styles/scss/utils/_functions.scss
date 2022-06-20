@@ -102,3 +102,6 @@ $root-font-size: 16;
     }
   }
 }
+@function rootVar($variablename) {
+  @return var(--variablename)
+}

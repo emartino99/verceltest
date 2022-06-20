@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { CurvedArrow } from "../../../assets";
 
-import { useHeroHooks } from "../../../services/hero";
+import { useHeroHooks } from "../../../services";
 
 export function Hero() {
 
@@ -35,7 +35,7 @@ export function Hero() {
 
     return (
 
-        <div className="span-1-12" style={{ minHeight: 400 }}>
+        <div className="hero span-1-12" >
 
             {
                 videoPlayer === true && urlMedia &&
@@ -76,9 +76,9 @@ export function Hero() {
                                     {
                                         showQuickLinksMenu 
                                         ? quickLinks?.map(currentQuickLink => (
-                                            <p key={currentQuickLink.ID} className='semibold' onClick={() => redirectToUrl(currentQuickLink.QuickLinkUrl)}>{currentQuickLink.Title}</p>
+                                            <p key={currentQuickLink.ID} className='links' onClick={() => redirectToUrl(currentQuickLink.QuickLinkUrl)}>{currentQuickLink.Title}</p>
                                         ))
-                                        :   <p className='semibold' onClick={quickLinksMenuHandler}>Guarda cosa possiamo fare per te</p>
+                                        :   <p className='links' onClick={quickLinksMenuHandler}>Guarda cosa possiamo fare per te</p>
                                     }
                                 </div>
                             </div>

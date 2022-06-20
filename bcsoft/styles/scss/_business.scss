@@ -1,0 +1,92 @@
+.business {
+    padding: 3rem;
+    &-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        & > .title,
+        & > .subtitle {
+            text-align: center;
+            @include margin-top-bottom(null, 5, 5);
+        }
+        & > .title {
+            font: normal normal bold 40px/60px Exo;
+            letter-spacing: $--unnamed-character-spacing-0;
+            color: $--unnamed-color-002950;
+        }
+        & > .subtitle {
+            letter-spacing: $--unnamed-character-spacing-0;
+            color: $--unnamed-color-185fa2;
+        }
+    }
+    &-card {
+        // @include padding-left-right(null, 16, 16);
+        // @include margin-top-bottom(null, 24, 24);
+        & .core {
+            position: relative;
+            max-height: 100%;
+            @include padding-top-bottom(null, 24, 24);
+            & > svg {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &_content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            @include padding-top-bottom(null, 0, 24);
+        }
+        &_title {
+            text-transform: uppercase;
+            text-align: center;
+            font: normal normal bold 22px/33px Exo;
+            letter-spacing: $--unnamed-character-spacing-0;
+            color: $--unnamed-color-001f3c;
+        }
+        &_subtitle {
+            @include padding-left-right(null, 16, 16);
+            @include margin-top-bottom(null, 0, 24);
+            font: normal normal normal 14px/21px Exo;
+            letter-spacing: $--unnamed-character-spacing-0-03;
+            color: $--unnamed-color-001f3c;
+        }
+        &_footer {
+            display: flex;
+            align-items: flex-end;
+            @include padding-left-right(null, 16, 16);
+            @include margin-top-bottom(null, 0, 24);
+            & > button {
+                height: 38px;
+                background: $--unnamed-color-ffffff 0% 0% no-repeat padding-box;
+                border: 1px solid $--unnamed-color-001f3c;
+                background: #ffffff 0% 0% no-repeat padding-box;
+            }
+        }
+    }
+}
+
+.inner-shadow-button,
+.outer-shadow-button {
+    display: none !important;
+    cursor: default !important;
+}
+
+.inner-shadow-button {
+    transform: translate(5px, -5px);
+    color: white;
+    background-color: #002950 !important;
+    position: absolute;
+}
+
+.outer-shadow-button {
+    transform: translate(-5px, 5px);
+    background-color: #185fa2 !important;
+    position: absolute;
+}
+
+.main-button:hover + .inner-shadow-button,
+.main-button:hover + .inner-shadow-button + .outer-shadow-button {
+    display: flex !important;
+}

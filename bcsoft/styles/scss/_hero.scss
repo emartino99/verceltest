@@ -73,6 +73,7 @@ div.heroSection {
 
 // refactor
 .hero {
+    min-height: 600px;
     &-elements {
         z-index: 20;
         position: relative;
@@ -83,12 +84,11 @@ div.heroSection {
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-    &_title {
-        font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold) var(--unnamed-font-size-64) /
-            var(--unnamed-line-spacing-96) var(--unnamed-font-family-exo-2);
-        letter-spacing: var(--unnamed-character-spacing-0);
-        color: var(--unnamed-color-001f3c);
+        &_title {
+            font: normal normal bold 64px/96px Exo;
+            letter-spacing: $--unnamed-character-spacing-0;
+            color: $--unnamed-color-001f3c;
+        }
     }
 }
 
@@ -104,6 +104,11 @@ div.heroSection {
         top: 50%;
         left: 50%;
         transform: translate(0%, -50%);
+    }
+    & > .links {
+        font: normal normal bold 14px/33px Exo;
+        letter-spacing: 0px;
+        color: #185fa2;
     }
 }
 
