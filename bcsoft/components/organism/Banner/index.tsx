@@ -25,7 +25,7 @@ export function Banner() {
     const urlHandler = (url: string) => window.open(url, '_blank');
 
     return (
-        <div
+        <section
             className='banner span-1-12'
         >
             <span className={`banner-text ${adsBannerTextWeight}`} style={{ color: adsBannerTextColor }}>{adsBannerText}</span>
@@ -39,7 +39,7 @@ export function Banner() {
                     {`>> ${adsBannerLinkText} <<`}
                 </span>
             }
-        </div>
+        </section>
 
     );
 };

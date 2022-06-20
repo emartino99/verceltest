@@ -11,21 +11,13 @@ export function Hero() {
     // TODO: info from list!
     const {
         videoPlayer,
-        urlMedia,
-        alignElements,
-        titleWeight,
-        titleAlign,
-        titleSize,
-        textColor,
+        urlMedia, 
+        titleAlign, 
         title,
     } = {
         videoPlayer: false,
-        urlMedia: '',
-        alignElements: 'center',
-        titleWeight: 'bold',
-        titleAlign: 'center',
-        titleSize: 1,
-        textColor: 'black',
+        urlMedia: '', 
+        titleAlign: 'center', 
         title: 'Soluzioni digitali Al servizio delle idee',
     };
 
@@ -35,7 +27,7 @@ export function Hero() {
 
     return (
 
-        <div className="hero span-1-12" >
+        <section className="hero span-1-12" >
 
             {
                 videoPlayer === true && urlMedia &&
@@ -56,14 +48,14 @@ export function Hero() {
                 !videoPlayer  &&
                 <div className='quick-links-menu-centered'>
                     <div className={`hero-elements`}>
-                        <div className={`hero-content justify-content-${alignElements}`}>
+                        <div className={`hero-content`}>
                             <span
-                                className={`hero-content_title w-100 px-3 text-${titleAlign}`}
+                                className={`hero-content_title w-100text-${titleAlign}`}
                                 dangerouslySetInnerHTML={{ __html: title ?? "" }}>
                             </span>
-                            <div className="check-more-container d-flex align-items-center">
+                            <div className="check-more-container">
                                 <div
-                                    className="parallelogram d-flex align-items-center justify-content-center"
+                                    className="parallelogram"
                                     onClick={quickLinksMenuHandler}
                                 >
                                    
@@ -72,7 +64,7 @@ export function Hero() {
                                 </div>
                                 <div className="parallelogram-top-shadow"></div>
                                 <div className="parallelogram-bottom-shadow"></div>
-                                <div className='quick-links'>
+                                <menu className='quick-links'>
                                     {
                                         showQuickLinksMenu 
                                         ? quickLinks?.map(currentQuickLink => (
@@ -80,13 +72,13 @@ export function Hero() {
                                         ))
                                         :   <p className='links' onClick={quickLinksMenuHandler}>Guarda cosa possiamo fare per te</p>
                                     }
-                                </div>
+                                </menu>
                             </div>
                         </div>
                     </div>
                 </div>
             }
-        </div>
+        </section>
     );
 };
 
