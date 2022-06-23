@@ -5,8 +5,7 @@ import { useFooterLinkHook } from "../../../services";
 
 export const Footer = () => {
 
-   const { footerLinks, error } = useFooterLinkHook();
-   console.log("🚀 ~ file: index.tsx ~ line 10 ~ Footer ~ footerLinks", footerLinks)
+  const { footerLinks, error } = useFooterLinkHook();
   
   const redirectHandler = (urlToRedirectTo: string) => window.open(urlToRedirectTo, '_blank');
   

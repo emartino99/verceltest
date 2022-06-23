@@ -1,34 +1,28 @@
 import Image from "next/image";
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useMemo } from "react";
 import { useBusinessHook } from "../../../services";
+import { parseImgJson } from "../../../utils";
 import { CardLine } from "../../atoms";
+import { ImageResources } from "../../atoms/ImageResources";
 
 export function Business() {
 
     const { coreBusinessCards, error } = useBusinessHook();
-    console.log("🚀 ~ file: index.tsx ~ line 8 ~ Business ~ coreBusinessCards =====>>>", error, coreBusinessCards)
 
-    const {
-        titleColor,
-        title,
-        titleSize,
-        subtitleColor,
-        subtitle,
-        subtitleSize,
+    const { 
+        title, 
+        subtitle, 
         cardTextSize
     } = {
-        titleColor: 'black',
-        title: 'todo',
-        titleSize: 1,
-        subtitleColor: 'blue',
+        title: 'todo', 
         subtitle: 'todo',
-        subtitleSize: 1,
         cardTextSize: 1,
     };
 
- 
+    // const resultWithUsableIMG = useMemo(() => coreBusinessCards ? parseImgJson(coreBusinessCards): undefined,[coreBusinessCards]) 
+    // console.log("🚀 ~ file: index.tsx ~ line 22 ~ Business ~ resultWithUsableIMG", resultWithUsableIMG)
     const newsUrlHandler = (url: string) => window.open(url, '_self');
-
+ 
     return (
         <section className="business span-1-12">
 
@@ -42,6 +36,7 @@ export function Business() {
                         <div id={`core${i}`} className='core'>
                             <CardLine id={`core${i}` }/>
                             <div className='business-card_content'>
+                                <ImageResources item={item} />
                                 <header>
                                     <h4 className='cardTitle business-card_title'>{item.Title}</h4>
                                     <div className='cardSubtitle '>

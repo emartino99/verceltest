@@ -20,8 +20,8 @@ export default function handler(
         "Accept": "application/json;odata=verbose",
         "Authorization": response.headers.Authorization || ''
       }
-      }).then(resolve => res.status(200).json(resolve.data))
+      }).then(resolve => res.status(200).json(resolve.data)).catch(error => res.status(error.status).end())
       
     }
-  ).catch(console.error)
+  ).catch( err => res.status(err.status).end())
 }

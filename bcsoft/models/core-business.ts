@@ -19,6 +19,9 @@ export interface iCoreBusiness {
     CardButtonText: string;
     CardButtonRedirectURL: string;
 }
+export interface ICoreBusinessAsset extends iCoreBusiness {
+    CardImg: string;
+}
 export interface ICardIMG {
     type: string;
     fileName: string;
