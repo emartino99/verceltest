@@ -6,14 +6,15 @@
         display: flex;
         flex-direction: column;
         text-align: center;
-        & .logo {
-            max-width: 300px;
+        & .logo > svg {
+            max-width: 250px;
+            padding-right: 1rem;
         }
         & .social {
             display: inline-flex;
             align-items: center;
             justify-content: space-around;
-            @include padding-top-bottom(null, 25, 25);
+            @include padding-top-bottom(null, 0, 25);
         }
     }
     & .legal {

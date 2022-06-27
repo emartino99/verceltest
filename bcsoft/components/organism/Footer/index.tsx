@@ -1,8 +1,9 @@
-import Head from "next/head";
 import { FormEventHandler, useCallback } from "react";
-import { FacebookLogo, 
-  // FooterLogo, 
-  Linkedin, YouTube } from "../../../assets";
+import {
+  FacebookLogo,
+  FooterLogo,
+  Linkedin, YouTube
+} from "../../../assets";
 import { useFooterLinkHook } from "../../../services";
 
 export const Footer = () => {
@@ -15,15 +16,15 @@ export const Footer = () => {
     e.preventDefault()
   }, [])
   return (
-    <> 
+    <>
       <footer className="footer span-auto-12 grid template-col-12" itemScope itemType="https://schema.org/Organization">
         <section className="contact span-3-3">
           <span className="logo pointer" itemProp="logo" data-src='../../../assets/img/footer_logo.svg' >
-            {/* <FooterLogo /> */}
+            <FooterLogo />
           </span>
           <div className="social">
             <YouTube className=" pointer" onClick={() => redirectHandler('https://www.youtube.com/channel/UCz3lusBHpaSfx32g0RqF1UQ')} />
-            <Linkedin width="18.834" height="18" viewBox="0 0 18.834 18" className=" pointer" onClick={() => redirectHandler('https://it.linkedin.com/company/bc-soft-srl')} />
+            <Linkedin className=" pointer" onClick={() => redirectHandler('https://it.linkedin.com/company/bc-soft-srl')} />
             <FacebookLogo className=" pointer" onClick={() => redirectHandler('https://www.facebook.com/www.bcsoft.net/')} />
           </div>
         </section>

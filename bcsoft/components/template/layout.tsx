@@ -1,6 +1,6 @@
 import { PropsWithChildren, ReactElement, ReactNode } from 'react'
 import { Navbar, Footer } from '../organism';
-// import  '../../../assets/sprite.svg';
+// import  '../../assets/sprite.svg';
 import Head from 'next/head';
 
 export const Layout = ({ children }: PropsWithChildren) => {
@@ -8,7 +8,7 @@ export const Layout = ({ children }: PropsWithChildren) => {
     return (
         <>
             {/* <Head>
-                <link rel='preload' as='image' type='image/svg+xml' href='/assets/sprite.svg'/>
+                <link rel='preload' as='image' type='image/svg+xml' href='assets/sprite.svg'/>
             </Head> */}
             {/* <Sprite  /> */}
             <Navbar />
