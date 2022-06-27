@@ -1,1 +1,2 @@
-export * from './CardLine'
+export * from './CardLine';
+export * from './ImageResources';

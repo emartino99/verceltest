@@ -1,10 +1,9 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.scss'
 import { getLayout } from '../components/template';
 import { Banner, Business, Hero } from '../components/organism';
  
 
-const Home = () => {  
+const Home = ( ) => {   
  
   return (
     <>
@@ -13,14 +12,10 @@ const Home = () => {
         <meta name="description" content="BCsoft website homepage" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <main className='grid template-col-12'>
         <Hero />
-        <Banner/>
-        <Business />
-     
-
-       
+        <Banner />
+        <Business /> 
       </main>
 
     </>
@@ -28,6 +23,5 @@ const Home = () => {
 }
 
 export default Home
- 
 
 Home.getLayout = getLayout

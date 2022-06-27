@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
-import { CurvedArrow } from "../../../assets";
+// import { CurvedArrow } from "../../../../assets";
 
 import { useHeroHooks } from "../../../services";
 
@@ -59,7 +59,7 @@ export function Hero() {
                                     onClick={quickLinksMenuHandler}
                                 >
                                    
-                                        <CurvedArrow height={78}/>
+                                        {/* <CurvedArrow height={78}/> */}
                                    
                                 </div>
                                 <div className="parallelogram-top-shadow"></div>
