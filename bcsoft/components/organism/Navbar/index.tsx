@@ -23,7 +23,7 @@ export function Navbar() {
     return (
         <header className='header span-auto-12 grid template-col-12' itemScope itemType="https://schema.org/Organization">
             <span className="span-2-3" itemProp='logo' data-src='../../../assets/img/logo.svg' >
-                <Logo />
+                <Logo width={240} height={90} />
             </span>
             <nav className='span-8-4 navbar'>
                 {mainLinks?.map((item) => {

@@ -62,6 +62,7 @@ div.heroSection {
 // refactor
 .hero {
     min-height: 600px;
+    position: relative;
     &-elements {
         z-index: 20;
         position: relative;
