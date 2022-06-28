@@ -1,0 +1,36 @@
+ .locations {
+    display: flex;
+    flex: 1;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    path:hover{
+        fill-opacity: .8;
+        cursor: pointer;
+    }
+    path.selected{
+        fill-opacity: .8;
+    }
+    &-regione{
+        transition: all 500ms ease-in-out;
+    }
+    &-card {
+        position: absolute;
+        background-color: #155897;
+        transform: skewY(355deg);
+        padding: 1em;
+        color: #fff;
+        &-email {
+            text-decoration: underline;
+        }
+        &-email:hover {
+            opacity: .8;
+        }
+    }
+    svg {
+        @media only screen and (max-width: 580px) {
+            height: calc(100vw - 60px);
+        }
+    }
+}

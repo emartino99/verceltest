@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { getLayout } from '../components/template';
-import { Banner, Business, Hero } from '../components/organism';
+import { Banner, Locations, Business, Hero } from '../components/organism';
  
 
 const Home = ( ) => {   
@@ -15,7 +15,8 @@ const Home = ( ) => {
       <main className='grid template-col-12'>
         <Hero />
         <Banner />
-        <Business /> 
+        <Business />
+        <Locations /> 
       </main>
 
     </>

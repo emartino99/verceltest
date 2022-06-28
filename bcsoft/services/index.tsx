@@ -3,3 +3,4 @@ export * from './footer';
 export * from './hero';
 export * from './business';
 export * from './srcAssets';
+export * from './locations';
