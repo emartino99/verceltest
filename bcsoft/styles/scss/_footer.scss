@@ -23,7 +23,7 @@
         justify-content: space-between;
 
         & .piva {
-            font: normal normal normal 12px/18px Exo;
+            font: normal normal normal 12px/18px "Exo-regular";
             letter-spacing: $--unnamed-character-spacing-0-05;
             color: $--unnamed-color-ffffff;
         }
@@ -37,14 +37,14 @@
         }
         & .newsletter {
             & > label {
-                font: normal normal normal 14px/21px Exo;
+                font: normal normal normal 14px/21px "Exo-regular";
                 letter-spacing: $--unnamed-character-spacing-0-03;
                 color: $--unnamed-color-ffffff;
             }
             & .signin {
                 @include padding-top-bottom(null, 11, 11);
                 height: 34px;
-                font: normal normal normal 14px/24px Exo;
+                font: normal normal normal 14px/24px "Exo-regular";
                 & > .input {
                     width: 180px;
                     height: 100%;

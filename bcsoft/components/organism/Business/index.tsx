@@ -20,8 +20,8 @@ export function Business() {
         subtitle: 'todo',
     };
 
-    const resultWithUsableIMG = useMemo(() => coreBusinessCards ? parseImgJson(coreBusinessCards): undefined,[coreBusinessCards]) 
-    console.log("🚀 ~ file: index.tsx ~ line 22 ~ Business ~ resultWithUsableIMG", resultWithUsableIMG)
+    // const resultWithUsableIMG = useMemo(() => coreBusinessCards ? parseImgJson(coreBusinessCards): undefined,[coreBusinessCards]) 
+    // console.log("🚀 ~ file: index.tsx ~ line 22 ~ Business ~ resultWithUsableIMG", resultWithUsableIMG)
 
  
     return (

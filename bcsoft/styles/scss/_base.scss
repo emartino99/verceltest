@@ -1,40 +1,40 @@
 @font-face {
-  font-family: "bold";
+  font-family: "Exo-bold";
   src: url("../Font/Exo2-Bold.ttf");
 }
 @font-face {
-  font-family: "semibold";
+  font-family: "Exo-semibold";
   src: url("../Font/Exo2-SemiBold.ttf");
 }
 
 @font-face {
-  font-family: "light";
+  font-family: "Exo-light";
   src: url("../Font/Exo2-Light.ttf");
 }
 
 @font-face {
-  font-family: "regular";
+  font-family: "Exo-regular";
   src: url("../Font/Exo2-Regular.ttf");
 }
 
 .bold {
-  font-family: "bold";
+  font-family: "Exo-bold";
 }
 
 .semibold {
-  font-family: "semibold";
+  font-family: "Exo-semibold";
 }
 
 .light {
-  font-family: "light";
+  font-family: "Exo-light";
 }
 
 .regular {
-  font-family: "regular";
+  font-family: "Exo-regular";
 }
 
 body {
-  font-family: "regular";
+  font-family: "Exo-regular";
   margin: 0;
   padding: 0;
 }
@@ -53,7 +53,7 @@ a.disabled {
 }
 
 .sectionTitle {
-  font-family: "bold";
+  font-family: "Exo-bold";
   padding: 30px 0;
   margin: 0;
 }
@@ -64,18 +64,18 @@ a.disabled {
 
 .sectionSubtitle {
   font-size: 1.2em;
-  font-family: "regular";
+  font-family: "Exo-regular";
 }
 
 .cardSubtitle {
   font-size: 1.1em;
-  font-family: "regular";
+  font-family: "Exo-regular";
   width: 100%;
   color: #001f3c;
 }
 
 .cardTitle {
-  font-family: "bold";
+  font-family: "Exo-bold";
   width: 100%;
   color: #001f3c;
 }
@@ -102,7 +102,7 @@ button.btn.btnOutline {
   border-radius: 3px;
   padding-left: 1.2em;
   padding-right: 1.2em;
-  font-family: "regular";
+  font-family: "Exo-regular";
 }
 svg{
   // min-width: 200px;

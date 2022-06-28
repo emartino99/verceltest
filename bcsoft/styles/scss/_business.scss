@@ -11,7 +11,7 @@
             @include margin-top-bottom(null, 5, 5);
         }
         & > .title {
-            font: normal normal bold 40px/60px Exo;
+            font: normal normal bold 40px/60px "Exo-bold";
             letter-spacing: $--unnamed-character-spacing-0;
             color: $--unnamed-color-002950;
         }
@@ -42,14 +42,14 @@
         &_title {
             text-transform: uppercase;
             text-align: center;
-            font: normal normal bold 22px/33px Exo;
+            font: normal normal bold 22px/33px "Exo-bold";
             letter-spacing: $--unnamed-character-spacing-0;
             color: $--unnamed-color-001f3c;
         }
         &_subtitle {
             @include padding-left-right(null, 16, 16);
             @include margin-top-bottom(null, 0, 24);
-            font: normal normal normal 14px/21px Exo;
+            font: normal normal normal 14px/21px "Exo-regular";
             letter-spacing: $--unnamed-character-spacing-0-03;
             color: $--unnamed-color-001f3c;
         }
