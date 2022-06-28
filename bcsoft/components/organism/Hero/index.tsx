@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
-// import { CurvedArrow } from "../../../../assets";
+import { CurvedArrow } from "../../../assets";
 
 import { useHeroHooks } from "../../../services";
 
@@ -57,10 +57,8 @@ export function Hero() {
                                 <div
                                     className="parallelogram"
                                     onClick={quickLinksMenuHandler}
-                                >
-                                   
-                                        {/* <CurvedArrow height={78}/> */}
-                                   
+                                    >
+                                        <CurvedArrow width={57} height={72} style={{ transform: `rotateY(${showQuickLinksMenu ? '0': '180'}deg)`}} />
                                 </div>
                                 <div className="parallelogram-top-shadow"></div>
                                 <div className="parallelogram-bottom-shadow"></div>

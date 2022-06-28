@@ -1,37 +1,46 @@
-// import Logo from './img/logo.svg';
-// import FooterLogo from './img/footer_logo.svg';
-// import CurvedArrow from './img/curvedArrow.svg';
+import './img/curvedArrow.svg';
+import './img/linkedin.svg'
+import './img/facebook.svg'
+import './img/youtube.svg'
+import './img/logo.svg';
+import './img/footer_logo.svg';
+import './img/locations.svg';
+
 import React, { SVGProps } from 'react';
 
-const Icon = ({ children, ...props }: SVGProps<SVGSVGElement>) => 
+type SVGIcon = SVGProps<SVGSVGElement> & {selector: string }
+ 
+const Icon = ({ selector, ...props }: SVGIcon) => 
     (
-        <svg xmlns="http://www.w3.org/2000/svg"  {...props}  >
-            {children}
+        <svg {...props}  >
+            <use href={`#${selector}`} />
         </svg>
     );
 
 const Linkedin = (props: SVGProps<SVGSVGElement>) => 
-    <Icon width="18.834" height="18" viewBox="0 0 18.834 18" {...props} >
-        <use href={`#linkedin`}/>
-    </Icon>
+    <Icon width={18} height={18} {...props} selector='linkedin' />;
 const FacebookLogo = (props: SVGProps<SVGSVGElement>) => 
-    <Icon width="10.758" height="20.708" viewBox="0 0 10.758 20.708" {...props} >
-        <use href='#facebook'/>
-    </Icon>
+    <Icon width={10} height={23} {...props} selector='facebook' />;
 const YouTube = (props: SVGProps<SVGSVGElement>) => 
-    <Icon width="22.509" height="15.817" viewBox="0 0 22.509 15.817"{...props} >
-        <use href='#youtube'/>
-    </Icon>
-
+    <Icon width={22} height={15} {...props} selector='youtube' />;
+const Logo = (props: SVGProps<SVGSVGElement>) => 
+    <Icon {...props} selector='logo' />;
+const FooterLogo = (props: SVGProps<SVGSVGElement>) => 
+    <Icon {...props} selector='footer_logo' />;
+const CurvedArrow = (props: SVGProps<SVGSVGElement>) => 
+    <Icon {...props} selector='curvedArrow' />;
 const LocationsMap = (props: SVGProps<SVGSVGElement>) => 
-    <Icon width="500" height="550" viewBox="0 0 500 550"{...props}></Icon>
+    <Icon {...props} selector='locations' />;
 
 export {
     FacebookLogo,
     Linkedin,
     YouTube,
-    LocationsMap
+    LocationsMap,
     // Logo,
     // FooterLogo,
     // CurvedArrow
+    Logo,
+    FooterLogo,
+    CurvedArrow
 }

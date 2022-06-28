@@ -1,7 +1,9 @@
 .navbar {
   display: flex;
+  align-items: flex-end;
   & > button {
-    min-width: 75px;
+    @include padding-top-bottom(null, 16, 16);
+    min-width: 100px;
     border-radius: 0 !important;
     outline: none !important;
     border: none;
@@ -40,17 +42,18 @@
   @include padding-top-bottom(null, 10, 0);
 }
 .submenu {
-
   display: inline-flex;
   justify-content: center;
   align-items: center;
   background: $--unnamed-color-185fa2 0% 0% no-repeat padding-box;
   color: $--unnamed-color-ffffff;
-  transition: all 0.2s linear ;
-  min-height: 0;
+  transition: all 0.3s linear 0.1s;
+  height: 0;
+  opacity: 0;
   &.open{
     height: auto;
-    min-height: 100px;
+    height: 70px;
+    opacity: 1;
   }
   &-items {
     @include margin-left-right(null, 12, 12);
