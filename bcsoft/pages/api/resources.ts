@@ -27,7 +27,7 @@ export default function handler(
       // }
       // GetFileByServerRelativePath(decodedurl='/sites/BCSoft.net.test/SiteAssets/Lists/6d3bc0b6-7808-4da9-afbf-1e16b7c51129/code3.png')
       // https://bcsoftsrl.sharepoint.com/sites/BCSoft.net.test/_api/Web/GetFileByServerRelativePath(decodedurl='/sites/BCSoft.net.test/SiteAssets/Lists/6d3bc0b6-7808-4da9-afbf-1e16b7c51129/team.png')
-      axios.get(`${process.env.NEXT_PUBLIC_BASE_URL_ASSETS}/GetFileByServerRelativePath(decodedurl='${req.headers['data-serverrelativeurl']}')/$value`,{headers: {
+      axios.get(`${process.env.NEXT_PUBLIC_BASE_URL_DOMAIN}${req.headers['data-serverrelativeurl']}`,{headers: {
         "Accept": "application/json;odata=verbose",
         "Authorization": response.headers.Authorization || '',
         "responseType": "blob"
@@ -45,7 +45,7 @@ export default function handler(
       // console.log("🚀 ~ file: resources.ts ~ line 32 ~ axios.get ~ encode", encode)
         res.status(200).json(resolve.data)
       }).catch(error => {
-      // console.log("🚀 ~ file: resources.ts ~ line 28 ~ error", error)
+      console.log("🚀 ~ file: resources.ts ~ line 28 ~ error", error)
         res.status(error.status).json(error.status)
       })
       

@@ -8,7 +8,7 @@
     outline: none !important;
     border: none;
     background-color: #fff;
-    font: normal normal normal 16px/24px Exo;
+    font: normal normal normal 16px/24px "Exo-regular";
     letter-spacing: $--unnamed-character-spacing-0;
     color: $--unnamed-color-185fa2;
     text-align: center;
@@ -60,7 +60,7 @@
     &-links {
       display: inline-flex;
       align-items: center;
-      font: normal normal bold 18px/33px Exo;
+      font: normal normal bold 18px/33px "Exo-bold";
       letter-spacing: $--unnamed-character-spacing-0;
       color: $--unnamed-color-ffffff;
       @extend .pointer;

@@ -74,7 +74,7 @@ div.heroSection {
         flex-direction: column;
         align-items: center;
         &_title {
-            font: normal normal bold 64px/96px Exo;
+            font: normal normal bold 64px/96px "Exo-regular";
             letter-spacing: $--unnamed-character-spacing-0;
             color: $--unnamed-color-001f3c;
         }
@@ -95,7 +95,7 @@ div.heroSection {
         transform: translate(0%, -50%);
     }
     & > .links {
-        font: normal normal bold 14px/33px Exo;
+        font: normal normal bold 14px/33px "Exo-bold";
         letter-spacing: $--unnamed-character-spacing-0;
         color: $--unnamed-color-185fa2;
     }
