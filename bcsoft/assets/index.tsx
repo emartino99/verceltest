@@ -4,7 +4,6 @@ import './img/facebook.svg'
 import './img/youtube.svg'
 import './img/logo.svg';
 import './img/footer_logo.svg';
-import './img/locations.svg';
 
 import React, { SVGProps } from 'react';
 
@@ -29,14 +28,11 @@ const FooterLogo = (props: SVGProps<SVGSVGElement>) =>
     <Icon {...props} selector='footer_logo' />;
 const CurvedArrow = (props: SVGProps<SVGSVGElement>) => 
     <Icon {...props} selector='curvedArrow' />;
-const LocationsMap = (props: SVGProps<SVGSVGElement>) => 
-    <Icon {...props} selector='locations' />;
 
 export {
     FacebookLogo,
     Linkedin,
     YouTube,
-    LocationsMap,
     // Logo,
     // FooterLogo,
     // CurvedArrow

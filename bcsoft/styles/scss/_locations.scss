@@ -4,13 +4,40 @@
     flex-flow: row wrap;
     justify-content: space-around;
     align-items: center;
-    padding: 1rem;
+    position: relative;
     path:hover{
         fill-opacity: .8;
         cursor: pointer;
     }
     path.selected{
         fill-opacity: .8;
+    }
+    &-text {
+        max-width: 500px;
+
+        h1 {
+            font-weight: $--unnamed-font-weight-bold;
+            font-family: $--unnamed-font-family-exo-2;
+            font-size: $--unnamed-font-size-40;
+            letter-spacing: $--unnamed-character-spacing-0;
+            color: $--unnamed-color-002950;
+        }
+
+        span {
+            font-weight: $--unnamed-font-weight-bold;
+            font-family: $--unnamed-font-family-exo-2;
+            font-size: $--unnamed-font-size-16;
+            letter-spacing: $--unnamed-character-spacing-0;
+            color: $--unnamed-color-185fa2;
+        }
+
+        p {
+            font-weight: $--unnamed-font-weight-300;
+            font-family: $--unnamed-font-family-exo-2;
+            font-size: $--unnamed-font-size-16;
+            letter-spacing: $--unnamed-character-spacing-0;
+            color: $--unnamed-color-185fa2;
+        }
     }
     &-regione{
         transition: all 500ms ease-in-out;
@@ -19,7 +46,8 @@
         position: absolute;
         background-color: #155897;
         transform: skewY(355deg);
-        padding: 1em;
+        @include padding-top-bottom(null, 15, 15);
+        @include padding-left-right(null, 15, 15);
         color: #fff;
         &-email {
             text-decoration: underline;

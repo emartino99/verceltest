@@ -23,5 +23,5 @@ export interface ILocations {
 export interface IPosition {
     x: number;
     y: number;
-    selectedLocation: string | null;
+    selectedLocation: ILocations | undefined
 }

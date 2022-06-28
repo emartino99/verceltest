@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import useSWR from "swr";
 import { ILocations, IPosition } from "../models";
 import { getApi } from "./axios";
@@ -10,41 +10,33 @@ export const useLocationsHook = () => {
 
     const { data: locationsInfo, error: locationsInfoError } = useSWR<ILocations[], Error>(ENDPOINTS.locations, getApi('locations'));
 
-    const regionClickHandler = (element: Element) => {
+    const regionClickHandler = useCallback((element: Element) => {
+        if(!locationsInfo) return;
         const elementPosition = element.getBoundingClientRect();
         setPosition(prevState => {
-            if ( element.getAttribute('data-regione') === prevState?.selectedLocation ) return undefined;
-
-            return {
-                x: elementPosition.x + elementPosition.width - 170, 
-                y: elementPosition.y - 150, 
-                selectedLocation: element.getAttribute('data-regione')
+           return ( element.getAttribute('data-regione')?.toLowerCase() === prevState?.selectedLocation?.Title?.toLowerCase())
+            ? undefined
+            : {
+                x: elementPosition.x + elementPosition.width + 100,
+                y: elementPosition.y - 250,
+                selectedLocation: locationsInfo?.find(regionToFilter => regionToFilter.Title.toLowerCase() === element.getAttribute('data-regione')?.toLowerCase())
             }
         })
-    };
-    
+    }, [!!locationsInfo]);
+ 
     useEffect(() => {
+        if(!locationsInfo) return;
+
         const svgPaths = document.querySelectorAll('[data-regione]');
-        svgPaths.forEach((element) => element.addEventListener('click', () => regionClickHandler(element)));
+        svgPaths.forEach((element) => element.addEventListener('click', () => regionClickHandler(element), false));
 
         return () => {
             svgPaths.forEach((element) => element.removeEventListener('click', () => regionClickHandler(element)));
         };
-    }, []);
-
-    const selectedLocation = useMemo(() => 
-        position && locationsInfo?.find(regionToFilter => regionToFilter.Title.toLowerCase() === position?.selectedLocation?.toLowerCase())
-    ,[locationsInfo, position?.selectedLocation]);
-    
-    //   useEffect(() => {
-    //     const selectedColor:string = rotate ? '#F07A3C' : '#002950';
-    //     const elissi = document.querySelectorAll('[data-name^=Ellisse]');
-    //     elissi.forEach(elisse => elisse.setAttribute('fill', selectedColor));
-    //   }, [rotate]);
+    }, [!!locationsInfo, regionClickHandler]);
 
     return {
-        error: locationsInfoError,
         position,
-        selectedLocation
+        error: locationsInfoError
     }
 }

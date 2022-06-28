@@ -2,20 +2,19 @@ import { ILocations, IPosition } from "../../../models";
 
 interface CardLocationsProps{
     position?: IPosition,
-    selectedLocation: ILocations
 }
 
-export function CardLocations({position, selectedLocation}: CardLocationsProps): JSX.Element {
+export function CardLocations({ position }: CardLocationsProps): JSX.Element {
 
-    const sendEmailTo = (email:string) => window.open(`mailto:${email}`, '_blank');
+    const sendEmailTo = (email:string | undefined) => window.open(`mailto:${email}`, '_blank');
     
     return <div 
-            className='grid template-col-autofill locations-card'
+            className='locations-card'
             style={{top: position?.y, left: position?.x}}
         >
-            <p>{selectedLocation.Indirizzo_x0020_sede}</p>
-            <p>{selectedLocation.Telefono}</p>
-            <p>{selectedLocation.Fax}</p>
-            <p className='pointer locations-card-email' onClick={() => sendEmailTo(selectedLocation.Email)}>{selectedLocation.Email}</p>
+            <p>{position?.selectedLocation?.Indirizzo_x0020_sede}</p>
+            <p>{position?.selectedLocation?.Telefono}</p>
+            <p>{position?.selectedLocation?.Fax}</p>
+            <p className='pointer locations-card-email' onClick={() => sendEmailTo(position?.selectedLocation?.Email)}>{position?.selectedLocation?.Email}</p>
     </div>
 }

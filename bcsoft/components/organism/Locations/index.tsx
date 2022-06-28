@@ -1,68 +1,39 @@
 import { useLocationsHook } from '../../../services';
-import { LocationsMap } from '../../../assets';
 import { CardLocations } from '../../molecule';
+import { Map } from '../../atoms';
 
 export function Locations() {
 
-   //todo spostare l'svg ed importarlo
-   //todo mettere la maggioraprte della logica dentro un custom hook.
-   //todo effettuo prima il controllo legato a data-regione. se è positivo creo l'oggetto altrimenti è undefined.
-   //todo il filter.map dentro il jsx deve diventare uno useMemo.
-   //todo inserire html semantico
-   //todo sistemare il css.
-   //la card è una molecola, spostare tutto dentro la cartella molecule e importare nel jsx.
-
   const { 
     position,
-    selectedLocation,
     error
 } = useLocationsHook();
 
   const {
-    rotate,
     backgroundColor,
     title,
-    titleColor,
-    titleSize,
-    titleWeight,
+    secondaryTitle,
     description,
-    descriptionColor,
-    descriptionSize,
-    descriptionWeight,
   } = {
-    rotate: false,
     backgroundColor: '#fff',
-    title: 'todo',
-    titleColor: 'red',
-    titleSize: 1.4,
-    titleWeight: 'normal',
-    description: 'todo',
-    descriptionColor: 'blue',
-    descriptionSize: 1,
-    descriptionWeight: 'normal',
+    title: 'I nostri consulenti',
+    secondaryTitle: 'Copriamo quasi tutto il territorio nazionale',
+    description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo con",
   };
 
   return(
     <section
       className='locations span-1-12'
-      style={{backgroundColor: backgroundColor, flexDirection: rotate ? 'row-reverse' : 'row'}}
+      style={{ backgroundColor: backgroundColor }}
     >
-      <LocationsMap className="pointer" width="550" height="500" />
-      <div>
-        <h1 
-          className={`${titleWeight}`} 
-          style={{ color: titleColor, fontSize: titleSize.toString() + "em" }} 
-          dangerouslySetInnerHTML={{  __html: title }}>
-        </h1>
-        <span
-          className={`${descriptionWeight}`}
-          style={{ color:descriptionColor, fontSize: descriptionSize.toString() + "em" }} 
-          dangerouslySetInnerHTML={{  __html: description }}>
-        </span>
+      <Map />
+      <div className='locations-text'>
+        <h1 dangerouslySetInnerHTML={{  __html: title }}></h1>
+        <span dangerouslySetInnerHTML={{  __html: secondaryTitle }}></span>
+        <p dangerouslySetInnerHTML={{  __html: description }}></p>
       </div>
-
       {
-        selectedLocation && <CardLocations position={position} selectedLocation={selectedLocation} />
+        position?.selectedLocation && <CardLocations position={position} />
       }
 
     </section>
