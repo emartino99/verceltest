@@ -1,6 +1,6 @@
 import { iCoreBusiness } from "../../../models";
 import { getRelativePath } from "../../../utils";
-import { CardLine, ImageResources } from "../../atoms";
+import { CardLine, CardIcon } from "../../atoms";
 
 interface CardBuisinessProps{
     item: iCoreBusiness,
@@ -19,9 +19,9 @@ export function CardBuisiness({item, i}: CardBuisinessProps): JSX.Element {
         <div id={`core${i}`} className='core'>
             <CardLine id={`core${i}`} />
             <div className='business-card_content'>
-                <ImageResources title={item.Title} relativePath={getRelativePath(item.CardImg)} />
-                <header>
-                    <h4 className='cardTitle business-card_title'>{item.Title}</h4>
+                <CardIcon title={item.Title} relativePath={getRelativePath(item.CardImg)} width={64}/>
+                <header className="business-card_header">
+                    <h1 className='cardTitle business-card_title'>{item.Title}</h1>
                     <div className='cardSubtitle '>
                         <p
                             className='sectionSubtitle business-card_subtitle'

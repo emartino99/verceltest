@@ -6,12 +6,11 @@ import { ENDPOINTS } from "./endpoints";
 
 export const useLocationsHook = () => {
 
-    const [position, setPosition] = useState<IPosition | undefined>(undefined);
+    const [position, setPosition] = useState<IPosition>();
 
     const { data: locationsInfo, error: locationsInfoError } = useSWR<ILocations[], Error>(ENDPOINTS.locations, getApi('locations'));
 
     const regionClickHandler = useCallback((element: Element) => {
-        if(!locationsInfo) return;
         const elementPosition = element.getBoundingClientRect();
         setPosition(prevState => {
            return ( element.getAttribute('data-regione')?.toLowerCase() === prevState?.selectedLocation?.Title?.toLowerCase())
@@ -22,6 +21,7 @@ export const useLocationsHook = () => {
                 selectedLocation: locationsInfo?.find(regionToFilter => regionToFilter.Title.toLowerCase() === element.getAttribute('data-regione')?.toLowerCase())
             }
         })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [!!locationsInfo]);
  
     useEffect(() => {
@@ -33,6 +33,7 @@ export const useLocationsHook = () => {
         return () => {
             svgPaths.forEach((element) => element.removeEventListener('click', () => regionClickHandler(element)));
         };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [!!locationsInfo, regionClickHandler]);
 
     return {
