@@ -16,7 +16,6 @@ const Home = ( ) => {
         <Hero />
         <Banner />
         <Business />
-        <Locations /> 
       </main>
 
     </>

@@ -16,3 +16,17 @@ export interface IQuickLinks {
     ComplianceAssetId?: any;
     QuickLinkUrl: string;
 }
+export interface IHeroMedia {
+    
+    Id: number; 
+    ID: number;
+    ContentTypeId: string;
+    Title: string; 
+    OData__UIVersionString: string;
+    Attachments: boolean;
+    GUID: string;
+    ComplianceAssetId?: any;
+    ImgURL: string;
+    MediaURL?: any;
+}
+ 

@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { FormEventHandler, useCallback } from "react";
 import {
   FacebookLogo,
@@ -8,9 +9,10 @@ import { useFooterLinkHook } from "../../../services";
 
 export const Footer = () => {
 
+  const router = useRouter();
   const { footerLinks, error } = useFooterLinkHook();
 
-  const redirectHandler = (urlToRedirectTo: string) => window.open(urlToRedirectTo, '_blank');
+  const redirectHandler = (urlToRedirectTo: string) => router.push(urlToRedirectTo);
 
   const handleSubmit: FormEventHandler = useCallback((e) => {
     e.preventDefault()
