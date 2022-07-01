@@ -1,19 +1,20 @@
-import { iCoreBusiness } from "../../../models";
+import { useRouter } from "next/router";
+import { iCoreBusiness, iCoreBusinessCard } from "../../../models";
 import { getRelativePath } from "../../../utils";
 import { CardLine, CardIcon } from "../../atoms";
 
 interface CardBuisinessProps{
-    item: iCoreBusiness,
+    item: iCoreBusinessCard,
     i: number
 }
 export function CardBuisiness({item, i}: CardBuisinessProps): JSX.Element {
-
+    const router = useRouter();
     const { 
         cardTextSize
     } = { 
         cardTextSize: 1,
     };
-    const newsUrlHandler = (url: string) => window.open(url, '_self');
+    const newsUrlHandler = (url: string) => router.push(url);
     
     return <article key={item.GUID} className='business-card'>
         <div id={`core${i}`} className='core'>

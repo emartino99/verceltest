@@ -1,7 +1,9 @@
+import { useRouter } from "next/router";
 
 
 export function Banner() {
 
+    const router = useRouter();
     const {
         backgroundColor,
         adsBannerText,
@@ -22,7 +24,7 @@ export function Banner() {
         adsBannerLinkUrl: 'light-blue'
     };
 
-    const urlHandler = (url: string) => window.open(url, '_blank');
+    const urlHandler = (url: string) => router.push(url);
 
     return (
         <section

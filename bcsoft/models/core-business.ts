@@ -1,4 +1,4 @@
-export interface iCoreBusiness {
+export interface iCoreBusinessCard {
     FileSystemObjectType: number;
     Id: number;
     ServerRedirectedEmbedUri?: any;
@@ -19,7 +19,7 @@ export interface iCoreBusiness {
     CardButtonText: string;
     CardButtonRedirectURL: string;
 }
-export interface ICoreBusinessAsset extends iCoreBusiness {
+export interface ICoreBusinessAsset extends iCoreBusinessCard {
     CardImg: string;
 }
 export interface ICardIMG {
@@ -30,4 +30,12 @@ export interface ICardIMG {
     fieldId: string;
     serverRelativeUrl: string;
     id: string;
+}
+export interface iCoreBusiness {
+    FileSystemObjectType: number;
+    Id: number;
+    ID: number;
+    Title: string;
+    Subtitle: string;
+    
 }
