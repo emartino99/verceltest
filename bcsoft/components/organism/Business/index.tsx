@@ -1,10 +1,4 @@
-import Image from "next/image";
-import { useCallback, useEffect, useMemo } from "react";
-import { iCoreBusiness } from "../../../models";
-import { useBusinessHook } from "../../../services";
-import { getRelativePath, parseImgJson } from "../../../utils";
-import { CardLine } from "../../atoms";
-import { ImageResources } from "../../atoms/ImageResources";
+import { useBusinessHook } from "../../../services"; 
 import { CardBuisiness } from "../../molecule";
 
 export function Business() {

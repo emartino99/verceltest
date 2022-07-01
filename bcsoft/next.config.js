@@ -8,7 +8,7 @@ const nextConfig = {
     includePaths: [path.join(__dirname, 'styles')],
   },
   images: {
-    domains: ['bcsoftsrl.sharepoint.com'],
+    domains: ['bcsoftcorporatesite.azurewebsites.net'],
   },
   webpack(config) {
     return {

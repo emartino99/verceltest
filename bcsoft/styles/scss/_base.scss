@@ -38,15 +38,18 @@ body {
   margin: 0;
   padding: 0;
 }
-ul{
+ul {
   margin: 0;
   padding: 0;
-  & > li{
+  & > li {
     list-style: none;
-    & > a{
+    & > a {
       text-decoration: none;
     }
   }
+}
+p {
+  margin: 0;
 }
 a.disabled {
   pointer-events: none;
@@ -75,25 +78,25 @@ a.disabled {
 }
 
 .cardTitle {
-  font-family: "Exo-bold";
-  width: 100%;
-  color: #001f3c;
+  font: normal normal bold 22px/33px "Exo-regular";
+  letter-spacing: $--unnamed-character-spacing-0;
+  color: $--unnamed-color-001f3c;
 }
 
-div.cardIcon-container {
-    background-color: #fff;
-    padding: 20px;
-    position: absolute;
-    top: 13px;
-    left: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+// div.cardIcon-container {
+//     background-color: #fff;
+//     padding: 20px;
+//     position: absolute;
+//     top: -5%;
+//     left: 50%;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
 
-img.cardIcon {
-  height: 50px;
-}
+// img.cardIcon {
+//   height: 50px;
+// }
 
 a.btn.btnOutline,
 button.btn.btnOutline {
@@ -104,7 +107,7 @@ button.btn.btnOutline {
   padding-right: 1.2em;
   font-family: "Exo-regular";
 }
-svg{
+svg {
   // min-width: 200px;
   image-rendering: -webkit-optimize-contrast;
   &.cardBorder {
@@ -114,7 +117,6 @@ svg{
     pointer-events: none !important;
   }
 }
-
 
 img {
   width: 100%;
@@ -144,27 +146,27 @@ video {
 
 .swiper-button-prev,
 .swiper-button-next {
-    background-color: #0F4B8C;
-    color: #fff !important;
-    clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
-    width: 35px !important;
-    height: 45px !important;
+  background-color: #0f4b8c;
+  color: #fff !important;
+  clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
+  width: 35px !important;
+  height: 45px !important;
 }
 
 .swiper-button-prev {
-    left: 0px !important;
+  left: 0px !important;
 }
 
 .swiper-button-next {
-    right: 0px !important;
+  right: 0px !important;
 }
 
 .swiper-button-next:after {
-    font-size: 25px !important;
+  font-size: 25px !important;
 }
 
 .swiper-button-prev:after {
-    font-size: 25px !important;
+  font-size: 25px !important;
 }
 
 /* workbench 100% width */
@@ -172,6 +174,6 @@ video {
 //   .CanvasComponent.LCS .CanvasZone {
 //     max-width: 100% !important;
 // }
-.pointer{
+.pointer {
   cursor: pointer;
 }

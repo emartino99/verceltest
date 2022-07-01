@@ -1,3 +1,3 @@
 export * from './CardLine';
-export * from './ImageResources';
+export * from './CardIcon';
 export * from './Map';
