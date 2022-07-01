@@ -34,7 +34,7 @@ export const ImageResources = ({title, relativePath}:ImageResourcesProps) => {
     // console.log("🚀 ~ file: ImageResources.tsx ~ line 8 ~ ImageResources ~ src", src)
   return (
       <div className='cardIcon-container'>
-          {relativePath && <img src={`${process.env.NEXT_PUBLIC_BASE_URL_DOMAIN}${relativePath}`} alt={title}   className='' />}
+          {relativePath && <img src={`${process.env.NEXT_PUBLIC_BASE_URL_ASSETS}${relativePath}`} alt={title} className='' />}
       </div>
   )
 }

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { getLayout } from '../components/template';
-import { Banner, Locations, Business, Hero } from '../components/organism';
+import { Banner, Business, Hero, Partners } from '../components/organism';
  
 
 const Home = ( ) => {   
@@ -16,7 +16,7 @@ const Home = ( ) => {
         <Hero />
         <Banner />
         <Business />
-        <Locations /> 
+        <Partners /> 
       </main>
 
     </>
