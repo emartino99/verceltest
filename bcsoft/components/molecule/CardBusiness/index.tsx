@@ -19,7 +19,7 @@ export function CardBuisiness({item, i}: CardBuisinessProps): JSX.Element {
         <div id={`core${i}`} className='core'>
             <CardLine id={`core${i}`} />
             <div className='business-card_content'>
-                <CardIcon title={item.Title} relativePath={getRelativePath(item.CardImg)} width={64}/>
+                <CardIcon title={item.Title} relativePath={getRelativePath(item.CardImg)}  />
                 <header className="business-card_header">
                     <h1 className='cardTitle business-card_title'>{item.Title}</h1>
                     <div className='cardSubtitle '>
