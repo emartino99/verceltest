@@ -5,3 +5,4 @@ export * from './business';
 export * from './srcAssets';
 export * from './locations';
 export * from './partners';
+export * from './clients';

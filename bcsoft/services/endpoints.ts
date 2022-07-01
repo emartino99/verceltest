@@ -8,6 +8,7 @@ export const ENDPOINTS = {
     businessCard: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('coreBusinessCards')/items`,
     locations: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('bcSoftLocations')/items`,
     partners: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('partners')/items`,
+    clients: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('clientsPresentation')/items`,
 }
 
 export type ENDPOINTS_TYPE = keyof typeof ENDPOINTS;
