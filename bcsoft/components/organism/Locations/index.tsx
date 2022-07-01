@@ -39,5 +39,3 @@ export function Locations() {
     </section>
   );
 };
-
-export default Locations;

@@ -1,0 +1,44 @@
+.partners {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: $--unnamed-color-001f3c;
+    @include padding-top-bottom(null, 60, 60);
+
+    &-card{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 2rem;
+
+        &-title{
+            flex: 1;
+            display: flex;
+
+            h2 {
+                font-weight: $--unnamed-font-weight-bold;
+                font-family: $--unnamed-font-family-exo-2;
+                font-size: $--unnamed-font-size-40;
+                color: $--unnamed-color-ffffff;
+            }
+        }
+
+        &-image{
+            flex: 1;
+            display: flex;
+            background-color: transparent;
+
+            &-container {
+                background-color: #fff;
+                min-height: 240px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}
