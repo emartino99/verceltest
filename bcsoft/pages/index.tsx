@@ -10,7 +10,6 @@ import { axiosParser, parseResults } from '../utils';
 function Home({business, businessCard}: InferGetServerSidePropsType<typeof getServerSideProps> ){   
 
   const coreBusiness = parseResults<iCoreBusiness[]>(business) ;
-  console.log("🚀 ~ file: index.tsx ~ line 13 ~ Home ~ coreBusiness", coreBusiness)
   const coreBusinessCards = parseResults<iCoreBusinessCard[]>(businessCard);
  
   return (
