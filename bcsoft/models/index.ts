@@ -4,3 +4,4 @@ export * from './hero';
 export * from './core-business';
 export * from './locations';
 export * from './partners';
+export * from './sharepoint';

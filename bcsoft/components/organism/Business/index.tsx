@@ -1,9 +1,12 @@
-import { useBusinessHook } from "../../../services"; 
+import { iCoreBusiness, iCoreBusinessCard } from "../../../models";
 import { CardBuisiness } from "../../molecule";
 
-export function Business() {
+interface Business {
+    coreBusiness: iCoreBusiness[] | undefined ,
+    coreBusinessCards: iCoreBusinessCard[] | undefined
+}
+export function Business({ coreBusiness, coreBusinessCards }: Business ) {
 
-    const { coreBusiness, coreBusinessCards, error } = useBusinessHook(); 
     const { 
         Title, 
         Subtitle, 

@@ -1,5 +1,3 @@
-
-
 export interface Metadata {
     id: string;
     uri: string;
