@@ -5,6 +5,7 @@
     align-items: center;
     background-color: $--unnamed-color-001f3c;
     @include padding-top-bottom(null, 60, 60);
+    gap: 3rem;
 
     &-card{
         display: flex;
@@ -13,12 +14,15 @@
         align-items: center;
         width: 100%;
         gap: 2rem;
+        min-height: 240px;
 
         &-title{
             flex: 1;
             display: flex;
-            // TODO: correggere tag h2
-            h2 {
+            height: 100%;
+            align-items: center;
+
+            h1 {
                 font-weight: $--unnamed-font-weight-bold;
                 font-family: $--unnamed-font-family-exo-2;
                 font-size: $--unnamed-font-size-40;
@@ -29,16 +33,15 @@
         &-image{
             flex: 1;
             display: flex;
-            background-color: transparent;
+            height: 100%;
+            background-color: $--unnamed-color-ffffff;
+            align-items: center;
+            position: relative;
 
-            &-container {
-                background-color: #fff;
-                min-height: 240px;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            div {
+                margin: 1rem;
             }
+
         }
     }
 }

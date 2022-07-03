@@ -5,3 +5,4 @@ export * from './locations';
 export * from './partners';
 export * from './axios';
 export * from './endpoints';
+export * from './clients';
