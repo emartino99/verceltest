@@ -34,7 +34,7 @@ export function Hero() {
             {
                 !MediaURL 
                 && ImgURL
-                &&  <Image src={getMediaPath(ImgURL)} alt={Title} layout='fill' />
+                &&  <Image src={getMediaPath(ImgURL)} alt={Title} layout='fill' priority/>
             }
 
             {
