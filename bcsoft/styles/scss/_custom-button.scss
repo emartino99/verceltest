@@ -1,0 +1,43 @@
+.custom-button-container {
+    position: relative;
+
+    .custom-main-button {
+        height: 40px;
+        width: 198px;
+        z-index: 1;
+        border: 1px solid #001f3c;
+        font-weight: normal;
+        font-family: $--unnamed-font-family-exo-2;
+        font-size: $--unnamed-font-size-14;
+    }
+
+    .custom-inner-shadow {
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        transform: translate(7px, -7px);
+        position: absolute;
+        z-index: -1;
+        display: none !important;
+        cursor: default !important;
+    }
+
+    .custom-outer-shadow {
+        height: 100%;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        transform: translate(-7px, 7px);
+        position: absolute;
+        z-index: -1;
+        display: none !important;
+        cursor: default !important;
+    }
+
+}
+
+.custom-main-button:hover + .custom-inner-shadow,
+.custom-main-button:hover + .custom-inner-shadow + .custom-outer-shadow {
+    display: flex !important;
+}
