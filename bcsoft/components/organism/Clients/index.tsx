@@ -21,6 +21,7 @@ export function Clients({clients, clientsMainSettings}: ClientsProps) {
         {clients?.map((item, i) => {
           return (
             <div 
+              key={item.ID}
               className='clients-container-content' 
               style={{ animation: `fadeIn ${3 + 2 + i}s`, WebkitAnimation: `fadeIn ${3 + 2 +  i}s`, MozAnimation: `fadeIn ${3 + 2 + i}s` }} 
             >

@@ -46,10 +46,7 @@ Home.getLayout = getLayout
 
 export const getServerSideProps = async () => {
   
-  const headers = await getHeader();
-  // page - id -
-
-  // => configurazione -> lists =>   [0] => endpoint - nome/component value/enpoint
+  const headers = await getHeader(); 
   const [
     businessResponse, 
     businessCardResponse,
