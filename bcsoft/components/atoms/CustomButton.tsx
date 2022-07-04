@@ -34,12 +34,12 @@ export const CustomButton = ({
         </button>
         <button 
             className='custom-inner-shadow'
-            style={{border: `2px solid ${innerShadowrColor}`, backgroundColor: secondaryBackgroundColor ? innerShadowrColor : ''}}
+            style={{border: `2px solid ${innerShadowrColor}`, backgroundColor: secondaryBackgroundColor ? innerShadowrColor : 'none'}}
         >
         </button>
         <button 
             className='custom-outer-shadow'
-            style={{border: `2px solid ${outerShadowColor}`, backgroundColor: secondaryBackgroundColor ? outerShadowColor : ''}}
+            style={{border: `2px solid ${outerShadowColor}`, backgroundColor: secondaryBackgroundColor ? outerShadowColor : 'none'}}
         >
         </button>
     </div>
