@@ -1,12 +1,11 @@
-import { usePartnersHook } from '../../../services';
 import { CustomImage } from '../../atoms/CustomImage';
+import { IPartners } from "../../../models";
 
-export function Partners() {
+interface PartnesProps {
+    partners: IPartners[] | undefined;
+};
 
-    const { 
-        partners,
-        error
-    } = usePartnersHook();
+export function Partners({partners}: PartnesProps) {
 
     return (
         <section className='partners span-1-12'>
