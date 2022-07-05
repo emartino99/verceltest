@@ -1,0 +1,61 @@
+.courses {
+  background-color: #C9E2FF;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  min-height: 380px;
+  display: flex;
+  flex-flow: column nowrap;
+  @include padding-top-bottom(null, 50, 50);
+  position: relative;
+
+  &-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 900px;
+
+    h1 {
+      color: $--unnamed-color-002950;
+      font-weight: $--unnamed-font-weight-bold;
+      font-family: $--unnamed-font-family-exo-2;
+      font-size: $--unnamed-font-size-40;
+    }
+
+    p {
+      color: $--unnamed-color-001f3c;
+      font-weight: $--unnamed-font-weight-300;
+      font-family: $--unnamed-font-family-exo-2;
+      font-size: $--unnamed-font-size-16;
+    }
+
+  }
+
+  .custom-swiper-button {
+    background-color: #0F4B8C;
+    color: #fff !important;
+    clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
+    width: 35px !important;
+    height: 45px !important;
+  }
+
+  .custom-next-arrow,
+  .custom-prev-arrow {
+      border-right: 2px solid;
+      border-bottom: 2px solid;
+      height: 20px;
+      width: 20px;
+  }
+
+  .custom-next-arrow {
+      transform: rotate(-45deg);
+      margin-right: 10px;
+  }
+
+  .custom-prev-arrow {
+      transform: rotate(135deg);
+      margin-left: 10px;
+  }
+
+}

@@ -1,0 +1,86 @@
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: #0f4b8c;
+  color: #fff !important;
+  clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
+  width: 35px !important;
+  height: 45px !important;
+}
+
+.swiper-button-prev {
+  left: 0px !important;
+}
+
+.swiper-button-next {
+  right: 0px !important;
+}
+
+.swiper-button-next:after {
+  font-size: 25px !important;
+}
+
+.swiper-button-prev:after {
+  font-size: 25px !important;
+}
+
+/*swiper*/
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 150px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-container {
+    height: 250px;
+    width: 75%;
+
+    .swiper-slide-container {
+      background-color: #fff;
+      height: 220px;
+      width: 220px;
+  
+      .swiper-slider-img-container {
+        height: 150px;
+      }
+  
+    }
+
+  }
+
+  .custom-prev-button,
+  .custom-next-button {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-prev-button {
+    left: 0px;
+    transform: translateX(100%);
+}
+
+.custom-next-button {
+    right: 0px;
+    transform: translateX(-100%);
+}

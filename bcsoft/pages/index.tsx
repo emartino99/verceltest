@@ -1,8 +1,8 @@
 import { InferGetServerSidePropsType } from 'next';
 import Head from 'next/head';
 import { getLayout } from '../components/template';
-import { Banner, Business, Clients, Hero, Partners } from '../components/organism';
-import { SharepointResponse, iCoreBusiness, iCoreBusinessCard, IPartners, IClients, IClientsMainSettings } from '../models';
+import { Banner, Business, Clients, Courses, Hero, Partners } from '../components/organism';
+import { SharepointResponse, iCoreBusiness, iCoreBusinessCard, IPartners, IClients, IClientsMainSettings, ICourses, ICoursesMainSettings } from '../models';
 import { ENDPOINTS, get } from '../services';
 import { getHeader } from './api/auth';
 import { axiosParser, parseResults } from '../utils';
@@ -12,7 +12,9 @@ function Home({
   businessCard,
   partnersProps,
   clientsProps,
-  clientsMainSettingsProps
+  clientsMainSettingsProps,
+  coursesProps,
+  coursesMainSettingsProps
 }: InferGetServerSidePropsType<typeof getServerSideProps> ){   
 
   const coreBusiness = parseResults<iCoreBusiness[]>(business) ;
@@ -20,6 +22,8 @@ function Home({
   const partners = parseResults<IPartners[]>(partnersProps);
   const clients = parseResults<IClients[]>(clientsProps);
   const clientsMainSettings = parseResults<IClientsMainSettings[]>(clientsMainSettingsProps);
+  const courses = parseResults<ICourses[]>(coursesProps);
+  const coursesMainSettings = parseResults<ICoursesMainSettings[]>(coursesMainSettingsProps);
  
   return (
     <>
@@ -34,6 +38,7 @@ function Home({
         <Business coreBusiness={coreBusiness} coreBusinessCards={coreBusinessCards} />
         <Partners partners={partners} />
         <Clients clients={clients} clientsMainSettings={clientsMainSettings} />
+        <Courses courses={courses} coursesMainSettings={coursesMainSettings} />
       </main>
     </>
   )
@@ -52,13 +57,17 @@ export const getServerSideProps = async () => {
     businessCardResponse,
     partnersResponse,
     clientsResponse,
-    clientsMainSettingsResponse
+    clientsMainSettingsResponse,
+    coursesResponse,
+    coursesMainSettingsResponse
   ] = await Promise.allSettled([
     get<SharepointResponse<iCoreBusiness[]>>(ENDPOINTS.business, { headers }),
     get<SharepointResponse<iCoreBusinessCard[]>>(ENDPOINTS.businessCard, { headers }),
     get<SharepointResponse<IPartners[]>>(ENDPOINTS.partners, { headers }),
     get<SharepointResponse<IClients[]>>(ENDPOINTS.clients, { headers }),
     get<SharepointResponse<IClientsMainSettings[]>>(ENDPOINTS.clientsMainSettings, { headers }),
+    get<SharepointResponse<ICourses[]>>(ENDPOINTS.courses, { headers }),
+    get<SharepointResponse<ICoursesMainSettings[]>>(ENDPOINTS.coursesMainSettings, { headers }),
   ])
 
   return {
@@ -68,6 +77,8 @@ export const getServerSideProps = async () => {
       partnersProps: axiosParser(partnersResponse),
       clientsProps: axiosParser(clientsResponse),
       clientsMainSettingsProps: axiosParser(clientsMainSettingsResponse),
+      coursesProps: axiosParser(coursesResponse),
+      coursesMainSettingsProps: axiosParser(coursesMainSettingsResponse),
     }
   }
 }

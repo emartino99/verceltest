@@ -6,3 +6,4 @@ export * from './Business';
 export * from './Locations';
 export * from './Partners';
 export * from './Clients';
+export * from './Courses';

@@ -132,48 +132,6 @@ video {
   width: 100%;
 }
 
-/* global swiper css */
-.swiper {
-  width: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-}
-
-.swiper-button-prev,
-.swiper-button-next {
-  background-color: #0f4b8c;
-  color: #fff !important;
-  clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
-  width: 35px !important;
-  height: 45px !important;
-}
-
-.swiper-button-prev {
-  left: 0px !important;
-}
-
-.swiper-button-next {
-  right: 0px !important;
-}
-
-.swiper-button-next:after {
-  font-size: 25px !important;
-}
-
-.swiper-button-prev:after {
-  font-size: 25px !important;
-}
-
-/* workbench 100% width */
-// #workbenchPageContent,
-//   .CanvasComponent.LCS .CanvasZone {
-//     max-width: 100% !important;
-// }
 .pointer {
   cursor: pointer;
 }

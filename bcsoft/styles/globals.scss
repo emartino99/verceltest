@@ -1,3 +1,6 @@
+@import '../node_modules/swiper/swiper.scss';
+@import '../node_modules/swiper/modules/effect-coverflow/effect-coverflow.scss';
+@import '../node_modules/swiper/modules/navigation/navigation.scss';
 @import './design_bcsoft';
 @import './scss/utils/breakpoints';
 @import './scss/utils/functions';
@@ -13,3 +16,5 @@
 @import './scss/partners';
 @import './scss/clients';
 @import './scss/custom-button';
+@import './scss/courses';
+@import './scss/swiper';
