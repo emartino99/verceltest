@@ -68,7 +68,7 @@ export const Courses = ({ courses, coursesMainSettings }: Coursesprops) => {
                 <SwiperSlide key={currentCorso.ID}>
                     <div className="swiper-slide-container">
                         <div className="swiper-slider-img-container">
-                            <Image src={getMediaPath(currentCorso.CorsoImg)} alt={currentCorso.Title} objectFit='scale-down' layout="fill" />
+                            <Image src={getMediaPath(currentCorso.CorsoImg)} alt={currentCorso.Title} objectFit='scale-down' layout="fill" priority={true} />
                         </div>
                     </div> 
                 </SwiperSlide>
