@@ -35,24 +35,10 @@ export const Courses = ({ courses, coursesMainSettings }: Coursesprops) => {
             effect={"coverflow"}
             grabCursor={true}
             centeredSlides={true}
-            slidesPerView={4}
-            initialSlide={2}
+            slidesPerView='auto'
+            initialSlide={2} 
             loop={true}
-            loopFillGroupWithBlank={true}
-            breakpoints={{
-                380: {
-                    slidesPerView: 1,
-                },
-                800: {
-                    slidesPerView: 2,
-                },
-                1280: {
-                    slidesPerView: 3,
-                },
-                1400: {
-                    slidesPerView: 4,
-                },
-              }}
+            loopFillGroupWithBlank={true} 
             coverflowEffect={{
                 rotate: 25,
                 stretch: 0,
