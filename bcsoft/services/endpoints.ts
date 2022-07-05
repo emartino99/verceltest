@@ -10,6 +10,8 @@ export const ENDPOINTS = {
     partners: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('partners')/items`,
     clients: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('clientsPresentation')/items`,
     clientsMainSettings: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('clientsPresentationMainSettings')/items`,
+    courses: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('corsi')/items`,
+    coursesMainSettings: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('corsiMainSettings')/items`,
 }
 
 export type ENDPOINTS_TYPE = keyof typeof ENDPOINTS;
