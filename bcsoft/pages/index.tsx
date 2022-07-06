@@ -1,8 +1,8 @@
 import { InferGetServerSidePropsType } from 'next';
 import Head from 'next/head';
 import { getLayout } from '../components/template';
-import { Banner, Business, Clients, Courses, Hero, Partners } from '../components/organism';
-import { SharepointResponse, iCoreBusiness, iCoreBusinessCard, IPartners, IClients, IClientsMainSettings, ICourses, ICoursesMainSettings } from '../models';
+import { Banner, Business, Clients, Courses, Hero, News, Partners } from '../components/organism';
+import { SharepointResponse, iCoreBusiness, iCoreBusinessCard, IPartners, IClients, IClientsMainSettings, ICourses, ICoursesMainSettings, INews } from '../models';
 import { ENDPOINTS, get } from '../services';
 import { getHeader } from './api/auth';
 import { axiosParser, parseResults } from '../utils';
@@ -13,11 +13,12 @@ function Home({
   partnersProps,
   clientsProps,
   clientsMainSettingsProps,
-  test,
+  // test,
   coursesProps,
-  coursesMainSettingsProps
+  coursesMainSettingsProps,
+  newsProps
 }: InferGetServerSidePropsType<typeof getServerSideProps> ){   
-  console.log("🚀 ~ file: index.tsx ~ line 57 ~ getServerSideProps ~ test", test)
+  // console.log("🚀 ~ file: index.tsx ~ line 57 ~ getServerSideProps ~ test", test)
   const coreBusiness = parseResults<iCoreBusiness[]>(business) ;
   const coreBusinessCards = parseResults<iCoreBusinessCard[]>(businessCard);
   const partners = parseResults<IPartners[]>(partnersProps);
@@ -25,6 +26,7 @@ function Home({
   const clientsMainSettings = parseResults<IClientsMainSettings[]>(clientsMainSettingsProps);
   const courses = parseResults<ICourses[]>(coursesProps);
   const coursesMainSettings = parseResults<ICoursesMainSettings[]>(coursesMainSettingsProps);
+  const news = parseResults<INews[]>(newsProps);
  
   return (
     <>
@@ -45,6 +47,7 @@ function Home({
         <Partners partners={partners} />
         <Clients clients={clients} clientsMainSettings={clientsMainSettings} />
         <Courses courses={courses} coursesMainSettings={coursesMainSettings} />
+        <News news={news}/>
       </main>
     </>
   )
@@ -64,18 +67,20 @@ export const getServerSideProps = async () => {
     partnersResponse,
     clientsResponse,
     clientsMainSettingsResponse,
-    test,
+    // test,
     coursesResponse,
-    coursesMainSettingsResponse
+    coursesMainSettingsResponse,
+    newsResponse
   ] = await Promise.allSettled([
     get<SharepointResponse<iCoreBusiness[]>>(ENDPOINTS.business, { headers }),
     get<SharepointResponse<iCoreBusinessCard[]>>(ENDPOINTS.businessCard, { headers }),
     get<SharepointResponse<IPartners[]>>(ENDPOINTS.partners, { headers }),
     get<SharepointResponse<IClients[]>>(ENDPOINTS.clients, { headers }),
     get<SharepointResponse<IClientsMainSettings[]>>(ENDPOINTS.clientsMainSettings, { headers }),
-    get<SharepointResponse<any[]>>(`https://bcsoftsrl.sharepoint.com/sites/BCSoft.net.test/_api/Web/Lists(guid'e94cfae5-f8a3-4713-a0fb-76dc70e9655a')/Items?$filter=PromotedState eq 2&$select=Title,Description,BannerImageUrl,FirstPublishedDate,FileRef`, { headers }),
+    // get<SharepointResponse<any[]>>(`https://bcsoftsrl.sharepoint.com/sites/BCSoft.net.test/_api/Web/Lists(guid'e94cfae5-f8a3-4713-a0fb-76dc70e9655a')/Items?$filter=PromotedState eq 2&$select=Title,Description,BannerImageUrl,FirstPublishedDate,FileRef`, { headers }),
     get<SharepointResponse<ICourses[]>>(ENDPOINTS.courses, { headers }),
     get<SharepointResponse<ICoursesMainSettings[]>>(ENDPOINTS.coursesMainSettings, { headers }),
+    get<SharepointResponse<INews[]>>(ENDPOINTS.news, { headers }),
   ])
   {/* 
           [
@@ -91,9 +96,10 @@ export const getServerSideProps = async () => {
       partnersProps: axiosParser(partnersResponse),
       clientsProps: axiosParser(clientsResponse),
       clientsMainSettingsProps: axiosParser(clientsMainSettingsResponse),
-      test: axiosParser(test),
+      // test: axiosParser(test),
       coursesProps: axiosParser(coursesResponse),
       coursesMainSettingsProps: axiosParser(coursesMainSettingsResponse),
+      newsProps: axiosParser(newsResponse),
     }
   }
 }

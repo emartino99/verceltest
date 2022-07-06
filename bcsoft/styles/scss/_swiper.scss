@@ -34,7 +34,7 @@
   background-position: center;
   background-size: cover;
   width: 300px;
-  height: 150px;
+  // height: 150px;
 }
 
 .swiper-slide img {
@@ -49,7 +49,7 @@
 }
 
 .swiper-container {
-    height: 250px;
+    // height: 250px;
     width: 75%;
 
     .swiper-slide-container {
@@ -68,21 +68,25 @@
   }
 
   .custom-prev-button,
-  .custom-next-button {
+  .custom-next-button,
+  .custom-news-prev-button,
+  .custom-news-next-button {
     position: absolute;
     top: 50%;
     z-index: 10;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+  }
 
-.custom-prev-button {
+  .custom-prev-button,
+  .custom-news-prev-button {
     left: 0px;
     transform: translateX(100%);
-}
+  }
 
-.custom-next-button {
-    right: 0px;
-    transform: translateX(-100%);
-}
+  .custom-next-button,
+  .custom-news-next-button {
+      right: 0px;
+      transform: translateX(-100%);
+  }
