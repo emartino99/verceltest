@@ -8,3 +8,4 @@ export * from './sharepoint';
 export * from './clients';
 export * from './courses';
 export * from './news';
+export * from './banner';

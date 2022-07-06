@@ -1,17 +1,23 @@
 .banner {
+    align-items: center;
+    background: #DAB00699 0% 0% no-repeat padding-box;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
     min-height: 50px;
     text-align: center;
-    background: #DAB00699 0% 0% no-repeat padding-box;
-    &-banner-text {
-        font-size: 16px;
-        font-weight: 400;
-        margin-right: 25px;
+    &-text {
+        color: $--unnamed-color-185fa2;
+        font-family: $--unnamed-font-family-exo-2;
+        font-size: $--unnamed-font-size-16;
+        font-weight: $--unnamed-font-weight-400;
     }
-    &-banner-link-text {
+    &-link-text {
+        color: $--unnamed-color-001f3c;
+        font-family: $--unnamed-font-family-exo-2;
+        font-size: $--unnamed-font-size-16;
+        font-weight: $--unnamed-font-weight-bold;
         text-decoration: underline;
-        font-size: 16px;
-        font-weight: bold;
-        cursor: pointer;
     }
     &-banner-link-text:hover {
         opacity: 0.7;

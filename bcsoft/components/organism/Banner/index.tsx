@@ -1,28 +1,19 @@
 import { useRouter } from "next/router";
+import { IBanner } from "../../../models";
 
+interface BannerProps {
+    bannerInfos: IBanner[] | undefined;
+}
 
-export function Banner() {
+export function Banner({bannerInfos}: BannerProps) {
 
     const router = useRouter();
+
     const {
-        backgroundColor,
-        adsBannerText,
-        adsBannerTextWeight,
-        adsBannerTextColor,
-        adsBannerLinkText,
-        adsBannerLinkTextWeight,
-        adsBannerLinkTextColor,
-        adsBannerLinkUrl
-    } = {
-        backgroundColor: 'yellow',
-        adsBannerText: 'todo',
-        adsBannerTextWeight: 'normal',
-        adsBannerTextColor: 'black',
-        adsBannerLinkText: 'todo',
-        adsBannerLinkTextWeight: 'bold',
-        adsBannerLinkTextColor: 'blue',
-        adsBannerLinkUrl: 'light-blue'
-    };
+        Title,
+        LinkLabel,
+        LinkURL
+    } = bannerInfos?.[0] || {};
 
     const urlHandler = (url: string) => router.push(url);
 
@@ -30,15 +21,14 @@ export function Banner() {
         <section
             className='banner span-1-12'
         >
-            <span className={`banner-text ${adsBannerTextWeight}`} style={{ color: adsBannerTextColor }}>{adsBannerText}</span>
+            <span className='banner-text'>{Title}</span>
             {
-                adsBannerLinkUrl
-                && adsBannerLinkText
+                LinkURL
+                && LinkLabel
                 && <span
-                    className={`banner-link-text ${adsBannerLinkTextWeight}`}
-                    style={{ color: adsBannerLinkTextColor, }}
-                    onClick={() => urlHandler(adsBannerLinkUrl)}>
-                    {`>> ${adsBannerLinkText} <<`}
+                    className='banner-link-text pointer'
+                    onClick={() => urlHandler(LinkURL)}>
+                    {`>> ${LinkLabel} <<`}
                 </span>
             }
         </section>

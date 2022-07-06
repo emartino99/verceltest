@@ -2,12 +2,19 @@ import { InferGetServerSidePropsType } from 'next';
 import Head from 'next/head';
 import { getLayout } from '../components/template';
 import { Banner, Business, Clients, Courses, Hero, News, Partners } from '../components/organism';
-import { SharepointResponse, iCoreBusiness, iCoreBusinessCard, IPartners, IClients, IClientsMainSettings, ICourses, ICoursesMainSettings, INews } from '../models';
+import { 
+    SharepointResponse, iCoreBusiness, iCoreBusinessCard, IPartners, IClients,
+    IClientsMainSettings, ICourses, ICoursesMainSettings, INews, IBanner, IHeroMedia, 
+    IQuickLinks 
+} from '../models';
 import { ENDPOINTS, get } from '../services';
 import { getHeader } from './api/auth';
 import { axiosParser, parseResults } from '../utils';
 
 function Home({
+  heroProps,
+  heroLinksProps,
+  bannerProps,
   business,
   businessCard,
   partnersProps,
@@ -19,7 +26,10 @@ function Home({
   newsProps
 }: InferGetServerSidePropsType<typeof getServerSideProps> ){   
   // console.log("🚀 ~ file: index.tsx ~ line 57 ~ getServerSideProps ~ test", test)
-  const coreBusiness = parseResults<iCoreBusiness[]>(business) ;
+  const media = parseResults<IHeroMedia[]>(heroProps);
+  const quickLinks = parseResults<IQuickLinks[]>(heroLinksProps);
+  const bannerInfos = parseResults<IBanner[]>(bannerProps);
+  const coreBusiness = parseResults<iCoreBusiness[]>(business);
   const coreBusinessCards = parseResults<iCoreBusinessCard[]>(businessCard);
   const partners = parseResults<IPartners[]>(partnersProps);
   const clients = parseResults<IClients[]>(clientsProps);
@@ -41,8 +51,8 @@ function Home({
             {webpart: 'hero', endpoint: 'hero'}
           ]
         */}
-        <Hero />
-        <Banner />
+        <Hero media={media} quickLinks={quickLinks} />
+        <Banner bannerInfos={bannerInfos} />
         <Business coreBusiness={coreBusiness} coreBusinessCards={coreBusinessCards} />
         <Partners partners={partners} />
         <Clients clients={clients} clientsMainSettings={clientsMainSettings} />
@@ -62,6 +72,9 @@ export const getServerSideProps = async () => {
   
   const headers = await getHeader(); 
   const [
+    heroResponse,
+    heroLinksResponse,
+    bannerResponse,
     businessResponse, 
     businessCardResponse,
     partnersResponse,
@@ -72,6 +85,9 @@ export const getServerSideProps = async () => {
     coursesMainSettingsResponse,
     newsResponse
   ] = await Promise.allSettled([
+    get<SharepointResponse<IHeroMedia[]>>(ENDPOINTS.hero, { headers }),
+    get<SharepointResponse<IQuickLinks[]>>(ENDPOINTS.herolinks, { headers }),
+    get<SharepointResponse<IBanner[]>>(ENDPOINTS.banner, { headers }),
     get<SharepointResponse<iCoreBusiness[]>>(ENDPOINTS.business, { headers }),
     get<SharepointResponse<iCoreBusinessCard[]>>(ENDPOINTS.businessCard, { headers }),
     get<SharepointResponse<IPartners[]>>(ENDPOINTS.partners, { headers }),
@@ -91,6 +107,9 @@ export const getServerSideProps = async () => {
   // https://bcsoftsrl.sharepoint.com/sites/BCSoft.net.test/_api/Web/GetFileByServerRelativePath(decodedurl='/sites/BCSoft.net.test/SitePages/Academy.aspx')
   return {
     props: {
+      heroProps: axiosParser(heroResponse),
+      heroLinksProps: axiosParser(heroLinksResponse),
+      bannerProps: axiosParser(bannerResponse),
       business: axiosParser(businessResponse),
       businessCard: axiosParser(businessCardResponse),
       partnersProps: axiosParser(partnersResponse),

@@ -2,14 +2,16 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { CurvedArrow } from "../../../assets";
-import { IHeroMedia } from "../../../models";
-
-import { useHeroHooks } from "../../../services";
+import { IHeroMedia, IQuickLinks } from "../../../models";
 import { getMediaPath } from "../../../utils";
 
-export function Hero() {
+interface HeroProps {
+    quickLinks: IQuickLinks[] | undefined;
+    media: IHeroMedia[] | undefined;
+}
+
+export function Hero({quickLinks, media}: HeroProps) {
     const router = useRouter();
-    const { quickLinks, media, error } = useHeroHooks();
 
     const [showQuickLinksMenu, setShowQuickLinksMenu] = useState<boolean>(false);
     const quickLinksMenuHandler = () => setShowQuickLinksMenu(val => !val);

@@ -13,6 +13,7 @@ export const ENDPOINTS = {
     courses: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('corsi')/items`,
     coursesMainSettings: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('corsiMainSettings')/items`,
     news: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('news_list')/items`,
+    banner: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('banner')/items`,
 }
 
 export type ENDPOINTS_TYPE = keyof typeof ENDPOINTS;
