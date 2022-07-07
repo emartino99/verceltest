@@ -1,0 +1,191 @@
+.numbers {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    @include padding-top-bottom(null, 60, 60);
+    gap: 25px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: $--unnamed-color-ffffff;
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
+    min-height: 500px;
+
+    &-header {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+    
+        div {
+            max-width: 500px;
+
+            h1 {
+                font-weight: $--unnamed-font-weight-bold;
+                font-family: $--unnamed-font-family-exo-2;
+                font-size: $--unnamed-font-size-40;
+            }
+
+            span {
+                font-weight: $--unnamed-font-weight-300;
+                font-family: $--unnamed-font-family-exo-2;
+                font-size: $--unnamed-font-size-16;
+            }
+
+        }  
+    
+    }
+
+    &-wrapper {
+        position: relative;
+        padding: 10px;
+        min-height: 420px;
+        flex: 1 1 0;
+
+        .numbers-card {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            transition: .5s ease-in-out;
+
+            span {
+                font-size: 66px;
+                margin: 0;
+            }
+
+        }
+
+        .inner-card-2 span {
+            font-size: 44px;
+        }
+
+        .inner-card-0 {
+            z-index: 1;
+            width: 150px;
+            height: 150px; 
+            background-color: $--unnamed-color-001f3c;
+            top: 15px; 
+            left: 5px;
+            transform: perspective(800px) rotate3d(0, 1, 0, -20deg) skew(0, 5deg);
+        }
+        
+        .outer-card-0 {
+            width: 150px; 
+            height: 150px; 
+            background-color: $--unnamed-color-accfe5;
+            top: 22px;
+            left: 12px;
+            transform: perspective(800px) rotate3d(0, 1, 0, -20deg) skew(0, 5deg);
+        }
+        
+        .inner-card-0:hover,
+        .inner-card-0:hover + .outer-card-0 {
+            transform: scale(1.1) perspective(800px) rotate3d(0, 1, 0, -20deg) skew(0, 5deg);
+        }
+
+        .inner-card-1 {
+            z-index: 3;
+            width: 140px;
+            height: 140px;
+            background-color: $--unnamed-color-155897;
+            top: 145px;
+            left: 115px;
+            transform: perspective(800px) rotate3d(0, 1, 0, -20deg);
+        }
+        
+        .outer-card-1 {
+            z-index: 2;
+            width: 140px;
+            height: 140px;
+            background-color: $--unnamed-color-accfe5;
+            top: 152px;
+            left: 122px;
+            transform: perspective(800px) rotate3d(0, 1, 0, -20deg);
+        }
+        
+        .inner-card-1:hover,
+        .inner-card-1:hover + .outer-card-1 {
+            transform: scale(1.1) perspective(800px) rotate3d(0, 1, 0, -20deg);
+        }
+        
+        .inner-card-2 {
+            z-index: 5;
+            width: 100px;
+            height: 100px;
+            background-color: $--unnamed-color-aacef8;
+            top: 260px;
+            left: 45px;
+            transform: perspective(800px) rotate3d(0, 1, 0, -20deg);
+        }
+        
+        .outer-card-2 {
+            z-index: 4;
+            width: 100px;
+            height: 100px;
+            background-color: $--unnamed-color-2974b3;
+            top: 267px;
+            left: 52px;
+            transform: perspective(800px) rotate3d(0, 1, 0, -20deg);
+        }
+        
+        .inner-card-2:hover,
+        .inner-card-2:hover + .outer-card-2 {
+            transform: scale(1.1) perspective(800px) rotate3d(0, 1, 0, -20deg);
+        }
+        
+        .inner-card-3 {
+            z-index: 1;
+            width: 140px;
+            height: 140px;
+            background-color: $--unnamed-color-001f3c;
+            top: 265px;
+            left: 220px;
+            transform: perspective(800px) rotate3d(0, 1, 0, -20deg) skew(0, 5deg);
+        }
+        
+        .outer-card-3 {
+            width: 140px;
+            height: 140px;
+            background-color: $--unnamed-color-2974b3;
+            top: 272px;
+            left: 227px;
+            transform: perspective(800px) rotate3d(0, 1, 0, -20deg) skew(0, 5deg);
+        }
+        
+        .inner-card-3:hover,
+        .inner-card-3:hover + .outer-card-3 {
+            transform: scale(1.1) perspective(800px) rotate3d(0, 1, 0, -20deg) skew(0, 5deg);
+        }
+        
+        .inner-card-4 {
+            z-index: 1;
+            width: 140px;
+            height: 140px;
+            background-color: $--unnamed-color-155897;
+            top: 43px;
+            left: 267px;
+            transform: perspective(800px) rotate3d(0, 1, 0, -20deg) skew(0, 5deg);
+        }
+        
+        .outer-card-4 {
+            width: 140px;
+            height: 140px;
+            background-color: $--unnamed-color-001f3c;
+            top: 50px;
+            left: 260px;
+            transform: perspective(800px) rotate3d(0, 1, 0, -20deg) skew(0, 5deg);
+        }
+        
+        .inner-card-4:hover,
+        .inner-card-4:hover + .outer-card-4 {
+            transform: scale(1.1) perspective(800px) rotate3d(0, 1, 0, -20deg) skew(0, 5deg);
+        }
+
+    }
+
+}

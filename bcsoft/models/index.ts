@@ -9,3 +9,4 @@ export * from './clients';
 export * from './courses';
 export * from './news';
 export * from './banner';
+export * from './numbers';

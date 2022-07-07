@@ -8,3 +8,4 @@ export * from './Partners';
 export * from './Clients';
 export * from './Courses';
 export * from './News';
+export * from './Numbers';
