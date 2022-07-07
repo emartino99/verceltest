@@ -44,14 +44,14 @@ export const News = ({news}: NewsProps) => {
                             height={300} 
                             objectFit='cover' 
                             className='news-img' 
-                            onClick={() => console.log("routing to be implemented")}
+                            onClick={() => newsUrlHandler(currentNews.FileRef)}
                         />
                         <article className="news-carousel-info-container">
                           <span>{currentNews.Topic}</span>
                           <div className='news-carousel-info-title'>
                             <h1 
                                 className='pointer'
-                                onClick={() => console.log("routing to be implemented")}
+                                onClick={() => newsUrlHandler(currentNews.FileRef)}
                             >
                                 {currentNews.Title}
                             </h1>

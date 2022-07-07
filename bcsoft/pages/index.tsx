@@ -1,11 +1,13 @@
 import { InferGetServerSidePropsType } from 'next';
 import Head from 'next/head';
 import { getLayout } from '../components/template';
-import { Banner, Business, Clients, Courses, Hero, News, Partners } from '../components/organism';
+import { Banner, Business, Clients, Courses, Hero, Locations, News, Partners } from '../components/organism';
 import { 
     SharepointResponse, iCoreBusiness, iCoreBusinessCard, IPartners, IClients,
     IClientsMainSettings, ICourses, ICoursesMainSettings, INews, IBanner, IHeroMedia, 
-    IQuickLinks 
+    IQuickLinks, 
+    ILocations,
+    ILocationsMainSettings
 } from '../models';
 import { ENDPOINTS, get } from '../services';
 import { getHeader } from './api/auth';
@@ -23,7 +25,9 @@ function Home({
   // test,
   coursesProps,
   coursesMainSettingsProps,
-  newsProps
+  newsProps,
+  // locationsProps,
+  // locationsMainSettingsProps
 }: InferGetServerSidePropsType<typeof getServerSideProps> ){   
   // console.log("🚀 ~ file: index.tsx ~ line 57 ~ getServerSideProps ~ test", test)
   const media = parseResults<IHeroMedia[]>(heroProps);
@@ -37,6 +41,8 @@ function Home({
   const courses = parseResults<ICourses[]>(coursesProps);
   const coursesMainSettings = parseResults<ICoursesMainSettings[]>(coursesMainSettingsProps);
   const news = parseResults<INews[]>(newsProps);
+  // const locationsInfo = parseResults<ILocations[]>(locationsProps);
+  // const locationsMainSettings = parseResults<ILocationsMainSettings[]>(locationsMainSettingsProps);
  
   return (
     <>
@@ -58,6 +64,7 @@ function Home({
         <Clients clients={clients} clientsMainSettings={clientsMainSettings} />
         <Courses courses={courses} coursesMainSettings={coursesMainSettings} />
         <News news={news}/>
+        {/* <Locations locationsInfo={locationsInfo} locationsMainSettings={locationsMainSettings} /> */}
       </main>
     </>
   )
@@ -83,7 +90,9 @@ export const getServerSideProps = async () => {
     // test,
     coursesResponse,
     coursesMainSettingsResponse,
-    newsResponse
+    newsResponse,
+    // locationsResponse,
+    // locationsMainSettingsResponse
   ] = await Promise.allSettled([
     get<SharepointResponse<IHeroMedia[]>>(ENDPOINTS.hero, { headers }),
     get<SharepointResponse<IQuickLinks[]>>(ENDPOINTS.herolinks, { headers }),
@@ -97,6 +106,8 @@ export const getServerSideProps = async () => {
     get<SharepointResponse<ICourses[]>>(ENDPOINTS.courses, { headers }),
     get<SharepointResponse<ICoursesMainSettings[]>>(ENDPOINTS.coursesMainSettings, { headers }),
     get<SharepointResponse<INews[]>>(ENDPOINTS.news, { headers }),
+    // get<SharepointResponse<ILocations[]>>(ENDPOINTS.locations, { headers }),
+    // get<SharepointResponse<ILocationsMainSettings[]>>(ENDPOINTS.locationsMainSettings, { headers }),
   ])
   {/* 
           [
@@ -119,6 +130,8 @@ export const getServerSideProps = async () => {
       coursesProps: axiosParser(coursesResponse),
       coursesMainSettingsProps: axiosParser(coursesMainSettingsResponse),
       newsProps: axiosParser(newsResponse),
+      // locationsProps: axiosParser(locationsResponse),
+      // locationsMainSettingsProps: axiosParser(locationsMainSettingsResponse),
     }
   }
 }

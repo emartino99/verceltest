@@ -48,7 +48,8 @@
         transform: skewY(355deg);
         @include padding-top-bottom(null, 15, 15);
         @include padding-left-right(null, 15, 15);
-        color: #fff;
+        color: $--unnamed-color-ffffff;
+        max-width: 250px;
         &-email {
             text-decoration: underline;
         }

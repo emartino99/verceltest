@@ -20,6 +20,13 @@ export interface ILocations {
     Email: string;
 }
 
+export interface ILocationsMainSettings {
+    ID: number;
+    Title: string;
+    secondaryTitle: string;
+    description: string;
+}
+
 export interface IPosition {
     x: number;
     y: number;

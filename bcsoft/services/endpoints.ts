@@ -7,6 +7,7 @@ export const ENDPOINTS = {
     business: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('CoreBusiness')/items`,
     businessCard: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('coreBusinessCards')/items`,
     locations: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('bcSoftLocations')/items`,
+    locationsMainSettings: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('bcSoftLocationsMainSettings')/items`,
     partners: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('partners')/items`,
     clients: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('clientsPresentation')/items`,
     clientsMainSettings: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('clientsPresentationMainSettings')/items`,
