@@ -1,0 +1,36 @@
+.future {
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $--unnamed-color-002950;
+    display: flex;
+    flex-flow: column nowrap;
+    font-family: $--unnamed-font-family-exo-2;
+    justify-content: center;
+
+    &-content {
+        align-items: flex-start;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 2rem;
+        justify-content: center;
+        min-height: 800px;
+        min-width: 800px;
+
+        h1 {
+            font-size: $--unnamed-font-size-40;
+            font-weight: $--unnamed-font-weight-bold;
+            margin: 0;
+            width: 450px;
+        }
+
+        p {
+            font-size: $--unnamed-font-size-30;
+            font-weight: $--unnamed-font-weight-300;
+            width: 350px;        
+        }
+
+    }
+
+}

@@ -1,0 +1,745 @@
+/*
+    GENERAL STYILING
+*/
+.history {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    min-height: 800px;
+    position: relative;
+    &-header {
+        width: 75%;
+        padding: 2em;
+
+        h1 {
+            font-weight: $--unnamed-font-weight-bold;
+            font-family: $--unnamed-font-family-exo-2;
+            font-size: $--unnamed-font-size-40;
+            color: $--unnamed-color-002950;
+        }
+
+        span {
+            font-weight: $--unnamed-font-weight-300;
+            font-family: $--unnamed-font-family-exo-2;
+            font-size: $--unnamed-font-size-16;
+            color: $--unnamed-color-185fa2;
+        }
+
+    }
+
+    .swiper-slide {
+        width: 288px !important;
+
+        .history-card-even-container,
+        .history-card-odd-container {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            height: 200px;
+            width: 200px;
+
+            h1 {
+                font-weight: $--unnamed-font-weight-500;
+                color: $--unnamed-color-155897;
+                font-size: $--unnamed-font-size-46;
+                font-family: $--unnamed-font-family-exo-2;
+                opacity: 0;
+            }
+            
+        }
+
+        .history-card-even-circle-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 200px;
+
+            .history-card-even-circle-line {
+                height: 75px;
+                width: 75px;
+            }
+
+            .history-card-even-circle {
+                visibility: hidden;
+                background-color: #fff;
+                left: 33%;
+                border-radius: 50%;
+                border: 3px solid rgba(21, 88, 151, 0.3);
+                height: 20px;
+                width: 20px;
+            }
+
+        }
+
+        .history-card-odd-circle-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 200px;
+
+            .history-card-odd-circle-line {
+                height: 75px;
+                width: 75px;
+            }
+
+            .history-card-odd-circle {
+                visibility: hidden;
+                background-color: #fff;
+                left: 33%;
+                border-radius: 50%;
+                border: 3px solid rgba(21, 88, 151, 0.3);
+                height: 20px;
+                width: 20px;
+            }
+
+        }
+
+    }
+
+    .swiper-wrapper > .swiper-slide:last-child {
+        width: 215px !important;
+    }
+    
+}
+
+/*
+    EVEN CARDS
+*/
+
+.history-card-even-container {
+    transform: skew(0deg, 4deg);
+}
+
+.history-card-even-lower-left-border {
+    top: 39%;
+    left: 0;
+    animation: border-animation-1 500ms linear forwards;
+}
+
+.history-card-even-upper-top-border {
+    border-radius: 5px;
+    top: -1px;
+    left: 0;
+    animation: border-animation-5 500ms linear 500ms forwards;
+}
+
+.history-card-even-lower-bottom-border {
+    bottom: 0;
+    right: 0;
+    animation: border-animation-2 500ms linear 1s forwards;
+}
+
+.history-card-even-upper-left-border {
+    border-radius: 0 0 5px 5px;
+    bottom: 64%;
+    left: 0;
+    animation: border-animation-4 500ms linear forwards;
+}
+
+.history-card-even-lower-right-border {
+    bottom: 0;
+    left: 0;
+    animation: border-animation-3 500ms linear 500ms forwards;
+}
+
+.history-card-even-upper-right-border {
+    border-radius: 0 0 5px 5px;
+    top: 0;
+    right: 0;
+    animation: border-animation-6 500ms linear 1s forwards;
+}
+
+.history-card-even-circle {
+    top: -17%;
+}
+
+/*
+    ODD CARDS
+*/
+.history-card-odd-container {
+    transform: skew(0deg, 356deg);
+}
+
+.history-card-odd-upper-left-border {
+    bottom: 39%;
+    left: 0;
+    animation: border-animation-odd-1 500ms linear forwards;
+}
+
+.history-card-odd-upper-top-border {
+    top: 0;
+    left: 0;
+    animation: border-animation-odd-2 500ms linear 500ms forwards;
+}
+
+.history-card-odd-upper-right-border {
+    top: 0;
+    right: 0;
+    animation: border-animation-odd-3 500ms linear 1s forwards;
+}
+
+.history-card-odd-lower-left-border {
+    border-radius: 5px 5px 0 0;
+    top: 64%;
+    left: 0;
+    animation: border-animation-odd-4 500ms linear forwards;
+}
+
+.history-card-odd-lower-bottom-border {
+    bottom: -1px;
+    left: 0;
+    animation: border-animation-odd-5 500ms linear 500ms forwards;
+}
+
+.history-card-odd-lower-right-border {
+    border-radius: 5px 5px 0 0;
+    bottom: 0; 
+    right: 0;
+    animation: border-animation-odd-6 500ms linear 1s forwards;
+}
+
+.history-card-odd-circle {
+    bottom: -17%;
+}
+
+
+/*
+    GENERAL ANIMATIONS
+*/
+
+.history-card-even-container > .show-text,
+.history-card-odd-container > .show-text,
+.history-card-even-lower-left-border,
+.history-card-even-lower-bottom-border,
+.history-card-even-lower-right-border,
+.history-card-even-upper-left-border,
+.history-card-even-upper-top-border,
+.history-card-even-upper-right-border,
+.history-card-odd-upper-left-border,
+.history-card-odd-upper-top-border,
+.history-card-odd-upper-right-border,
+.history-card-odd-lower-left-border,
+.history-card-odd-lower-bottom-border,
+.history-card-odd-lower-right-border,
+.history-card-even-circle-line::before,
+.history-card-odd-circle-line::before,
+.history-card-even-circle-line::after,
+.history-card-odd-circle-line::after,
+.history-card-even-circle-line > .history-card-even-circle,
+.history-card-odd-circle-line > .history-card-odd-circle {
+    content: '';
+    position: absolute;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+}
+
+
+
+/*
+    ANIMATIONS TEXT
+*/
+.history-card-even-container > .show-text,
+.history-card-odd-container > .show-text {
+    animation: show-text 3s linear forwards;
+}
+
+@keyframes show-text {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/*
+    ANIMATIONS EVEN CARDS
+*/
+@keyframes border-animation-1 {
+    0% {
+        height: 0;
+    }
+    50% {
+        border: 3px solid rgba(21, 88, 151, 0.6);
+        height: 53px;
+    }
+    100% {
+        border: 3px solid rgba(21, 88, 151, 1);
+        height: 116px;
+    }
+}
+
+@keyframes border-animation-2 {
+    0% {
+        border: 3px solid rgb(170, 206, 248);
+        height: 0;
+    }
+    50% {
+        border: 3px solid rgba(21, 88, 151, 0.6);
+        height: 41px;
+    }
+    100% {
+        border: 3px solid rgba(21, 88, 151, 1);
+        height: 76px;
+    }
+}
+
+@keyframes border-animation-3 {
+    0% {
+        width: 0;
+    }
+    50% {
+        border: 3px solid rgba(21, 88, 151, 0.6);
+        width: 100px;
+    }
+    100% {
+        border: 3px solid rgba(21, 88, 151, 1);
+        width: 194px;
+    }
+}
+
+@keyframes border-animation-4 {
+    0% {
+        height: 0;
+    }
+    50% {
+        border: 3px solid rgba(170, 206, 248, .6);
+        height: 34px;
+    }
+    100% {
+        border: 3px solid rgba(170, 206, 248, 1);
+        height: 63px;
+    }
+}
+
+@keyframes border-animation-5 {
+    0% {
+        width: 0;
+    }
+    50% {
+        border: 3px solid rgba(170, 206, 248, .6);
+        width: 100px;
+    }
+    100% {
+        border: 3px solid rgba(170, 206, 248, 1);
+        width: 194px;
+    }
+}
+
+@keyframes border-animation-6 {
+    0% {
+        height: 0;
+    }
+    50% {
+        border: 3px solid rgba(170, 206, 248, .6);
+        height: 56px;
+    }
+    100% {
+        border: 3px solid rgba(170, 206, 248, 1);
+        height: 100px;
+    }
+}
+
+/*
+    ANIMATIONS ODD CARDS
+*/
+
+@keyframes border-animation-odd-1 {
+    0% {
+        height: 0;
+    }
+    50% {
+        border: 3px solid rgba(21, 88, 151, 0.6);
+        height: 58px;
+    }
+    100% {
+        border: 3px solid rgba(21, 88, 151, 1);
+        height: 116px;
+    }
+}
+
+@keyframes border-animation-odd-2 {
+    0% {
+        width: 0;
+    }
+    50% {
+        border: 3px solid rgba(21, 88, 151, 0.6);
+        width: 100px;
+    }
+    100% {
+        border: 3px solid rgba(21, 88, 151, 1);
+        width: 194px;
+    }
+}
+
+@keyframes border-animation-odd-3 {
+    0% {
+        height: 0;
+    }
+    50% {
+        border: 3px solid rgba(21, 88, 151, 0.6);
+        height: 41px;
+    }
+    100% {
+        border: 3px solid rgba(21, 88, 151, 1);
+        height: 76px;
+    }
+}
+
+@keyframes border-animation-odd-4 {
+    0% {
+        height: 0;
+    }
+    50% {
+        border: 3px solid rgba(170, 206, 248, .6);
+        height: 34px;
+    }
+    100% {
+        border: 3px solid rgba(170, 206, 248, 1);
+        height: 68px;
+    }
+}
+
+@keyframes border-animation-odd-5 {
+    0% {
+        width: 0;
+    }
+    50% {
+        border: 3px solid rgba(170, 206, 248, .6);
+        width: 100px;
+    }
+    100% {
+        border: 3px solid rgba(170, 206, 248, 1);
+        width: 194px;
+    }
+}
+
+@keyframes border-animation-odd-6 {
+    0% {
+        height: 0;
+    }
+    50% {
+        border: 3px solid rgba(170, 206, 248, .6);
+        height: 54px;
+    }
+    100% {
+        border: 3px solid rgba(170, 206, 248, 1);
+        height: 100px;
+    }
+}
+
+
+
+/*
+    ANIMATIONS LINE
+*/
+.history-card-even-circle-line::before,
+.history-card-odd-circle-line::before {
+    left: 0;
+    animation: border-line-animation 500ms linear 1.5s forwards;
+}
+
+.history-card-even-circle-line::before {
+    top: 0;
+}
+
+.history-card-odd-circle-line::before {
+    bottom: 0;
+}
+
+.history-card-even-circle-line::after,
+.history-card-odd-circle-line::after {
+    left: 53px;
+    animation: border-line-animation-2 500ms linear 2s forwards;
+}
+
+.history-card-even-circle-line::after {
+    top: 0;
+}
+
+.history-card-odd-circle-line::after {
+    bottom: 0;
+}
+
+
+@keyframes border-line-animation {
+    0% {
+        width: 0;
+        border: 2px solid rgba(21, 88, 151, .3);
+    }50% {
+        width: 22px;
+        border: 2px solid rgba(21, 88, 151, .6);
+    }
+    100% {
+        border: 2px solid rgba(21, 88, 151, 1);
+        width: 45px;
+    }
+}
+
+@keyframes border-line-animation-2 {
+    0% {
+        width: 0px;
+        border: 2px solid rgba(21, 88, 151, .3);
+    }
+    50% {
+        width: 16px;
+        border: 2px solid rgba(21, 88, 151, .6);
+    }
+    100% {
+        border: 2px solid rgba(21, 88, 151, 1);
+        width: 32px;
+    }
+}
+
+
+/*
+    ANIMATIONS CIRCLE
+*/
+.history-card-even-circle-line > .history-card-even-circle,
+.history-card-odd-circle-line > .history-card-odd-circle {
+    animation: border-circle-animation-1 55ms linear 1.80s forwards,
+               border-circle-animation-2 55ms linear 1.85s forwards,
+               border-circle-animation-3 55ms linear 1.90s forwards,
+               border-circle-animation-4 55ms linear 1.95s forwards;
+}
+
+@keyframes border-circle-animation-1 {
+    0% {
+        visibility: visible;
+        border-bottom-color: rgba(21, 88, 151, 0.3);
+        border-bottom-width: 5px;
+    }
+    50% {
+        visibility: visible;
+        border-bottom-color: rgba(21, 88, 151, 0.6);
+        border-bottom-width: 5px;
+    }
+    100% {
+        visibility: visible;
+        border-bottom-color: rgba(21, 88, 151, 1);
+        border-bottom-width: 5px;
+    }
+}
+
+@keyframes border-circle-animation-2 {
+    0% {
+        visibility: visible;
+        border-right-color: rgba(21, 88, 151, 0.3);
+        border-right-width: 5px;
+    }
+    50% {
+        visibility: visible;
+        border-right-color: rgba(21, 88, 151, 0.6);
+        border-right-width: 5px;
+    }
+    100% {
+        visibility: visible;
+        border-right-color: rgba(21, 88, 151, 1);
+        border-right-width: 5px;
+    }
+}
+
+@keyframes border-circle-animation-3 {
+    0% {
+        visibility: visible;
+        border-top-color: rgba(21, 88, 151, 0.3);
+        border-top-width: 5px;
+    }
+    50% {
+        visibility: visible;
+        border-top-color: rgba(21, 88, 151, 0.6);
+        border-top-width: 5px;
+    }
+    100% {
+        visibility: visible;
+        border-top-color: rgba(21, 88, 151, 1);
+        border-top-width: 5px;
+    }
+}
+
+@keyframes border-circle-animation-4 {
+    0% {
+        visibility: visible;
+        border-left-color: rgba(21, 88, 151, 0.3);
+        border-left-width: 5px;
+    }
+    50% {
+        visibility: visible;
+        border-left-color: rgba(21, 88, 151, 0.6);
+        border-left-width: 5px;
+    }
+    100% {
+        visibility: visible;
+        border-left-color: rgba(21, 88, 151, 1);
+        border-left-width: 5px;
+    }
+}
+
+/*
+    BCSOFT-HISTORY-SWIPER-DESCRIPTION-CONTAINER
+*/
+
+.bcsoft-history-swiper-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.provaaa {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.bcsoft-history-swiper-description-container > div:nth-of-type(2) > span:nth-of-type(1) {
+    font-size: 22px;
+    color: #002950;
+}
+
+.bcsoft-history-swiper-description-container > div:nth-of-type(2) > span:nth-of-type(2) {
+    font-size: 16px;
+    color: #002950;
+}
+
+.bcsoft-history-swiper-description-container > div:nth-of-type(2) > span:nth-of-type(3) {
+    font-size: 17px;
+    color: #155897;
+}
+
+.bcsoft-history-swiper-description-container {
+    height: 200px;
+    width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        font-weight: $--unnamed-font-weight-bold;
+        font-family: $--unnamed-font-family-exo-2;
+        font-size: $--unnamed-font-size-22;
+        color: $--unnamed-color-002950;
+    }
+
+    p {
+        font-weight: $--unnamed-font-weight-bold;
+        font-family: $--unnamed-font-family-exo-2;
+        font-size: $--unnamed-font-size-16;
+        color: $--unnamed-color-001f3c;
+        @include margin-top-bottom(null, 14, 14);
+    }
+
+    span {
+        font-weight: $--unnamed-font-weight-bold;
+        font-family: $--unnamed-font-family-exo-2;
+        font-size: $--unnamed-font-size-16;
+        color: $--unnamed-color-155897;
+    }
+
+}
+
+/*
+    BCSOFT-HISTORY-BUTTON-SWIPER
+*/
+.bcsoft-history-swiper-custom-prev-button-wrapper,
+.bcsoft-history-swiper-custom-next-button-wrapper {
+    position: absolute;
+    transform: skew(0deg, 350deg);
+}
+
+.bcsoft-history-swiper-custom-prev-button-wrapper {
+    right: 73%;
+    top: 73%;
+    left: auto;
+}
+
+.bcsoft-history-swiper-custom-next-button-wrapper {
+    right: auto;
+    top: 73%;
+    left: 69%;
+}
+
+.bcsoft-history-swiper-custom-prev-button,
+.bcsoft-history-swiper-custom-next-button {
+    position: absolute;
+    background-color: #fff;
+    border: 2px solid #001F3C;
+    color: #001F3C;
+    width: 40px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bcsoft-history-swiper-custom-prev-button:hover::before,
+.bcsoft-history-swiper-custom-next-button:hover::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 45px;
+    background-color: #fff;
+    border: 2px solid #ACCFE5;
+    transform: translate(6px, 6px);
+    z-index: -1;
+}
+
+.bcsoft-history-swiper-custom-prev-button:hover::before,
+.bcsoft-history-swiper-custom-next-button:hover::before {
+    transform: translate(6px, 6px);
+}
+
+.bcsoft-history-swiper-custom-next-button:hover::before {
+    transform: translate(-6px, -6px);
+}
+
+.bcsoft-history-swiper-custom-next-arrow,
+.bcsoft-history-swiper-custom-prev-arrow {
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+    height: 20px;
+    width: 20px;
+}
+
+.bcsoft-history-swiper-custom-next-arrow {
+    transform: rotate(-45deg);
+    margin-right: 10px;
+}
+
+.bcsoft-history-swiper-custom-prev-arrow {
+    transform: rotate(135deg);
+    margin-left: 10px;
+}
+
+
+
+/*
+    BCSOFT-HISTORY-SWIPER
+*/
+.bcsoft-history-swiper-container {
+    position: relative;
+    max-width: 825px;
+}
+
+
+/*
+    MEDIA QUERIES
+*/
+@media only screen and (max-width: 930px) {
+    .bcsoft-history-swiper-container {
+        width: 549px;
+    }
+
+    .bcsoft-history-swiper-custom-next-button-wrapper {
+        left: 66%;
+    }
+
+    .bcsoft-history-swiper-custom-prev-button-wrapper {
+        right: 74%;
+    }
+}

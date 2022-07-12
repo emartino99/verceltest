@@ -1,0 +1,143 @@
+.strengths {
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    margin-top: 500px;
+    padding: 100px;
+    position: relative;
+
+    h1 {
+        position: absolute;
+        top: -470px;
+        color: $--unnamed-color-002950;
+        font-family: $--unnamed-font-family-exo-2;
+        font-size: $--unnamed-font-size-36;
+        font-weight: $--unnamed-font-weight-bold;
+    }
+
+    &-container {
+        display: inline-block;
+        height: 70px;
+        padding: .5em;
+        position: relative;
+        width: 1000px;
+
+        .perspective {
+            perspective: 100px;
+        }
+
+        .strengths-circle {
+            background-color: #155897;
+            border-radius: 50%;
+            height: 8px;
+            width: 8px;
+    
+            div {
+                background-color: #fff;
+            }
+    
+        }
+
+        .strengths-card {
+            border: 1px solid rgba(0,0,0,.5);
+            display: inline-block;
+            height: 2.5em;
+            margin: .5em;
+            position: absolute;
+            transform-style: preserve-3d;
+            transform: rotateX(191deg);
+            width: 4em;
+        }
+
+        .image-container {
+            align-items: center;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            position: absolute;
+
+            span {
+                color: $--unnamed-color-002950;
+                font-family: $--unnamed-font-family-exo-2;
+                font-size: $--unnamed-font-size-18;
+                font-weight: $--unnamed-font-weight-bold;
+            }
+
+            .text-container {
+                display: none;
+                position: absolute;
+                top: 50px;
+                width: 200px;
+            }
+        }
+
+        .image-container:hover {
+           .text-container {
+                display: block;
+           }
+        }
+
+    }
+
+    /*
+    ANIMATIONS FADE IN
+    */
+    .fade-in {
+        animation: fade-in 1s linear forwards;
+        opacity: 0;
+    }
+
+    .fade-in-delay-1 {
+        animation: fade-in 1s linear 1s forwards;
+        opacity: 0;
+        position: absolute;
+    }
+
+    .fade-in-delay-2 {
+        animation: fade-in 1s linear 2s forwards;
+        opacity: 0;
+    }
+
+    @keyframes fade-in {
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+
+    /*
+    MEDIA QUERIES
+    */
+
+    @media only screen and (max-width: 1000px) {
+        .strengths-container {
+            width: 400px;
+
+            .strengths-card {
+                height: 2em;
+                width: 3em;
+            }
+
+            span {
+                font-size: 14px;
+            }
+
+        }
+    }
+
+    @media only screen and (max-width: 380px) {
+        .strengths-container {
+            width: 350px;
+
+            .strengths-card {
+                height: 2.8em;
+                width: 2.8em;
+            }
+        }
+
+    }
+
+}

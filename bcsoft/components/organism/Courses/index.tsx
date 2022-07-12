@@ -1,5 +1,4 @@
 import * as React from 'react';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Navigation } from 'swiper';
 import { ICourses, ICoursesMainSettings } from '../../../models';

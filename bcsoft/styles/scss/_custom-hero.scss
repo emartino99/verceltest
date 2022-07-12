@@ -1,0 +1,39 @@
+.custom-hero {
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 3rem;
+    justify-content: center;
+    min-height: 700px;
+    position: relative;
+
+    header {
+
+        max-width: 1000px;
+        min-width: 870px;
+
+        h1 {
+            color: $--unnamed-color-001f3c;
+            font-family: $--unnamed-font-family-exo-2;
+            font-size: $--unnamed-font-size-64;
+            font-weight: $--unnamed-font-weight-bold;
+            max-width: 479px;
+        }
+
+        div {
+            color: $--unnamed-color-185fa2 !important;
+            font-family: $--unnamed-font-family-exo-2 !important;
+            font-size: $--unnamed-font-size-16 !important;
+            font-weight: $--unnamed-font-weight-300 !important;
+        }
+    }
+
+    &-telephone-number {
+        border-bottom: 2px solid #000;
+    }
+
+}
