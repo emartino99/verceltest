@@ -1,56 +1,51 @@
-import { UseWindowSize } from "../../../hooks";
-import { IStrengthsContainer } from "../../../models";
+import { IStrengthsContainer, IStrengths } from "../../../models";
 import Image from "next/image";
+import { CustomImage } from "../../atoms/CustomImage";
 
 interface StrengthsContainerProps {
-    arrayToMap: IStrengthsContainer[];
+    arrayToMap: IStrengths[] | undefined;
+    objectCss: IStrengthsContainer[];
 }
 
-export const StrengthsContainer = ({arrayToMap}: StrengthsContainerProps) => {
-
-    const [width] = UseWindowSize();
-
-    const widthToRemove:number = width > 1000 ? .3 : .5;
+export const StrengthsContainer = ({arrayToMap, objectCss}: StrengthsContainerProps) => {
 
     return(
         <div className="strengths-container">
             {
-                arrayToMap.map((item,index) => (
-                    <article key={index}>
+                arrayToMap?.map((item,index) => (
+                    <article key={item.ID}>
                         <div className="perspective">
                             <div 
                                 className="strengths-card fade-in-delay-2" 
-                                style={{left: item.left, backgroundColor: item.backgroundColor}}
+                                style={{left: objectCss[index].left, backgroundColor: objectCss[index].backgroundColor}}
                             >
                             </div>
                         </div>
                         {
-                            item.img &&
+                            item.image &&
                             <>
                                 <div 
                                     className="fade-in-delay-1" 
-                                    style={{top: item.thinBorderTop, left: item.thinBorderLeft, width: 2, height: item.thinBorderHeight}}
+                                    style={{top: objectCss[index].thinBorderTop, left: objectCss[index].thinBorderLeft, width: 2, height: objectCss[index].thinBorderHeight}}
                                 >
                                     <Image alt='thinBorder'src={"/thinBorder.png"} layout="fill" />
                                 </div>
                                 <div 
                                     className="strengths-circle fade-in-delay-1"
-                                    style={{top: item.thinBorderTop, left: item.thinBorderLeft && parseFloat(item.thinBorderLeft) - widthToRemove + '%'}}
+                                    style={{top: objectCss[index].thinBorderTop, left: `${parseFloat(objectCss[index].thinBorderLeft || '0') - .25}%` }}
                                 >
                                 </div>
                                 <div 
                                     className="image-container fade-in" 
-                                    style={{top: item.imgTop, left: item.imgLeft, flexDirection: item.flexDirection ? 'row-reverse' : 'row' }}
+                                    style={{top: objectCss[index].imgTop, left: objectCss[index].imgLeft, flexDirection: objectCss[index].flexDirection ? 'row-reverse' : 'row' }}
                                 >
-                                    <Image alt={item.img} src={`/${item.img}`} width={item.width} height={item.height} />
-                                    <span>{item.imgText}</span>
+                                    <CustomImage title={item.Title} relativePath={item.image} width={item.imageWidth} height={item.imageheight} />
+                                    <span>{item.Title}</span>
                                     <div 
                                         className="text-container" 
-                                        style={{left: item.hoverTextLeft, textAlign: item.flexDirection ? 'right' : 'left'}}
+                                        style={{left: objectCss[index].hoverTextLeft, textAlign: objectCss[index].flexDirection ? 'right' : 'left'}}
                                     >
-                                        <p>
-                                            Il nostro è un percorso condiviso verso il successo. I problemi non rappresentano ostacoli, ma stimoli che ci spingono a trovare sempre la migliore soluzione.
-                                        </p>
+                                        <p>{item.hoverText}</p>
                                     </div>
                                 </div>
                                 

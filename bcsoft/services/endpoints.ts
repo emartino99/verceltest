@@ -23,6 +23,8 @@ export const ENDPOINTS = {
     partners: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('partners')/items`,
     quoteAbout: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('quoteAbout')/items`,
     strengths: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('strengths')/items`,
+    strengthsSecondContainer: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('strengthsSecondContainer')/items`,
+    strengthsThirdContainer: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('strengthsThirdContainer')/items`,
     submenu: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('navbarSubMenuLinks')/items`,
     vision: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('vision')/items`,
 }

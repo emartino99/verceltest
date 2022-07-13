@@ -14,7 +14,8 @@ import {
     ICustomHero,
     IInfoBanner,
     IQuote,
-    IFuture
+    IFuture,
+    IStrengths
 } from '../../models';
 import { ENDPOINTS, get } from '../../services';
 import { getHeader } from '../api/auth';
@@ -29,6 +30,9 @@ function About({
   visionProps,
   infoBannerProps,
   locationsProps,
+  strengthsProps,
+  strengthsSecondContainerProps,
+  strengthsThirdContainerProps,
   locationsMainSettingsProps,
   buildYourFutureProps,
   quoteProps
@@ -40,6 +44,9 @@ function About({
   const numbersMainSettings = parseResults<INumbersMainSettings[]>(numbersMainSettingsProps);
   const vision = parseResults<IVision[]>(visionProps);
   const infoBanner = parseResults<IInfoBanner[]>(infoBannerProps);
+  const strenghts = parseResults<IStrengths[]>(strengthsProps);
+  const strenghtsSecondContainer = parseResults<IStrengths[]>(strengthsSecondContainerProps);
+  const strenghtsThirdContainer = parseResults<IStrengths[]>(strengthsThirdContainerProps);
   const locationsInfo = parseResults<ILocations[]>(locationsProps);
   const locationsMainSettings = parseResults<ILocationsMainSettings[]>(locationsMainSettingsProps);
   const future = parseResults<IFuture[]>(buildYourFutureProps);
@@ -58,7 +65,7 @@ function About({
         <Numbers numbers={numbers} numbersMainSettings={numbersMainSettings} />
         <Vision vision={vision} />
         <InfoBanner infoBanner={infoBanner} />
-        <Strenghts />
+        <Strenghts strengths={strenghts} strenghtsSecondContainer={strenghtsSecondContainer} strenghtsThirdContainer={strenghtsThirdContainer} />
         <Locations locationsInfo={locationsInfo} locationsMainSettings={locationsMainSettings} />
         <BuildYourFuture future={future} />
         <Quote quote={quote} />
@@ -82,6 +89,9 @@ export const getServerSideProps = async () => {
     numbersMainSettingsResponse,
     visionResponse,
     infoBannerResponse,
+    strengthsResponse,
+    strengthsSecondContainerResponse,
+    strengthsThirdContainerResponse,
     locationsResponse,
     locationsMainSettingsResponse,
     buildYourFutureResponse,
@@ -94,6 +104,9 @@ export const getServerSideProps = async () => {
     get<SharepointResponse<INumbersMainSettings[]>>(ENDPOINTS.numbersMainSettings, { headers }),
     get<SharepointResponse<IVision[]>>(ENDPOINTS.vision, { headers }),
     get<SharepointResponse<IInfoBanner[]>>(ENDPOINTS.infoBannerAbout, { headers }),
+    get<SharepointResponse<IStrengths[]>>(ENDPOINTS.strengths, { headers }),
+    get<SharepointResponse<IStrengths[]>>(ENDPOINTS.strengthsSecondContainer, { headers }),
+    get<SharepointResponse<IStrengths[]>>(ENDPOINTS.strengthsThirdContainer, { headers }),
     get<SharepointResponse<ILocations[]>>(ENDPOINTS.locations, { headers }),
     get<SharepointResponse<ILocationsMainSettings[]>>(ENDPOINTS.locationsMainSettings, { headers }),
     get<SharepointResponse<IFuture[]>>(ENDPOINTS.buildYourFuture, { headers }),
@@ -109,6 +122,9 @@ export const getServerSideProps = async () => {
       numbersMainSettingsProps: axiosParser(numbersMainSettingsResponse),
       visionProps: axiosParser(visionResponse),
       infoBannerProps: axiosParser(infoBannerResponse),
+      strengthsProps: axiosParser(strengthsResponse),
+      strengthsSecondContainerProps: axiosParser(strengthsSecondContainerResponse),
+      strengthsThirdContainerProps: axiosParser(strengthsThirdContainerResponse),
       locationsProps: axiosParser(locationsResponse),
       locationsMainSettingsProps: axiosParser(locationsMainSettingsResponse),
       buildYourFutureProps: axiosParser(buildYourFutureResponse),

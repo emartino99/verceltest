@@ -1,12 +1,10 @@
 export interface IStrengthsContainer {
-    top: string;
     left: string;
     backgroundColor: string;
     flexDirection?: string;
     img?: string;
     imgTop?: string;
     imgLeft?: string;
-    imgText?: string;
     thinBorderTop?: string;
     thinBorderLeft?: string;
     thinBorderHeight?: string;
@@ -18,5 +16,8 @@ export interface IStrengthsContainer {
 export interface IStrengths {
     ID: number;
     Title: string;
-    hoverText: string;
+    hoverText?: string;
+    image?: string;
+    imageWidth?: string;
+    imageheight?: string;
 }

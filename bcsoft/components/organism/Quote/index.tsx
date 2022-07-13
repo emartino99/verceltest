@@ -14,7 +14,7 @@ export const Quote = ({quote}: QuoteProps) => {
 
     return (
         <section className="quote span-1-12" style={{backgroundColor: backgroundColor ?? '#ffffff'}}>
-            <Image src={'/logo.svg'} alt={'bcsoft-logo'} height={250} width={306} />
+            <Image src={'/logo.png'} alt={'bcsoft-logo'} height={243} width={307} />
             <h1>{Title}</h1>
         </section>
     );
