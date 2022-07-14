@@ -16,47 +16,92 @@ div.heroSection {
     opacity: 0.7;
 }
 
-/* devo levarlo????? */
 .parallelogram {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+    background-color: #001f3c;;
+    clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 90%);
     z-index: 1;
-    width: 70px;
-    height: 70px;
-    background-color: transparent;
-    border: 3px solid #001f3c;
-    transform: skew(0deg, 12deg);
+
+    svg {
+        transition: 0.2s ease-in-out; 
+    }
+
+    .parallelogram-inner {
+        height: 64px;
+        width: 64px;
+        background-color: #fff;
+        clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 90%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+    }
+
 }
 
-.parallelogram svg {
-    transition: 0.2s ease-in-out;
-}
-
-.parallelogram:hover svg {
-    transform: scale(1.5);
-}
-
-.parallelogram-top-shadow,
-.parallelogram-bottom-shadow {
-    display: none;
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    background-color: transparent;
-}
-
-.parallelogram-top-shadow {
-    border: 3px solid #185fa2;
-    transform: skew(0deg, 12deg) translate(7px, -7px);
-}
-
-.parallelogram-bottom-shadow {
-    border: 3px solid #acd0fb;
-    transform: skew(0deg, 12deg) translate(-7px, 6px);
+.parallelogram:hover > .parallelogram-inner > svg {
+    transform: rotateY(180deg) scale(1.2);
 }
 
 .parallelogram:hover + .parallelogram-top-shadow,
 .parallelogram:hover + .parallelogram-top-shadow + .parallelogram-bottom-shadow {
     display: flex;
+}
+
+
+.parallelogram-top-shadow {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+    background-color: #185fa2;
+    clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 90%);
+    top: 33px;
+    left: 24px;
+    z-index: -1;
+    display: none;
+
+    .parallelogram-top-shadow-inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 64px;
+        width: 64px;
+        background-color: #fff;
+        clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 90%);
+    }
+
+}
+
+.parallelogram-bottom-shadow {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+    background-color: #acd0fb;
+    clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 90%);
+    bottom: 33px;
+    left: 8px;
+    z-index: -1;
+    display: none;
+
+    .parallelogram-bottom-shadow-inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 64px;
+        width: 64px;
+        background-color: #fff;
+        clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 90%);
+    }
+
 }
 
 // refactor
@@ -109,3 +154,5 @@ div.heroSection {
     display: flex;
     align-items: center;
 }
+
+    

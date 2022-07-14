@@ -23,6 +23,9 @@ export function Hero({quickLinks, media}: HeroProps) {
         MediaURL,
         Title
     } = media?.[0] || {} as IHeroMedia;
+
+    console.log(getMediaPath(ImgURL))
+
     return (
         <section className="hero span-1-12" >
             {
@@ -36,7 +39,7 @@ export function Hero({quickLinks, media}: HeroProps) {
             {
                 !MediaURL 
                 && ImgURL
-                &&  <Image src={getMediaPath(ImgURL)} alt={Title} layout='fill' priority/>
+                && <Image src={getMediaPath(ImgURL)} alt={Title} layout='fill' priority/>
             }
 
             {
@@ -49,14 +52,19 @@ export function Hero({quickLinks, media}: HeroProps) {
                                 dangerouslySetInnerHTML={{ __html: Title ?? "" }}>
                             </span>
                             <div className="check-more-container">
-                                <div
-                                    className="parallelogram"
-                                    onClick={quickLinksMenuHandler}
-                                >
-                                    <CurvedArrow width={57} height={72} style={{ transform: `rotateY(${showQuickLinksMenu ? '0' : '180'}deg)` }} />
+
+                                <div className="parallelogram pointer" onClick={quickLinksMenuHandler}>
+                                    <div className="parallelogram-inner">
+                                        <CurvedArrow width={50} height={67} />
+                                    </div>
                                 </div>
-                                <div className="parallelogram-top-shadow"></div>
-                                <div className="parallelogram-bottom-shadow"></div>
+                                <div className="parallelogram-top-shadow">
+                                    <div className="parallelogram-top-shadow-inner"></div>
+                                </div>
+                                <div className="parallelogram-bottom-shadow">
+                                    <div className="parallelogram-bottom-shadow-inner"></div>
+                                </div>
+
                                 <menu className='quick-links'>
                                     {
                                         showQuickLinksMenu

@@ -1,6 +1,7 @@
 export * from './Banner';
 export * from './BuildYourFuture';
 export * from './Business';
+export * from './CertificationsItems';
 export * from './Clients';
 export * from './Courses';
 export * from './CustomHero';

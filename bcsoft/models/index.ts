@@ -1,5 +1,6 @@
 export * from './banner';
 export * from './build-your-future';
+export * from './certifications';
 export * from './clients';
 export * from './core-business';
 export * from './courses';

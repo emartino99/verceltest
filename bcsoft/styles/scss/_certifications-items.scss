@@ -1,0 +1,36 @@
+.certifications {
+    align-items: center;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    min-height: 500px;
+
+    &-item {
+        align-items: center;
+        color: $--unnamed-color-002950;
+        display: flex;
+        flex-flow: column nowrap;
+        flex: 1;
+        font-family: $--unnamed-font-family-exo-2;
+        gap: 2rem;
+        justify-content: center;
+        max-width: 489px;
+        padding: 1rem;
+        position: relative;
+
+        h1 {
+            font-size: $--unnamed-font-size-30;
+            font-weight: $--unnamed-font-weight-500;
+        }
+
+        p {
+            font-size: $--unnamed-font-size-16;
+            font-weight: $--unnamed-font-weight-300;
+        }
+
+        &-image {
+            height: 400px;
+            width: 500px;
+        }
+    }
+}

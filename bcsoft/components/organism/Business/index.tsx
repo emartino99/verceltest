@@ -18,7 +18,7 @@ export function Business({ coreBusiness, coreBusinessCards }: Business ) {
                 <h1 className='title'>{Title}</h1>
                 {Subtitle && <span className='subtitle ' dangerouslySetInnerHTML={{ __html: Subtitle }}></span>}
             </header>
-            <div className='grid template-col-autofill'>
+            <div className="business-container">
                 {coreBusinessCards?.map((item, i) => (
                     <CardBuisiness item={item} i={i} key={item.ID} />
                 ))}
