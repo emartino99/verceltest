@@ -1,0 +1,96 @@
+.services {
+    align-items: center;
+    background-color: $--unnamed-color-001f3c;
+    clip-path: polygon(0 7%, 100% 0, 100% 93%, 0% 100%);
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 3rem;
+    justify-content: center;
+    min-height: 900px;
+    @include padding-top-bottom(null, 60, 60);
+    @include padding-left-right(null, 60, 60);
+
+    header {
+
+        align-items: center;
+        display: flex;
+        flex-flow: column nowrap;
+        font-family: $--unnamed-font-family-exo-2;
+        gap: 2rem;
+        max-width: 800px;
+        text-align: center;
+        @include margin-top-bottom(null, 50, 0);
+
+        h1 {
+            font-size: $--unnamed-font-size-30;
+            font-weight: $--unnamed-font-weight-500;
+            @include margin-top-bottom(null, 0, 0);
+        }
+
+        p {
+            font-size: $--unnamed-font-size-16;
+            font-weight: $--unnamed-font-weight-300;
+        }
+
+        span {
+            font-size: $--unnamed-font-size-16;
+            font-weight: $--unnamed-font-weight-400;
+        }
+
+    }
+
+    &-content {
+        align-items: center;
+        display: flex;
+        flex-flow: row wrap;
+        @include padding-top-bottom(null, 60, 60);
+        @include padding-left-right(null, 60, 60);
+        gap: 3rem;
+        max-width: 1400px;
+
+        article {
+            @include padding-left-right(null, 30, 30);
+            @include padding-top-bottom(null, 15, 15);
+            align-items: center;
+            background-color: $--unnamed-color-ffffff;
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 1rem;
+            justify-content: center;
+            min-height: 165px;
+            position: relative;
+            transform: skewY(357deg);
+            width: 247px;
+            border: 1.5px solid $--unnamed-color-001f3c;
+
+            .image-container {
+                height: 70px;
+                position: relative;
+                top: 5%;
+                width: 70px;
+            }
+
+            h1 {
+                font-size: $--unnamed-font-size-22;
+                font-weight: $--unnamed-font-weight-500;
+                @include margin-top-bottom(null, 0, 0);
+            }
+
+            p {
+                font-size: $--unnamed-font-size-16;
+                font-weight: $--unnamed-font-weight-300;
+                text-align: center;
+                transition: height .8s ease-in-out;
+                height: 0;
+                overflow: hidden;
+            }
+        }
+
+        article:hover {
+            p {
+                height: 120px;
+            }
+        }
+
+    }
+}

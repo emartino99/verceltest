@@ -5,4 +5,6 @@ export interface IInfoBanner {
     buttonLabel: string;
     buttonHref: string;
     layoutOrder: string;
+    backgroundColor: string;
+    whiteColorTextAndButton: string;
 }

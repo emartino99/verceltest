@@ -12,16 +12,21 @@ export const InfoBanner = ({infoBanner}: InfoBannerProps) => {
         description,
         buttonLabel,
         buttonHref,
-        layoutOrder
+        layoutOrder,
+        backgroundColor,
+        whiteColorTextAndButton
     } = infoBanner?.[0] || {};
 
+    const color = whiteColorTextAndButton === 'SI' ? '#FFFFFF' : '#001F3C';
+    const buttonTextColor = whiteColorTextAndButton === 'SI' ? '#001F3C' : '#FFFFFF';
+
     return (
-        <section className="info-banner span-1-12">
-            <div className={`info-banner-${layoutOrder}`}>
+        <section className="info-banner span-1-12" style={{backgroundColor: backgroundColor ?? '#C9E2FF'}}>
+            <div className={`info-banner-${layoutOrder}`} style={{color: color}} >
                 <h1>{Title}</h1>
                 <p>{description}</p>
                 {
-                    buttonLabel && buttonHref && <CustomButton title={buttonLabel} href={buttonHref} />
+                    buttonLabel && buttonHref && <CustomButton title={buttonLabel} href={buttonHref} mainBackgroundColor={color} mainColor={buttonTextColor} />
                 }
             </div>
         </section>

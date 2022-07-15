@@ -15,5 +15,6 @@ export * from './News';
 export * from './Numbers';
 export * from './Partners';
 export * from './Quote';
+export * from './Services';
 export * from './Strengths';
 export * from './Vision';

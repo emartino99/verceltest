@@ -29,10 +29,10 @@ function About({
   numbersMainSettingsProps,
   visionProps,
   infoBannerProps,
-  locationsProps,
   strengthsProps,
   strengthsSecondContainerProps,
   strengthsThirdContainerProps,
+  locationsProps,
   locationsMainSettingsProps,
   buildYourFutureProps,
   quoteProps

@@ -1,8 +1,6 @@
 .info-banner {
     align-items: center;
-    background-color: #C9E2FF;
     clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%);
-    color: $--unnamed-color-001f3c;
     display: flex;
     font-family: $--unnamed-font-family-exo-2;
     justify-content: center;
@@ -22,7 +20,7 @@
 
         p {
             font-size: $--unnamed-font-size-16;
-            font-weight: $--unnamed-font-weight-bold;
+            font-weight: $--unnamed-font-weight-500;
             max-width: 400px;
         }
 
@@ -38,7 +36,7 @@
 
         p {
             font-size: $--unnamed-font-size-16;
-            font-weight: $--unnamed-font-weight-bold;
+            font-weight: $--unnamed-font-weight-500;
             max-width: 800px;
             text-align: center;
         }
