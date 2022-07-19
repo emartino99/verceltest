@@ -11,4 +11,7 @@ export interface INumbersMainSettings {
     GUID: string;
     description: string;
     backgroundImage: string;
+    image: string;
+    buttonLabel: string;
+    buttonHref: string;
 }

@@ -6,4 +6,5 @@ export interface ICertifications {
     GUID: string;
     ID: number;
     Title: string;
+    invertPosition: string;
 }

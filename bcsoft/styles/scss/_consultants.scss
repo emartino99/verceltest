@@ -1,0 +1,44 @@
+.consultants {
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    min-height: 800px;
+    position: relative;
+
+    header {
+        align-items: center;
+        display: flex;
+        flex-flow: column nowrap;
+        font-family: $--unnamed-font-family-exo-2;
+        gap: 2rem;
+        justify-content: center;
+        max-width: 1060px;
+        position: relative;
+        text-align: center;
+        z-index: 1;
+
+        h1 {
+            color: $--unnamed-color-002950;
+            font-size: $--unnamed-font-size-40;
+            font-weight: $--unnamed-font-weight-bold;
+            @include margin-top-bottom(null, 0, 0);
+        }
+
+        span,
+        p {
+            color: $--unnamed-color-185fa2;
+            font-size: $--unnamed-font-size-16;
+            font-weight: $--unnamed-font-weight-500;
+
+        }
+    }
+
+    &-map {
+        opacity: .4;
+        position: absolute;
+        top: 20%;
+        z-index: -1;
+    }
+
+}

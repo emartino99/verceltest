@@ -3,13 +3,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1;
     @include padding-top-bottom(null, 60, 60);
     gap: 25px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    color: $--unnamed-color-ffffff;
     clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
     min-height: 500px;
 
@@ -17,10 +15,12 @@
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         text-align: left;
+        gap: 2rem;
     
         div {
+
             max-width: 500px;
 
             h1 {
@@ -35,7 +35,13 @@
                 font-size: $--unnamed-font-size-16;
             }
 
-        }  
+        }
+
+        .numbers-image {
+            position: relative;
+            width: 500px;
+            height: 150px;
+        }
     
     }
 
@@ -43,7 +49,9 @@
         position: relative;
         padding: 10px;
         min-height: 420px;
-        flex: 1 1 0;
+        // flex: 1 1 0;
+        width: 500px;
+        color: $--unnamed-color-ffffff;
 
         .numbers-card {
             display: flex;
@@ -54,14 +62,14 @@
             transition: .5s ease-in-out;
 
             span {
-                font-size: 66px;
+                font-size: 22px;
                 margin: 0;
             }
 
         }
 
         .inner-card-2 span {
-            font-size: 44px;
+            font-size: 22px;
         }
 
         .inner-card-0 {

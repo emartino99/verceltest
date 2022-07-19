@@ -14,13 +14,12 @@ export const CertificationsItems = ({certifications}: CertificationsProps) => {
     description,
     certificationImage,
     buttonLabel,
-    buttonHref
+    buttonHref,
+    invertPosition
   } = certifications?.[0] || {};
 
-  const invertPosition = true;
-
   return (
-    <section className="certifications span-1-12" style={{flexDirection: invertPosition ? 'row-reverse' : 'row'}}>
+    <section className="certifications span-1-12" style={{flexDirection: invertPosition === 'SI' ? 'row-reverse' : 'row'}}>
         <article className="certifications-item">
             <h1>{Title}</h1>
             <p>{description}</p>

@@ -1,0 +1,78 @@
+.feedbacks {
+    @include padding-top-bottom(null, 50, 50);
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+    font-family: $--unnamed-font-family-exo-2;
+    justify-content: center;
+    min-height: 500px;
+
+    header {
+        text-align: center;
+
+        h1 {
+            color: $--unnamed-color-002950;
+            font-size: $--unnamed-font-size-40;
+            font-weight: $--unnamed-font-weight-bold;
+        }
+    
+        span {
+            color: $--unnamed-color-185fa2;
+            font-size: $--unnamed-font-size-16;
+            font-weight: $--unnamed-font-weight-500;
+        }
+    }
+
+    &-container {
+        align-items: center;
+        display: flex;
+        flex-flow: row wrap;
+        gap: 2rem;
+        max-width: 1200px;
+
+        .feedbacks-card {
+            @include padding-left-right(null, 30, 30);
+            @include padding-top-bottom(null, 30, 30);
+            border: 2px solid #001f3c;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            min-height: 220px;
+            position: relative;
+            transform: skewY(353deg);
+            width: 270px;
+
+            .feedback-image {
+                background-color: #ffffff;
+                height: 70px;
+                left: 15%;
+                position: absolute;
+                top: -12%;
+                width: 100px;
+            }
+
+            p {
+                @include padding-top-bottom(null, 0, 20);
+                color: $--unnamed-color-185fa2;
+                font-size: $--unnamed-font-size-16;
+                font-weight: $--unnamed-font-weight-300;
+                transform: skewY(-353deg);
+            }
+
+            .feedback-owner {
+                color: $--unnamed-color-185fa2;
+                font-size: $--unnamed-font-size-16;
+                font-weight: $--unnamed-font-weight-bold;
+            }
+
+            span {
+                color: $--unnamed-color-001f3c;
+                font-size: $--unnamed-font-size-14;
+                font-weight: $--unnamed-font-weight-300;
+                transform: skewY(-353deg);
+            }
+
+        }
+
+    }
+}

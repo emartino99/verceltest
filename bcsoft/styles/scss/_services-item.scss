@@ -1,0 +1,45 @@
+.services-item {
+    min-height: 500px;
+    clip-path: polygon(0 7%, 100% 0, 100% 93%, 0% 100%);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    font-family: $--unnamed-font-family-exo-2;
+
+
+    header {
+        max-width: 500px;
+
+        h1 {
+            font-size: $--unnamed-font-size-30;
+            font-weight: $--unnamed-font-weight-500;
+        }
+
+        p {
+            font-size: $--unnamed-font-size-16;
+            font-weight: $--unnamed-font-weight-300;
+        }
+    }
+
+    aside {
+        height: 100%;
+        width: 260px;
+        background-color: #fff;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        span {
+            font-size: $--unnamed-font-size-22;
+            font-weight: $--unnamed-font-weight-500;
+            color: $--unnamed-color-002950;
+            position: absolute;
+            top: 65%;
+        }
+        
+    }
+
+}
