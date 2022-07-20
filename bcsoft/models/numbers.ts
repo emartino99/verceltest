@@ -14,4 +14,5 @@ export interface INumbersMainSettings {
     image: string;
     buttonLabel: string;
     buttonHref: string;
+    rotate: string;
 }

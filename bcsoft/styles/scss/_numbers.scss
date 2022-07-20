@@ -60,6 +60,8 @@
             align-items: center;
             position: absolute;
             transition: .5s ease-in-out;
+            text-align: center;
+            padding: .6rem;
 
             span {
                 font-size: 22px;
@@ -69,7 +71,7 @@
         }
 
         .inner-card-2 span {
-            font-size: 22px;
+            font-size: 16px;
         }
 
         .inner-card-0 {

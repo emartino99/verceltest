@@ -1,61 +1,70 @@
  .locations {
-    display: flex;
-    flex: 1;
-    flex-flow: row wrap;
-    justify-content: space-around;
     align-items: center;
-    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1;
+    justify-content: space-around;
     min-height: 700px;
+    position: relative;
     path:hover{
-        fill-opacity: .8;
         cursor: pointer;
+        fill-opacity: .8;
     }
     path.selected{
-        fill-opacity: .8;
+        fill-opacity:.8;
     }
     &-text {
+        font-family: $--unnamed-font-family-exo-2;
         max-width: 500px;
 
         h1 {
-            font-weight: $--unnamed-font-weight-bold;
-            font-family: $--unnamed-font-family-exo-2;
-            font-size: $--unnamed-font-size-40;
-            letter-spacing: $--unnamed-character-spacing-0;
+            @include margin-top-bottom(null, 0, 0);
             color: $--unnamed-color-002950;
+            font-size: $--unnamed-font-size-40;
+            font-weight: $--unnamed-font-weight-bold;
         }
 
         span {
-            font-weight: $--unnamed-font-weight-bold;
-            font-family: $--unnamed-font-family-exo-2;
-            font-size: $--unnamed-font-size-16;
-            letter-spacing: $--unnamed-character-spacing-0;
+            @include margin-top-bottom(null, 0, 15);
             color: $--unnamed-color-185fa2;
+            display: inline-block;
+            font-size: $--unnamed-font-size-16;
+            font-weight: $--unnamed-font-weight-bold;
         }
 
         p {
-            font-weight: $--unnamed-font-weight-300;
-            font-family: $--unnamed-font-family-exo-2;
-            font-size: $--unnamed-font-size-16;
-            letter-spacing: $--unnamed-character-spacing-0;
             color: $--unnamed-color-185fa2;
+            font-size: $--unnamed-font-size-16;
+            font-weight: $--unnamed-font-weight-300;
+        }
+
+        .click-region {
+            @include margin-top-bottom(null, 15, 0);
+            color: $--unnamed-color-001f3c;
+            display: inline-block;
+            font-size: $--unnamed-font-size-14;
+            font-weight: $--unnamed-font-weight-300;
         }
     }
     &-regione{
         transition: all 500ms ease-in-out;
     }
     &-card {
-        position: absolute;
+        @include padding-left-right(null, 30, 30);
+        @include padding-top-bottom(null, 30, 30);
         background-color: #155897;
-        transform: skewY(355deg);
-        @include padding-top-bottom(null, 15, 15);
-        @include padding-left-right(null, 15, 15);
         color: $--unnamed-color-ffffff;
         max-width: 250px;
+        position: absolute;
+        transform: skewY(355deg);
         &-email {
             text-decoration: underline;
         }
         &-email:hover {
             opacity: .8;
+        }
+        div {
+            transform: skewY(-355deg);
         }
     }
     svg {

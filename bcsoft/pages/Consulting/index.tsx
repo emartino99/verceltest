@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { InferGetServerSidePropsType } from 'next';
-import { ClientsFeedbacks, CustomHero, Numbers, ReEngineering, Services, ServicesItem } from '../../components/organism';
+import { ClientsFeedbacks, CustomHero, Locations, Numbers, Services, ServicesItem } from '../../components/organism';
 import { getLayout } from '../../components/template';
 import { 
     SharepointResponse,
@@ -11,12 +11,13 @@ import {
     IServicesMainSettings,
     IFeedbacksMainSettings,
     IFeedbacks,
-    IReEngineering
+    ILocations,
+    ILocationsMainSettings,
+    IServicesItem
 } from '../../models';
 import { ENDPOINTS, get } from '../../services';
 import { getHeader } from '../api/auth';
 import { axiosParser, parseResults } from '../../utils';
-import { IServicesItem } from '../../models/services-item';
 
 function Consulting({
   customHeroProps,
@@ -24,22 +25,24 @@ function Consulting({
   numbersMainSettingsProps,
   servicesProps,
   servicesMainSettingsProps,
-  servicesItemEnterpriseProps,
+  servicesItemBlockchainProps,
   servicesItemAMProps,
-  reEngineeringProps,
   clientsFeedbacksProps,
-  clientsFeedbacksMainSettingsProps
+  clientsFeedbacksMainSettingsProps,
+  locationsProps,
+  locationsMainSettingsProps,
 }: InferGetServerSidePropsType<typeof getServerSideProps>){
   const customHero = parseResults<ICustomHero[]>(customHeroProps);
   const numbers = parseResults<INumbers[]>(numbersProps);
   const numbersMainSettings = parseResults<INumbersMainSettings[]>(numbersMainSettingsProps);
   const services = parseResults<IServices[]>(servicesProps);
   const servicesMainSettings = parseResults<IServicesMainSettings[]>(servicesMainSettingsProps);
-  const servicesItemEnterprise = parseResults<IServicesItem[]>(servicesItemEnterpriseProps);
+  const servicesItemBlockchain = parseResults<IServicesItem[]>(servicesItemBlockchainProps);
   const servicesItemAM = parseResults<IServicesItem[]>(servicesItemAMProps);
-  const reEngineering = parseResults<IReEngineering[]>(reEngineeringProps);
   const feedbacks = parseResults<IFeedbacks[]>(clientsFeedbacksProps);
   const feedbacksMainSettings = parseResults<IFeedbacksMainSettings[]>(clientsFeedbacksMainSettingsProps);
+  const locationsInfo = parseResults<ILocations[]>(locationsProps);
+  const locationsMainSettings = parseResults<ILocationsMainSettings[]>(locationsMainSettingsProps);
  
   return (
     <>
@@ -52,10 +55,10 @@ function Consulting({
         <CustomHero customHero={customHero} />
         <Numbers numbers={numbers} numbersMainSettings={numbersMainSettings} />
         <Services services={services} servicesMainSettings={servicesMainSettings} />
-        <ServicesItem servicesItem={servicesItemEnterprise} />
         <ServicesItem servicesItem={servicesItemAM} />
-        <ReEngineering reEngineering={reEngineering} />
+        <ServicesItem servicesItem={servicesItemBlockchain} />
         <ClientsFeedbacks feedbacks={feedbacks} feedbacksMainSettings={feedbacksMainSettings} />
+        <Locations locationsInfo={locationsInfo} locationsMainSettings={locationsMainSettings} />
       </main>
     </>
   )
@@ -74,22 +77,24 @@ export const getServerSideProps = async () => {
     numbersMainSettingsResponse,
     servicesResponse,
     servicesMainSettingsResponse,
-    servicesItemEnterpriseResponse,
+    servicesItemBlockchainResponse,
     servicesItemAMResponse,
-    ReEngineeringResponse,
     clientsFeedbacksResponse,
-    clientsFeedbacksMainSettingssponse
+    clientsFeedbacksMainSettingssponse,
+    locationsResponse,
+    locationsMainSettingsResponse,
   ] = await Promise.allSettled([
-    get<SharepointResponse<ICustomHero[]>>(ENDPOINTS.customHeroFactory, { headers }),
-    get<SharepointResponse<INumbers[]>>(ENDPOINTS.numbersFactory, { headers }),
-    get<SharepointResponse<INumbersMainSettings[]>>(ENDPOINTS.numbersFactoryMainSettings, { headers }),
-    get<SharepointResponse<IServices[]>>(ENDPOINTS.servicesFactory, { headers }),
-    get<SharepointResponse<IServicesMainSettings[]>>(ENDPOINTS.servicesFactoryMainSettings, { headers }),
-    get<SharepointResponse<IServicesItem[]>>(ENDPOINTS.servicesItemEnterprise, { headers }),
+    get<SharepointResponse<ICustomHero[]>>(ENDPOINTS.customHeroConsulting, { headers }),
+    get<SharepointResponse<INumbers[]>>(ENDPOINTS.numbersConsulting, { headers }),
+    get<SharepointResponse<INumbersMainSettings[]>>(ENDPOINTS.numbersConsultingMainSettings, { headers }),
+    get<SharepointResponse<IServices[]>>(ENDPOINTS.servicesConsulting, { headers }),
+    get<SharepointResponse<IServicesMainSettings[]>>(ENDPOINTS.servicesConsultingMainSettings, { headers }),
+    get<SharepointResponse<IServicesItem[]>>(ENDPOINTS.servicesItemBlockchain, { headers }),
     get<SharepointResponse<IServicesItem[]>>(ENDPOINTS.servicesItemAM, { headers }),
-    get<SharepointResponse<IReEngineering[]>>(ENDPOINTS.reEngineering, { headers }),
-    get<SharepointResponse<IFeedbacks[]>>(ENDPOINTS.clientsFeedbacks, { headers }),
+    get<SharepointResponse<IFeedbacks[]>>(ENDPOINTS.clientsFeedbacksConsulting, { headers }),
     get<SharepointResponse<IFeedbacksMainSettings[]>>(ENDPOINTS.clientsFeedbacksMainSettings, { headers }),
+    get<SharepointResponse<ILocations[]>>(ENDPOINTS.locations, { headers }),
+    get<SharepointResponse<ILocationsMainSettings[]>>(ENDPOINTS.locationsConsultingMainSettings, { headers }),
   ])
 
   return {
@@ -99,11 +104,12 @@ export const getServerSideProps = async () => {
       numbersMainSettingsProps: axiosParser(numbersMainSettingsResponse),
       servicesProps: axiosParser(servicesResponse),
       servicesMainSettingsProps: axiosParser(servicesMainSettingsResponse),
-      servicesItemEnterpriseProps: axiosParser(servicesItemEnterpriseResponse),
+      servicesItemBlockchainProps: axiosParser(servicesItemBlockchainResponse),
       servicesItemAMProps: axiosParser(servicesItemAMResponse),
-      reEngineeringProps: axiosParser(ReEngineeringResponse),
       clientsFeedbacksProps: axiosParser(clientsFeedbacksResponse),
       clientsFeedbacksMainSettingsProps: axiosParser(clientsFeedbacksMainSettingssponse),
+      locationsProps: axiosParser(locationsResponse),
+      locationsMainSettingsProps: axiosParser(locationsMainSettingsResponse),
     }
   }
 }

@@ -1,5 +1,4 @@
 .courses {
-  background-color: #C9E2FF;
   justify-content: center;
   align-items: center;
   gap: 2rem;
@@ -11,20 +10,19 @@
 
   &-header {
     display: flex;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     text-align: center;
     max-width: 900px;
 
     h1 {
-      color: $--unnamed-color-002950;
       font-weight: $--unnamed-font-weight-bold;
       font-family: $--unnamed-font-family-exo-2;
       font-size: $--unnamed-font-size-40;
     }
 
     p {
-      color: $--unnamed-color-001f3c;
       font-weight: $--unnamed-font-weight-300;
       font-family: $--unnamed-font-family-exo-2;
       font-size: $--unnamed-font-size-16;

@@ -29,7 +29,9 @@ export const CustomHero = ({customHero}: CustomHeroProps) => {
   return (
     <section className="custom-hero span-1-12" style={{backgroundImage: backgroundImage && `url(${getMediaPath(backgroundImage)})`}}>
         <header>
-            <h1>{Title}</h1>
+            <div style={{maxWidth: 'max-content'}}>
+                <h1>{Title}</h1>
+            </div>
             <div ref={descriptionRef}></div>
         </header>
         {

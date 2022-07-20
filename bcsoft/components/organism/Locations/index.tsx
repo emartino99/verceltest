@@ -15,17 +15,21 @@ export function Locations({locationsInfo, locationsMainSettings}: LocationsProps
   const {
     Title,
     secondaryTitle,
-    description
+    description,
+    rotate
   } = locationsMainSettings?.[0] || {};
+
+  const direction = rotate === 'SI' ? 'row-reverse' : 'row';
 
   const regionClickHandler = useCallback((element: Element) => {
       const elementPosition = element.getBoundingClientRect();
       setPosition(prevState => {
+        const value = rotate === 'NO' ? elementPosition.x + elementPosition.width + 100 : elementPosition.left + elementPosition.width - 500;
         return ( element.getAttribute('data-regione')?.toLowerCase() === prevState?.selectedLocation?.Title?.toLowerCase())
           ? undefined
           : {
-              x: elementPosition.x + elementPosition.width + 100,
-              y: elementPosition.y - ( elementPosition.y - 100),
+              x: value,
+              y: elementPosition.y - ( elementPosition.y - 150),
               selectedLocation: locationsInfo?.find(regionToFilter => regionToFilter.Title.toLowerCase() === element.getAttribute('data-regione')?.toLowerCase())
           }
       })
@@ -50,12 +54,13 @@ export function Locations({locationsInfo, locationsMainSettings}: LocationsProps
   }, [hasLoaded]);
 
   return(
-    <section className='locations span-1-12'> 
+    <section className='locations span-1-12' style={{flexDirection: direction}}> 
       <Map />
       <header className='locations-text'>
         <h1 dangerouslySetInnerHTML={{  __html: Title ?? '' }}></h1>
         <span dangerouslySetInnerHTML={{  __html: secondaryTitle ?? '' }}></span>
         <p dangerouslySetInnerHTML={{  __html: description ?? '' }}></p>
+        <span className='click-region'>Seleziona le regioni per saperne di più</span>
       </header>
       {
         position?.selectedLocation && <CardLocations position={position} />

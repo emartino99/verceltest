@@ -1,0 +1,58 @@
+.courses-structure {
+    @include padding-left-right(null, 50, 50);
+    @include padding-top-bottom(null, 50, 50);
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+    font-family: $--unnamed-font-family-exo-2;
+    gap: 2rem;
+    justify-content: center;
+    min-height: 500px;
+    position: relative;
+
+    .corses-image-container {
+        height: 128px;
+        position: relative;
+        top: 0;
+        width: 100%;
+    }
+
+    .courses-structure-container {
+        align-items: center;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        max-width: 1400px;
+
+        .courses-structure-item {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+    
+            h1 {
+                font-size: $--unnamed-font-size-30;
+                font-weight: $--unnamed-font-weight-500;
+                color: $--unnamed-color-002950;
+            }
+    
+            p {
+                font-size: $--unnamed-font-size-16;
+                font-weight: $--unnamed-font-weight-300;
+                color: $--unnamed-color-185fa2;
+                max-width: 400px;
+            }
+
+            .card-container {
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+                justify-content: center;
+                gap: 1.5rem;
+                max-width: 450px;
+            }
+        }
+
+    }
+    
+}

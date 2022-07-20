@@ -11,17 +11,28 @@
     min-height: 700px;
     position: relative;
 
+    &::before {
+        background-color: rgba(255, 255, 255, 0.5);
+        bottom: 0px;
+        content: "";
+        left: 0px;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+
     header {
 
         max-width: 1000px;
         min-width: 870px;
+        position: relative;
 
         h1 {
             color: $--unnamed-color-001f3c;
             font-family: $--unnamed-font-family-exo-2;
             font-size: $--unnamed-font-size-64;
             font-weight: $--unnamed-font-weight-bold;
-            max-width: 479px;
+            max-width: calc(100% - 280px);
             @include margin-top-bottom(null, 0, 15);
         }
 
@@ -43,5 +54,4 @@
     &-telephone-number {
         border-bottom: 2px solid #000;
     }
-
 }

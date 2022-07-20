@@ -17,14 +17,19 @@ export const Courses = ({ courses, coursesMainSettings }: Coursesprops) => {
         Title, 
         Description,
         buttonLabel,
-        href
+        href,
+        backgroundColor
     } = coursesMainSettings?.[0] || {}
 
+    const mainColor = backgroundColor === '#001F3C' ? '#FFFFFF' : '#002950';
+    const secondaryColor = backgroundColor === '#001F3C' ? '#FFFFFF' : '#001F3C';
+    const buttonTextColor = backgroundColor === '#001F3C' ? '#001F3C' : '#FFFFFF';
+
   return (
-    <section className='courses span-1-12'>
+    <section className='courses span-1-12' style={{backgroundColor: backgroundColor}}>
         <header className='courses-header'>
-            <h1>{Title}</h1>
-            <p>{Description}</p>
+            <h1 style={{color: mainColor}}>{Title}</h1>
+            <p style={{color: secondaryColor}} >{Description}</p>
         </header>
         <Swiper
             navigation={{
@@ -66,7 +71,14 @@ export const Courses = ({ courses, coursesMainSettings }: Coursesprops) => {
         <div className="custom-next-button custom-swiper-button">
             <div className='custom-next-arrow'></div>
         </div>
-        <CustomButton title={buttonLabel} href={href} outerShadowColor={"#002950"} innerShadowrColor={"#5b9ce7"} />
+        <CustomButton 
+            title={buttonLabel}
+            href={href} 
+            outerShadowColor={"#002950"} 
+            innerShadowrColor={"#5b9ce7"} 
+            mainBackgroundColor={mainColor}
+            mainColor={buttonTextColor}
+        />
     </section>
   );
 };

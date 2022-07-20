@@ -6,11 +6,14 @@
     font-family: $--unnamed-font-family-exo-2;
     justify-content: center;
     min-height: 500px;
+    gap: 3rem;
 
     header {
         text-align: center;
+        max-width: 980px;
 
         h1 {
+            @include margin-top-bottom(null, 0, 30);
             color: $--unnamed-color-002950;
             font-size: $--unnamed-font-size-40;
             font-weight: $--unnamed-font-weight-bold;
@@ -20,6 +23,12 @@
             color: $--unnamed-color-185fa2;
             font-size: $--unnamed-font-size-16;
             font-weight: $--unnamed-font-weight-500;
+        }
+
+        p {
+            color: $--unnamed-color-185fa2;
+            font-size: $--unnamed-font-size-16;
+            font-weight: $--unnamed-font-weight-300;
         }
     }
 
@@ -41,6 +50,11 @@
             position: relative;
             transform: skewY(353deg);
             width: 270px;
+            gap: .2rem;
+
+            & > * {
+                transform: skewY(-353deg);
+            }
 
             .feedback-image {
                 background-color: #ffffff;
@@ -51,12 +65,18 @@
                 width: 100px;
             }
 
+            h1 {
+                @include margin-top-bottom(null, 0, 0);
+                color: $--unnamed-color-002950;
+                font-size: $--unnamed-font-size-22;
+                font-weight: $--unnamed-font-weight-500;
+            }
+
             p {
                 @include padding-top-bottom(null, 0, 20);
                 color: $--unnamed-color-185fa2;
                 font-size: $--unnamed-font-size-16;
                 font-weight: $--unnamed-font-weight-300;
-                transform: skewY(-353deg);
             }
 
             .feedback-owner {
@@ -69,7 +89,6 @@
                 color: $--unnamed-color-001f3c;
                 font-size: $--unnamed-font-size-14;
                 font-weight: $--unnamed-font-weight-300;
-                transform: skewY(-353deg);
             }
 
         }

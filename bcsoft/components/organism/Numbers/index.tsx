@@ -16,14 +16,19 @@ export const Numbers = ({numbers, numbersMainSettings}: NumbersProps) => {
         backgroundImage,
         image,
         buttonLabel,
-        buttonHref
+        buttonHref,
+        rotate
     } = numbersMainSettings?.[0] || {};
 
     const mainTextColor = backgroundImage ? '#FFFFFF' : '#002950';
     const secondaryTextColor = backgroundImage ? '#FFFFFFF' : '#185FA2';
+    const direction = rotate === 'SI' ? 'row-reverse' : 'row';
 
     return(
-        <section className="numbers span-1-12" style={{backgroundImage: backgroundImage && `url(${getMediaPath(backgroundImage)})`}} >
+        <section 
+            className="numbers span-1-12" 
+            style={{backgroundImage: backgroundImage && `url(${getMediaPath(backgroundImage)})`, flexDirection: direction}}
+        >
             <header className='numbers-header numbers-wrapper' >
                 <div>
                     <h1 dangerouslySetInnerHTML={{  __html: Title ?? '' }} style={{color: mainTextColor}} ></h1>

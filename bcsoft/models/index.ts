@@ -5,6 +5,7 @@ export * from './clients-feedbacks';
 export * from './clients';
 export * from './consultants';
 export * from './core-business';
+export * from './courses-structure';
 export * from './courses';
 export * from './custom-hero';
 export * from './footer';

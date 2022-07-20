@@ -12,4 +12,5 @@ export interface ICoursesMainSettings {
     Description: string;
     buttonLabel: string;
     href: string;
+    backgroundColor: string;
 }

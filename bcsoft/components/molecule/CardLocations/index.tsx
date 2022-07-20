@@ -12,9 +12,11 @@ export function CardLocations({ position }: CardLocationsProps): JSX.Element {
             className='locations-card'
             style={{top: position?.y, left: position?.x}}
         >
-            <p>{position?.selectedLocation?.Indirizzo_x0020_sede}</p>
-            <p>{position?.selectedLocation?.Telefono}</p>
-            <p>{position?.selectedLocation?.Fax}</p>
-            <p className='pointer locations-card-email' onClick={() => sendEmailTo(position?.selectedLocation?.Email)}>{position?.selectedLocation?.Email}</p>
+            <div>
+                <p>{position?.selectedLocation?.Indirizzo_x0020_sede}</p>
+                <p>{position?.selectedLocation?.Telefono}</p>
+                <p>{position?.selectedLocation?.Fax}</p>
+                <p className='pointer locations-card-email' onClick={() => sendEmailTo(position?.selectedLocation?.Email)}>{position?.selectedLocation?.Email}</p>
+            </div>
     </article>
 }

@@ -1,0 +1,29 @@
+.courses-structure-card {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 160px;
+    min-height: 185px;
+    background-color: $--unnamed-color-f3f3f3;
+    clip-path: polygon(0 8%, 100% 0, 100% 92%, 0% 100%);
+    position: relative;
+    opacity: .7;
+
+    .main-text {
+        font-size: $--unnamed-font-size-16;
+        font-weight: $--unnamed-font-weight-bold;
+        color: $--unnamed-color-001f3c;
+    }
+
+    .secondary-text {
+        font-size: $--unnamed-font-size-16;
+        font-weight: $--unnamed-font-weight-300;
+        color: $--unnamed-color-001f3c;
+    }
+}
+
+.even-card {
+    top: -20px;
+}
