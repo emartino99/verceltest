@@ -4,21 +4,22 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-- develop
+- master
 
 pool:
-  vmImage: ubuntu-latest
+ vmImage: ubuntu-latest
 
 steps:
 - task: NodeTool@0
-  inputs:
-    versionSpec: '14.x'
-  displayName: 'Install Node.js'
+ inputs:
+   versionSpec: '12.x'
+ displayName: 'Install Node.js'
 
 - script: |
-    yarn install
-    yarn run build
-  displayName: 'yarn install and build'
+   npm install
+   npm run build
+ displayName: 'npm install and build'
+
 - task: ArchiveFiles@2
  inputs:
    rootFolderOrFile: '.'
