@@ -71,14 +71,17 @@ export const Courses = ({ courses, coursesMainSettings }: Coursesprops) => {
         <div className="custom-next-button custom-swiper-button">
             <div className='custom-next-arrow'></div>
         </div>
-        <CustomButton 
-            title={buttonLabel}
-            href={href} 
-            outerShadowColor={"#002950"} 
-            innerShadowrColor={"#5b9ce7"} 
-            mainBackgroundColor={mainColor}
-            mainColor={buttonTextColor}
-        />
+        {
+            buttonLabel && href &&
+                <CustomButton 
+                    title={buttonLabel}
+                    href={href} 
+                    outerShadowColor={"#002950"} 
+                    innerShadowrColor={"#5b9ce7"} 
+                    mainBackgroundColor={mainColor}
+                    mainColor={buttonTextColor}
+                />
+        }
     </section>
   );
 };
