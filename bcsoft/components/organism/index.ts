@@ -6,6 +6,7 @@ export * from './Clients';
 export * from './ClientsFeedbacks';
 export * from './Consultants';
 export * from './Courses';
+export * from './CoursesAndMasters';
 export * from './CoursesStructure';
 export * from './CustomHero';
 export * from './Footer';

@@ -1,0 +1,49 @@
+.courses-masters-card-container {
+    @include padding-top-bottom(null, 30, 30);
+    align-items: center;
+    border: 2px solid $--unnamed-color-001f3c;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    max-width: 300px;
+    min-height: 250px;
+    min-width: 280px;
+    position: relative;
+    transform: skewY(354deg);
+
+    .courses-masters-card {
+        display: flex;
+        flex-flow: row wrap;
+        transform: skewY(-354deg);
+        width: 100%;
+        gap: 1rem;
+
+        .courses-masters-image {
+            flex: 1;
+            position: relative;
+            background-color: $--unnamed-color-ffffff;
+        }
+
+        .courses-masters-title {
+            flex: 2;
+            position: relative;
+        }
+
+        h1 {
+            font-size: $--unnamed-font-size-22;
+            font-weight: $--unnamed-font-weight-500;
+        }
+
+        p {
+            @include padding-left-right(null, 20, 20);
+            font-size: $--unnamed-font-size-16;
+            font-weight: $--unnamed-font-weight-300;
+        }
+    }
+
+    .custom-button-container {
+        @include margin-left-right(null, 30, 30);
+        @include margin-top-bottom(null, 30, 0);
+        width: 198px;
+    }
+}
