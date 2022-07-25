@@ -24,7 +24,7 @@ export const CoursesAndMasters = ({coursesMastersMainSettings, cardsCoursesMaste
     return (
         <section className="courses-masters span-1-12">
             {
-                Title || mainDescription &&
+                (Title || mainDescription) &&
                     <header>
                         <h1>{Title}</h1>
                         <p>{mainDescription}</p>
