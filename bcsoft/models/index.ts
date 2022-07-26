@@ -1,6 +1,8 @@
 export * from './banner';
 export * from './build-your-future';
+export * from './card-avaiable-services';
 export * from './cards-courses-masters';
+export * from './cards-services-products';
 export * from './certifications';
 export * from './clients-feedbacks';
 export * from './clients';
@@ -20,6 +22,7 @@ export * from './locations';
 export * from './navbar';
 export * from './news';
 export * from './numbers';
+export * from './our-services';
 export * from './partners';
 export * from './products';
 export * from './quote';

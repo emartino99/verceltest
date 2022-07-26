@@ -1,0 +1,30 @@
+.avaiable-services-item-card-container {
+    display: flex;
+    width: 100%;
+    @include padding-top-bottom(null, 5, 5);
+
+    .avaiable-services-item-card {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        width: 348px;
+        transform: skewY(357deg);
+        position: relative;
+
+        h1 {
+            font-size: $--unnamed-font-size-22;
+            font-weight: $--unnamed-font-weight-300;
+        }
+    
+        &-image {
+            position: relative;
+            height: 100px;
+            width: 70px;
+        }
+
+        & > * {
+            transform: skewY(-357deg);
+        }
+    }
+}

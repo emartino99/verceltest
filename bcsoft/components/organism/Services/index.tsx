@@ -32,18 +32,26 @@ export const Services = ({services, servicesMainSettings}: ServicesProps) => {
             </header>
             <div className="services-content">
                 {
-                    services?.map(card => (
-                        <article key={card.ID}>
-                            {
-                                card.image &&
-                                    <div className="image-container">
-                                        <Image src={getMediaPath(card.image)} alt={card.Title} layout="fill" objectFit='scale-down' />
-                                    </div>
-                            }
-                            <h1>{card.Title}</h1>
-                            {card.descriptionHover && <p>{card.descriptionHover}</p>}
+                    services?.map(card => {
+                        console.log(card);
+                        const backgroundColor = card.whiteBackgroundColor === 'SI' ? '#FFFFFF' : '#001F3C';
+                        const textColor = card.whiteBackgroundColor === 'SI' ? '#001F3C' : '#FFFFFF';
+                        return(
+                            <article 
+                                key={card.ID}
+                                style={{backgroundColor: backgroundColor, minHeight: card.cardMinHeight}}
+                            >
+                                {
+                                    card.image &&
+                                        <div className="image-container">
+                                            <Image src={getMediaPath(card.image)} alt={card.Title} layout="fill" objectFit='scale-down' />
+                                        </div>
+                                }
+                            <h1 style={{color: textColor}}>{card.Title}</h1>
+                            {card.descriptionHover && <p style={{color: textColor}}>{card.descriptionHover}</p>}
                         </article>
-                    ))
+                        )
+                    })
                 }
             </div>
             {buttonLabel && buttonHref && <CustomButton title={buttonLabel} href={buttonHref} mainBackgroundColor={'#FFFFFF'} mainColor={'#001F3C'} />}

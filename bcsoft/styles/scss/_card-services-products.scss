@@ -1,0 +1,61 @@
+.services-products-card {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 250px;
+    width: 348px;
+    background-color: #001f3c;
+    color: #fff;
+    clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+    gap: 1.5rem;
+
+    &-header {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        &-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            position: relative;
+            min-height: 70px;
+
+            h1 {
+                @include margin-top-bottom(null, 0,0);
+                color: $--unnamed-color-ffffff;
+                font-size: $--unnamed-font-size-30;
+                font-weight: $--unnamed-font-weight-500;
+            }
+        }
+
+        .image {
+            width: 100px;
+        }
+        
+    }
+
+    &-dots {
+        height: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &::before {
+            content: "• • • • • • • • • • • • • • • • • • •";
+            font-size: 1.7rem;
+        }
+    }
+
+    p {
+        width: 170px;
+        text-align: center;
+        color: $--unnamed-color-ffffff;
+        font-size: $--unnamed-font-size-14;
+        font-weight: $--unnamed-font-weight-500;
+    }
+}

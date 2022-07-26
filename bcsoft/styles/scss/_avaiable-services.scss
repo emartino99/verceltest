@@ -1,0 +1,21 @@
+.avaiable-services {
+    min-height: 500px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    font-family: $--unnamed-font-family-exo-2;
+
+    &-item {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        flex: 1;
+        position: relative;
+        text-align: center;
+        max-width: 500px;        
+    }
+}

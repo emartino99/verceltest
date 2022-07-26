@@ -6,7 +6,7 @@
     flex-flow: column nowrap;
     gap: 3rem;
     justify-content: center;
-    min-height: 900px;
+    min-height: 600px;
     @include padding-top-bottom(null, 60, 60);
     @include padding-left-right(null, 60, 60);
 
@@ -17,7 +17,7 @@
         flex-flow: column nowrap;
         font-family: $--unnamed-font-family-exo-2;
         gap: 2rem;
-        max-width: 800px;
+        max-width: 900px;
         text-align: center;
         @include margin-top-bottom(null, 50, 0);
 
@@ -52,16 +52,14 @@
             @include padding-left-right(null, 30, 30);
             @include padding-top-bottom(null, 15, 15);
             align-items: center;
-            background-color: $--unnamed-color-ffffff;
             display: flex;
             flex-flow: column nowrap;
             gap: 1rem;
             justify-content: center;
-            min-height: 165px;
             position: relative;
             transform: skewY(357deg);
             width: 247px;
-            border: 1.5px solid $--unnamed-color-001f3c;
+            border: 1.5px solid $--unnamed-color-ffffff;
 
             .image-container {
                 height: 70px;

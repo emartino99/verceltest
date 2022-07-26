@@ -1,0 +1,30 @@
+.avaiable-services-item-header-container {
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+
+    h1 {
+        font-size: $--unnamed-font-size-30;
+        font-weight: $--unnamed-font-weight-500;
+    }
+
+    p {
+        color: $--unnamed-color-001f3c;
+        font-size: $--unnamed-font-size-16;
+        font-weight: $--unnamed-font-weight-300;
+    }
+
+    .avaiable-services-item-header-image {
+        height: 100px;
+        position: relative;
+        width: 100%;
+    }
+
+    .avaiable-services-item-header-button {
+        width: 198px;
+    } 
+}
+   

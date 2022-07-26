@@ -3,7 +3,8 @@ export interface IServices {
     Title: string;
     descriptionHover: string;
     image: string;
-    whiteBackground: string;
+    whiteBackgroundColor: string;
+    cardMinHeight: string;
 }
 
 export interface IServicesMainSettings {
