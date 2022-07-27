@@ -44,6 +44,7 @@ const nextConfig = {
 module.exports = {
   reactStrictMode: true,
   images:{
-    loader:'cloudinary',
+    loader:'imgix',
+    path: "https://noop/"
   },
 };
