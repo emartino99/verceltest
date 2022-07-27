@@ -27,6 +27,6 @@ jobs:
 # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
       app_location: "/bcsoft" # App source code path
       api_location: "" # Api source code path - optional
-      output_location: "out" # Built app content directory - optional
+      output_location: "/bcsoft/out" # Built app content directory - optional
 ###### End of Repository/Build Configurations ######
 
