@@ -1,0 +1,18 @@
+.development-team-card {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    &-image {
+        position: relative;
+        height: 250px;
+        width: 400px;
+    }
+
+    span {
+        color: $--unnamed-color-002950;
+        font-size: $--unnamed-font-size-30;
+        font-weight: $--unnamed-font-weight-bold;
+    }
+}

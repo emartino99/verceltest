@@ -1,0 +1,22 @@
+.estate {
+    align-items: flex-start;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    font-family: $--unnamed-font-family-exo-2;
+    justify-content: flex-start;
+    min-height: 700px;
+
+    header {
+        @include margin-left-right(null, 200, 0);
+        @include margin-top-bottom(null, 120, 120);
+        max-width: 500px;
+
+        p {
+            color: $--unnamed-color-2c74b4;
+            font-size: $--unnamed-font-size-22;
+            font-weight: $--unnamed-font-weight-300;
+        }
+    }
+}
