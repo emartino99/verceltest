@@ -1,0 +1,38 @@
+.development-team {
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+    font-family: $--unnamed-font-family-exo-2;
+    gap: 1.2rem;
+
+    header {
+        align-items: center;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        max-width: 1100px;
+        text-align: center;
+
+        h1 {
+            color: $--unnamed-color-002950;
+            font-size: $--unnamed-font-size-40;
+            font-weight: $--unnamed-font-weight-bold;
+        }
+
+        p {
+            color: $--unnamed-color-185fa2;
+            font-size: $--unnamed-font-size-16;
+            font-weight: $--unnamed-font-weight-300;
+        }
+    }
+
+    &-content {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        max-width: 1200px;
+    }
+}

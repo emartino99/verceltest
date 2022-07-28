@@ -1,0 +1,42 @@
+.cervellone {
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+    font-family: $--unnamed-font-family-exo-2;
+    gap: 4rem;
+    justify-content: center;
+    min-height: 500px;
+
+    header {
+        align-items: center;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 1.5rem;
+        justify-content: center;
+        max-width: 1100px;
+
+        h1 {
+            color: $--unnamed-color-002950;
+            font-size: $--unnamed-font-size-40;
+            font-weight: $--unnamed-font-weight-bold;
+        }
+
+        span {
+            color: $--unnamed-color-001f3c;
+            font-size: $--unnamed-font-size-14;
+            font-weight: $--unnamed-font-weight-300;
+        }
+        
+        p {
+            color: $--unnamed-color-185fa2;
+            font-size: $--unnamed-font-size-16;
+            font-weight: $--unnamed-font-weight-300;
+            line-height: 1.7rem;
+        }
+    }
+
+    &-container {
+        background-color: $--unnamed-color-002950;
+        width: 100%;
+    }
+}

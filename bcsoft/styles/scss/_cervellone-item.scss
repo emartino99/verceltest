@@ -1,0 +1,43 @@
+.cervellone-card {
+    align-items: center;
+    background-color: $--unnamed-color-002950;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    width: 100%;
+
+    h1 {
+        color: $--unnamed-color-ffffff;
+        font-size: $--unnamed-font-size-40;
+        font-weight: $--unnamed-font-weight-bold;
+    }
+
+    &-content {
+        @include padding-top-bottom(null, 30, 30);
+        align-items: center;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        width: 100%;
+        gap: 1.3rem;
+
+        .cervellone-card-image {
+            flex: 1;
+            max-width: 550px;
+            min-height: 450px;
+            position: relative;
+        }
+
+        .cervellone-card-description {
+            flex: 1;
+            max-width: 550px;
+            position: relative;
+
+            p {
+                color: $--unnamed-color-ffffff;
+                font-size: $--unnamed-font-size-16;
+                font-weight: $--unnamed-font-weight-300;
+            }
+        }
+    }
+}
