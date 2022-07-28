@@ -41,10 +41,11 @@ const nextConfig = {
   },
 }
 
-module.exports = {
-  reactStrictMode: true,
-  images:{
-    loader:'imgix',
-    path: "https://noop/"
-  },
-};
+module.exports = nextConfig
+// module.exports = {
+//   reactStrictMode: true,
+//   images:{
+//     loader:'imgix',
+//     path: "https://noop/"
+//   },
+// };
