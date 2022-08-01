@@ -1,0 +1,112 @@
+.latest-news {
+    @include padding-top-bottom(null, 30, 30);
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+    font-family: $--unnamed-font-family-exo-2;
+    gap: 6rem;
+    justify-content: center;
+    min-height: 500px;
+
+    header {
+        align-items: center;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        position: relative;
+
+        h1 {
+            @include margin-top-bottom(null, 0, 0);
+            color: $--unnamed-color-39597787;
+            font-size: $--unnamed-font-size-78;
+            font-weight: $--unnamed-font-weight-300;
+        }
+
+        h2 {
+            @include margin-top-bottom(null, 0, 0);
+            color: $--unnamed-color-001f3c;
+            font-size: $--unnamed-font-size-56;
+            font-weight: $--unnamed-font-weight-500;
+            position: absolute;
+            top: 46%;
+        }
+    }
+
+    &-content {
+        align-items: flex-start;
+        display: flex;
+        flex-flow: row wrap;
+        gap: 1.5rem;
+        justify-content: center;
+
+        .news-first-container {
+            align-items: center;
+            display: flex;
+            flex-flow: row wrap;
+            gap: 1.5rem;
+            max-width: 700px;
+
+            .show-more {
+                @include margin-top-bottom(null, 30, 0);
+                width: 100%;
+                text-align: center;
+                text-decoration: underline;
+            }
+        }
+
+        .news-second-container {
+            @include padding-left-right(null, 30, 30);
+            @include padding-top-bottom(null, 20, 80);
+            align-items: center;
+            background-color: #001F3C;
+            clip-path: polygon(0 4%, 100% 0, 100% 96%, 0% 100%);
+            color: #fff;
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 1.5rem;
+            justify-content: center;
+            width: 300px;
+
+            .sign-in-newsletter {
+                & > label {
+                    color: $--unnamed-color-ffffff;
+                    font: normal normal normal 14px/21px "Exo-regular";
+                    letter-spacing: $--unnamed-character-spacing-0-03;
+                }
+                & .signin {
+                    @include margin-top-bottom(null, 30, 0);
+                    @include padding-top-bottom(null, 11, 11);
+                    align-items: center;
+                    display: flex;
+                    flex-flow: column nowrap;
+                    font: normal normal normal 14px/24px "Exo-regular";
+                    gap: 1rem;
+                    height: 34px;
+                    justify-content: center;
+
+                    & > .input {
+                        @include padding-left-right(null, 24, 24);
+                        @include padding-top-bottom(null, 15, 15);
+                        border-radius: 3px 0 0 3px;
+                        border: 1px solid #000;
+                        box-sizing: border-box;
+                        height: 40px;
+                        outline: none;
+                        width: 100%;
+                    }
+                    & > .button {
+                        @include padding-left-right(null, 24, 24);
+                        @include padding-top-bottom(null, 15, 15);
+                        border-radius: 0px 2px 2px 0px;
+                        border: 1px solid #001f3c;
+                        color:$--unnamed-color-001f3c;
+                        height: 40px;
+                        letter-spacing:$--unnamed-character-spacing-0;
+                        width: 100%;
+                    }
+                }
+            }
+            
+        }
+    }
+}

@@ -5,7 +5,7 @@ import { getMediaPath } from "../../../utils";
 interface CardCoursesMastersProps {
     title: string;
     description: string;
-    image: string;
+    image?: string;
     buttonLabel?: string;
     buttonHref?: string;
     backgroundColor: string;
@@ -30,7 +30,7 @@ export const CardCoursesMasters = ({
         >
             <div className="courses-masters-card">
                 <div className="courses-masters-image">
-                    <Image src={getMediaPath(image)} alt={title} layout="fill" objectFit="scale-down" />
+                    { image && <Image src={getMediaPath(image)} alt={title} layout="fill" objectFit="scale-down" /> }
                 </div>
                 <div className="courses-masters-title">
                     <h1 style={{color: textColor}}>{title}</h1>

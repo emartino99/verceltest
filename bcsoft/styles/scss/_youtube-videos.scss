@@ -1,0 +1,47 @@
+.youtube-videos {
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2rem;
+    justify-content: center;
+    min-height: 500px;
+
+    header {
+        align-items: center;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        position: relative;
+
+        h1 {
+            @include margin-top-bottom(null, 0, 0);
+            color: $--unnamed-color-39597787;
+            font-size: $--unnamed-font-size-56;
+            font-weight: $--unnamed-font-weight-300;
+        }
+
+        h2 {
+            @include margin-top-bottom(null, 0, 0);
+            color: $--unnamed-color-001f3c;
+            font-size: $--unnamed-font-size-40;
+            font-weight: $--unnamed-font-weight-bold;
+            position: absolute;
+            top: 46%;
+        }
+    }
+
+    &-content {
+        @include padding-top-bottom(null, 30, 30);
+        align-items: center;
+        display: flex;
+        flex-flow: row wrap;
+        gap: 2rem;
+        max-width: 1200px;
+
+        .youtube-card {
+            border: none;
+            height: 144px;
+            width: 257px;
+        }
+    }
+}

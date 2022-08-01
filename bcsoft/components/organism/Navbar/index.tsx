@@ -33,11 +33,11 @@ export function Navbar() {
                     return item.HasSubLinks === "SI"
                         ? <button
                             key={item.LinkID}
-                            className={`navbar-custom-button ${selected?.[0]?.SubLinkID === item.LinkID ? 'active' : ''}`}
+                            className={`navbar-custom-button pointer ${selected?.[0]?.SubLinkID === item.LinkID ? 'active' : ''}`}
                             onClick={() => openMenu(item.LinkID)} type='button'>
                             {item.Title}
                         </button>
-                        : <button key={item.LinkID} onClick={() => item?.LinkURL && redirectToLink(item.LinkURL)} type='button'>
+                        : <button className="pointer" key={item.LinkID} onClick={() => item?.LinkURL && redirectToLink(item.LinkURL)} type='button'>
                             {item.Title}
                         </button>;
 

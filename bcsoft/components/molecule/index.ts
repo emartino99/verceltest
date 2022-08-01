@@ -3,6 +3,7 @@ export * from './CardBusiness'
 export * from './CardCoursesMasters';
 export * from './CardDeveloper';
 export * from './CardLocations'
+export * from './CardNewsLetter';
 export * from './CardServicesProducts';
 export * from './CervelloneItem';
 export * from './HeaderAvaiableServices';

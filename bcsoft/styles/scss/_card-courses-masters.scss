@@ -5,9 +5,8 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    max-width: 300px;
+    width: 325px;
     min-height: 250px;
-    min-width: 280px;
     position: relative;
     transform: skewY(354deg);
 
@@ -19,6 +18,7 @@
         gap: 1rem;
 
         .courses-masters-image {
+            @include margin-left-right(null, 20, 0);
             flex: 1;
             position: relative;
             background-color: $--unnamed-color-ffffff;
@@ -27,6 +27,7 @@
         .courses-masters-title {
             flex: 2;
             position: relative;
+            @include margin-left-right(null, 0, 5);
         }
 
         h1 {

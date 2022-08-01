@@ -1,0 +1,48 @@
+.linkedin-feed {
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2rem;
+    justify-content: center;
+    min-height: 500px;
+
+    header {
+        align-items: center;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        position: relative;
+
+        h1 {
+            @include margin-top-bottom(null, 0, 0);
+            color: $--unnamed-color-39597787;
+            font-size: $--unnamed-font-size-78;
+            font-weight: $--unnamed-font-weight-300;
+        }
+
+        h2 {
+            @include margin-top-bottom(null, 0, 0);
+            color: $--unnamed-color-001f3c;
+            font-size: $--unnamed-font-size-56;
+            font-weight: $--unnamed-font-weight-500;
+            position: absolute;
+            top: 46%;
+        }
+    }
+
+    &-content {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        gap: 2rem;
+        @include padding-top-bottom(null, 30, 30);
+        max-width: 1200px;
+
+        .linkedin-feed-card {
+            position: relative;
+            height: 450px;
+            width: 350px;
+        }
+    }
+
+}

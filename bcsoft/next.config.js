@@ -3,6 +3,10 @@ const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+  },
   reactStrictMode: true,
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],

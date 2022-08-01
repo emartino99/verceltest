@@ -44,6 +44,7 @@ export const ENDPOINTS = {
     customHeroFreeCourses: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('customHeroFreeCourses')/items`,
     customHeroJobPositions: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('customHeroJobPositions')/items`,
     customHeroMasters: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('customHeroMasters')/items`,
+    customHeroNews: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('customHeroNews')/items`,
     customHeroServices: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('customHeroServices')/items`,
     design: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('design')/items`,
     designAndCommunciationsMainSettings: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('designAndCommunciationsMainSettings')/items`,
@@ -63,6 +64,11 @@ export const ENDPOINTS = {
     laBellaEstateHero: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('laBellaEstateHero')/items`,
     laBellaEstatePartners: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('laBellaEstatePartners')/items`,
     laBellaEstatePartnersMainSettings: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('laBellaEstatePartnersMainSettings')/items`,
+    latestNews: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('latestNews')/items`,
+    latestNewsMainSettings: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('latestNewsMainSettings')/items`,
+    latestNewsNewsletter: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('latestNewsNewsletter')/items`,
+    linkedinFeed: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('linkedinFeed')/items`,
+    linkedinFeedMainSettings: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('linkedinFeedMainSettings')/items`,
     locations: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('bcSoftLocations')/items`,
     locationsConsultingMainSettings: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('bcSoftLocationsConsultingMainSettings')/items`,
     locationsContactsMainSettings: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('bcSoftLocationsContactsMainSettings')/items`,
@@ -104,6 +110,8 @@ export const ENDPOINTS = {
     strengthsThirdContainer: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('strengthsThirdContainer')/items`,
     submenu: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('navbarSubMenuLinks')/items`,
     vision: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('vision')/items`,
+    youtube: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('youtube')/items`,
+    youtubeMainSettings: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('youtubeMainSettings')/items`,
 }
 
 export type ENDPOINTS_TYPE = keyof typeof ENDPOINTS;
