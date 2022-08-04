@@ -14,6 +14,7 @@ export * from './CustomHero';
 export * from './Design';
 export * from './EstateDevelopmentTeam';
 export * from './Footer';
+export * from './Form';
 export * from './Hero';
 export * from './History';
 export * from './InfoBanner';

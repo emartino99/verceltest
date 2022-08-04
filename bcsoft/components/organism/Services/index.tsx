@@ -33,7 +33,6 @@ export const Services = ({services, servicesMainSettings}: ServicesProps) => {
             <div className="services-content">
                 {
                     services?.map(card => {
-                        console.log(card);
                         const backgroundColor = card.whiteBackgroundColor === 'SI' ? '#FFFFFF' : '#001F3C';
                         const textColor = card.whiteBackgroundColor === 'SI' ? '#001F3C' : '#FFFFFF';
                         return(

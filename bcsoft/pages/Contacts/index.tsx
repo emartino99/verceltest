@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { InferGetServerSidePropsType } from 'next';
-import { CustomHero, InfoBanner, Locations, Services } from '../../components/organism';
+import { CustomHero, Form, InfoBanner, Locations, Services } from '../../components/organism';
 import { getLayout } from '../../components/template';
 import { 
     SharepointResponse,
@@ -10,6 +10,8 @@ import {
     IInfoBanner,
     IServices,
     IServicesMainSettings,
+    IFormMainSettings,
+    IForm,
 } from '../../models';
 import { ENDPOINTS, get } from '../../services';
 import { getHeader } from '../api/auth';
@@ -21,7 +23,9 @@ function Contacts({
   servicesMainSettingsProps,
   locationsProps,
   locationsMainSettingsProps,
-  infoBannerProps
+  infoBannerProps,
+  formProps,
+  formMainSettingsProps
 }: InferGetServerSidePropsType<typeof getServerSideProps>){
   const customHero = parseResults<ICustomHero[]>(customHeroProps);
   const services = parseResults<IServices[]>(servicesProps);
@@ -29,6 +33,8 @@ function Contacts({
   const locationsInfo = parseResults<ILocations[]>(locationsProps);
   const locationsMainSettings = parseResults<ILocationsMainSettings[]>(locationsMainSettingsProps);
   const infoBanner = parseResults<IInfoBanner[]>(infoBannerProps);
+  const form = parseResults<IForm[]>(formProps);
+  const formMainSettings = parseResults<IFormMainSettings[]>(formMainSettingsProps);
  
   return (
     <>
@@ -42,6 +48,7 @@ function Contacts({
         <Services services={services} servicesMainSettings={servicesMainSettings} />
         <Locations locationsInfo={locationsInfo} locationsMainSettings={locationsMainSettings} />
         <InfoBanner infoBanner={infoBanner} />
+        <Form form={form} formMainSettings={formMainSettings} />
       </main>
     </>
   )
@@ -60,7 +67,9 @@ export const getServerSideProps = async () => {
     servicesMainSettingsResponse,
     locationsResponse,
     locationsMainSettingsResponse,
-    infoBannerResponse
+    infoBannerResponse,
+    formResponse,
+    formMainSettingsResponse
   ] = await Promise.allSettled([
     get<SharepointResponse<ICustomHero[]>>(ENDPOINTS.customHeroContacts, { headers }),
     get<SharepointResponse<IServices[]>>(ENDPOINTS.servicesContacts, { headers }),
@@ -68,6 +77,8 @@ export const getServerSideProps = async () => {
     get<SharepointResponse<ILocations[]>>(ENDPOINTS.locations, { headers }),
     get<SharepointResponse<ILocationsMainSettings[]>>(ENDPOINTS.locationsContactsMainSettings, { headers }),
     get<SharepointResponse<IInfoBanner[]>>(ENDPOINTS.infoBannerContacts, { headers }),
+    get<SharepointResponse<IForm[]>>(ENDPOINTS.formContacts, { headers }),
+    get<SharepointResponse<IFormMainSettings[]>>(ENDPOINTS.formContactsMainSettings, { headers }),
   ])
 
   return {
@@ -77,7 +88,9 @@ export const getServerSideProps = async () => {
       servicesMainSettingsProps: axiosParser(servicesMainSettingsResponse),
       locationsProps: axiosParser(locationsResponse),
       locationsMainSettingsProps: axiosParser(locationsMainSettingsResponse),
-      infoBannerProps: axiosParser(infoBannerResponse)
+      infoBannerProps: axiosParser(infoBannerResponse),
+      formProps: axiosParser(formResponse),
+      formMainSettingsProps: axiosParser(formMainSettingsResponse)
     }
   }
 }

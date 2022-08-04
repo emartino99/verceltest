@@ -16,6 +16,7 @@ export * from './custom-hero';
 export * from './design-communication';
 export * from './development-team';
 export * from './footer';
+export * from './form';
 export * from './hero';
 export * from './history';
 export * from './info-banner';

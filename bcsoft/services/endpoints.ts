@@ -53,6 +53,8 @@ export const ENDPOINTS = {
     estateDevelopmentTeam: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('estateDevelopmentTeam')/items`,
     estateDevelopmentTeamMainSettings: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('estateDevelopmentTeamMainSettings')/items`,
     footer: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('footerLinks')/items`,
+    formContacts: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('formContacts')/items`,
+    formContactsMainSettings: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('formContactsMainSettings')/items`,
     hero: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('hero')/items`,
     herolinks: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('heroQuickLinks')/items`,
     history: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('bcSoftHistory')/items`,
