@@ -8,7 +8,8 @@ import { ENDPOINTS, get } from '../../services';
 import { getHeader } from '../api/auth';
 import { axiosParser, paramsValidation, parseResults } from '../../utils';
 import { IProductsPage, PageConfigurationModel, PageEndpointsModel } from '../../models/products_page';
-import { getComponentFrom } from '../../components/organism';
+import { getComponentFrom } from '../../components';
+
 
 function ProductsPage({
     template,

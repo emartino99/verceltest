@@ -1,8 +1,8 @@
-import { PageEndpoints } from '../../models/products_page';
-import Banner from './Banner';
+
+
 
 export * from './AvaiableServices';
-export {Banner} from './Banner';
+export * from './Banner';
 export * from './BuildYourFuture';
 export * from './Business';
 export * from './CertificationsItems';
@@ -40,10 +40,3 @@ export * from './ServicesProducts';
 export * from './Strengths';
 export * from './Vision';
 export * from './YoutubeVideos';
-
-interface ConfiguratiorType extends  Record<string, any>{}
-export const getComponentFrom = (key: string) => {
-    return ({
-        Banner: Banner
-    } as ConfiguratiorType)[key] || null
-}
