@@ -11,3 +11,5 @@ export const axiosParser = <T>(result: PromiseSettledResult<SharepointResponse<T
 export const isModel = <T>(data: ApiResults<T> | ApiError): data is ApiResults<T> => 
    (data as ApiResults<T>)?.results !== undefined;
 export const parseResults = <T>(data: ApiResults<T> | ApiError) => isModel<T>(data) ? data.results : undefined;
+
+export const paramsValidation = (id: string | string[] | undefined): id is string => !!id && !Array.isArray(id)
