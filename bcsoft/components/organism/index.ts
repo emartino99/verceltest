@@ -41,9 +41,9 @@ export * from './Strengths';
 export * from './Vision';
 export * from './YoutubeVideos';
 
-interface ConfiguratiorType extends  Record<PageEndpoints, any>{}
-export const getComponentFrom = (key: PageEndpoints) => {
+interface ConfiguratiorType extends  Record<string, any>{}
+export const getComponentFrom = (key: string) => {
     return ({
-        banner: Banner
+        Banner: Banner
     } as ConfiguratiorType)[key] || null
 }
