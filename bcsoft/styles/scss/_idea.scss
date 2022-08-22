@@ -1,0 +1,113 @@
+.idea {
+    @include padding-left-right(null, 30, 30);
+    @include padding-top-bottom(null, 30, 30);
+    align-items: center;
+    background-color: $--unnamed-color-001f3c;
+    clip-path: polygon(0 5%, 100% 0, 100% 95%, 0% 100%);
+    color: $--unnamed-color-ffffff;
+    display: flex;
+    flex-flow: column nowrap;
+    font-family: $--unnamed-font-family-exo-2;
+    gap: 4rem;
+    justify-content: flex-start;
+    max-height: calc(100% + 200px);
+    min-height: 500px;
+
+    header {
+        text-align: center;
+
+        h1 {
+            font-size: $--unnamed-font-size-40;
+            font-weight: $--unnamed-font-weight-bold;
+        }
+    }
+
+    &-container {
+        align-items: center;
+        display: flex;
+        flex-flow: row wrap;
+        gap: 3rem;
+        max-width: 1500px;
+        min-height: 200px;
+
+        .content {
+            align-content: center;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            transform: skewY(355deg);
+        }
+
+        .number-container {
+            height: 75px;
+            position: relative;
+            transform: skewY(-355deg);
+            width: 60px;
+        }
+
+        .text-container {
+            @include padding-top-bottom(null, 15 ,15);
+            align-items: center;
+            border: 1px solid $--unnamed-color-f0c70c;
+            border-left: none;
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 1.2rem;
+            height: 44px;
+            justify-content: center;
+            text-align: center;
+            transform: translate(-8px, 3px);
+            transition: height .6s;
+            width: 250px;
+
+            & > * {
+                transform: skewY(-355deg);
+            }
+
+            h1 {
+                @include margin-top-bottom(null, 0, 0);
+                font-size: $--unnamed-font-size-27;
+                font-weight: $--unnamed-font-weight-bold;
+            }
+
+            span {
+                display: none;
+                font-size: $--unnamed-font-size-14;
+                font-weight: $--unnamed-font-weight-300;
+            }
+
+            p {
+                display: none;
+                font-size: $--unnamed-font-size-12;
+                font-weight: $--unnamed-font-weight-300;
+                max-width: 193px;
+                max-height: 185px;
+                overflow: hidden;
+            }
+
+            &::before {
+                background-color: $--unnamed-color-f0c70c;
+                bottom: 0;
+                content: '';
+                height: 6px;
+                left: 0;
+                position: absolute;
+                transition: height .6s;
+                width: 1px;
+            }
+            
+            &.active:hover {
+                height: 170px;
+
+                span,
+                p {
+                    display: inline;
+                }
+
+                &::before {
+                    height: 130px
+                }
+            }
+        }
+    }
+}

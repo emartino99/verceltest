@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { InferGetServerSidePropsType } from 'next';
-import { ClientsFeedbacks, Courses, CoursesStructure, CustomHero, Numbers } from '../../components/organism';
+import { ClientsFeedbacks, Courses, CoursesStructure, CustomHero, Form, Numbers } from '../../components/organism';
 import { getLayout } from '../../components/template';
 import { 
     SharepointResponse,
@@ -13,6 +13,8 @@ import {
     ICoursesMainSettings,
     ICoursesStructure,
     ICoursesStructureMainSettings,
+    IForm,
+    IFormMainSettings,
 } from '../../models';
 import { ENDPOINTS, get } from '../../services';
 import { getHeader } from '../api/auth';
@@ -30,6 +32,8 @@ function Academy({
   numbersMainSettingsProps,
   coursesAcademyProps,
   coursesAcademyMainSettingsProps,
+  formProps,
+  formMainSettingsProps
 }: InferGetServerSidePropsType<typeof getServerSideProps>){
   const customHero = parseResults<ICustomHero[]>(customHeroProps);
   const feedbacks = parseResults<IFeedbacks[]>(clientsFeedbacksProps);
@@ -42,6 +46,8 @@ function Academy({
   const numbersMainSettings = parseResults<INumbersMainSettings[]>(numbersMainSettingsProps);
   const coursesAcademy = parseResults<ICourses[]>(coursesAcademyProps);
   const coursesAcademyMainSettings = parseResults<ICoursesMainSettings[]>(coursesAcademyMainSettingsProps);
+  const form = parseResults<IForm[]>(formProps);
+  const formMainSettings = parseResults<IFormMainSettings[]>(formMainSettingsProps);
  
   return (
     <>
@@ -57,6 +63,7 @@ function Academy({
         <Courses courses={courses} coursesMainSettings={coursesMainSettings} />
         <Numbers numbers={numbers} numbersMainSettings={numbersMainSettings} />
         <Courses courses={coursesAcademy} coursesMainSettings={coursesAcademyMainSettings} />
+        <Form form={form} formMainSettings={formMainSettings} />
       </main>
     </>
   )
@@ -81,6 +88,8 @@ export const getServerSideProps = async () => {
     numbersMainSettingsResponse,
     coursesAcademyResponse,
     coursesAcademyMainSettingsResponse,
+    formResponse,
+    formMainSettingsResponse
   ] = await Promise.allSettled([
     get<SharepointResponse<ICustomHero[]>>(ENDPOINTS.customHeroAcademy, { headers }),
     get<SharepointResponse<IFeedbacks[]>>(ENDPOINTS.clientsFeedbacksAcademy, { headers }),
@@ -93,6 +102,8 @@ export const getServerSideProps = async () => {
     get<SharepointResponse<INumbersMainSettings[]>>(ENDPOINTS.numbersAcademyMainSettings, { headers }),
     get<SharepointResponse<ICourses[]>>(ENDPOINTS.coursesAcademy, { headers }),
     get<SharepointResponse<ICoursesMainSettings[]>>(ENDPOINTS.coursesAcademyMainSettings, { headers }),
+    get<SharepointResponse<IForm[]>>(ENDPOINTS.formAcademy, { headers }),
+    get<SharepointResponse<IFormMainSettings[]>>(ENDPOINTS.formAcademyMainSettings, { headers }),
   ])
 
   return {
@@ -108,6 +119,8 @@ export const getServerSideProps = async () => {
       numbersMainSettingsProps: axiosParser(numbersMainSettingsResponse),
       coursesAcademyProps: axiosParser(coursesAcademyResponse),
       coursesAcademyMainSettingsProps: axiosParser(coursesAcademyMainSettingsResponse),
+      formProps: axiosParser(formResponse),
+      formMainSettingsProps: axiosParser(formMainSettingsResponse)
     }
   }
 }

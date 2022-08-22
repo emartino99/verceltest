@@ -17,6 +17,7 @@ export * from './Footer';
 export * from './Form';
 export * from './Hero';
 export * from './History';
+export * from './Idea';
 export * from './InfoBanner';
 export * from './JobOffers';
 export * from './LaBellaEstateHero';

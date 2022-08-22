@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { InferGetServerSidePropsType } from 'next';
-import { ClientsFeedbacks, CustomHero, Numbers, ReEngineering, Services, ServicesItem } from '../../components/organism';
+import { ClientsFeedbacks, CustomHero, Form, Numbers, ReEngineering, Services, ServicesItem } from '../../components/organism';
 import { getLayout } from '../../components/template';
 import { 
     SharepointResponse,
@@ -11,7 +11,9 @@ import {
     IServicesMainSettings,
     IFeedbacksMainSettings,
     IFeedbacks,
-    IReEngineering
+    IReEngineering,
+    IForm,
+    IFormMainSettings
 } from '../../models';
 import { ENDPOINTS, get } from '../../services';
 import { getHeader } from '../api/auth';
@@ -28,7 +30,9 @@ function Factory({
   servicesItemAMProps,
   reEngineeringProps,
   clientsFeedbacksProps,
-  clientsFeedbacksMainSettingsProps
+  clientsFeedbacksMainSettingsProps,
+  formProps,
+  formMainSettingsProps
 }: InferGetServerSidePropsType<typeof getServerSideProps>){
   const customHero = parseResults<ICustomHero[]>(customHeroProps);
   const numbers = parseResults<INumbers[]>(numbersProps);
@@ -40,6 +44,8 @@ function Factory({
   const reEngineering = parseResults<IReEngineering[]>(reEngineeringProps);
   const feedbacks = parseResults<IFeedbacks[]>(clientsFeedbacksProps);
   const feedbacksMainSettings = parseResults<IFeedbacksMainSettings[]>(clientsFeedbacksMainSettingsProps);
+  const form = parseResults<IForm[]>(formProps);
+  const formMainSettings = parseResults<IFormMainSettings[]>(formMainSettingsProps);
  
   return (
     <>
@@ -56,6 +62,7 @@ function Factory({
         <ServicesItem servicesItem={servicesItemAM} />
         <ReEngineering reEngineering={reEngineering} />
         <ClientsFeedbacks feedbacks={feedbacks} feedbacksMainSettings={feedbacksMainSettings} />
+        <Form form={form} formMainSettings={formMainSettings} />
       </main>
     </>
   )
@@ -78,7 +85,9 @@ export const getServerSideProps = async () => {
     servicesItemAMResponse,
     ReEngineeringResponse,
     clientsFeedbacksResponse,
-    clientsFeedbacksMainSettingssponse
+    clientsFeedbacksMainSettingssponse,
+    formResponse,
+    formMainSettingsResponse
   ] = await Promise.allSettled([
     get<SharepointResponse<ICustomHero[]>>(ENDPOINTS.customHeroFactory, { headers }),
     get<SharepointResponse<INumbers[]>>(ENDPOINTS.numbersFactory, { headers }),
@@ -90,6 +99,8 @@ export const getServerSideProps = async () => {
     get<SharepointResponse<IReEngineering[]>>(ENDPOINTS.reEngineering, { headers }),
     get<SharepointResponse<IFeedbacks[]>>(ENDPOINTS.clientsFeedbacks, { headers }),
     get<SharepointResponse<IFeedbacksMainSettings[]>>(ENDPOINTS.clientsFeedbacksMainSettings, { headers }),
+    get<SharepointResponse<IForm[]>>(ENDPOINTS.formFactory, { headers }),
+    get<SharepointResponse<IFormMainSettings[]>>(ENDPOINTS.formFactoryMainSettings, { headers }),
   ])
 
   return {
@@ -104,6 +115,8 @@ export const getServerSideProps = async () => {
       reEngineeringProps: axiosParser(ReEngineeringResponse),
       clientsFeedbacksProps: axiosParser(clientsFeedbacksResponse),
       clientsFeedbacksMainSettingsProps: axiosParser(clientsFeedbacksMainSettingssponse),
+      formProps: axiosParser(formResponse),
+      formMainSettingsProps: axiosParser(formMainSettingsResponse)
     }
   }
 }

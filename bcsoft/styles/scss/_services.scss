@@ -61,6 +61,10 @@
             width: 247px;
             border: 1.5px solid $--unnamed-color-ffffff;
 
+            & > * {
+                transform: skewY(-357deg);
+            }
+
             .image-container {
                 height: 70px;
                 position: relative;

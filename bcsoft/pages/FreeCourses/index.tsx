@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { InferGetServerSidePropsType } from 'next';
-import { Courses, CoursesStructure, CustomHero } from '../../components/organism';
+import { Courses, CoursesStructure, CustomHero, Form } from '../../components/organism';
 import { getLayout } from '../../components/template';
 import { 
     SharepointResponse,
@@ -9,6 +9,8 @@ import {
     ICoursesMainSettings,
     ICoursesStructure,
     ICoursesStructureMainSettings,
+    IForm,
+    IFormMainSettings,
 } from '../../models';
 import { ENDPOINTS, get } from '../../services';
 import { getHeader } from '../api/auth';
@@ -19,13 +21,17 @@ function FreeCourses({
   coursesStructureProps,
   coursesStructureMainSettingsProps,
   coursesProps,
-  coursesMainSettingsProps
+  coursesMainSettingsProps,
+  formProps,
+  formMainSettingsProps
 }: InferGetServerSidePropsType<typeof getServerSideProps>){
   const customHero = parseResults<ICustomHero[]>(customHeroProps);
   const coursesStructure = parseResults<ICoursesStructure[]>(coursesStructureProps);
   const coursesStructureMainSettings = parseResults<ICoursesStructureMainSettings[]>(coursesStructureMainSettingsProps);
   const courses = parseResults<ICourses[]>(coursesProps);
   const coursesMainSettings = parseResults<ICoursesMainSettings[]>(coursesMainSettingsProps);
+  const form = parseResults<IForm[]>(formProps);
+  const formMainSettings = parseResults<IFormMainSettings[]>(formMainSettingsProps);
  
   return (
     <>
@@ -38,6 +44,7 @@ function FreeCourses({
         <CustomHero customHero={customHero} />
         <CoursesStructure coursesStructure={coursesStructure} coursesStructureMainSettings={coursesStructureMainSettings} />
         <Courses courses={courses} coursesMainSettings={coursesMainSettings} />
+        <Form form={form} formMainSettings={formMainSettings} />
       </main>
     </>
   )
@@ -56,12 +63,16 @@ export const getServerSideProps = async () => {
     coursesStructureMainSettingsResponse,
     coursesResponse,
     coursesMainSettingsResponse,
+    formResponse,
+    formMainSettingsResponse
   ] = await Promise.allSettled([
     get<SharepointResponse<ICustomHero[]>>(ENDPOINTS.customHeroFreeCourses, { headers }),
     get<SharepointResponse<ICoursesStructure[]>>(ENDPOINTS.coursesStructureFreeCourses, { headers }),
     get<SharepointResponse<ICoursesStructureMainSettings[]>>(ENDPOINTS.coursesStructureFreeCoursesMainSettings, { headers }),
     get<SharepointResponse<ICourses[]>>(ENDPOINTS.coursesFreeCourses, { headers }),
     get<SharepointResponse<ICoursesMainSettings[]>>(ENDPOINTS.coursesFreeCoursesMainSettings, { headers }),
+    get<SharepointResponse<IForm[]>>(ENDPOINTS.formFreeCourses, { headers }),
+    get<SharepointResponse<IFormMainSettings[]>>(ENDPOINTS.formFreeCoursesMainSettings, { headers }),
   ])
 
   return {
@@ -71,6 +82,8 @@ export const getServerSideProps = async () => {
       coursesStructureMainSettingsProps: axiosParser(coursesStructureMainSettingsResponse),
       coursesProps: axiosParser(coursesResponse),
       coursesMainSettingsProps: axiosParser(coursesMainSettingsResponse),
+      formProps: axiosParser(formResponse),
+      formMainSettingsProps: axiosParser(formMainSettingsResponse)
     }
   }
 }

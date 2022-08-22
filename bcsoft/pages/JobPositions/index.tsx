@@ -1,12 +1,14 @@
 import Head from 'next/head';
 import { InferGetServerSidePropsType } from 'next';
-import { Consultants, CustomHero, JobOffers } from '../../components/organism';
+import { Consultants, CustomHero, Form, JobOffers } from '../../components/organism';
 import { getLayout } from '../../components/template';
 import { 
     SharepointResponse,
     ICustomHero,
     IConsultants,
-    IJobOffers
+    IJobOffers,
+    IForm,
+    IFormMainSettings
 } from '../../models';
 import { ENDPOINTS, get } from '../../services';
 import { getHeader } from '../api/auth';
@@ -15,11 +17,15 @@ import { axiosParser, parseResults } from '../../utils';
 function JobPositions({
   customHeroProps,
   consultantsProps,
-  jobOffersProps
+  jobOffersProps,
+  formProps,
+  formMainSettingsProps
 }: InferGetServerSidePropsType<typeof getServerSideProps>){
   const customHero = parseResults<ICustomHero[]>(customHeroProps);
   const consultants = parseResults<IConsultants[]>(consultantsProps);
   const jobOffers = parseResults<IJobOffers[]>(jobOffersProps);
+  const form = parseResults<IForm[]>(formProps);
+  const formMainSettings = parseResults<IFormMainSettings[]>(formMainSettingsProps);
  
   return (
     <>
@@ -32,6 +38,7 @@ function JobPositions({
         <CustomHero customHero={customHero} />
         <Consultants consultants={consultants} />
         <JobOffers jobOffers={jobOffers} />
+        <Form form={form} formMainSettings={formMainSettings} />
       </main>
     </>
   )
@@ -47,18 +54,24 @@ export const getServerSideProps = async () => {
   const [
     customHeroResponse,
     consultantsResponse,
-    jobOffersResponse
+    jobOffersResponse,
+    formResponse,
+    formMainSettingsResponse
   ] = await Promise.allSettled([
     get<SharepointResponse<ICustomHero[]>>(ENDPOINTS.customHeroJobPositions, { headers }),
     get<SharepointResponse<IConsultants[]>>(ENDPOINTS.consultants, { headers }),
-    get<SharepointResponse<IJobOffers[]>>(ENDPOINTS.jobOffers, { headers })
+    get<SharepointResponse<IJobOffers[]>>(ENDPOINTS.jobOffers, { headers }),
+    get<SharepointResponse<IForm[]>>(ENDPOINTS.formJobPositions, { headers }),
+    get<SharepointResponse<IFormMainSettings[]>>(ENDPOINTS.formJobPositionsMainSettings, { headers }),
   ])
 
   return {
     props: {
       customHeroProps: axiosParser(customHeroResponse),
       consultantsProps: axiosParser(consultantsResponse),
-      jobOffersProps: axiosParser(jobOffersResponse)
+      jobOffersProps: axiosParser(jobOffersResponse),
+      formProps: axiosParser(formResponse),
+      formMainSettingsProps: axiosParser(formMainSettingsResponse)
     }
   }
 }

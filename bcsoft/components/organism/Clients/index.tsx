@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { IClients, IClientsMainSettings } from "../../../models";
 import { CustomButton } from "../../atoms/CustomButton";
 import { CustomImage } from "../../atoms/CustomImage";
@@ -9,22 +10,33 @@ interface ClientsProps {
 
 export function Clients({clients, clientsMainSettings}: ClientsProps) {
 
+  const sectionRef = useRef() as React.MutableRefObject<HTMLDivElement>;
+
   const { 
     Title, 
     buttonRouting,
     description
-} = clientsMainSettings?.[0] || {}
+  } = clientsMainSettings?.[0] || {};
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const arrayHtmlCollection = Array.from(entry.target.children[0].children);
+            arrayHtmlCollection.forEach(element => element.classList.add('clients-container-content'))
+          }
+      });
+    });
+    
+    observer.observe(sectionRef.current);
+  }, []);
 
   return (
-    <section className='clients span-1-12'>
+    <section className='clients span-1-12' ref={sectionRef}>
       <article className='clients-container'>
-        {clients?.map((item, i) => {
+        {clients?.map( item => {
           return (
-            <div 
-              key={item.ID}
-              className='clients-container-content' 
-              style={{ animation: `fadeIn ${3 + 2 + i}s`, WebkitAnimation: `fadeIn ${3 + 2 +  i}s`, MozAnimation: `fadeIn ${3 + 2 + i}s` }} 
-            >
+            <div key={item.ID} >
               <CustomImage title={item.Title} relativePath={item.ClientLogo} width={200} height={100} />
             </div> 
           );

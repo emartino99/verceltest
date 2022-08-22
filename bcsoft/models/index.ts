@@ -19,6 +19,7 @@ export * from './footer';
 export * from './form';
 export * from './hero';
 export * from './history';
+export * from './idea';
 export * from './info-banner';
 export * from './job-offers';
 export * from './la-bella-estate-hero';

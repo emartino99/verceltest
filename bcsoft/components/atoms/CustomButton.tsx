@@ -26,7 +26,7 @@ export const CustomButton = ({
   return ( 
     <div className='custom-button-container'>
         <button 
-            className='custom-main-button'
+            className='custom-main-button pointer'
             style={{backgroundColor: mainBackgroundColor, color: mainColor}}
             onClick={() => buttonRedirect(href)}
         >

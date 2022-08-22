@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { InferGetServerSidePropsType } from 'next';
-import { ClientsFeedbacks, CustomHero, Locations, Numbers, Services, ServicesItem } from '../../components/organism';
+import { ClientsFeedbacks, CustomHero, Form, Locations, Numbers, Services, ServicesItem } from '../../components/organism';
 import { getLayout } from '../../components/template';
 import { 
     SharepointResponse,
@@ -13,7 +13,9 @@ import {
     IFeedbacks,
     ILocations,
     ILocationsMainSettings,
-    IServicesItem
+    IServicesItem,
+    IFormMainSettings,
+    IForm
 } from '../../models';
 import { ENDPOINTS, get } from '../../services';
 import { getHeader } from '../api/auth';
@@ -31,6 +33,8 @@ function Consulting({
   clientsFeedbacksMainSettingsProps,
   locationsProps,
   locationsMainSettingsProps,
+  formProps,
+  formMainSettingsProps
 }: InferGetServerSidePropsType<typeof getServerSideProps>){
   const customHero = parseResults<ICustomHero[]>(customHeroProps);
   const numbers = parseResults<INumbers[]>(numbersProps);
@@ -43,6 +47,8 @@ function Consulting({
   const feedbacksMainSettings = parseResults<IFeedbacksMainSettings[]>(clientsFeedbacksMainSettingsProps);
   const locationsInfo = parseResults<ILocations[]>(locationsProps);
   const locationsMainSettings = parseResults<ILocationsMainSettings[]>(locationsMainSettingsProps);
+  const form = parseResults<IForm[]>(formProps);
+  const formMainSettings = parseResults<IFormMainSettings[]>(formMainSettingsProps);
  
   return (
     <>
@@ -59,6 +65,7 @@ function Consulting({
         <ServicesItem servicesItem={servicesItemBlockchain} />
         <ClientsFeedbacks feedbacks={feedbacks} feedbacksMainSettings={feedbacksMainSettings} />
         <Locations locationsInfo={locationsInfo} locationsMainSettings={locationsMainSettings} />
+        <Form form={form} formMainSettings={formMainSettings} />
       </main>
     </>
   )
@@ -83,6 +90,8 @@ export const getServerSideProps = async () => {
     clientsFeedbacksMainSettingssponse,
     locationsResponse,
     locationsMainSettingsResponse,
+    formResponse,
+    formMainSettingsResponse
   ] = await Promise.allSettled([
     get<SharepointResponse<ICustomHero[]>>(ENDPOINTS.customHeroConsulting, { headers }),
     get<SharepointResponse<INumbers[]>>(ENDPOINTS.numbersConsulting, { headers }),
@@ -95,6 +104,8 @@ export const getServerSideProps = async () => {
     get<SharepointResponse<IFeedbacksMainSettings[]>>(ENDPOINTS.clientsFeedbacksMainSettings, { headers }),
     get<SharepointResponse<ILocations[]>>(ENDPOINTS.locations, { headers }),
     get<SharepointResponse<ILocationsMainSettings[]>>(ENDPOINTS.locationsConsultingMainSettings, { headers }),
+    get<SharepointResponse<IForm[]>>(ENDPOINTS.formConsulting, { headers }),
+    get<SharepointResponse<IFormMainSettings[]>>(ENDPOINTS.formConsultingMainSettings, { headers }),
   ])
 
   return {
@@ -110,6 +121,8 @@ export const getServerSideProps = async () => {
       clientsFeedbacksMainSettingsProps: axiosParser(clientsFeedbacksMainSettingssponse),
       locationsProps: axiosParser(locationsResponse),
       locationsMainSettingsProps: axiosParser(locationsMainSettingsResponse),
+      formProps: axiosParser(formResponse),
+      formMainSettingsProps: axiosParser(formMainSettingsResponse)
     }
   }
 }

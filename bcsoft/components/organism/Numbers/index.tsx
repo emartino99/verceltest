@@ -46,13 +46,13 @@ export const Numbers = ({numbers, numbersMainSettings}: NumbersProps) => {
             {
                 numbers?.length && (numbers.map(((card, index) => {
                 return(
-                    <article key={card.ID}>
-                        <div className={`numbers-card inner-card-${index}`} >
+                    <div key={card.ID}>
+                        <div className={`pointer numbers-card inner-card-${index}`} >
                             <span>{card.Title}</span>
                             <p>{card.CardDescription}</p>
                         </div>
                         <div className={`numbers-card outer-card-${index}`}></div>
-                    </article>
+                    </div>
                 ); 
                 }))) 
             }

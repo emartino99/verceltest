@@ -21,10 +21,10 @@
         height: 70px;
         padding: .5em;
         position: relative;
-        width: 1000px;
+        width: 1150px;
 
         .perspective {
-            perspective: 100px;
+            perspective: 300px;
         }
 
         .strengths-circle {
@@ -40,13 +40,14 @@
         }
 
         .strengths-card {
-            border: 1px solid rgba(0,0,0,.5);
+            // border: 1px solid rgba(0,0,0,.5);
             display: inline-block;
-            height: 2.5em;
+            // height: 2.5em;
+            height: 2em;
             margin: .5em;
             position: absolute;
-            transform-style: preserve-3d;
-            transform: rotateX(191deg);
+            // transform-style: preserve-3d;
+            // transform: rotateX(191deg);
             width: 4em;
         }
 
@@ -56,6 +57,7 @@
             gap: 15px;
             justify-content: center;
             position: absolute;
+            opacity: 0;
 
             span {
                 color: $--unnamed-color-002950;
@@ -137,7 +139,17 @@
                 width: 2.8em;
             }
         }
-
     }
+}
 
+.container1 {
+    top: 32%;
+}
+
+.container2 {
+    top: 18%;
+}
+
+.container3 {
+    top: 5%;
 }

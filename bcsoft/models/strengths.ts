@@ -11,6 +11,7 @@ export interface IStrengthsContainer {
     width?: string;
     height?: string;
     hoverTextLeft?: string;
+    transform?: string;
 }
 
 export interface IStrengths {

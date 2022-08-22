@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { InferGetServerSidePropsType } from 'next';
-import { CustomHero, Design, Products } from '../../components/organism';
+import { CustomHero, Design, Form, Idea, Products } from '../../components/organism';
 import { getLayout } from '../../components/template';
 import { 
     SharepointResponse,
@@ -8,7 +8,11 @@ import {
     IDesignCommunication,
     IDesignCommunicationMainSettings,
     IProducts,
-    IProductsMainSettings
+    IProductsMainSettings,
+    IForm,
+    IFormMainSettings,
+    IIdea,
+    IIdeaMainSettings
 } from '../../models';
 import { ENDPOINTS, get } from '../../services';
 import { getHeader } from '../api/auth';
@@ -19,15 +23,23 @@ function DesignAndCommuncation({
   designProps,
   communicationProps,
   designAndCommunicationMainSettingsProps,
+  ideaResponse,
+  ideaMainSettingsResponse,
   productsResponse,
-  productsMainSettingsResponse
+  productsMainSettingsResponse,
+  formProps,
+  formMainSettingsProps
 }: InferGetServerSidePropsType<typeof getServerSideProps>){
   const customHero = parseResults<ICustomHero[]>(customHeroProps);
   const design = parseResults<IDesignCommunication[]>(designProps);
   const communication = parseResults<IDesignCommunication[]>(communicationProps);
   const designAndCommunication = parseResults<IDesignCommunicationMainSettings[]>(designAndCommunicationMainSettingsProps);
+  const idea = parseResults<IIdea[]>(ideaResponse);
+  const ideaMainSettings = parseResults<IIdeaMainSettings[]>(ideaMainSettingsResponse);
   const products = parseResults<IProducts[]>(productsResponse);
   const productsMainSettings = parseResults<IProductsMainSettings[]>(productsMainSettingsResponse);
+  const form = parseResults<IForm[]>(formProps);
+  const formMainSettings = parseResults<IFormMainSettings[]>(formMainSettingsProps);
  
   return (
     <>
@@ -39,7 +51,9 @@ function DesignAndCommuncation({
       <main className='grid template-col-12'>
         <CustomHero customHero={customHero} />
         <Design design={design} communication={communication} designAndCommunication={designAndCommunication} />
+        <Idea idea={idea} ideaMainSettings={ideaMainSettings} />
         <Products products={products} productsMainSettings={productsMainSettings} />
+        <Form form={form} formMainSettings={formMainSettings} />
       </main>
     </>
   )
@@ -57,15 +71,23 @@ export const getServerSideProps = async () => {
     designResponse,
     communicationResponse,
     designAndCommunicationMainSettingsResponse,
+    ideaResponse,
+    ideaMainSettings,
     productsResponse,
-    productsMainSettingsResponse
+    productsMainSettingsResponse,
+    formResponse,
+    formMainSettingsResponse
   ] = await Promise.allSettled([
     get<SharepointResponse<ICustomHero[]>>(ENDPOINTS.customHeroDesignAndCommunication, { headers }),
     get<SharepointResponse<IDesignCommunication[]>>(ENDPOINTS.design, { headers }),
     get<SharepointResponse<IDesignCommunication[]>>(ENDPOINTS.communication, { headers }),
     get<SharepointResponse<IDesignCommunicationMainSettings[]>>(ENDPOINTS.designAndCommunciationsMainSettings, { headers }),
+    get<SharepointResponse<IIdea[]>>(ENDPOINTS.idea, { headers }),
+    get<SharepointResponse<IIdeaMainSettings[]>>(ENDPOINTS.ideaMainSettings, { headers }),
     get<SharepointResponse<IProducts[]>>(ENDPOINTS.products, { headers }),
     get<SharepointResponse<IProductsMainSettings[]>>(ENDPOINTS.productsMainSettings, { headers }),
+    get<SharepointResponse<IForm[]>>(ENDPOINTS.formDesign, { headers }),
+    get<SharepointResponse<IFormMainSettings[]>>(ENDPOINTS.formDesignMainSettings, { headers }),
   ])
 
   return {
@@ -74,8 +96,12 @@ export const getServerSideProps = async () => {
       designProps: axiosParser(designResponse),
       communicationProps: axiosParser(communicationResponse),
       designAndCommunicationMainSettingsProps: axiosParser(designAndCommunicationMainSettingsResponse),
+      ideaResponse: axiosParser(ideaResponse),
+      ideaMainSettingsResponse: axiosParser(ideaMainSettings),
       productsResponse: axiosParser(productsResponse),
       productsMainSettingsResponse: axiosParser(productsMainSettingsResponse),
+      formProps: axiosParser(formResponse),
+      formMainSettingsProps: axiosParser(formMainSettingsResponse)
     }
   }
 }

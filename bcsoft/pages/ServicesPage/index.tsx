@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { InferGetServerSidePropsType } from 'next';
-import { AvaiableServices, CustomHero, InfoBanner, OurServices, Services, ServicesProducts } from '../../components/organism';
+import { AvaiableServices, CustomHero, Form, InfoBanner, OurServices, Services, ServicesProducts } from '../../components/organism';
 import { getLayout } from '../../components/template';
 import { 
     SharepointResponse,
@@ -13,6 +13,8 @@ import {
     IAvaiableServicesMainSettings,
     IServices,
     IServicesMainSettings,
+    IForm,
+    IFormMainSettings,
 } from '../../models';
 import { ENDPOINTS, get } from '../../services';
 import { getHeader } from '../api/auth';
@@ -31,7 +33,9 @@ function ServicesPage({
   designProps,
   designMainSettingsProps,
   communicationProps,
-  communicationMainSettingsProps
+  communicationMainSettingsProps,
+  formProps,
+  formMainSettingsProps
 }: InferGetServerSidePropsType<typeof getServerSideProps>){
   const customHero = parseResults<ICustomHero[]>(customHeroProps);
   const cardsServices = parseResults<ICardServicesProducts[]>(cardsServicesProps);
@@ -46,6 +50,8 @@ function ServicesPage({
   const designMainSettings = parseResults<IAvaiableServicesMainSettings[]>(designMainSettingsProps);
   const communication = parseResults<ICardAvaiableService[]>(communicationProps);
   const communicationMainSettings = parseResults<IAvaiableServicesMainSettings[]>(communicationMainSettingsProps);
+  const form = parseResults<IForm[]>(formProps);
+  const formMainSettings = parseResults<IFormMainSettings[]>(formMainSettingsProps);
  
   return (
     <>
@@ -63,6 +69,7 @@ function ServicesPage({
         <Services services={services} servicesMainSettings={servicesMainSettings} />
         <AvaiableServices cardAvaiableService={design} avaiableServicesMainSettings={designMainSettings} />
         <AvaiableServices cardAvaiableService={communication} avaiableServicesMainSettings={communicationMainSettings} />
+        <Form form={form} formMainSettings={formMainSettings} />
       </main>
     </>
   )
@@ -88,7 +95,9 @@ export const getServerSideProps = async () => {
     designResponse,
     designMainSettingsResponse,
     communicationResponse,
-    communicationMainSettingsResponse
+    communicationMainSettingsResponse,
+    formResponse,
+    formMainSettingsResponse
   ] = await Promise.allSettled([
     get<SharepointResponse<ICustomHero[]>>(ENDPOINTS.customHeroServices, { headers }),
     get<SharepointResponse<ICardServicesProducts[]>>(ENDPOINTS.cardsServicesProducts, { headers }),
@@ -103,6 +112,8 @@ export const getServerSideProps = async () => {
     get<SharepointResponse<IAvaiableServicesMainSettings[]>>(ENDPOINTS.designServiceMainSettings, { headers }),
     get<SharepointResponse<ICardAvaiableService[]>>(ENDPOINTS.communicationService, { headers }),
     get<SharepointResponse<IAvaiableServicesMainSettings[]>>(ENDPOINTS.communicationServiceMainSettings, { headers }),
+    get<SharepointResponse<IForm[]>>(ENDPOINTS.formServices, { headers }),
+    get<SharepointResponse<IFormMainSettings[]>>(ENDPOINTS.formServicesMainSettings, { headers }),
   ])
 
   return {
@@ -120,6 +131,8 @@ export const getServerSideProps = async () => {
       designMainSettingsProps: axiosParser(designMainSettingsResponse),
       communicationProps: axiosParser(communicationResponse),
       communicationMainSettingsProps: axiosParser(communicationMainSettingsResponse),
+      formProps: axiosParser(formResponse),
+      formMainSettingsProps: axiosParser(formMainSettingsResponse)
     }
   }
 }
