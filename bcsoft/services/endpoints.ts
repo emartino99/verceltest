@@ -132,6 +132,7 @@ export const ENDPOINTS = {
     vision: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('vision')/items`,
     youtube: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('youtube')/items`,
     youtubeMainSettings: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('youtubeMainSettings')/items`,
+    productPage: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('ProductsPage')/items`,
 }
 
 export type ENDPOINTS_TYPE = keyof typeof ENDPOINTS;
