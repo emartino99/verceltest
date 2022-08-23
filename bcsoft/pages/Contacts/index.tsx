@@ -71,7 +71,7 @@ export const getServerSideProps = async () => {
     formResponse,
     formMainSettingsResponse
   ] = await Promise.allSettled([
-    get<SharepointResponse<ICustomHero[]>>(ENDPOINTS.customHeroContacts, { headers }),
+    get<SharepointResponse<ICustomHero[]>>(ENDPOINTS.customHero, { headers }),
     get<SharepointResponse<IServices[]>>(ENDPOINTS.servicesContacts, { headers }),
     get<SharepointResponse<IServicesMainSettings[]>>(ENDPOINTS.servicesContactsMainSettings, { headers }),
     get<SharepointResponse<ILocations[]>>(ENDPOINTS.locations, { headers }),

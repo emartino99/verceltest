@@ -97,7 +97,7 @@ export const getServerSideProps = async () => {
     buildYourFutureResponse,
     quoteResponse,
   ] = await Promise.allSettled([
-    get<SharepointResponse<ICustomHero[]>>(ENDPOINTS.customHeroAbout, { headers }),
+    get<SharepointResponse<ICustomHero[]>>(ENDPOINTS.customHero, { headers }),
     get<SharepointResponse<IHistoryCard[]>>(ENDPOINTS.history, { headers }),
     get<SharepointResponse<IHistoryMainSettings[]>>(ENDPOINTS.historyMainSettings, { headers }),
     get<SharepointResponse<INumbers[]>>(ENDPOINTS.numbers, { headers }),

@@ -8,10 +8,10 @@
     flex-flow: column nowrap;
     gap: 3rem;
     justify-content: center;
-    min-height: 700px;
+    min-height: 750px;
     position: relative;
 
-    &::before {
+    &.opacity::before {
         background-color: rgba(255, 255, 255, 0.5);
         bottom: 0px;
         content: "";
@@ -21,37 +21,28 @@
         top: 0px;
     }
 
-    header {
-
-        max-width: 1000px;
-        min-width: 870px;
+    &-header {
+        display: flex;
+        flex-flow: column nowrap;
+        min-height: 500px;
         position: relative;
 
-        h1 {
-            color: $--unnamed-color-001f3c;
-            font-family: $--unnamed-font-family-exo-2;
-            font-size: $--unnamed-font-size-64;
-            font-weight: $--unnamed-font-weight-bold;
-            max-width: calc(100% - 247px);
+        .custom-hero-title {
+            max-width: calc(100% - 100px);
             @include margin-top-bottom(null, 0, 15);
         }
 
-        div {
-            color: $--unnamed-color-185fa2 !important;
-            font-family: $--unnamed-font-family-exo-2 !important;
-            font-size: $--unnamed-font-size-16 !important;
-            font-weight: $--unnamed-font-weight-300 !important;
-
-            span {
-                color: $--unnamed-color-185fa2 !important;
-                font-family: $--unnamed-font-family-exo-2 !important;
-                font-size: $--unnamed-font-size-16 !important;
-                font-weight: $--unnamed-font-weight-300 !important;
-            }
+        .custom-hero-description {
+            line-height: 2rem;
         }
     }
 
     &-telephone-number {
-        border-bottom: 2px solid #000;
+        color: #001F3C;
+        position: relative;
+
+        span {
+            border-bottom: 2px solid #000;
+        }
     }
 }

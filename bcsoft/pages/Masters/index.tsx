@@ -48,7 +48,7 @@ export const getServerSideProps = async () => {
     coursesMastersResponse,
     cardsCoursesResponse
   ] = await Promise.allSettled([
-    get<SharepointResponse<ICustomHero[]>>(ENDPOINTS.customHeroMasters, { headers }),
+    get<SharepointResponse<ICustomHero[]>>(ENDPOINTS.customHero, { headers }),
     get<SharepointResponse<ICoursesMastersMainSettings[]>>(ENDPOINTS.mastersMainSettings, { headers }),
     get<SharepointResponse<ICardsCoursesMasters[]>>(ENDPOINTS.cardsMasters, { headers }),
   ])

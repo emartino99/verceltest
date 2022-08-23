@@ -10,7 +10,6 @@ import { axiosParser, paramsValidation, parseResults } from '../../utils';
 import { IProductsPage, PageConfigurationModel, PageEndpointsModel } from '../../models/products_page';
 import { getComponentFrom } from '../../components';
 
-
 function ProductsPage({
     template,
     configurator
@@ -20,7 +19,7 @@ function ProductsPage({
         <>
             <Head>
                 <title>BCSoft</title>
-                <meta name="description" content="BCsoft website Company-About" />
+                <meta name="description" content="BCsoft website Products" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className='grid template-col-12'>
@@ -52,7 +51,7 @@ export const getServerSideProps = async (context: GetServerSidePropsContext) => 
     const { template, endpoints } = page[0];
     const api = JSON.parse(endpoints) as Record<string, PageEndpointsModel>;
     const apiList = Object.values(api);
-    const responseList = await Promise.allSettled( apiList.map(({ endpoint }) =>   get(ENDPOINTS[endpoint], { headers })))
+    const responseList = await Promise.allSettled( apiList.map(({ endpoint }) => get(ENDPOINTS[endpoint], { headers })))
     const response = responseList.map((el: any) => parseResults(axiosParser(el)))
 
     const configurator = apiList.reduce < PageConfigurationModel[]>( (acc, {nameComponent, position, prop}, i, array) => {

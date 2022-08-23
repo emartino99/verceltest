@@ -1,21 +1,36 @@
 import { useEffect, useRef } from "react";
-import { ICustomHero } from "../../../models";
+import { useRouter } from "next/router";
+import { ICustomHero, ISharepointStyle } from "../../../models";
 import { getMediaPath } from "../../../utils";
 import { CustomButton } from "../../atoms/CustomButton";
-
 interface CustomHeroProps {
     customHero: ICustomHero[] | undefined;
 }
 
 export const CustomHero = ({customHero}: CustomHeroProps) => {
 
+    const route = useRouter();
+    const params = route?.query?.id ?? route?.pathname;
+
+    const dataExtracted = customHero?.find((row) => row.field === params);
+
     const {
         Title,
         description,
         backgroundImage,
         buttonLabel,
-        buttonHref
-    } = customHero?.[0] || {};
+        buttonHref,
+        style
+    } = dataExtracted || {};
+
+    const usableStyle: ISharepointStyle = style && JSON.parse(style);
+
+    const {
+        headerStyle,
+        titleStyle,
+        descriptionStyle,
+        imageOpacity
+    } = usableStyle || {};
         
     const descriptionRef = useRef<HTMLDivElement>(null);
 
@@ -27,18 +42,26 @@ export const CustomHero = ({customHero}: CustomHeroProps) => {
     }, []);
 
   return (
-    <section className="custom-hero span-1-12" style={{backgroundImage: backgroundImage && `url(${getMediaPath(backgroundImage)})`}}>
-        <header>
-            <div style={{maxWidth: 'max-content'}}>
-                <h1>{Title}</h1>
+    <section 
+        className={`custom-hero span-1-12 ${imageOpacity && 'opacity'}`} 
+        style={{backgroundImage: backgroundImage && `url(${getMediaPath(backgroundImage)})`}}
+    >
+        <header 
+            className="custom-hero-header" 
+            style={{...headerStyle}}
+        >
+            <h1 className="custom-hero-title" style={{...titleStyle}}>{Title}</h1>
+            <div 
+                className="custom-hero-description" 
+                ref={descriptionRef} 
+                style={{...descriptionStyle}}>
             </div>
-            <div ref={descriptionRef}></div>
         </header>
         {
             buttonLabel && buttonHref &&
                 <>
                     <CustomButton title={buttonLabel} href={buttonHref} />
-                    <p>oppure chiamaci allo <span className="custom-hero-telephone-number"> 081-5536002 </span></p>
+                    <p className="custom-hero-telephone-number">oppure chiamaci allo <span> 081-5536002 </span></p>
                 </>
         }
     </section>

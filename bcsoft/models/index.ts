@@ -36,6 +36,7 @@ export * from './quote';
 export * from './re-engineering';
 export * from './services-item';
 export * from './services';
+export * from './sharepoint-style';
 export * from './sharepoint';
 export * from './strengths';
 export * from './vision';

@@ -5,4 +5,6 @@ export interface ICustomHero {
     backgroundImage: string;
     buttonLabel: string;
     buttonHref: string;
+    field: string;
+    style: string;
 }

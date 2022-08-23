@@ -1,8 +1,11 @@
-import { Banner } from "./organism"
+import { CustomHero, Cervellone, EstateDevelopmentTeam, Products } from "./organism"
 
 interface ConfiguratiorType extends Record<string, any> { }
 export const getComponentFrom = (key: string) => {
     return ({
-        Banner: Banner
+        CustomHero: CustomHero,
+        Cervellone: Cervellone,
+        EstateDevelopmentTeam: EstateDevelopmentTeam,
+        Products: Products
     } as ConfiguratiorType)[key] || null
 }

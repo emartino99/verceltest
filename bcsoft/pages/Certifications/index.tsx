@@ -57,7 +57,7 @@ export const getServerSideProps = async () => {
     certificationsISO27001,
     quoteResponse
   ] = await Promise.allSettled([
-    get<SharepointResponse<ICustomHero[]>>(ENDPOINTS.customHeroCertifications, { headers }),
+    get<SharepointResponse<ICustomHero[]>>(ENDPOINTS.customHero, { headers }),
     get<SharepointResponse<ICertifications[]>>(ENDPOINTS.certificationsMicrosoft, { headers }),
     get<SharepointResponse<ICertifications[]>>(ENDPOINTS.certificationsISO9001, { headers }),
     get<SharepointResponse<ICertifications[]>>(ENDPOINTS.certificationsISO27001, { headers }),

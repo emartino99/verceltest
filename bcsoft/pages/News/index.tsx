@@ -40,7 +40,7 @@ function News({
     <>
       <Head>
         <title>BCSoft</title>
-        <meta name="description" content="BCsoft website Company-About" />
+        <meta name="description" content="BCsoft website News" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className='grid template-col-12'>
@@ -70,7 +70,7 @@ export const getServerSideProps = async () => {
     youtubeResponse,
     youtubeMainSettingsResponse
   ] = await Promise.allSettled([
-    get<SharepointResponse<ICustomHero[]>>(ENDPOINTS.customHeroNews, { headers }),
+    get<SharepointResponse<ICustomHero[]>>(ENDPOINTS.customHero, { headers }),
     get<SharepointResponse<ILatestNewsMainSettings[]>>(ENDPOINTS.latestNewsMainSettings, { headers }),
     get<SharepointResponse<ILatestNews[]>>(ENDPOINTS.latestNews, { headers }),
     get<SharepointResponse<ILatestNewsNewsletter[]>>(ENDPOINTS.latestNewsNewsletter, { headers }),
