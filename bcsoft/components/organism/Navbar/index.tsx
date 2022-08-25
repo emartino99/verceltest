@@ -3,10 +3,12 @@ import { Logo } from "../../../assets";
 import { ISubLinks } from "../../../models";
 import { useNavLinkHook } from "../../../services";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export function Navbar() {
 
     const { mainLinks, subLinks, error } = useNavLinkHook();
+    console.log("🚀 ~ file: index.tsx ~ line 10 ~ Navbar ~ subLinks", subLinks)
     const [selected, setSelected] = useState<ISubLinks[]>();
 
     const router = useRouter();
@@ -46,14 +48,14 @@ export function Navbar() {
             <ul className={`submenu span-1-12 ${selected?.length ? 'open' : ''}`}  >
                 {selected?.map(
                     currentItem =>
-                        <li key={currentItem.ID} className='submenu-items' >
-                            <a className={`submenu-items-links`} href={currentItem.SubLinkURL}>
+                        <Link key={currentItem.ID} href={currentItem.SubLinkURL} className='submenu-items'>
+                            <a className={`submenu-items-links`}>
                                 <span className="arrow-1"></span>
                                 {currentItem.Title}
                             </a>
-                        </li>
+                        </Link> 
                 )}
             </ul>
-        </header>
+        </header >
     )
 }

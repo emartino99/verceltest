@@ -19,12 +19,10 @@ function Home({
   partnersProps,
   clientsProps,
   clientsMainSettingsProps,
-  // test,
   coursesProps,
   coursesMainSettingsProps,
   newsProps,
 }: InferGetServerSidePropsType<typeof getServerSideProps> ){   
-  // console.log("🚀 ~ file: index.tsx ~ line 57 ~ getServerSideProps ~ test", test)
   const media = parseResults<IHeroMedia[]>(heroProps);
   const quickLinks = parseResults<IQuickLinks[]>(heroLinksProps);
   const bannerInfos = parseResults<IBanner[]>(bannerProps);
@@ -45,11 +43,6 @@ function Home({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className='grid template-col-12'>
-        {/* 
-          [
-            {webpart: 'hero', endpoint: 'hero'}
-          ]
-        */}
         <Hero media={media} quickLinks={quickLinks} />
         <Banner bannerInfos={bannerInfos} />
         <Business coreBusiness={coreBusiness} coreBusinessCards={coreBusinessCards} />
@@ -79,7 +72,6 @@ export const getServerSideProps = async () => {
     partnersResponse,
     clientsResponse,
     clientsMainSettingsResponse,
-    // test,
     coursesResponse,
     coursesMainSettingsResponse,
     newsResponse,
@@ -92,18 +84,11 @@ export const getServerSideProps = async () => {
     get<SharepointResponse<IPartners[]>>(ENDPOINTS.partners, { headers }),
     get<SharepointResponse<IClients[]>>(ENDPOINTS.clients, { headers }),
     get<SharepointResponse<IClientsMainSettings[]>>(ENDPOINTS.clientsMainSettings, { headers }),
-    // get<SharepointResponse<any[]>>(`https://bcsoftsrl.sharepoint.com/sites/BCSoft.net.test/_api/Web/Lists(guid'e94cfae5-f8a3-4713-a0fb-76dc70e9655a')/Items?$filter=PromotedState eq 2&$select=Title,Description,BannerImageUrl,FirstPublishedDate,FileRef`, { headers }),
     get<SharepointResponse<ICourses[]>>(ENDPOINTS.courses, { headers }),
     get<SharepointResponse<ICoursesMainSettings[]>>(ENDPOINTS.coursesMainSettings, { headers }),
     get<SharepointResponse<INews[]>>(ENDPOINTS.news, { headers }),
-  ])
-  {/* 
-          [
-            {webpart: 'hero', endpoint: 'hero'}
-          ]
-  */}
-  // console.log("🚀 ~ file: index.tsx ~ line 58 ~ getServerSideProps ~ test", test)
-  // https://bcsoftsrl.sharepoint.com/sites/BCSoft.net.test/_api/Web/GetFileByServerRelativePath(decodedurl='/sites/BCSoft.net.test/SitePages/Academy.aspx')
+  ]);
+  
   return {
     props: {
       heroProps: axiosParser(heroResponse),
