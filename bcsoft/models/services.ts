@@ -1,10 +1,10 @@
 export interface IServices {
     ID: number;
     Title: string;
+    description: string;
     descriptionHover: string;
     image: string;
-    whiteBackgroundColor: string;
-    cardMinHeight: string;
+    style: string;
 }
 
 export interface IServicesMainSettings {
@@ -14,5 +14,5 @@ export interface IServicesMainSettings {
     subtitle: string;
     buttonLabel: string;
     buttonHref: string;
-    darkBackgroundColor: string;
+    style: string;
 }

@@ -61,7 +61,7 @@ export const getServerSideProps = async () => {
     get<SharepointResponse<ICertifications[]>>(ENDPOINTS.certificationsMicrosoft, { headers }),
     get<SharepointResponse<ICertifications[]>>(ENDPOINTS.certificationsISO9001, { headers }),
     get<SharepointResponse<ICertifications[]>>(ENDPOINTS.certificationsISO27001, { headers }),
-    get<SharepointResponse<IQuote[]>>(ENDPOINTS.quoteCertifications, { headers })
+    get<SharepointResponse<IQuote[]>>(ENDPOINTS.quote, { headers })
   ])
 
   return {

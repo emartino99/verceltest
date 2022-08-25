@@ -1,0 +1,27 @@
+.app {
+    min-height: 1000px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    header {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    &-item {
+        flex: 1;
+        position: relative;
+        height: 700px;
+        max-width: 600px;
+
+        p {
+            line-height: 1.4;
+        }
+
+    }
+
+}

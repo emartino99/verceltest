@@ -7,4 +7,5 @@ export interface ICustomHero {
     buttonHref: string;
     field: string;
     style: string;
+    image: string;
 }

@@ -4,7 +4,7 @@
     clip-path: polygon(0 7%, 100% 0, 100% 93%, 0% 100%);
     display: flex;
     flex-flow: column nowrap;
-    gap: 3rem;
+    // gap: 3rem;
     justify-content: center;
     min-height: 600px;
     @include padding-top-bottom(null, 60, 60);
@@ -54,7 +54,6 @@
             align-items: center;
             display: flex;
             flex-flow: column nowrap;
-            gap: 1rem;
             justify-content: center;
             position: relative;
             transform: skewY(357deg);
@@ -79,12 +78,19 @@
             }
 
             p {
+                @include margin-top-bottom(null, 10, 0);
+                color: $--unnamed-color-185fa2;
                 font-size: $--unnamed-font-size-16;
                 font-weight: $--unnamed-font-weight-300;
                 text-align: center;
                 transition: height .8s ease-in-out;
                 height: 0;
                 overflow: hidden;
+            }
+
+            span {
+                color: $--unnamed-color-001f3c;
+                font-size: $--unnamed-font-size-30;
             }
         }
 

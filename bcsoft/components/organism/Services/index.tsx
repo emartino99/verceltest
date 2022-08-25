@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { IServices, IServicesMainSettings } from "../../../models";
-import { getMediaPath } from "../../../utils";
+import { useRouter } from "next/router";
+import { IServices, IServicesMainSettings, ISharepointStyle } from "../../../models";
+import { extractMultipleData, getMediaPath, extractData } from "../../../utils";
 import { CustomButton } from "../../atoms/CustomButton";
 
 interface ServicesProps {
@@ -10,35 +11,41 @@ interface ServicesProps {
 
 export const Services = ({services, servicesMainSettings}: ServicesProps) => {
 
+    const route = useRouter();
+    const servicesExtracted: IServices[] = extractMultipleData(route, services);
+    const servicesMainSettingsExtracted: IServicesMainSettings = extractData(route, servicesMainSettings);
+
     const {
         Title,
         description,
         subtitle,
         buttonLabel,
         buttonHref,
-        darkBackgroundColor
-    } = servicesMainSettings?.[0] || {};
-    
-    const backgroundColor = darkBackgroundColor === 'SI' ? '#001F3C' : '#C9E2FF66';
-    const mainTitleTextColor = darkBackgroundColor === 'SI' ? '#FFFFFF' : '#002950';
-    const textColor = darkBackgroundColor === 'SI' ? '#FFFFFF' : '#185fa2';
+        style
+    } = servicesMainSettingsExtracted || {};
+
+    const { 
+        backgroundColor, 
+        titleStyle, 
+        descriptionStyle,
+        subtitleStyle
+    }: ISharepointStyle = style && JSON.parse(style);
 
     return (
         <section className="services span-1-12" style={{backgroundColor: backgroundColor}}>
             <header>
-                <h1 style={{color: mainTitleTextColor}}>{Title}</h1>
-                <p style={{color: textColor}}>{description}</p>
-                <span style={{color: textColor}}>{subtitle}</span>
+                <h1 style={{...titleStyle}}>{Title}</h1>
+                <p style={{...descriptionStyle}}>{description}</p>
+                <span style={{...subtitleStyle}}>{subtitle}</span>
             </header>
             <div className="services-content">
                 {
-                    services?.map(card => {
-                        const backgroundColor = card.whiteBackgroundColor === 'SI' ? '#FFFFFF' : '#001F3C';
-                        const textColor = card.whiteBackgroundColor === 'SI' ? '#001F3C' : '#FFFFFF';
+                    servicesExtracted?.map(card => {
+                        const { cardStyle, titleStyle, descriptionStyle }: ISharepointStyle = card.style && JSON.parse(card.style);
                         return(
                             <article 
                                 key={card.ID}
-                                style={{backgroundColor: backgroundColor, minHeight: card.cardMinHeight}}
+                                style={{...cardStyle}}
                             >
                                 {
                                     card.image &&
@@ -46,8 +53,9 @@ export const Services = ({services, servicesMainSettings}: ServicesProps) => {
                                             <Image src={getMediaPath(card.image)} alt={card.Title} layout="fill" objectFit='scale-down' />
                                         </div>
                                 }
-                            <h1 style={{color: textColor}}>{card.Title}</h1>
-                            {card.descriptionHover && <p style={{color: textColor}}>{card.descriptionHover}</p>}
+                            <h1 style={{...titleStyle}}>{card.Title}</h1>
+                            <span style={{...descriptionStyle}}>{card.description}</span>
+                            {card.descriptionHover && <p>{card.descriptionHover}</p>}
                         </article>
                         )
                     })

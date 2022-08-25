@@ -15,18 +15,10 @@
 
         h1 {
             @include margin-top-bottom(null, 0, 0);
-            color: $--unnamed-color-39597787;
-            font-size: $--unnamed-font-size-56;
-            font-weight: $--unnamed-font-weight-300;
         }
 
         h2 {
             @include margin-top-bottom(null, 0, 0);
-            color: $--unnamed-color-001f3c;
-            font-size: $--unnamed-font-size-40;
-            font-weight: $--unnamed-font-weight-bold;
-            position: absolute;
-            top: 46%;
         }
     }
 
@@ -40,8 +32,6 @@
 
         .youtube-card {
             border: none;
-            height: 144px;
-            width: 257px;
         }
     }
 }

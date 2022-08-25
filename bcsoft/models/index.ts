@@ -1,3 +1,4 @@
+export * from './app-description';
 export * from './banner';
 export * from './build-your-future';
 export * from './card-avaiable-services';

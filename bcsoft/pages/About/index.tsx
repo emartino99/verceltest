@@ -110,7 +110,7 @@ export const getServerSideProps = async () => {
     get<SharepointResponse<ILocations[]>>(ENDPOINTS.locations, { headers }),
     get<SharepointResponse<ILocationsMainSettings[]>>(ENDPOINTS.locationsMainSettings, { headers }),
     get<SharepointResponse<IFuture[]>>(ENDPOINTS.buildYourFuture, { headers }),
-    get<SharepointResponse<IQuote[]>>(ENDPOINTS.quoteAbout, { headers }),
+    get<SharepointResponse<IQuote[]>>(ENDPOINTS.quote, { headers }),
   ])
 
   return {
