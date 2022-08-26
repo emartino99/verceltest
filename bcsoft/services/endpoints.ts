@@ -1,4 +1,5 @@
 export const ENDPOINTS = {
+    academyPage: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('AcademyPage')/items`,
     appDescription: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('appDescription')/items`,
     banner: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('banner')/items`,
     buildYourFuture: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('buildYourFuture')/items`,
@@ -60,6 +61,8 @@ export const ENDPOINTS = {
     formJobPositionsMainSettings: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('formJobPositionsMainSettings')/items`,
     formServices: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('formServices')/items`,
     formServicesMainSettings: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('formServicesMainSettings')/items`,
+    formSpecializedCourses: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('formSpecializedCourses')/items`,
+    formSpecializedCoursesMainSettings: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('formSpecializedCoursesMainSettings')/items`,
     hero: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('hero')/items`,
     herolinks: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('heroQuickLinks')/items`,
     history: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('bcSoftHistory')/items`,

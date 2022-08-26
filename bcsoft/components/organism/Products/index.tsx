@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 import Image from 'next/image';
@@ -12,10 +13,18 @@ interface ProductsProps {
 
 export const Products = ({products, productsMainSettings}: ProductsProps) => {
 
+    const [isFirefox, setIsFirefox] = useState<boolean>(true);
+
     const {
         Title,
         description
     } = productsMainSettings?.[0] || {};
+
+    useEffect(() => {
+        const userAgent = window.navigator.userAgent;
+        const isFirefox = !!userAgent.match(/firefox|fxios/i);
+        setIsFirefox(isFirefox);
+    }, []);
 
     return (
         <section className="products span-1-12">
@@ -28,8 +37,8 @@ export const Products = ({products, productsMainSettings}: ProductsProps) => {
                 centeredSlides={true}
                 slidesPerView={5}
                 initialSlide={2} 
-                loop={true}
-                loopFillGroupWithBlank={true} 
+                loop={!isFirefox}
+                rewind={isFirefox}
                 modules={[Navigation]}
                 className='swiper-container'
             >

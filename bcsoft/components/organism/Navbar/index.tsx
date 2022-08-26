@@ -8,7 +8,6 @@ import Link from "next/link";
 export function Navbar() {
 
     const { mainLinks, subLinks, error } = useNavLinkHook();
-    console.log("🚀 ~ file: index.tsx ~ line 10 ~ Navbar ~ subLinks", subLinks)
     const [selected, setSelected] = useState<ISubLinks[]>();
 
     const router = useRouter();

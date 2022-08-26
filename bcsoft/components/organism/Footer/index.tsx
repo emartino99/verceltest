@@ -1,5 +1,6 @@
-import { useRouter } from "next/router";
 import { FormEventHandler, useCallback } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import {
   FacebookLogo,
   FooterLogo,
@@ -36,12 +37,9 @@ export const Footer = () => {
               footerLinks
                 ?.filter(currentLink => currentLink.isMain === "SI")
                 .map(item =>
-                  <span
-                    className="site-info"
-                    key={item.ID}
-                    onClick={() => redirectHandler(item.FooterLinkUrl)}>
-                    {item.Title}
-                  </span>
+                 <Link key={item.ID} href={item.FooterLinkUrl}>
+                    <span className="site-info">{item.Title}</span>
+                 </Link>
                 )
             }
           </div>

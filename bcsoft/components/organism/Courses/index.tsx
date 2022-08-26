@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Navigation } from 'swiper';
 import { ICourses, ICoursesMainSettings } from '../../../models';
@@ -13,6 +14,8 @@ interface Coursesprops {
 
 export const Courses = ({ courses, coursesMainSettings }: Coursesprops) => {
 
+    const [isFirefox, setIsFirefox] = useState<boolean>(true);
+
     const { 
         Title, 
         Description,
@@ -24,6 +27,12 @@ export const Courses = ({ courses, coursesMainSettings }: Coursesprops) => {
     const mainColor = backgroundColor === '#001F3C' ? '#FFFFFF' : '#002950';
     const secondaryColor = backgroundColor === '#001F3C' ? '#FFFFFF' : '#001F3C';
     const buttonTextColor = backgroundColor === '#001F3C' ? '#001F3C' : '#FFFFFF';
+
+    useEffect(() => {
+        const userAgent = window.navigator.userAgent;
+        const isFirefox = !!userAgent.match(/firefox|fxios/i);
+        setIsFirefox(isFirefox);
+    }, []);
 
   return (
     <section className='courses span-1-12' style={{backgroundColor: backgroundColor}}>
@@ -39,17 +48,17 @@ export const Courses = ({ courses, coursesMainSettings }: Coursesprops) => {
             effect={"coverflow"}
             grabCursor={true}
             centeredSlides={true}
-            slidesPerView='auto'
-            initialSlide={2} 
-            loop={true}
-            loopFillGroupWithBlank={true} 
+            slidesPerView={4}
+            initialSlide={2}
+            loop={!isFirefox}
+            rewind={isFirefox}
             coverflowEffect={{
                 rotate: 25,
                 stretch: 0,
                 depth: 140,
                 modifier: 1,
                 slideShadows: false,
-        }}
+            }}
             modules={[EffectCoverflow, Navigation]}
             className='swiper-container'
         >
