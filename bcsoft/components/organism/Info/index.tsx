@@ -1,25 +1,22 @@
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React, { useEffect, useRef } from 'react'
-import { IAppDescription, ISharepointStyle } from '../../../models';
-import { extractData, getMediaPath } from '../../../utils';
+import { IInfo, ISharepointStyle } from '../../../models';
+import { extractData } from '../../../utils';
 
-interface AppDescriptionProps {
-    appDescription: IAppDescription[] | undefined;
+interface InfoProps {
+    info: IInfo[] | undefined;
 }
 
-export const AppDescription = ({appDescription}: AppDescriptionProps) => {
+export const Info = ({info}: InfoProps) => {
 
     const route = useRouter();
-    const dataExtracted: IAppDescription = extractData(route, appDescription);
+    const dataExtracted: IInfo = extractData(route, info);
 
     const {
         Title,
         firstDescription,
         secondTitle,
         secondDescription,
-        image,
-        imageALT,
         style
     } = dataExtracted || {};
 
@@ -39,8 +36,8 @@ export const AppDescription = ({appDescription}: AppDescriptionProps) => {
     const { titleStyle, descriptionStyle }: ISharepointStyle = style && JSON.parse(style);
 
     return (
-        <section className='app span-1-12'>
-            <header className='app-item'>
+        <section className='info span-1-12'>
+            <header>
                 <div>
                     <h1 style={{...titleStyle}}>{Title}</h1>
                     <div ref={firstDescriptionRef} style={{...descriptionStyle}}></div>
@@ -49,14 +46,8 @@ export const AppDescription = ({appDescription}: AppDescriptionProps) => {
                 <div>
                     <h1 style={{...titleStyle}}>{secondTitle}</h1>
                     <div ref={secondDescriptionRef} style={{...descriptionStyle}}></div>
-                    {/* <p  style={{...descriptionStyle}}>{secondDescription}</p> */}
                 </div>
             </header>
-            {   image && 
-                    <div className='app-item'>
-                        <Image src={getMediaPath(image)} alt={imageALT} layout='fill' objectFit='scale-down' priority/>
-                    </div>
-            }
         </section>
     );
 };

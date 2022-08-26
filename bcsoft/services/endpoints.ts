@@ -1,6 +1,5 @@
 export const ENDPOINTS = {
     appDescription: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('appDescription')/items`,
-    appDescriptionMainSettings: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('appDescriptionMainSettings')/items`,
     banner: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('banner')/items`,
     buildYourFuture: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('buildYourFuture')/items`,
     business: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('CoreBusiness')/items`,
@@ -67,6 +66,7 @@ export const ENDPOINTS = {
     historyMainSettings: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('bcSoftHistoryMainSettings')/items`,
     idea: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('idea')/items`,
     ideaMainSettings: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('ideaMainSettings')/items`,
+    info: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('info')/items`,
     infoBannerAbout: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('infoBannerAbout')/items`,
     infoBannerContacts: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('infoBannerContacts')/items`,
     infoBannerServices: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('infoBannerServices')/items`,
@@ -101,6 +101,8 @@ export const ENDPOINTS = {
     productsMainSettings: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('productsMainSettings')/items`,
     quote: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('quote')/items`,
     reEngineering: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('reEngineering')/items`,
+    results: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('results')/items`,
+    resultsMainSettings: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('resultsMainSettings')/items`,
     services: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('services')/items`,
     servicesItemAM: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('servicesItemAM')/items`,
     servicesItemBlockchain: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('servicesItemBlockchain')/items`,

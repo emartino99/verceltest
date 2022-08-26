@@ -11,12 +11,11 @@ interface CustomHeroProps {
 export const CustomHero = ({customHero}: CustomHeroProps) => {
 
     const route = useRouter();
-    // const params = route?.query?.id ?? route?.pathname;
-    // const dataExtracted = customHero?.find((row) => row.field === params);
-    const dataExtracted = extractData(route, customHero);
+    const dataExtracted: ICustomHero = extractData(route, customHero);
 
     const {
         Title,
+        subtitle,
         description,
         backgroundImage,
         buttonLabel,
@@ -30,9 +29,11 @@ export const CustomHero = ({customHero}: CustomHeroProps) => {
     const {
         headerStyle,
         titleStyle,
+        subtitleStyle,
         descriptionStyle,
         backgroundImageOpacity,
-        backgroundColor
+        backgroundColor,
+        flexFlow
     } = usableStyle || {};
         
     const descriptionRef = useRef<HTMLDivElement>(null);
@@ -53,12 +54,13 @@ export const CustomHero = ({customHero}: CustomHeroProps) => {
             clipPath: backgroundImage ? 'polygon(0 5%, 100% 0, 100% 95%, 0 100%)' : 'polygon(0 0, 100% 0, 100% 95%, 0% 100%)'
         }}
     >
-       <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%'}} >
+       <div className="custom-hero-content" style={{flexFlow: flexFlow }} >
             <header 
                 className="custom-hero-header" 
                 style={{...headerStyle}}
             >
                 <h1 className="custom-hero-title" style={{...titleStyle}}>{Title}</h1>
+                <h2 className="custom-hero-subtitle" style={{...subtitleStyle}}>{subtitle}</h2>
                 <div 
                     className="custom-hero-description" 
                     ref={descriptionRef} 
@@ -67,8 +69,8 @@ export const CustomHero = ({customHero}: CustomHeroProps) => {
             </header>
             {
                 image && 
-                    <div style={{ position: 'relative', width: 350, height: 350}}>
-                        <Image src={getMediaPath(image)} alt={Title} layout='fill' objectFit="scale-down" ></Image>
+                    <div className="custom-hero-image">
+                        <Image src={getMediaPath(image)} alt={Title} layout='fill' objectFit="scale-down" priority ></Image>
                     </div>
             }
        </div>

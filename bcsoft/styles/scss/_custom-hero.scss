@@ -20,20 +20,40 @@
         top: 0px;
     }
 
-    &-header {
+    &-content {
         display: flex;
-        flex-flow: column nowrap;
-        min-height: 500px;
-        position: relative;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
 
-        .custom-hero-title {
-            max-width: calc(100% - 100px);
-            @include margin-top-bottom(null, 0, 15);
+        .custom-hero-header {
+            display: flex;
+            flex-flow: column nowrap;
+            min-height: 500px;
+            position: relative;
+    
+            .custom-hero-title {
+                max-width: calc(100% - 100px);
+                @include margin-top-bottom(null, 0, 0);
+            }
+    
+            .custom-hero-subtitle {
+                max-width: calc(100% - 100px);
+                @include margin-top-bottom(null, 0, 0);
+            }
+    
+            .custom-hero-description {
+                @include margin-top-bottom(null, 15, 0);
+                line-height: 2rem;
+            }
         }
 
-        .custom-hero-description {
-            line-height: 2rem;
+        .custom-hero-image {
+            position: relative;
+            height: 350px;
+            width: 350px;
         }
+
     }
 
     &-telephone-number {

@@ -2,7 +2,8 @@ import {
     CustomHero, Cervellone, 
     EstateDevelopmentTeam, Products, 
     YoutubeVideos, AppDescription,
-    Services, Quote
+    Services, Quote,
+    Results, Info
 } from "./organism"
 
 interface ConfiguratiorType extends Record<string, any> { }
@@ -12,9 +13,11 @@ export const getComponentFrom = (key: string) => {
         Cervellone: Cervellone,
         CustomHero: CustomHero,
         EstateDevelopmentTeam: EstateDevelopmentTeam,
+        Info: Info,
         Products: Products,
+        Quote: Quote,
+        Results: Results,
         Services: Services,
         YoutubeVideos: YoutubeVideos,
-        Quote: Quote
     } as ConfiguratiorType)[key] || null
 }

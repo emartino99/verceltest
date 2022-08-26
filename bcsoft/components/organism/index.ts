@@ -1,3 +1,4 @@
+
 export * from './AppDescription';
 export * from './AvaiableServices';
 export * from './Banner';
@@ -19,6 +20,7 @@ export * from './Form';
 export * from './Hero';
 export * from './History';
 export * from './Idea';
+export * from './Info';
 export * from './InfoBanner';
 export * from './JobOffers';
 export * from './LaBellaEstateHero';
@@ -33,6 +35,7 @@ export * from './Partners';
 export * from './Products';
 export * from './Quote';
 export * from './ReEngineering';
+export * from './Results';
 export * from './Services';
 export * from './ServicesItem';
 export * from './ServicesProducts';

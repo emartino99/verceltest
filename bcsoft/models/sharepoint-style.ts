@@ -31,6 +31,11 @@ export type section = {
     backgroundColor?: string;
     flexFlow?: string;
 }
+
+export type border = {
+    height: string;
+    borderRight: string;
+}
 export interface ISharepointStyle {
     headerStyle?: headerStyle;
     titleStyle?: textStyle;
@@ -41,4 +46,8 @@ export interface ISharepointStyle {
     cardStyle: card;
     imageStyle: image;
     sectionStyle: section;
+    flexFlow: string;
+    leftBorder: border;
+    rightBorder: border;
+    border: border;
 }
