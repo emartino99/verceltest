@@ -24,8 +24,6 @@ export function Hero({quickLinks, media}: HeroProps) {
         Title
     } = media?.[0] || {} as IHeroMedia;
 
-    console.log(getMediaPath(ImgURL))
-
     return (
         <section className="hero span-1-12" >
             {
