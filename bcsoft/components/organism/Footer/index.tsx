@@ -7,11 +7,17 @@ import {
   Linkedin, YouTube
 } from "../../../assets";
 import { useFooterLinkHook } from "../../../services";
+import { IFooterLinks } from "../../../models";
 
-export const Footer = () => {
+interface FooterProps{
+  footerLinks?: IFooterLinks[] | undefined,
+  skip?: boolean
+}
+export const Footer = (props: FooterProps) => {
 
   const router = useRouter();
-  const { footerLinks, error } = useFooterLinkHook();
+  const { footerLinks: links, error } = useFooterLinkHook(props?.skip);
+  const footerLinks = props?.footerLinks || links;
 
   const redirectHandler = (urlToRedirectTo: string) => router.push(urlToRedirectTo);
 

@@ -3,9 +3,9 @@ import { IMainLinks, ISubLinks } from "../models";
 import { get, getApi } from "./axios";
 import { ENDPOINTS } from "./endpoints";
 
-export const useNavLinkHook = () => {
-    const { data: mainLinks, error: mainError } = useSWR<IMainLinks[], Error>(ENDPOINTS.mainmenu, getApi('mainmenu'));
-    const { data: subLinks, error: subError } = useSWR<ISubLinks[]>(ENDPOINTS.submenu, getApi('submenu'));
+export const useNavLinkHook = (skip?: boolean) => {
+    const { data: mainLinks, error: mainError } = useSWR<IMainLinks[], Error>(ENDPOINTS.mainmenu, !skip ? getApi('mainmenu'): null);
+    const { data: subLinks, error: subError } = useSWR<ISubLinks[]>(ENDPOINTS.submenu, !skip ? getApi('submenu'): null);
     return {
         mainLinks,
         subLinks,
