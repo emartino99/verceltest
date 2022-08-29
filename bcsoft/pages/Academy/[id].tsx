@@ -1,7 +1,9 @@
 import Head from 'next/head';
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
-import { getLayout } from '../../components/template';
 import {
+    IFooterLinks,
+    IMainLinks,
+    ISubLinks,
     SharepointResponse,
 } from '../../models';
 import { ENDPOINTS, get } from '../../services';
@@ -9,14 +11,18 @@ import { getHeader } from '../api/auth';
 import { axiosParser, paramsValidation, parseResults } from '../../utils';
 import { IProductsPage, PageConfigurationModel, PageEndpointsModel } from '../../models/products_page';
 import { getComponentFrom } from '../../components';
+import { Footer, Navbar } from '../../components/organism';
 
 function AcademyPage({
     template,
-    configurator
+    configurator,
+    layoutData
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+    const [mainLinks, subLinks, footerLinks] = layoutData || [];
 
     return (
         <>
+            <Navbar mainLinks={mainLinks as IMainLinks[]} subLinks={subLinks as ISubLinks[]} skip={true}/>
             <Head>
                 <title>BCSoft</title>
                 <meta name="description" content="BCsoft website Academy" />
@@ -31,22 +37,30 @@ function AcademyPage({
                     })
                 }
             </main>
+            <Footer footerLinks={footerLinks as IFooterLinks[]} skip={true} />
         </>
     )
 }
 
 export default AcademyPage
 
-AcademyPage.getLayout = getLayout
-
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
 
     const id = context.params?.id;
     if (!paramsValidation(id)) return { props: {} };
     const headers = await getHeader();
+
+    const layout = await Promise.allSettled([
+        get<SharepointResponse<IMainLinks[]>>(ENDPOINTS.mainmenu, { headers }),
+        get<SharepointResponse<ISubLinks[]>>(ENDPOINTS.submenu, { headers }),
+        get<SharepointResponse<IFooterLinks[]>>(ENDPOINTS.footer, { headers }),
+    ])
+    const layoutData = layout.map((data: any) => parseResults(axiosParser(data)));
+    
     const [configuartor] = await Promise.allSettled([get<SharepointResponse<IProductsPage[]>>(ENDPOINTS.academyPage, { headers })])
     const result = parseResults<IProductsPage[]>(axiosParser(configuartor));
     const page = result?.filter(pages => pages.id0 === id);
+    
     if (!page?.length) return { props: {} };
     const { template, endpoints } = page[0];
     const api = JSON.parse(endpoints) as Record<string, PageEndpointsModel>;
@@ -66,7 +80,8 @@ export const getServerSideProps = async (context: GetServerSidePropsContext) => 
     return {
         props: {
             template,
-            configurator
+            configurator,
+            layoutData
         }
     }
 }
