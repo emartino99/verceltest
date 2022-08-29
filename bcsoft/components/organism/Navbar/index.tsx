@@ -1,13 +1,21 @@
 import { useState } from "react";
 import { Logo } from "../../../assets";
-import { ISubLinks } from "../../../models";
+import { IMainLinks, ISubLinks } from "../../../models";
 import { useNavLinkHook } from "../../../services";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-export function Navbar() {
+interface NavbarProps{
+    mainLinks?: IMainLinks[] | undefined,
+    subLinks?: ISubLinks[] | undefined,
+    skip?: boolean;
+}
+export function Navbar(props: NavbarProps) {
 
-    const { mainLinks, subLinks, error } = useNavLinkHook();
+    const { mainLinks: links, subLinks: sub, error } = useNavLinkHook(props.skip);
+    const mainLinks = props?.mainLinks || links;
+    const subLinks = props?.subLinks || sub;
+
     const [selected, setSelected] = useState<ISubLinks[]>();
 
     const router = useRouter();
