@@ -27,7 +27,7 @@ export const HeaderAvaiableServices = ({
                 { image && <Image src={getMediaPath(image)} alt={title} layout='fill' objectFit="scale-down" /> }
             </div>
             <div className="avaiable-services-item-header-button">
-                { buttonLabel && buttonHref && <CustomButton title={buttonLabel} href={buttonHref} /> }
+                { buttonLabel && <CustomButton title={buttonLabel} href={buttonHref} /> }
             </div>
         </header>
     );

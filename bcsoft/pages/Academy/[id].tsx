@@ -19,7 +19,7 @@ function AcademyPage({
         <>
             <Head>
                 <title>BCSoft</title>
-                <meta name="description" content="BCsoft website Products" />
+                <meta name="description" content="BCsoft website Academy" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className='grid template-col-12'>

@@ -40,7 +40,7 @@ export const Numbers = ({numbers, numbersMainSettings}: NumbersProps) => {
                         <Image src={getMediaPath(image)} alt={Title} layout='fill' objectFit="scale-down" />
                     </div>
                 }
-                { buttonLabel && buttonHref && <CustomButton title={buttonLabel} href={buttonHref} /> }
+                { buttonLabel && <CustomButton title={buttonLabel} href={buttonHref} /> }
             </header>
             <aside className='numbers-wrapper'>
             {

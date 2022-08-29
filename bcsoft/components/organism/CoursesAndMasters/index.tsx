@@ -34,7 +34,7 @@ export const CoursesAndMasters = ({coursesMastersMainSettings, cardsCoursesMaste
                 <div className="courses-masters-header">
                     <h1>{secondaryTitle}</h1>
                     <p>{secondaryDescription}</p>
-                    { buttonLabel && buttonHref && <CustomButton title={buttonLabel} href={buttonHref} />}
+                    { buttonLabel && <CustomButton title={buttonLabel} href={buttonHref} />}
                 </div>
 
                 <div className="courses-masters-item">

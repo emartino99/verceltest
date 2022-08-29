@@ -75,7 +75,7 @@ export const CustomHero = ({customHero}: CustomHeroProps) => {
             }
        </div>
         {
-            buttonLabel && buttonHref &&
+            buttonLabel &&
                 <>
                     <CustomButton title={buttonLabel} href={buttonHref} />
                     <p className="custom-hero-telephone-number">oppure chiamaci allo <span> 081-5536002 </span></p>

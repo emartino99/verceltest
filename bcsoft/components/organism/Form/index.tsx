@@ -144,7 +144,7 @@ export const Form = ({form, formMainSettings}: FormProps) => {
                         </div>
                     </div>
                     <div className="form-button">
-                        <CustomButton title={'INVIA'} href={undefined}></CustomButton>
+                        <CustomButton title={'INVIA'}></CustomButton>
                     </div>
                 </form>
             </div>

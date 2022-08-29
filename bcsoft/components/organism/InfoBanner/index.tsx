@@ -26,7 +26,13 @@ export const InfoBanner = ({infoBanner}: InfoBannerProps) => {
                 <h1>{Title}</h1>
                 <p>{description}</p>
                 {
-                    buttonLabel && buttonHref && <CustomButton title={buttonLabel} href={buttonHref} mainBackgroundColor={color} mainColor={buttonTextColor} />
+                    buttonLabel && 
+                        <CustomButton 
+                            title={buttonLabel} 
+                            href={buttonHref} 
+                            mainBackgroundColor={color} 
+                            mainColor={buttonTextColor} 
+                        />
                 }
             </div>
         </section>

@@ -41,7 +41,7 @@ export const Design = ({design, communication, designAndCommunication}: DesignCo
                 {image && <Image src={getMediaPath(image)} alt='logo' layout='fill' objectFit="scale-down" />}
             </div>
             {
-                buttonLabel && buttonHref &&
+                buttonLabel &&
                     <CustomButton title={buttonLabel} href={buttonHref} />
             }
         </section>

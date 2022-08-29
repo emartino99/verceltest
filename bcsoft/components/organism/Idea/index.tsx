@@ -38,7 +38,7 @@ export const Idea = ({idea, ideaMainSettings}: IdeaProps) => {
                 }
             </div>
             {
-                buttonLabel && buttonHref &&
+                buttonLabel &&
                     <CustomButton 
                         title={buttonLabel} 
                         href={buttonHref} 

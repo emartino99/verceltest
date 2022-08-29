@@ -33,7 +33,7 @@ export const JobOffers = ({jobOffers}: JobOffersProps) => {
                                 </div>
                             </div>
                            {
-                            card.buttonHref && card.buttonLabel &&
+                            card.buttonLabel &&
                                 <div className="job-button" >
                                     <CustomButton title={card.buttonLabel} href={card.buttonHref} mainBackgroundColor={'#FFFFFF'} mainColor={'#001F3C'} />
                                 </div>

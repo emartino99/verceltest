@@ -44,10 +44,13 @@ export function Clients({clients, clientsMainSettings}: ClientsProps) {
       </article>
       <article className="clients-description">
         { description && <p className='regular sectionSubtitle text-center' dangerouslySetInnerHTML={{ __html: description }}></p> }
-        <CustomButton 
-          title={Title}
-          href={buttonRouting}
-        />
+        {
+          Title &&
+            <CustomButton 
+              title={Title}
+              href={buttonRouting}
+            />
+        }
       </article>
     </section>
   );

@@ -1,9 +1,9 @@
-import Image from "next/image";
-import { useRouter } from "next/router";
 import { useState } from "react";
+import Image from "next/image";
 import { CurvedArrow } from "../../../assets";
 import { IHeroMedia, IQuickLinks } from "../../../models";
 import { getMediaPath } from "../../../utils";
+import Link from "next/link";
 
 interface HeroProps {
     quickLinks: IQuickLinks[] | undefined;
@@ -11,12 +11,9 @@ interface HeroProps {
 }
 
 export function Hero({quickLinks, media}: HeroProps) {
-    const router = useRouter();
 
     const [showQuickLinksMenu, setShowQuickLinksMenu] = useState<boolean>(false);
     const quickLinksMenuHandler = () => setShowQuickLinksMenu(val => !val);
-
-    const redirectToUrl = (url: string) => router.push(url);
 
     const {
         ImgURL,
@@ -67,7 +64,9 @@ export function Hero({quickLinks, media}: HeroProps) {
                                     {
                                         showQuickLinksMenu
                                             ? quickLinks?.map(currentQuickLink => (
-                                                <p key={currentQuickLink.ID} className='links' onClick={() => redirectToUrl(currentQuickLink.QuickLinkUrl)}>{currentQuickLink.Title}</p>
+                                               <Link key={currentQuickLink.ID} href={currentQuickLink.QuickLinkUrl} >
+                                                    <p className='links' >{currentQuickLink.Title}</p>
+                                               </Link>
                                             ))
                                             : <p className='links' onClick={quickLinksMenuHandler}>Guarda cosa possiamo fare per te</p>
                                     }

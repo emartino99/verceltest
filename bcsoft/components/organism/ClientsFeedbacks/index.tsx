@@ -35,7 +35,7 @@ export const ClientsFeedbacks = ({feedbacks, feedbacksMainSettings}: FeedbacksPr
                             <span className="feedback-owner">{card.Title}</span>
                             <span>{card.company}</span>
                             {
-                                card.buttonLabel && card.buttonHref &&
+                                card.buttonLabel &&
                                     <div style={{width: 198}}>
                                         <CustomButton 
                                             title={card.buttonLabel}

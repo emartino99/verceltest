@@ -1,6 +1,5 @@
 import { FormEventHandler, useCallback } from "react";
 import { CardCoursesMasters, CardNewsLetter } from "../../molecule";
-import { useRouter } from "next/router";
 import { ILatestNews, ILatestNewsMainSettings, ILatestNewsNewsletter } from "../../../models";
 
 interface LatestNewsProps {
@@ -19,9 +18,6 @@ export const LatestNews = ({
         Title,
         subtitle
     } = latestNewsMainSettings?.[0] || {};
-
-    const router = useRouter();
-    const redirectHandler = (urlToRedirectTo: string) => router.push(urlToRedirectTo);
 
     const handleSubmit: FormEventHandler = useCallback((e) => {
         e.preventDefault()

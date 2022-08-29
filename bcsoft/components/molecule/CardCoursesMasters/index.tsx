@@ -36,7 +36,7 @@ export const CardCoursesMasters = ({
                     <h1 style={{color: textColor}}>{title}</h1>
                 </div>
                 <p style={{color: textColor}}>{description}</p>
-                { buttonLabel && buttonHref && <CustomButton title={buttonLabel} href={buttonHref} /> }
+                { buttonLabel && <CustomButton title={buttonLabel} href={buttonHref} /> }
             </div>
         </article>
     );

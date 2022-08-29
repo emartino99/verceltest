@@ -29,7 +29,7 @@ export const CertificationsItems = ({certifications}: CertificationsProps) => {
               {certificationImage && <Image src={getMediaPath(certificationImage)} alt={'Title'} layout='fill' objectFit="scale-down" priority/>}  
             </div>
             {
-              buttonLabel && buttonHref &&
+              buttonLabel &&
                 <CustomButton title={buttonLabel} href={buttonHref} />
             }
         </aside>

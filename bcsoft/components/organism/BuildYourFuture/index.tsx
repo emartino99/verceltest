@@ -22,8 +22,8 @@ export const BuildYourFuture = ({future}: FutureProps) => {
                 <h1 dangerouslySetInnerHTML={{ __html: Title ?? "" }}></h1>
                 <p dangerouslySetInnerHTML={{ __html: description ?? "" }}></p>
                 {
-                    buttonLabel && buttonHref &&
-                        <CustomButton title={'GUARDA LE POSIZIONI APERTE'} href={undefined} />
+                    buttonLabel &&
+                        <CustomButton title={'GUARDA LE POSIZIONI APERTE'} href={buttonHref} />
                 }
             </div>
         </section>

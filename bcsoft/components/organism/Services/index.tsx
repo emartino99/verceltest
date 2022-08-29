@@ -61,7 +61,7 @@ export const Services = ({services, servicesMainSettings}: ServicesProps) => {
                     })
                 }
             </div>
-            {buttonLabel && buttonHref && <CustomButton title={buttonLabel} href={buttonHref} mainBackgroundColor={'#FFFFFF'} mainColor={'#001F3C'} />}
+            {buttonLabel && <CustomButton title={buttonLabel} href={buttonHref} mainBackgroundColor={'#FFFFFF'} mainColor={'#001F3C'} />}
         </section>
     );
 };
