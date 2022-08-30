@@ -1,19 +1,10 @@
-export interface ISubLinks {
-    Id: number; 
-    ID: number;
-    Title: string;
+import { ISharepointList } from "./sharepoint-list";
+export interface ISubLinks extends ISharepointList {
     SubLinkID: number;
     SubLinkURL: string;
 }
-export interface IMainLinks {
-     
-    Id: number;
-     
-    ID: number;
-    
-    Title: string;
-    
-    LinkID: number;
+export interface IMainLinks extends ISharepointList {
     HasSubLinks: string;
+    LinkID: number;
     LinkURL?: string;
 }

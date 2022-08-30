@@ -36,7 +36,7 @@ export const Quote = ({quote}: QuoteProps) => {
                     className="pointer"
                     src={getMediaPath(image)} 
                     alt={imageALT} 
-                    onClick={() => redirectHandler(imageRedirect)}
+                    onClick={() => imageRedirect && redirectHandler(imageRedirect)}
                     layout='fill'
                     objectFit="scale-down"
                 />

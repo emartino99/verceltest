@@ -1,21 +1,18 @@
-export interface ILocations {
-    ID: number;
-    Title: string;
-    GUID: string;
+import { ISharepointList } from "./sharepoint-list";
+
+export interface ILocations extends ISharepointList {
+    Email: string;
+    Fax: string;
     Indirizzo_x0020_sede: string;
     Telefono: string;
-    Fax: string;
-    Email: string;
 }
-export interface ILocationsMainSettings {
-    ID: number;
-    Title: string;
-    secondaryTitle: string;
+export interface ILocationsMainSettings extends ISharepointList {
     description: string;
     rotate: string;
+    secondaryTitle: string;
 }
 export interface IPosition {
+    selectedLocation: ILocations | undefined
     x: number;
     y: number;
-    selectedLocation: ILocations | undefined
 }

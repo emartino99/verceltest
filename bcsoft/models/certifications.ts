@@ -1,10 +1,6 @@
-export interface ICertifications {
-    buttonHref: string;
-    buttonLabel: string;
+import { ISharepointList, ISharepointListButton } from "./sharepoint-list";
+export interface ICertifications extends ISharepointList, ISharepointListButton {
     certificationImage: string;
     description: string;
-    GUID: string;
-    ID: number;
-    Title: string;
     invertPosition: string;
 }

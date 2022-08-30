@@ -1,18 +1,10 @@
-export interface IServices {
-    ID: number;
-    Title: string;
+import { ISharepointListButton, ISharepointListStyle } from "./sharepoint-list";
+export interface IServices extends ISharepointListStyle {
     description: string;
     descriptionHover: string;
     image: string;
-    style: string;
 }
-
-export interface IServicesMainSettings {
-    ID: number;
-    Title: string;
+export interface IServicesMainSettings extends ISharepointListStyle, ISharepointListButton {
     description: string;
     subtitle: string;
-    buttonLabel: string;
-    buttonHref: string;
-    style: string;
 }

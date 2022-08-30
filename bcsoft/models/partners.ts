@@ -1,6 +1,4 @@
-export interface IPartners {
-    ID: number;
-    Title: string;
-    GUID: string;
+import { ISharepointList } from "./sharepoint-list";
+export interface IPartners extends ISharepointList {
     PartnerIMG: string;
 }

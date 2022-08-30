@@ -24,9 +24,9 @@ export const CertificationsItems = ({certifications}: CertificationsProps) => {
             <h1>{Title}</h1>
             <p>{description}</p>
         </article>
-        <aside className="certifications-item" style={{gap: '6rem'}}>
+        <aside className="certifications-item">
             <div className="certifications-item-image">
-              {certificationImage && <Image src={getMediaPath(certificationImage)} alt={'Title'} layout='fill' objectFit="scale-down" priority/>}  
+              {certificationImage && <Image src={getMediaPath(certificationImage)} alt={'Title'} layout='fill' objectFit="scale-down" priority />}  
             </div>
             {
               buttonLabel &&

@@ -1,5 +1,4 @@
-export interface IOurServices {
-    ID: number;
-    Title: string;
+import { ISharepointList } from "./sharepoint-list";
+export interface IOurServices extends ISharepointList {
     description: string;
 }

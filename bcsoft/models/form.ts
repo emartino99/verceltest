@@ -1,16 +1,12 @@
-export interface IForm {
-    ID: number;
-    Title: string;
-}
+import { ISharepointList } from "./sharepoint-list";
 
-export interface IFormMainSettings {
-    ID: number;
-    Title: string;
-    mainDescription: string;
-    sideContentTitle: string;
-    sideContentDescription: string;
-    Telefono: string;
-    secondRadioButtonTitle: string;
-    textAreaTitle: string;
+export interface IForm extends ISharepointList {}
+export interface IFormMainSettings extends ISharepointList {
     CV: string;
+    mainDescription: string;
+    secondRadioButtonTitle: string;
+    sideContentDescription: string;
+    sideContentTitle: string;
+    Telefono: string;
+    textAreaTitle: string;
 }

@@ -1,8 +1,5 @@
-export interface IFuture {
-    ID: number;
-    Title: string;
-    description: string;
-    buttonLabel: string;
-    buttonHref: string;
+import { ISharepointList, ISharepointListButton } from "./sharepoint-list";
+export interface IFuture extends ISharepointList, ISharepointListButton {
     backgroundImage: string;
+    description: string;
 }

@@ -1,12 +1,7 @@
-export interface ICustomHero {
-    ID: number;
-    Title: string;
-    subtitle: string;
-    description: string;
+import { ISharepointListStyle, ISharepointListButton } from "./sharepoint-list";
+export interface ICustomHero extends ISharepointListStyle, ISharepointListButton {
     backgroundImage: string;
-    buttonLabel: string;
-    buttonHref: string;
-    field: string;
-    style: string;
+    description: string;
     image: string;
+    subtitle: string;
 }

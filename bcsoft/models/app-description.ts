@@ -1,11 +1,8 @@
-export interface IAppDescription {
-    ID: number;
-    Title: string;
+import { ISharepointListStyle } from "./sharepoint-list";
+export interface IAppDescription extends ISharepointListStyle {
     firstDescription: string;
-    secondTitle: string;
-    secondDescription: string;
     image: string;
     imageALT: string;
-    field: string;
-    style: string;
+    secondDescription: string;
+    secondTitle: string;
 }

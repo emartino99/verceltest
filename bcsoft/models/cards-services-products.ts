@@ -1,13 +1,9 @@
-export interface ICardServicesProducts {
-    ID: number;
-    Title: string;
+import { ISharepointList } from "./sharepoint-list";
+export interface ICardServicesProducts extends ISharepointList {
+    backgroundColor: string;
     description: string;
     image: string;
-    backgroundColor: string;
 }
-
-export interface IServicesProductsMainSettings {
-    ID: number;
-    Title: string;
+export interface IServicesProductsMainSettings extends ISharepointList {
     description: string;
 }

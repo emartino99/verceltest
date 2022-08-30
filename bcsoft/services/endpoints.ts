@@ -74,7 +74,6 @@ export const ENDPOINTS = {
     infoBannerContacts: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('infoBannerContacts')/items`,
     infoBannerServices: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('infoBannerServices')/items`,
     jobOffers: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('jobOffers')/items`,
-    laBellaEstateHero: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('laBellaEstateHero')/items`,
     laBellaEstatePartners: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('laBellaEstatePartners')/items`,
     laBellaEstatePartnersMainSettings: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('laBellaEstatePartnersMainSettings')/items`,
     latestNews: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('latestNews')/items`,

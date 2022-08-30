@@ -1,10 +1,7 @@
-export interface IInfoBanner {
-    ID: number;
-    Title: string;
-    description: string;
-    buttonLabel: string;
-    buttonHref: string;
-    layoutOrder: string;
+import { ISharepointList, ISharepointListButton } from "./sharepoint-list";
+export interface IInfoBanner extends ISharepointList, ISharepointListButton {
     backgroundColor: string;
+    description: string;
+    layoutOrder: string;
     whiteColorTextAndButton: string;
 }

@@ -23,7 +23,6 @@ export * from './Idea';
 export * from './Info';
 export * from './InfoBanner';
 export * from './JobOffers';
-export * from './LaBellaEstateHero';
 export * from './LatestNews';
 export * from './LinkedinFeed';
 export * from './Locations';

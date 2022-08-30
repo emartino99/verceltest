@@ -1,7 +1,6 @@
-export interface ICardsCoursesMasters {
-    ID: number;
-    Title: string;
+import { ISharepointList } from "./sharepoint-list";
+export interface ICardsCoursesMasters extends ISharepointList {
+    backgroundColor: string;
     description: string;
     image: string;
-    backgroundColor: string;
 }

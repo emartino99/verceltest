@@ -48,7 +48,7 @@ export const StrengthsContainer = ({arrayToMap, objectCss, cssClass}: StrengthsC
                         {
                             item.image &&
                             <>
-                                <div style={{top: objectCss[index].thinBorderTop, left: objectCss[index].thinBorderLeft, width: 2, height: objectCss[index].thinBorderHeight}}>
+                                <div style={{position: 'absolute', opacity: 0, top: objectCss[index].thinBorderTop, left: objectCss[index].thinBorderLeft, width: 2, height: objectCss[index].thinBorderHeight}}>
                                     <Image alt='thinBorder'src={"/thinBorder.png"} layout="fill" />
                                 </div>
                                 <div 

@@ -1,14 +1,8 @@
-export interface IDesignCommunication {
-    ID: number;
-    Title: string;
-}
+import { ISharepointList, ISharepointListButton } from "./sharepoint-list";
 
-export interface IDesignCommunicationMainSettings {
-    ID: number;
-    Title: string;
-    designImage: string;
+export interface IDesignCommunication extends ISharepointList {}
+export interface IDesignCommunicationMainSettings extends ISharepointList, ISharepointListButton {
     communicationImage: string;
+    designImage: string;
     image: string;
-    buttonLabel: string;
-    buttonHref: string;
 }

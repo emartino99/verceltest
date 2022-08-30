@@ -1,22 +1,16 @@
-export interface ILatestNewsMainSettings {
-    ID: number;
-    Title: string;
+import { ISharepointList, ISharepointListButton } from "./sharepoint-list";
+
+export interface ILatestNewsMainSettings extends ISharepointList {
     subtitle: string;
 }
 
-export interface ILatestNews {
-    ID: number;
-    Title: string;
+export interface ILatestNews extends ISharepointList, ISharepointListButton {
+    backgroundColor: string;
     description: string;
     image: string;
-    backgroundColor: string;
-    buttonLabel: string;
-    buttonHref: string;
 }
 
-export interface ILatestNewsNewsletter {
-    ID: number;
-    Title: string;
+export interface ILatestNewsNewsletter extends ISharepointList {
     description: string;
     image: string;
 }

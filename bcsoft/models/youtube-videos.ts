@@ -1,13 +1,7 @@
-export interface IYoutube {
-    ID: number;
-    Title: string;
+import { ISharepointListStyle } from "./sharepoint-list";
+export interface IYoutube extends ISharepointListStyle {
     SRC: string;
-    style: string;
 }
-
-export interface IYoutubeMainSettings {
-    ID: number;
-    Title: string;
+export interface IYoutubeMainSettings extends ISharepointListStyle {
     subtitle: string;
-    style: string;
 }

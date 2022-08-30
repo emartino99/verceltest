@@ -1,8 +1,6 @@
-export interface ICoursesMastersMainSettings {
-    Title: string;
+import { ISharepointList, ISharepointListButton } from "./sharepoint-list";
+export interface ICoursesMastersMainSettings extends ISharepointList, ISharepointListButton {
     mainDescription: string;
-    secondaryTitle: string;
     secondaryDescription: string;
-    buttonLabel: string;
-    buttonHref: string;
+    secondaryTitle: string;
 }

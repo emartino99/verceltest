@@ -1,53 +1,30 @@
-export type headerStyle = {
+export interface style {
     alignItems?: string;
     justifyContent?: string;
     width?: string;
-}
-
-export type textStyle = {
     color?: string;
     fontSize?: string;
-    width?: string;
     fontWeight?: string;
     posistion?: string;
     top?: string;
-}
-
-export type card = {
     height?: string;
-    width?: string;
     minHeight?: string;
     backgroundColor?: string;
-}
-
-export type image = {
-    height?: string;
-    width?: string;
-}
-
-export type section = {
-    height?: string;
-    width?: string;
-    backgroundColor?: string;
     flexFlow?: string;
-}
-
-export type border = {
-    height: string;
     borderRight: string;
 }
 export interface ISharepointStyle {
-    headerStyle?: headerStyle;
-    titleStyle?: textStyle;
-    descriptionStyle?: textStyle;
-    subtitleStyle?: textStyle;
+    headerStyle?: style;
+    titleStyle?: style;
+    descriptionStyle?: style;
+    subtitleStyle?: style;
     backgroundImageOpacity?: boolean;
     backgroundColor?: string;
-    cardStyle: card;
-    imageStyle: image;
-    sectionStyle: section;
-    flexFlow: string;
-    leftBorder: border;
-    rightBorder: border;
-    border: border;
+    cardStyle?: style;
+    imageStyle?: style;
+    sectionStyle?: style;
+    flexFlow?: string;
+    leftBorder?: style;
+    rightBorder?: style;
+    border?: style;
 }

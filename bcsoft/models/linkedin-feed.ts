@@ -1,12 +1,10 @@
-export interface ILinkedinFeed {
-    ID: number;
-    Title: string;
+import { ISharepointList } from "./sharepoint-list";
+
+export interface ILinkedinFeed extends ISharepointList {
     image: string;
     redirectTo: string;
 }
 
-export interface ILinkedinFeedMainSettings {
-    ID: number;
-    Title: string;
+export interface ILinkedinFeedMainSettings extends ISharepointList {
     subtitle: string;
 }

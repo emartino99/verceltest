@@ -1,7 +1,4 @@
-export interface IResults {
-    ID: number;
-    Title: string;
+import { ISharepointListStyle } from "./sharepoint-list";
+export interface IResults extends ISharepointListStyle {
     description: string;
-    field: string;
-    style: string;
 }

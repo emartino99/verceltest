@@ -1,16 +1,10 @@
-export interface ICourses {
-    ID: number;
-    Title: string;
-    GUID: string;
+import { ISharepointList } from "./sharepoint-list";
+export interface ICourses extends ISharepointList {
     CorsoImg: string;
 }
-
-export interface ICoursesMainSettings {
-    ID: number;
-    Title: string;
-    GUID: string;
-    Description: string;
-    buttonLabel: string;
-    href: string;
+export interface ICoursesMainSettings extends ISharepointList {
     backgroundColor: string;
+    buttonLabel: string;
+    Description: string;
+    href: string;
 }

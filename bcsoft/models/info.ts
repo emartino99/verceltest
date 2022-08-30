@@ -1,9 +1,6 @@
-export interface IInfo {
-    ID: number;
-    Title: string;
+import { ISharepointListStyle } from "./sharepoint-list";
+export interface IInfo extends ISharepointListStyle {
     firstDescription: string;
-    secondTitle: string;
     secondDescription: string;
-    field: string;
-    style: string;
+    secondTitle: string;
 }

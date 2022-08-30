@@ -1,11 +1,7 @@
-export interface IProducts {
-    ID: number;
-    Title: string;
+import { ISharepointList } from "./sharepoint-list";
+export interface IProducts extends ISharepointList {
     image: string;
 }
-
-export interface IProductsMainSettings {
-    ID: number;
-    Title: string;
+export interface IProductsMainSettings extends ISharepointList {
     description: string;
 }

@@ -1,17 +1,11 @@
-export interface IFeedbacks {
-    ID: number;
-    Title: string;
+import { ISharepointList, ISharepointListButton } from "./sharepoint-list";
+export interface IFeedbacks extends ISharepointList, ISharepointListButton {
     company: string;
     description: string;
-    mainTitle: string;
     image: string;
-    buttonLabel: string;
-    buttonHref: string;
+    mainTitle: string;
 }
-
-export interface IFeedbacksMainSettings {
-    ID: number;
-    Title: string;
-    subtitle: string;
+export interface IFeedbacksMainSettings extends ISharepointList {
     description: string;
+    subtitle: string;
 }

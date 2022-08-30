@@ -1,6 +1,5 @@
-export interface IConsultants {
-    ID: number;
-    Title: string;
-    subtitle: string;
+import { ISharepointList } from "./sharepoint-list";
+export interface IConsultants extends ISharepointList {
     description: string;
+    subtitle: string;
 }

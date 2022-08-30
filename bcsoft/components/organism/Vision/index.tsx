@@ -35,7 +35,7 @@ export const Vision = ({vision}: VisionProps) => {
         <section className="vision span-1-12" ref={sectionRef}>
             <aside className='vision-container' style={{alignItems: 'flex-start'}}>
                 <div>
-                    <Image alt='vision'src={"/vision.png"} width={300} height={340} />
+                    <Image alt='vision'src={"/vision.png"} width={300} height={340} priority />
                     <h1>Vision</h1>
                     <div>
                         <Image alt='vision-logo'src={"/vision-logo.png"} width={147} height={65} />

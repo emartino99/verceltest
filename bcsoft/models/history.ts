@@ -1,20 +1,15 @@
-export interface IHistoryCard {
-    ID: number;
-    Title: string;
+import { ISharepointList } from "./sharepoint-list";
+export interface IHistoryCard extends ISharepointList {
     Event: string;
     NumberOfEmployees: string;
     YearToShow: number;
 }
-
-export interface IHistoryMainSettings {
-    ID: number;
-    Title: string;
+export interface IHistoryMainSettings extends ISharepointList {
     description: string;
 }
-
 export interface IHistoryCardProps {
-    isEven: boolean;
-    yearToShow: string;
-    isTheLastOne: boolean;
     isActive: boolean;
+    isEven: boolean;
+    isTheLastOne: boolean;
+    yearToShow: string;
 }

@@ -1,9 +1,8 @@
-export interface INews {
-    Title: string;
+import { ISharepointList } from "./sharepoint-list";
+export interface INews extends ISharepointList {
     BannerImageUrl: string;
     Description: string;
-    FirstPublishedDate: Date;
     FileRef: string;
-    ID: number;
+    FirstPublishedDate: Date;
     Topic: string;
 }

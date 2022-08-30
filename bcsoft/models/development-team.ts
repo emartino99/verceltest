@@ -1,11 +1,7 @@
-export interface IDeveloperCard {
-    ID: number;
-    Title: string;
+import { ISharepointList } from "./sharepoint-list";
+export interface IDeveloperCard extends ISharepointList {
     image: string;
 }
-
-export interface IDevelopmentMainSettings {
-    ID: number;
-    Title: string;
+export interface IDevelopmentMainSettings extends ISharepointList {
     description: string;
 }

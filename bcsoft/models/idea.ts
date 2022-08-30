@@ -1,14 +1,8 @@
-export interface IIdea {
-    ID: number;
-    Title: string;
+import { ISharepointList, ISharepointListButton } from "./sharepoint-list";
+export interface IIdea extends ISharepointList {
+    descriptionHover: string;
     numberImg: string;
     subtitleHover: string;
-    descriptionHover: string;
 }
 
-export interface IIdeaMainSettings {
-    ID: number;
-    Title: string
-    buttonLabel: string;
-    buttonHref: string;
-}
+export interface IIdeaMainSettings extends ISharepointList, ISharepointListButton {}

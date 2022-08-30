@@ -1,26 +1,21 @@
-export interface iCoreBusinessCard {
-    Id: number; 
-    ID: number;
-    Title: string;
-    CardImg: string;
-    CardDescription: string;
-    CardButtonText: string;
+import { ISharepointList } from "./sharepoint-list";
+export interface iCoreBusinessCard extends ISharepointList {
     CardButtonRedirectURL: string;
+    CardButtonText: string;
+    CardDescription: string;
+    CardImg: string;
 }
 export interface ICoreBusinessAsset extends iCoreBusinessCard {
     CardImg: string;
 }
 export interface ICardIMG {
-    type: string;
-    fileName: string;
-    fieldName: string;
     fieldId: string;
-    serverRelativeUrl: string;
+    fieldName: string;
+    fileName: string;
     id: string;
+    serverRelativeUrl: string;
+    type: string;
 }
-export interface iCoreBusiness {
-    Id: number;
-    ID: number;
-    Title: string;
+export interface iCoreBusiness extends ISharepointList {
     Subtitle: string;
 }
