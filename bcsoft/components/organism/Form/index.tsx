@@ -1,6 +1,8 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { FormEventHandler, useCallback, useRef } from "react";
 import { IForm, IFormMainSettings } from "../../../models";
+import { extractMultipleData, extractData } from "../../../utils";
 import { CustomButton } from "../../atoms/CustomButton";
 
 interface FormProps {
@@ -9,6 +11,10 @@ interface FormProps {
 }
 
 export const Form = ({form, formMainSettings}: FormProps) => {
+
+    const route = useRouter();
+    const formExtractedData: IForm[] = extractMultipleData(route, form);
+    const formMainSettingsExtractedData: IFormMainSettings = extractData(route, formMainSettings);
 
     const {
         Title,
@@ -19,7 +25,7 @@ export const Form = ({form, formMainSettings}: FormProps) => {
         secondRadioButtonTitle,
         textAreaTitle,
         CV,
-    } = formMainSettings?.[0] || {};
+    } = formMainSettingsExtractedData || {};
 
     const inputFileRef = useRef<HTMLInputElement>(null)
 
@@ -106,7 +112,7 @@ export const Form = ({form, formMainSettings}: FormProps) => {
                     <div className="input-container">
                         <div className='custom-form-radio'>
                             {
-                                form?.map(item => (
+                                formExtractedData?.map(item => (
                                     <div key={item.ID}>
                                         <input id={item.Title} type="radio" className='input' name="Oggetto"/>
                                         <label htmlFor={item.Title}>{item.Title}</label>

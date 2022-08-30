@@ -112,8 +112,8 @@ export const getServerSideProps = async () => {
     get<SharepointResponse<IAvaiableServicesMainSettings[]>>(ENDPOINTS.designServiceMainSettings, { headers }),
     get<SharepointResponse<ICardAvaiableService[]>>(ENDPOINTS.communicationService, { headers }),
     get<SharepointResponse<IAvaiableServicesMainSettings[]>>(ENDPOINTS.communicationServiceMainSettings, { headers }),
-    get<SharepointResponse<IForm[]>>(ENDPOINTS.formServices, { headers }),
-    get<SharepointResponse<IFormMainSettings[]>>(ENDPOINTS.formServicesMainSettings, { headers }),
+    get<SharepointResponse<IForm[]>>(ENDPOINTS.forms, { headers }),
+    get<SharepointResponse<IFormMainSettings[]>>(ENDPOINTS.formsMainSettings, { headers }),
   ])
 
   return {

@@ -102,8 +102,8 @@ export const getServerSideProps = async () => {
     get<SharepointResponse<INumbersMainSettings[]>>(ENDPOINTS.numbersAcademyMainSettings, { headers }),
     get<SharepointResponse<ICourses[]>>(ENDPOINTS.coursesAcademy, { headers }),
     get<SharepointResponse<ICoursesMainSettings[]>>(ENDPOINTS.coursesAcademyMainSettings, { headers }),
-    get<SharepointResponse<IForm[]>>(ENDPOINTS.formAcademy, { headers }),
-    get<SharepointResponse<IFormMainSettings[]>>(ENDPOINTS.formAcademyMainSettings, { headers }),
+    get<SharepointResponse<IForm[]>>(ENDPOINTS.forms, { headers }),
+    get<SharepointResponse<IFormMainSettings[]>>(ENDPOINTS.formsMainSettings, { headers }),
   ])
 
   return {
