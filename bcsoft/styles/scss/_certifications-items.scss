@@ -1,12 +1,13 @@
 .certifications {
+    @include padding-top-bottom(null, 30, 30);
     align-items: center;
+    clip-path: polygon(0 5%, 100% 0, 100% 95%, 0% 100%);
     display: flex;
     gap: 2rem;
     justify-content: center;
     min-height: 500px;
 
     &-item {
-        align-items: center;
         color: $--unnamed-color-002950;
         display: flex;
         flex-flow: column nowrap;
@@ -19,6 +20,7 @@
         position: relative;
 
         h1 {
+            @include margin-top-bottom(null, 0, 0);
             font-size: $--unnamed-font-size-30;
             font-weight: $--unnamed-font-weight-500;
         }

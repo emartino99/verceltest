@@ -1,45 +1,46 @@
 .partners {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
+    @include padding-top-bottom(null, 60, 60);
     align-items: center;
     background-color: $--unnamed-color-001f3c;
-    @include padding-top-bottom(null, 60, 60);
+    display: flex;
+    flex-flow: column nowrap;
     gap: 3rem;
+    justify-content: center;
 
     &-card{
+        align-items: center;
         display: flex;
         flex-flow: row wrap;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
         gap: 2rem;
+        justify-content: center;
         min-height: 240px;
+        width: 100%;
 
         &-title{
-            flex: 1;
-            display: flex;
-            height: 100%;
             align-items: center;
+            display: flex;
+            flex: 1;
+            height: 100%;
 
             h1 {
-                font-weight: $--unnamed-font-weight-bold;
+                color: $--unnamed-color-ffffff;
                 font-family: $--unnamed-font-family-exo-2;
                 font-size: $--unnamed-font-size-40;
-                color: $--unnamed-color-ffffff;
+                font-weight: $--unnamed-font-weight-bold;
             }
         }
 
-        &-image{
-            flex: 1;
-            display: flex;
-            height: 100%;
-            background-color: $--unnamed-color-ffffff;
+        &-image-container{
             align-items: center;
-            position: relative;
+            background-color: $--unnamed-color-ffffff;
+            display: flex;
+            flex: 1;
+            height: 100%;
 
-            div {
-                margin: 1rem;
+            .partners-card-image-content {
+               height: 100%;
+               position: relative;
+               width: 65%; 
             }
 
         }

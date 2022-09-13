@@ -1,24 +1,28 @@
 import { 
     AppDescription,
-    Cervellone, 
+    Benefits,
+    CertificationsItems,
+    Cervellone,
     Courses,
     CoursesAndMasters,
-    CoursesStructure, 
-    CustomHero, 
-    EstateDevelopmentTeam, 
-    Form, 
+    CoursesStructure,
+    CustomHero,
+    EstateDevelopmentTeam,
+    Form,
     Info,
-    Products, 
+    Products,
     Quote,
-    Results, 
-    Services, 
-    YoutubeVideos, 
+    Results,
+    Services,
+    YoutubeVideos
 } from "./organism"
 
 interface ConfiguratiorType extends Record<string, any> { }
 export const getComponentFrom = (key: string) => {
     return ({
         AppDescription: AppDescription,
+        Benefits: Benefits,
+        CertificationsItems: CertificationsItems,
         Cervellone: Cervellone,
         Courses: Courses,
         CoursesAndMasters: CoursesAndMasters,
@@ -31,6 +35,6 @@ export const getComponentFrom = (key: string) => {
         Quote: Quote,
         Results: Results,
         Services: Services,
-        YoutubeVideos: YoutubeVideos,
+        YoutubeVideos: YoutubeVideos
     } as ConfiguratiorType)[key] || null
 }

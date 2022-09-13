@@ -11,7 +11,7 @@ export interface style {
     minHeight?: string;
     backgroundColor?: string;
     flexFlow?: string;
-    borderRight: string;
+    borderRight?: string;
 }
 export interface ISharepointStyle {
     headerStyle?: style;
@@ -20,6 +20,7 @@ export interface ISharepointStyle {
     subtitleStyle?: style;
     backgroundImageOpacity?: boolean;
     backgroundColor?: string;
+    background?: string;
     cardStyle?: style;
     imageStyle?: style;
     sectionStyle?: style;
@@ -27,4 +28,10 @@ export interface ISharepointStyle {
     leftBorder?: style;
     rightBorder?: style;
     border?: style;
+    containerStyle?: style;
+    mainButtonBackgroundColor?: string; 
+    mainButtonColor?: string;
+    outerButtonShadowColor?: string;
+    innerButtonShadowrColor?: string; 
+    secondaryButtonBackgroundColor?: boolean;
 }

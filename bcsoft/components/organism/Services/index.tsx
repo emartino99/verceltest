@@ -24,21 +24,23 @@ export const Services = ({services, servicesMainSettings}: ServicesProps) => {
         style
     } = servicesMainSettingsExtracted || {};
 
-    const { 
+    const {
+        headerStyle,
         backgroundColor, 
         titleStyle, 
         descriptionStyle,
-        subtitleStyle
+        subtitleStyle,
+        containerStyle
     }: ISharepointStyle = style && JSON.parse(style);
 
     return (
         <section className="services span-1-12" style={{backgroundColor: backgroundColor}}>
-            <header>
+            <header style={{...headerStyle}}>
                 <h1 style={{...titleStyle}}>{Title}</h1>
                 <p style={{...descriptionStyle}}>{description}</p>
                 <span style={{...subtitleStyle}}>{subtitle}</span>
             </header>
-            <div className="services-content">
+            <div className="services-content" style={{...containerStyle}}>
                 {
                     servicesExtracted?.map(card => {
                         const { cardStyle, titleStyle, descriptionStyle }: ISharepointStyle = card.style && JSON.parse(card.style);

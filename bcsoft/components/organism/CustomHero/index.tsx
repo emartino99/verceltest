@@ -33,6 +33,7 @@ export const CustomHero = ({customHero}: CustomHeroProps) => {
         descriptionStyle,
         backgroundImageOpacity,
         backgroundColor,
+        background,
         flexFlow
     } = usableStyle || {};
         
@@ -48,11 +49,11 @@ export const CustomHero = ({customHero}: CustomHeroProps) => {
   return (
     <section 
         className={`custom-hero span-1-12 ${backgroundImageOpacity && 'opacity'}`} 
-        style={{
-            backgroundImage: backgroundImage && `url(${getMediaPath(backgroundImage)})`, 
-            backgroundColor: backgroundColor ?? '#FFFFFF',
-            clipPath: backgroundImage ? 'polygon(0 5%, 100% 0, 100% 95%, 0 100%)' : 'polygon(0 0, 100% 0, 100% 95%, 0% 100%)'
-        }}
+        style={
+            background ? {background: background} :
+            backgroundColor ? {backgroundColor: backgroundColor} :
+            backgroundImage ? {backgroundImage: `url(${getMediaPath(backgroundImage)})`, clipPath: 'polygon(0 5%, 100% 0, 100% 95%, 0 100%)'} : {}
+        }
     >
        <div className="custom-hero-content" style={{flexFlow: flexFlow }} >
             <header 

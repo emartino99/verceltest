@@ -1,5 +1,6 @@
 export * from './app-description';
 export * from './banner';
+export * from './benefits';
 export * from './build-your-future';
 export * from './card-avaiable-services';
 export * from './cards-courses-masters';

@@ -2,6 +2,7 @@
 export * from './AppDescription';
 export * from './AvaiableServices';
 export * from './Banner';
+export * from './Benefits';
 export * from './BuildYourFuture';
 export * from './Business';
 export * from './CertificationsItems';

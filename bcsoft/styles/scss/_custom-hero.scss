@@ -3,6 +3,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
     display: flex;
     flex-flow: column nowrap;
     gap: 3rem;
@@ -50,8 +51,10 @@
 
         .custom-hero-image {
             position: relative;
-            height: 350px;
-            width: 350px;
+            // height: 350px;
+            // width: 350px;
+            height: 500px;
+            width: 500px;
         }
 
     }

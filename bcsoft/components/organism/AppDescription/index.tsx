@@ -36,11 +36,15 @@ export const AppDescription = ({appDescription}: AppDescriptionProps) => {
         //eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    const { titleStyle, descriptionStyle }: ISharepointStyle = style && JSON.parse(style);
+    const {
+        headerStyle,
+        titleStyle, 
+        descriptionStyle 
+    }: ISharepointStyle = style && JSON.parse(style);
 
     return (
         <section className='app span-1-12'>
-            <header className='app-item'>
+            <header className='app-item' style={{...headerStyle}}>
                 <div>
                     <h1 style={{...titleStyle}}>{Title}</h1>
                     <div ref={firstDescriptionRef} style={{...descriptionStyle}}></div>
@@ -49,7 +53,6 @@ export const AppDescription = ({appDescription}: AppDescriptionProps) => {
                 <div>
                     <h1 style={{...titleStyle}}>{secondTitle}</h1>
                     <div ref={secondDescriptionRef} style={{...descriptionStyle}}></div>
-                    {/* <p  style={{...descriptionStyle}}>{secondDescription}</p> */}
                 </div>
             </header>
             {   image && 

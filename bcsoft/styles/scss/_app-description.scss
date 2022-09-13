@@ -1,15 +1,14 @@
 .app {
-    min-height: 1000px;
+    align-items: center;
     display: flex;
     flex-flow: row wrap;
+    gap: 2rem;
     justify-content: center;
-    align-items: center;
+    min-height: 1000px;
 
     header {
         display: flex;
         flex-flow: column nowrap;
-        justify-content: flex-start;
-        align-items: flex-start;
     }
 
     &-item {

@@ -1,0 +1,38 @@
+.benefits {
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    min-height: 500px;
+
+    &-banner {
+        align-items: center;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        max-width: 1200px;
+        min-height: 500px;
+        
+        &-text {
+            width: min(540px, 100%);
+        }
+
+        &-image {
+            height: 350px;
+            position: relative;
+            width: min(500px, 100%);
+
+            &.move-left {
+                & > span {
+                    margin-left: -91px !important;
+                }
+            }
+
+            &.move-right {
+                & > span {
+                    margin-right: -91px !important;
+                }
+            }
+        }
+    }
+}

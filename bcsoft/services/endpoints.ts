@@ -1,7 +1,10 @@
 export const ENDPOINTS = {
     academyPage: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('AcademyPage')/items`,
+    agereIntroduction: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('agereIntroduction')/items`,
     appDescription: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('appDescription')/items`,
     banner: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('banner')/items`,
+    benefits: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('benefits')/items`,
+    benefitsMainSettings: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('benefitsMainSettings')/items`,
     buildYourFuture: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('buildYourFuture')/items`,
     business: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('CoreBusiness')/items`,
     businessCard: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('coreBusinessCards')/items`,
@@ -69,6 +72,7 @@ export const ENDPOINTS = {
     locationsMainSettings: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('bcSoftLocationsMainSettings')/items`,
     mainmenu: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('navbarMainLinks')/items`,
     mastersMainSettings: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('mastersMainSettings')/items`,
+    midaBackend: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('midaBackend')/items`,
     news: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('news_list')/items`,
     numbers: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('bcSoftNumbersAbout')/items`,
     numbersAcademy: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('bcSoftNumbersAcademy')/items`,

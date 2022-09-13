@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ICertifications } from "../../../models";
+import { ICertifications, ISharepointStyle } from "../../../models";
 import { getMediaPath } from "../../../utils";
 import { CustomButton } from "../../atoms/CustomButton";
 
@@ -15,22 +15,46 @@ export const CertificationsItems = ({certifications}: CertificationsProps) => {
     certificationImage,
     buttonLabel,
     buttonHref,
-    invertPosition
+    invertPosition,
+    style,
+    ALTImage
   } = certifications?.[0] || {};
 
+  const usableStyle: ISharepointStyle = style && JSON.parse(style);
+
+  const {
+    headerStyle,
+    titleStyle,
+    descriptionStyle,
+    backgroundColor,
+    mainButtonBackgroundColor,
+    mainButtonColor,
+    outerButtonShadowColor,
+    innerButtonShadowrColor, 
+    secondaryButtonBackgroundColor
+} = usableStyle || {};
+
   return (
-    <section className="certifications span-1-12" style={{flexDirection: invertPosition === 'SI' ? 'row-reverse' : 'row'}}>
-        <article className="certifications-item">
-            <h1>{Title}</h1>
-            <p>{description}</p>
+    <section className="certifications span-1-12" style={{flexDirection: invertPosition === 'SI' ? 'row-reverse' : 'row', backgroundColor: backgroundColor}}>
+        <article className="certifications-item" style={{...headerStyle}}>
+            <h1 style={{...titleStyle}}>{Title}</h1>
+            <p style={{...descriptionStyle}}>{description}</p>
         </article>
         <aside className="certifications-item">
             <div className="certifications-item-image">
-              {certificationImage && <Image src={getMediaPath(certificationImage)} alt={'Title'} layout='fill' objectFit="scale-down" priority />}  
+              {certificationImage && <Image src={getMediaPath(certificationImage)} alt={ALTImage} layout='fill' objectFit="scale-down" priority />}  
             </div>
             {
               buttonLabel &&
-                <CustomButton title={buttonLabel} href={buttonHref} />
+                <CustomButton 
+                  title={buttonLabel} 
+                  href={buttonHref} 
+                  mainBackgroundColor={mainButtonBackgroundColor}
+                  mainColor={mainButtonColor}
+                  outerShadowColor={outerButtonShadowColor}
+                  innerShadowrColor={innerButtonShadowrColor}
+                  secondaryBackgroundColor={secondaryButtonBackgroundColor}
+                />
             }
         </aside>
     </section>
