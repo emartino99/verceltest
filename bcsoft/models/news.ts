@@ -5,4 +5,5 @@ export interface INews extends ISharepointList {
     FileRef0: string;
     FirstPublishedDate: Date;
     Topic: string;
+    Modified: Date;
 }

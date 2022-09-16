@@ -17,11 +17,11 @@ export const Consultants = ({consultants}: ConsultantsProps) => {
     } = consultants?.[0] || {};
 
     useEffect(() => {
-        if(descriptionRef.current && description) {
-            descriptionRef.current.innerHTML = description;
+        if(descriptionRef.current) {
+            description ? descriptionRef.current.innerHTML = description : descriptionRef.current.innerHTML = '';
         }
         //eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [description]);
 
     return (
         <section className="consultants span-1-12">
