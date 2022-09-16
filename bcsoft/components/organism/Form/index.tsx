@@ -53,7 +53,7 @@ export const Form = ({form, formMainSettings}: FormProps) => {
     const openFileDrop = () => inputFileRef.current?.click();
 
     return (
-        <section className="form span-1-12">
+        <section className="form span-1-12" id="form">
             <header>
                 <h1>{Title}</h1>
                 <p>{mainDescription}</p>

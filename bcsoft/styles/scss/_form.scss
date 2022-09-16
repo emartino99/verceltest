@@ -11,7 +11,8 @@
     min-height: 1100px;
 
     header {
-        text-align: center;
+        @include margin-top-bottom(null, 60, 0);
+        text-align: center; 
         
         h1 {
             color: $--unnamed-color-002950;

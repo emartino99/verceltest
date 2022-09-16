@@ -50,9 +50,10 @@ export const Services = ({services, servicesMainSettings}: ServicesProps) => {
                     servicesExtracted?.map(card => {
                         const { cardStyle, titleStyle, descriptionStyle }: ISharepointStyle = card.style && JSON.parse(card.style);
                         return(
-                            <article 
+                            <div 
                                 key={card.ID}
                                 style={{...cardStyle}}
+                                className="card-content"
                             >
                                 {
                                     card.image &&
@@ -63,7 +64,7 @@ export const Services = ({services, servicesMainSettings}: ServicesProps) => {
                             <h1 style={{...titleStyle}}>{card.Title}</h1>
                             <span style={{...descriptionStyle}}>{card.description}</span>
                             {card.descriptionHover && <p>{card.descriptionHover}</p>}
-                        </article>
+                        </div>
                         )
                     })
                 }

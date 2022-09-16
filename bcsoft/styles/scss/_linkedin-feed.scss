@@ -14,19 +14,17 @@
         position: relative;
 
         h1 {
-            @include margin-top-bottom(null, 0, 0);
-            color: $--unnamed-color-39597787;
+            @include margin-top-bottom(null, 60, 0);
+            color: $--unnamed-color-395977d9;
             font-size: $--unnamed-font-size-78;
             font-weight: $--unnamed-font-weight-300;
         }
 
         h2 {
-            @include margin-top-bottom(null, 0, 0);
+            @include margin-top-bottom(null, 0, 60);
             color: $--unnamed-color-001f3c;
             font-size: $--unnamed-font-size-56;
             font-weight: $--unnamed-font-weight-500;
-            position: absolute;
-            top: 46%;
         }
     }
 

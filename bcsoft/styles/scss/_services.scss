@@ -48,7 +48,7 @@
         gap: 3rem;
         // max-width: 1400px;
 
-        article {
+        .card-content {
             @include padding-left-right(null, 30, 30);
             @include padding-top-bottom(null, 15, 15);
             align-items: center;
@@ -94,8 +94,9 @@
             }
         }
 
-        article:hover {
+        .card-content:hover {
             p {
+                padding-top: 1.5rem;
                 height: 120px;
             }
         }

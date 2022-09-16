@@ -16,17 +16,17 @@
         width: 100%;
 
         h1 {
-            color: $--unnamed-color-2e6ea2;
+            @include margin-top-bottom(null, 90, 0);
+            color: $--unnamed-color-5093ce;
             font-size: $--unnamed-font-size-78;
             font-weight: $--unnamed-font-weight-300;
         }
 
         h2 {
+            @include margin-top-bottom(null, 0, 90);
             color: $--unnamed-color-ffffff;
             font-size: $--unnamed-font-size-56;
             font-weight: $--unnamed-font-weight-bold;
-            position: absolute;
-            top: 30%;
             width: 100%;
         }
     }
