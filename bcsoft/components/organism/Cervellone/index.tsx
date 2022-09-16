@@ -1,3 +1,4 @@
+import { useRef, useEffect } from "react";
 import { ICervelloneItem, ICervelloneMainSettings } from "../../../models";
 import { CervelloneItem } from "../../molecule";
 
@@ -8,18 +9,27 @@ interface CervelloneProps {
 
 export const Cervellone = ({cervellone, cervelloneMainSettings}: CervelloneProps) => {
 
+    const descriptionRef = useRef<HTMLDivElement>(null);
+
     const {
         Title,
         subtitle,
         description
     } = cervelloneMainSettings?.[0] || {};
 
+    useEffect(() => {
+        if(descriptionRef.current && description) {
+            descriptionRef.current.innerHTML = description;
+        }
+        //eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
     return (
         <section className="cervellone span-1-12">
             <header>
                 <h1>{Title}</h1>
                 <span>{subtitle}</span>
-                <p>{description}</p>
+                <p ref={descriptionRef}></p>
             </header>
             <div className="cervellone-container">
                 {

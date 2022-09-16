@@ -89,13 +89,30 @@
         animation: linear;
         animation-name: show-text;
         animation-duration: 2s;
+        animation-delay: 1.5s;
         animation-fill-mode: forwards;
+        gap: 2rem;
 
         div {
-            // padding: 10px;
-            @include padding-left-right(null, 15, 15);
+            @include padding-top-bottom(null, 0, 15);
+            position: relative;
+
+            &.move-right {
+                background-image: linear-gradient(to left, #F2F2F2, #FFFFFF);
+                clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+                @include padding-left-right(null, 30, 50);
+                right: -36px;
+            }
+
+            &.move-left {
+                background-image: linear-gradient(to right, #F2F2F2, #FFFFFF);
+                @include padding-left-right(null, 30, 30);
+                clip-path: polygon(5.6% 0%, 100% 0%, 100% 100%, 0% 100%);
+                left: -20.5px;
+            }
 
             h1 {
+                @include margin-top-bottom(null, 0, 15);
                 font-style: $--unnamed-font-style-italic;
                 font-weight: $--unnamed-font-weight-bold;
                 font-family: $--unnamed-font-family-exo-2;
@@ -128,6 +145,10 @@
 
     }
 
+}
+
+.limit-width {
+    max-width: 500px;
 }
 
 @keyframes vision-move {

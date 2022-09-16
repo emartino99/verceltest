@@ -1,7 +1,7 @@
+import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
-import { IJobOffers } from "../../../models";
 import { CustomButton } from "../../atoms/CustomButton";
-import { useRouter } from "next/router";
+import { IJobOffers } from "../../../models";
 import { getMediaPath } from "../../../utils";
 
 interface JobOffersProps {
@@ -10,8 +10,29 @@ interface JobOffersProps {
 
 export const JobOffers = ({jobOffers}: JobOffersProps) => {
 
-    const router = useRouter();
-    const buttonRedirect = () => router.push('jobs');
+    const [offers, setOffers] = useState<IJobOffers[]>([]);
+
+    const retrieveOffers = useCallback(() => {
+        if ( !jobOffers || offers.length === jobOffers.length ) return;
+
+        const jobsArray:IJobOffers[] = [];
+        const indexToReach = offers.length + 5;
+
+        for (let i = offers.length; i < jobOffers.length; i++) {
+            if (i > indexToReach) break;
+            jobsArray.push(jobOffers[i]);
+        }
+
+        setOffers(prevState => [...prevState, ...jobsArray]);
+    }, [jobOffers, offers]);
+
+
+    useEffect(() => {
+        retrieveOffers();
+
+        return () => setOffers([]);
+        //eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     return (
         <section className="job span-1-12">
@@ -21,11 +42,11 @@ export const JobOffers = ({jobOffers}: JobOffersProps) => {
             </header>
             <div className="job-container">
                 {
-                    jobOffers?.map(card => (
+                    offers?.map(card => (
                         <article className="job-article" key={card.ID}>
                             <div className="job-type">
                                 <div className="job-image">
-                                    <Image src={getMediaPath(card.image)} alt={card.Title} layout="fill" objectFit="scale-down" />
+                                    { card.image && <Image src={getMediaPath(card.image)} alt={card.Title} layout="fill" objectFit="scale-down" /> }
                                 </div>
                                 <div className="job-description">
                                     <h1>{card.Title}</h1>
@@ -35,13 +56,21 @@ export const JobOffers = ({jobOffers}: JobOffersProps) => {
                            {
                             card.buttonLabel &&
                                 <div className="job-button" >
-                                    <CustomButton title={card.buttonLabel} href={card.buttonHref} mainBackgroundColor={'#FFFFFF'} mainColor={'#001F3C'} />
+                                    <CustomButton 
+                                        title={card.buttonLabel} 
+                                        href={card.buttonHref} 
+                                        mainBackgroundColor={'#FFFFFF'} 
+                                        mainColor={'#001F3C'}
+                                        innerShadowrColor={'#ACD0FB'}
+                                        outerShadowColor={'#001F3C'}
+                                        secondaryBackgroundColor={true}
+                                    />
                                 </div>
                            }
                         </article>
                     ))
                 }
-                <span className="pointer" onClick={buttonRedirect} >Mostra altro</span>
+                <span className="pointer" onClick={retrieveOffers} >Mostra altro</span>
             </div>
         </section>
     );

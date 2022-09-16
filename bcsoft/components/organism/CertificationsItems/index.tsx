@@ -31,7 +31,8 @@ export const CertificationsItems = ({certifications}: CertificationsProps) => {
     mainButtonColor,
     outerButtonShadowColor,
     innerButtonShadowrColor, 
-    secondaryButtonBackgroundColor
+    secondaryButtonBackgroundColor,
+    imageStyle
 } = usableStyle || {};
 
   return (
@@ -41,8 +42,16 @@ export const CertificationsItems = ({certifications}: CertificationsProps) => {
             <p style={{...descriptionStyle}}>{description}</p>
         </article>
         <aside className="certifications-item">
-            <div className="certifications-item-image">
-              {certificationImage && <Image src={getMediaPath(certificationImage)} alt={ALTImage} layout='fill' objectFit="scale-down" priority />}  
+            <div className="certifications-item-image" style={{...imageStyle}}>
+              {
+                certificationImage && 
+                  <Image 
+                    src={getMediaPath(certificationImage)} 
+                    alt={ALTImage} 
+                    layout='fill' 
+                    objectFit="scale-down" 
+                    priority 
+                  />}  
             </div>
             {
               buttonLabel &&

@@ -27,8 +27,8 @@ export const News = ({news}: NewsProps) => {
             </header>
             <Swiper 
                 navigation={{
-                  nextEl: ".custom-news-next-button",
-                  prevEl: ".custom-news-prev-button"
+                    nextEl: ".news-next-button-content",
+                    prevEl: ".news-prev-button-content"
                 }}
                 modules={[Navigation]} 
                 slidesPerView={3}
@@ -44,14 +44,14 @@ export const News = ({news}: NewsProps) => {
                             height={300} 
                             objectFit='cover' 
                             className='news-img' 
-                            onClick={() => newsUrlHandler(currentNews.FileRef)}
+                            onClick={() => newsUrlHandler(currentNews.FileRef0)}
                         />
                         <article className="news-carousel-info-container">
                           <span>{currentNews.Topic}</span>
                           <div className='news-carousel-info-title'>
                             <h1 
                                 className='pointer'
-                                onClick={() => newsUrlHandler(currentNews.FileRef)}
+                                onClick={() => newsUrlHandler(currentNews.FileRef0)}
                             >
                                 {currentNews.Title}
                             </h1>
@@ -64,11 +64,16 @@ export const News = ({news}: NewsProps) => {
                   ))
                 }
             </Swiper>
-            <div className="custom-news-prev-button custom-swiper-button">
-                <div className='custom-prev-arrow'></div>
+            <div className="news-prev-button-container">
+                <div className='news-prev-button-content'>
+                    <div className='custom-prev-arrow'></div>
+                </div>
             </div>
-            <div className="custom-news-next-button custom-swiper-button">
-                <div className='custom-next-arrow'></div>
+
+            <div className="news-next-button-container">
+                <div className='news-next-button-content'>
+                    <div className='custom-next-arrow'></div>
+                </div>
             </div>
         </section>
     );

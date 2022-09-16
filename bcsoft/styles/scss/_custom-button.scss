@@ -43,4 +43,5 @@
 .custom-main-button:hover + .custom-inner-shadow,
 .custom-main-button:hover + .custom-inner-shadow + .custom-outer-shadow {
     display: flex !important;
+    border: none;
 }

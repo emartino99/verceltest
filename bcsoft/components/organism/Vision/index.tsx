@@ -43,11 +43,11 @@ export const Vision = ({vision}: VisionProps) => {
                 </div>
             </aside>
             <article>
-                <div>
+                <div className="move-left limit-width">
                     <h1>{Title}</h1>
                     <p>{visionDescription}</p>
                 </div>
-                <div>
+                <div className="move-right limit-width">
                     <h1>{missionTitle}</h1>
                     <p>{missionDescription}</p>
                 </div>

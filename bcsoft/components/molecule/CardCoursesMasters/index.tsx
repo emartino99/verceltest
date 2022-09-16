@@ -9,6 +9,12 @@ interface CardCoursesMastersProps {
     buttonLabel?: string;
     buttonHref?: string;
     backgroundColor: string;
+    mainButtonBackgroundColor?: string;
+    mainButtonColor?: string;
+    outerButtonShadowColor?: string;
+    innerButtonShadowrColor?: string;
+    secondaryButtonBackgroundColor?: boolean;
+
 }
 
 export const CardCoursesMasters = ({
@@ -17,8 +23,12 @@ export const CardCoursesMasters = ({
     image,
     buttonLabel,
     buttonHref,
-    backgroundColor
-    
+    backgroundColor,
+    mainButtonBackgroundColor,
+    mainButtonColor,
+    outerButtonShadowColor,
+    innerButtonShadowrColor,
+    secondaryButtonBackgroundColor
 }: CardCoursesMastersProps) => {
 
     const textColor = backgroundColor === '#001F3C' ? '#FFFFFF' : '#001F3C';
@@ -36,7 +46,18 @@ export const CardCoursesMasters = ({
                     <h1 style={{color: textColor}}>{title}</h1>
                 </div>
                 <p style={{color: textColor}}>{description}</p>
-                { buttonLabel && <CustomButton title={buttonLabel} href={buttonHref} /> }
+                { 
+                    buttonLabel && 
+                    <CustomButton
+                        title={buttonLabel} 
+                        href={buttonHref} 
+                        mainBackgroundColor={mainButtonBackgroundColor}
+                        mainColor={mainButtonColor}
+                        outerShadowColor={outerButtonShadowColor}
+                        innerShadowrColor={innerButtonShadowrColor}
+                        secondaryBackgroundColor={secondaryButtonBackgroundColor}
+                    />
+                }
             </div>
         </article>
     );

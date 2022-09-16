@@ -48,6 +48,11 @@
             flex-flow: column nowrap;
             gap: 2rem;
             max-width: 500px;
+
+            h1 {
+                @include margin-top-bottom(null, 0, 0);
+            }
+            
         }
 
         .courses-masters-item {

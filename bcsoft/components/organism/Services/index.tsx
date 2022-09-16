@@ -30,7 +30,12 @@ export const Services = ({services, servicesMainSettings}: ServicesProps) => {
         titleStyle, 
         descriptionStyle,
         subtitleStyle,
-        containerStyle
+        containerStyle,
+        mainButtonBackgroundColor,
+        mainButtonColor,
+        outerButtonShadowColor,
+        innerButtonShadowrColor,
+        secondaryButtonBackgroundColor
     }: ISharepointStyle = style && JSON.parse(style);
 
     return (
@@ -63,7 +68,18 @@ export const Services = ({services, servicesMainSettings}: ServicesProps) => {
                     })
                 }
             </div>
-            {buttonLabel && <CustomButton title={buttonLabel} href={buttonHref} mainBackgroundColor={'#FFFFFF'} mainColor={'#001F3C'} />}
+            {
+                    buttonLabel && 
+                        <CustomButton 
+                            title={buttonLabel} 
+                            href={buttonHref} 
+                            mainBackgroundColor={mainButtonBackgroundColor}
+                            mainColor={mainButtonColor}
+                            outerShadowColor={outerButtonShadowColor}
+                            innerShadowrColor={innerButtonShadowrColor}
+                            secondaryBackgroundColor={secondaryButtonBackgroundColor}
+                        />
+                }
         </section>
     );
 };

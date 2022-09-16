@@ -28,7 +28,7 @@ div.heroSection {
     z-index: 1;
 
     svg {
-        transition: 0.2s ease-in-out; 
+        transition: 0.3s ease-in-out; 
     }
 
     .parallelogram-inner {
@@ -45,7 +45,7 @@ div.heroSection {
 }
 
 .parallelogram:hover > .parallelogram-inner > svg {
-    transform: rotateY(180deg) scale(1.2);
+    transform: scale(1.2);
 }
 
 .parallelogram:hover + .parallelogram-top-shadow,

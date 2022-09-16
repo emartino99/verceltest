@@ -18,6 +18,7 @@
         max-width: 489px;
         padding: 1rem;
         position: relative;
+        align-items: center;
 
         h1 {
             @include margin-top-bottom(null, 0, 0);

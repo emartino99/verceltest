@@ -27,14 +27,13 @@ export const AppDescription = ({appDescription}: AppDescriptionProps) => {
     const secondDescriptionRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        if(firstDescriptionRef.current && firstDescription) {
-            firstDescriptionRef.current.innerHTML = firstDescription;
-        }
-        if(secondDescriptionRef.current && secondDescription) {
-            secondDescriptionRef.current.innerHTML = secondDescription;
-        }
-        //eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+        if(firstDescriptionRef.current) {
+            firstDescription ? firstDescriptionRef.current.innerHTML = firstDescription : firstDescriptionRef.current.innerHTML = '';
+        } 
+        if(secondDescriptionRef.current) {
+            secondDescription ? secondDescriptionRef.current.innerHTML = secondDescription : secondDescriptionRef.current.innerHTML = '';
+        } 
+    }, [firstDescription, secondDescription]);
 
     const {
         headerStyle,

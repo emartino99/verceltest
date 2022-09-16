@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { ICardsCoursesMasters, ICoursesMastersMainSettings } from "../../../models";
 import { CustomButton } from "../../atoms/CustomButton";
 import { CardCoursesMasters } from "../../molecule";
@@ -8,6 +9,8 @@ interface CoursesMastersProps {
 }
 
 export const CoursesAndMasters = ({coursesMastersMainSettings, cardsCoursesMasters}: CoursesMastersProps) => {
+
+    const descriptionRef = useRef<HTMLDivElement>(null);
 
     const {
         Title,
@@ -21,13 +24,19 @@ export const CoursesAndMasters = ({coursesMastersMainSettings, cardsCoursesMaste
     const firstHalf = cardsCoursesMasters?.filter((_item, index) => index % 2 === 0);
     const secondHalf = cardsCoursesMasters?.filter((_item, index) => index % 2 !== 0);
 
+    useEffect(() => {
+        if(descriptionRef.current && mainDescription) {
+            descriptionRef.current.innerHTML = mainDescription;
+        }
+    }, [mainDescription]);
+
     return (
         <section className="courses-masters span-1-12">
             {
                 (Title || mainDescription) &&
                     <header>
                         <h1>{Title}</h1>
-                        <p>{mainDescription}</p>
+                        <p ref={descriptionRef}></p>
                     </header>
             }
             <div className="courses-masters-container">

@@ -27,6 +27,7 @@ export const CustomHero = ({customHero}: CustomHeroProps) => {
     const usableStyle: ISharepointStyle = style && JSON.parse(style);
 
     const {
+        containerStyle,
         headerStyle,
         titleStyle,
         subtitleStyle,
@@ -40,11 +41,10 @@ export const CustomHero = ({customHero}: CustomHeroProps) => {
     const descriptionRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        if(descriptionRef.current && description) {
-            descriptionRef.current.innerHTML = description;
-        }
-        //eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+        if(descriptionRef.current) {
+            description ? descriptionRef.current.innerHTML = description : descriptionRef.current.innerHTML = '';
+        } 
+    }, [description]);
 
   return (
     <section 
@@ -55,7 +55,7 @@ export const CustomHero = ({customHero}: CustomHeroProps) => {
             backgroundImage ? {backgroundImage: `url(${getMediaPath(backgroundImage)})`, clipPath: 'polygon(0 5%, 100% 0, 100% 95%, 0 100%)'} : {}
         }
     >
-       <div className="custom-hero-content" style={{flexFlow: flexFlow }} >
+       <div className="custom-hero-content" style={{flexFlow: flexFlow, ...containerStyle }} >
             <header 
                 className="custom-hero-header" 
                 style={{...headerStyle}}

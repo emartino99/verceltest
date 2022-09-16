@@ -11,7 +11,6 @@
         display: flex;
         flex-flow: column nowrap;
         font-family: $--unnamed-font-family-exo-2;
-        gap: 2rem;
         justify-content: center;
         max-width: 1060px;
         position: relative;
@@ -25,7 +24,14 @@
             @include margin-top-bottom(null, 0, 0);
         }
 
-        span,
+        span {
+            color: $--unnamed-color-185fa2;
+            font-size: $--unnamed-font-size-16;
+            font-weight: $--unnamed-font-weight-bold;
+            @include margin-top-bottom(null, 15, 30);
+
+        }
+        
         p {
             color: $--unnamed-color-185fa2;
             font-size: $--unnamed-font-size-16;

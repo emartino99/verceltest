@@ -40,6 +40,8 @@
 .header {
   box-shadow: 0px 2px 10px #001f3c33;
   @include padding-top-bottom(null, 10, 0);
+  position: relative;
+  z-index: 5;
 }
 .submenu {
   display: inline-flex;
@@ -50,6 +52,8 @@
   transition: all 0.3s linear 0.1s;
   height: 0;
   opacity: 0;
+  gap: 2rem;
+
   &.open {
     height: auto;
     height: 70px;
@@ -66,6 +70,7 @@
       @extend .pointer;
       text-decoration: none;
       @include margin-left-right(null, 0, 12);
+      gap: .5rem;
     }
   }
 }

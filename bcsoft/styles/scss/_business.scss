@@ -132,17 +132,18 @@
 .inner-shadow-button {
     transform: translate(5px, -5px);
     color: white;
-    background-color: #002950 !important;
+    background-color: #ACD0FB !important;
     position: absolute;
 }
 
 .outer-shadow-button {
     transform: translate(-5px, 5px);
-    background-color: #185fa2 !important;
+    background-color: #001F3C !important;
     position: absolute;
 }
 
 .main-button:hover + .inner-shadow-button,
 .main-button:hover + .inner-shadow-button + .outer-shadow-button {
     display: flex !important;
+    border: none;
 }

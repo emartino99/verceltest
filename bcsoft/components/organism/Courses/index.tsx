@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Navigation } from 'swiper';
-import { ICourses, ICoursesMainSettings } from '../../../models';
-import Image from 'next/image';
+import { ICourses, ICoursesMainSettings, ISharepointStyle } from '../../../models';
 import { getMediaPath } from '../../../utils';
 import { CustomButton } from '../../atoms/CustomButton';
 
@@ -21,12 +21,21 @@ export const Courses = ({ courses, coursesMainSettings }: Coursesprops) => {
         Description,
         buttonLabel,
         href,
-        backgroundColor
-    } = coursesMainSettings?.[0] || {}
+        style
+    } = coursesMainSettings?.[0] || {};
 
-    const mainColor = backgroundColor === '#001F3C' ? '#FFFFFF' : '#002950';
-    const secondaryColor = backgroundColor === '#001F3C' ? '#FFFFFF' : '#001F3C';
-    const buttonTextColor = backgroundColor === '#001F3C' ? '#001F3C' : '#FFFFFF';
+    const usableStyle: ISharepointStyle = style && JSON.parse(style);
+
+    const {
+        titleStyle,
+        descriptionStyle,
+        backgroundColor,
+        mainButtonBackgroundColor,
+        mainButtonColor,
+        outerButtonShadowColor,
+        innerButtonShadowrColor,
+        secondaryButtonBackgroundColor
+    } = usableStyle || {};
 
     useEffect(() => {
         const userAgent = window.navigator.userAgent;
@@ -37,13 +46,13 @@ export const Courses = ({ courses, coursesMainSettings }: Coursesprops) => {
   return (
     <section className='courses span-1-12' style={{backgroundColor: backgroundColor}}>
         <header className='courses-header'>
-            <h1 style={{color: mainColor}}>{Title}</h1>
-            <p style={{color: secondaryColor}} >{Description}</p>
+            <h1 style={{...titleStyle}}>{Title}</h1>
+            <p style={{...descriptionStyle}} >{Description}</p>
         </header>
         <Swiper
             navigation={{
-                nextEl: ".custom-next-button",
-                prevEl: ".custom-prev-button"
+                nextEl: ".courses-next-button-content",
+                prevEl: ".courses-prev-button-content"
             }}
             effect={"coverflow"}
             grabCursor={true}
@@ -74,21 +83,27 @@ export const Courses = ({ courses, coursesMainSettings }: Coursesprops) => {
             ))
             }
         </Swiper>
-        <div className="custom-prev-button custom-swiper-button">
-            <div className='custom-prev-arrow'></div>
-        </div>
-        <div className="custom-next-button custom-swiper-button">
-            <div className='custom-next-arrow'></div>
+        <div className="courses-prev-button-container">
+            <div className='courses-prev-button-content'>
+                    <div className='custom-prev-arrow'></div>
+                </div>
+            </div>
+
+        <div className="courses-next-button-container">
+            <div className='courses-next-button-content'>
+                <div className='custom-next-arrow'></div>
+            </div>
         </div>
         {
-            buttonLabel &&
+            buttonLabel && 
                 <CustomButton 
-                    title={buttonLabel}
-                    href={href}
-                    outerShadowColor={"#002950"} 
-                    innerShadowrColor={"#5b9ce7"} 
-                    mainBackgroundColor={mainColor}
-                    mainColor={buttonTextColor}
+                    title={buttonLabel} 
+                    href={href} 
+                    mainBackgroundColor={mainButtonBackgroundColor}
+                    mainColor={mainButtonColor}
+                    outerShadowColor={outerButtonShadowColor}
+                    innerShadowrColor={innerButtonShadowrColor}
+                    secondaryBackgroundColor={secondaryButtonBackgroundColor}
                 />
         }
     </section>

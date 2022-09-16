@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="57.44" height="45.155" viewBox="0 0 57.44 45.155">
-  <g id="Raggruppa_1105" data-name="Raggruppa 1105" transform="matrix(-0.819, 0.574, -0.574, -0.819, 57.009, 24.241)">
-    <path id="Tracciato_746" data-name="Tracciato 746" d="M19.973,6.548A13.864,13.864,0,0,0,21.2,7.566c-33.556-15-22.49,2.058,12.5,22.543-.423-.978-.538-1.152-.483-.989C26.318,25.758,11.957,17.452,3.89,8.475-4.826-1.069,1.347-3.681,19.973,6.548Z" transform="translate(0.547 -0.91)" fill="#002950" stroke="#002950" stroke-width="0.5" fill-rule="evenodd"/>
-    <path id="Tracciato_747" data-name="Tracciato 747" d="M3.761,0l.529,5.469L0,9.083l17.039,3.4Z" transform="translate(27.869 22.776)" fill="#002950" fill-rule="evenodd"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="37.91" height="26.386" viewBox="0 0 37.91 26.386">
+  <g id="Raggruppa_1105" data-name="Raggruppa 1105" transform="translate(12.711 -3.701) rotate(32)">
+    <path id="Tracciato_746" data-name="Tracciato 746" d="M10.97,14.226a7.838,7.838,0,0,1,.676-.615C-6.784,22.665-.706,12.369,18.512,0c-.232.59-.3.7-.265.6-3.792,2.03-11.68,7.045-16.11,12.465C-2.65,18.825.74,20.4,10.97,14.226Z" transform="translate(0 5.15)" fill="#002950" stroke="#002950" stroke-width="0.5" fill-rule="evenodd"/>
+    <path id="Tracciato_747" data-name="Tracciato 747" d="M3.761,12.482l.529-5.469L0,3.4,17.039,0Z" transform="translate(12.675 0)" fill="#002950" fill-rule="evenodd"/>
   </g>
 </svg>

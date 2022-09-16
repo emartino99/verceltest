@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { IServicesItem } from "../../../models";
 import { getMediaPath } from "../../../utils";
+import { IServicesItem, ISharepointStyle } from "../../../models";
 
 interface ServicesItemProps {
     servicesItem: IServicesItem[] | undefined;
@@ -13,20 +13,22 @@ export const ServicesItem = ({servicesItem}: ServicesItemProps) => {
         description,
         image,
         imageTitle,
-        rotate,
-        darkBackgroundColor
+        style
     } = servicesItem?.[0] || {};
 
-    const backgroundColor = darkBackgroundColor === 'SI' ? '#001F3C' : '#C9E2FF';
-    const mainTextColor = darkBackgroundColor === 'SI' ? '#FFFFFF' : '#002950';
-    const secondaryTextColor = darkBackgroundColor === 'SI' ? '#FFFFFF' : '#185fa2';
-    const flexDirection = rotate === 'SI' ? 'row-reverse' : 'row'; 
+    const usableStyle: ISharepointStyle = style && JSON.parse(style);
+
+    const {
+        sectionStyle,
+        titleStyle,
+        descriptionStyle
+    } = usableStyle || {};
 
     return (
-        <section className="services-item span-1-12" style={{backgroundColor: backgroundColor, flexDirection: flexDirection}}>
+        <section className="services-item span-1-12" style={{...sectionStyle}}>
             <header>
-                <h1 style={{color: mainTextColor}}>{Title}</h1>
-                <p style={{color: secondaryTextColor}}>{description}</p>
+                <h1 style={{...titleStyle}}>{Title}</h1>
+                <p style={{...descriptionStyle}}>{description}</p>
             </header>
             <aside>
                 {image && <Image src={getMediaPath(image)} alt={imageTitle} layout='fill' objectFit="scale-down" />}

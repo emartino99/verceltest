@@ -1,6 +1,6 @@
 .job {
     @include padding-left-right(null, 60, 60);
-    @include padding-top-bottom(null, 60, 60);
+    @include padding-top-bottom(null, 60, 120);
     align-items: center;
     background-color: $--unnamed-color-001f3c;
     clip-path: polygon(0 7%, 100% 0, 100% 93%, 0% 100%);
@@ -54,6 +54,7 @@
                 flex-flow: row wrap;
                 gap: 1rem;
                 justify-content: center;
+                min-height: 125px;
                 width: 100%;
 
                 .job-image {

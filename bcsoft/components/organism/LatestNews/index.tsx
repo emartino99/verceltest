@@ -1,6 +1,6 @@
-import { FormEventHandler, useCallback } from "react";
+import { FormEventHandler, useCallback, useEffect, useState } from "react";
 import { CardCoursesMasters, CardNewsLetter } from "../../molecule";
-import { ILatestNews, ILatestNewsMainSettings, ILatestNewsNewsletter } from "../../../models";
+import { ILatestNews, ILatestNewsMainSettings, ILatestNewsNewsletter, ISharepointStyle } from "../../../models";
 
 interface LatestNewsProps {
     latestNewsMainSettings: ILatestNewsMainSettings[] | undefined;
@@ -14,14 +14,37 @@ export const LatestNews = ({
     latestNewsNewsletter
 }: LatestNewsProps) => {
 
+    const [news, setNews] = useState<ILatestNews[]>([]);
+
     const {
         Title,
         subtitle
     } = latestNewsMainSettings?.[0] || {};
 
+    const retrieveNews = useCallback(() => {
+        if ( !latestNews || news.length === latestNews.length ) return;
+
+        const newsArray:ILatestNews[] = [];
+        const indexToReach = news.length + 5;
+
+        for (let i = news.length; i < latestNews.length; i++) {
+            if (i > indexToReach) break;
+            newsArray.push(latestNews[i]);
+        }
+
+        setNews(prevState => [...prevState, ...newsArray]);
+    }, [latestNews, news]);
+
     const handleSubmit: FormEventHandler = useCallback((e) => {
         e.preventDefault()
-      }, [])
+    }, []);
+
+    useEffect(() => {
+        retrieveNews();
+
+        return () => setNews([]);
+        //eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     return (
         <section className="latest-news span-1-12">
@@ -33,19 +56,35 @@ export const LatestNews = ({
 
                 <div className="news-first-container">
                     {
-                        latestNews?.map(card => (
-                            <CardCoursesMasters
-                                key={card.ID}
-                                title={card.Title} 
-                                description={card.description}
-                                image={card.image}
-                                backgroundColor={card.backgroundColor}
-                                buttonLabel={card.buttonLabel}
-                                buttonHref={card.buttonHref}
-                            />
-                        ))
+                        news?.map(card => {
+
+                            const {
+                                mainButtonBackgroundColor,
+                                mainButtonColor,
+                                outerButtonShadowColor,
+                                innerButtonShadowrColor,
+                                secondaryButtonBackgroundColor
+                            }: ISharepointStyle = card?.style ? JSON.parse(card?.style) : {};
+
+                            return(
+                                <CardCoursesMasters
+                                    key={card.ID}
+                                    title={card.Title} 
+                                    description={card.description}
+                                    image={card.image}
+                                    backgroundColor={card.backgroundColor}
+                                    buttonLabel={card.buttonLabel}
+                                    buttonHref={card.buttonHref}
+                                    mainButtonBackgroundColor={mainButtonBackgroundColor}
+                                    mainButtonColor={mainButtonColor}
+                                    outerButtonShadowColor={outerButtonShadowColor}
+                                    innerButtonShadowrColor={innerButtonShadowrColor}
+                                    secondaryButtonBackgroundColor={secondaryButtonBackgroundColor}
+                                />
+                            )
+                        })
                     }
-                    <span className="show-more pointer">Mostra altro</span>
+                    <span className="show-more pointer" onClick={retrieveNews}>Mostra altro</span>
                 </div>
 
                 <div className="news-second-container">
