@@ -3,7 +3,7 @@ export interface INews extends ISharepointList {
     BannerImageUrl: string;
     Description: string;
     FileRef0: string;
-    FirstPublishedDate: Date;
+    FirstPublishedDate: string;
     Topic: string;
-    Modified: Date;
+    Modified: string;
 }

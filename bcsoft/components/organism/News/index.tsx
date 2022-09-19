@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from "next/router";
 import { INews } from "../../../models";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -11,8 +12,19 @@ interface NewsProps {
 
 export const News = ({news}: NewsProps) => {
 
+    const [filteredNews, setFilteredNews] = useState<INews[]>();
+
+    const getFilteredNews = useCallback(() => {
+        const newsNewestToOldest = news?.sort((a,b) => Date.parse(b.FirstPublishedDate) - Date.parse(a.FirstPublishedDate)).filter((_item, index) => index <= 5);
+        setFilteredNews(newsNewestToOldest);
+    }, [news]);
+
     const router = useRouter();
     const newsUrlHandler = (url: string) => router.push(url);
+
+    useEffect(() => {
+        getFilteredNews();
+    }, [getFilteredNews]);
 
     return(
         <section className="news span-1-12">
@@ -20,7 +32,7 @@ export const News = ({news}: NewsProps) => {
                 <h1>News</h1>
                 <span 
                     className='pointer'
-                    onClick={() => console.log("routing to be implemented")}
+                    onClick={() => newsUrlHandler('/News')}
                 >
                     Mostra tutte
                 </span>
@@ -35,7 +47,7 @@ export const News = ({news}: NewsProps) => {
                 className='swiper-container'
             >
                 {
-                  news?.length && news.map(currentNews => (
+                  filteredNews?.length && filteredNews.map(currentNews => (
                     <SwiperSlide key={currentNews.ID}>
                         <CustomImage
                             title={''}
