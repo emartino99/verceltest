@@ -4,4 +4,5 @@ export interface ICustomHero extends ISharepointListStyle, ISharepointListButton
     description: string;
     image: string;
     subtitle: string;
+    buttonArrowLabel: string;
 }

@@ -1,0 +1,32 @@
+.news-details {
+    @include margin-top-bottom(null, 120, 120);
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2rem;
+    justify-content: center;
+    min-height: 600px;
+
+    &-content {
+        align-items: center;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 2rem;
+        justify-content: center;
+        max-width: 800px;
+
+        .news-details-info {
+            width: 97%;
+        }
+
+        .news-details-image {
+            height: 500px;
+            position: relative;
+            width: 800px;
+        }
+
+        .news-details-description {
+            line-height: 1.5;
+        }
+    }
+}

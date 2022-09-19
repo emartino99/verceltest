@@ -29,6 +29,7 @@ export * from './LinkedinFeed';
 export * from './Locations';
 export * from './Navbar';
 export * from './News';
+export * from './NewsDetails';
 export * from './Numbers';
 export * from './OurServices';
 export * from './Partners';

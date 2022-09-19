@@ -74,6 +74,8 @@ export const ENDPOINTS = {
     mastersMainSettings: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('mastersMainSettings')/items`,
     midaBackend: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('midaBackend')/items`,
     news: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('news_list')/items`,
+    newsDetails: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('newsDetails')/items`,
+    newsDetailsPage: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('newsDetailsPage')/items`,
     numbers: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('bcSoftNumbersAbout')/items`,
     numbersAcademy: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('bcSoftNumbersAcademy')/items`,
     numbersAcademyMainSettings: `${process.env.NEXT_PUBLIC_BASE_URL}/getByTitle('bcSoftNumbersAcademyMainSettings')/items`,

@@ -4,6 +4,7 @@ import { ICustomHero, ISharepointStyle } from "../../../models";
 import { extractData, getMediaPath } from "../../../utils";
 import { CustomButton } from "../../atoms/CustomButton";
 import Image from "next/image";
+import { Arrow } from "../../../assets";
 interface CustomHeroProps {
     customHero: ICustomHero[] | undefined;
 }
@@ -21,7 +22,8 @@ export const CustomHero = ({customHero}: CustomHeroProps) => {
         buttonLabel,
         buttonHref,
         style,
-        image
+        image,
+        buttonArrowLabel
     } = dataExtracted || {};
 
     const usableStyle: ISharepointStyle = style && JSON.parse(style);
@@ -39,6 +41,8 @@ export const CustomHero = ({customHero}: CustomHeroProps) => {
     } = usableStyle || {};
         
     const descriptionRef = useRef<HTMLDivElement>(null);
+
+    const callTelephoneNumber = () => window.open('tel:00000000000');
 
     useEffect(() => {
         if(descriptionRef.current) {
@@ -76,11 +80,23 @@ export const CustomHero = ({customHero}: CustomHeroProps) => {
             }
        </div>
         {
-            buttonLabel &&
+            buttonLabel ?
                 <>
                     <CustomButton title={buttonLabel} href={buttonHref} />
-                    <p className="custom-hero-telephone-number">oppure chiamaci allo <span> 081-5536002 </span></p>
+                    <p className="custom-hero-telephone-number">oppure chiamaci allo <span className="pointer" onClick={callTelephoneNumber}> 081-5536002 </span></p>
                 </>
+
+            : buttonArrowLabel ?
+            
+                <>
+                    <div className="custom-hero-button">
+                        <Arrow width={40} height={67} />
+                    </div>
+                    <span className="custom-hero-button-text-fade-in">{buttonArrowLabel}</span>
+                </>
+
+            : null
+                    
         }
     </section>
   );

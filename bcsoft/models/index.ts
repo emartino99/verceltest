@@ -29,6 +29,7 @@ export * from './latest-news';
 export * from './linkedin-feed';
 export * from './locations';
 export * from './navbar';
+export * from './news-details';
 export * from './news';
 export * from './numbers';
 export * from './our-services';
